@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruchitra Kumaresan - Portfolio</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-image: url('8.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        .container {
+            max-width: 90%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .intro {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 10px auto;
+            display: block;
+        }
+
+        .nav {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .nav-item {
+            margin: 0;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.7);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .big-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .big-box p {
+            font-size: 1rem;
+            color: #333;
+            text-align: justify;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .Project-box {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+
+        .col-md-6 {
+            flex: 1;
+            max-width: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        .button-container a {
+            text-decoration: none;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button-container a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .previous {
+            background-color: #f1f1f1;
+            color: black;
+        }
+
+        .next {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .message-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .message-form label {
+            margin-top: 10px;
+            width: 100%;
+            max-width: 400px;
+            text-align: left;
+            color: #333;
+        }
+
+        .message-form input,
+        .message-form textarea {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .message-form textarea {
+            resize: vertical;
+        }
+
+        .message-form button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #04AA6D;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .message-form button:hover {
+            background-color: #028a53;
+        }
+
+        /* Hide all sections except intro initially */
+        section:not(#intro) {
+            display: none;
+        }
+
+         .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        a {
+            text-decoration: none;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .previous {
+            background-color: #f1f1f1;
+            color: black;
+        }
+
+        .next {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+      <header>
+      <p>  <h1>🙏🏻 WELCOME 🙏🏻</h1> </p>
+        </header>
+
+    <div class="container">
+        <!-- Intro Section -->
+        <section id="intro" class="intro">
+            <img src="1.jpg" alt="Ruchitra Kumaresan" class="profile-image">
+            <p class="intro-text">Ruchitra Kumaresan <br> Front-End Developer | UX / UI Designer | Software Developer</p>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a href="#about" class="nav-link">About Me</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="#achievements" class="nav-link">Achievements</a></li>
+                    <li class="nav-item"><a href="#certifications" class="nav-link">Certifications</a></li>
+                    <li class="nav-item"><a href="#resume" class="nav-link">Resume</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact Me</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="big-box">
+            <h2>ABOUT ME 👩🏻‍💼 </h2>
+            <p>I am Ruchitra Kumaresan, a dedicated front-end developer with a Master's in Computer Science from New York Institute of Technology (NYIT) and a Bachelor's in Computer Science from REVA University, India. I specialize in front-end development, with technical expertise in JavaScript, React.js, HTML5, CSS, and software testing. Throughout my academic and professional career, I have successfully delivered robust applications and systems, demonstrating my ability to tackle complex challenges and provide high-quality solutions.</p>
+            <p>In addition to my technical skills, I am well-versed in software development methodologies and have experience working in agile environments. My internships at Lernov and Sain Solutions in Bangalore, India, provided me with hands-on experience in front-end web development. I contributed to projects that improved user interaction and functionality. Furthermore, my coursework and projects, such as product recommendation systems and utilizing Recurrent Neural Networks (RNNs) for trading, have honed my analytical and problem-solving abilities.</p>
+            <p>I am eager to explore new opportunities to apply my skills and creativity to drive impactful software development and tech industry projects. Let’s connect and discuss how we can collaborate to make a significant difference in this ever-evolving field.</p>
+           <div class="button-container"> 
+                <a href="Project.html" class="next"> Project </a>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="big-box">
+            <h2>PROJECTS 👩‍💻 </h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="Project-box">
+                        <a href="CG Project.html">
+                            <h3>Computer Graphics</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="Project-box">
+                        <a href="Product Recommendation System.html">
+                            <h3>Product Recommendation System</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="Project-box">
+                        <a href="RNN.html">
+                            <h3>RNN for Trading: Multivariate Time Series and Text Data</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="Project-box">
+                        <a href="Bot.html">
+                            <h3>Lotto Bot</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="Project-box">
+                        <a href="Water.html">
+                            <h3>Water Quality Monitoring and Filter System Using IoT</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="Project-box">
+                        <a href="ML.html">
+                            <h3>Clustering of Cancerous Profiles Using Machine Learning</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="button-container"> 
+                <a href="Aboutme.html" class="previous">Aboutme</a>
+                <a href="Achievements.html" class="next">Achievements </a>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="big-box">
+            <h2>ACHIEVEMENTS 🏆 </h2>
+            <ul>
+                <li>Research Paper International Conference Advance in Computing and Information Technology IACIT-2020, conducted and organized by the School of Computing & Information Technology, REVA University, Bangalore, INDIA.</li>
+                <li>Engaged with the college's Career & Placement center, discussed effective strategies for securing positions within specific companies, and gained valuable insights into the expectations of hiring panels when evaluating candidates.</li>
+                <li>A dedicated volunteer with YuWaah (Generation Unlimited India), actively contributing to empowering youth and fostering their holistic development. I've gained valuable insights into youth challenges and the potential of youth-focused initiatives.</li>
+            </ul>
+            <div class="button-container"> 
+                <a href="Projects.html" class="previous">Projects</a>
+                <a href="Certifications.html" class="next">Certifications </a>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="big-box">
+            <h2>CERTIFICATIONS & SKILLS 🖥️</h2>
+            <ul>
+                <li><a href="https://www.coursera.org/account/accomplishments/verify/PB9T3XX2G598?utm_product=course" target="_blank">Coursera Fundamental of UX designer</a></li>
+                <li><a href="https://www.linkedin.com/learning/certificates/03da69d2bb5e305ddb2d41f79627b136ddcb8275f7d04fe8956db17714f23b1b?u=57502641" target="_blank">Introduction to Career Skills in Software Development</a></li>
+                <li><a href="https://www.linkedin.com/learning/certificates/c15b3155f12f28d5bcfbdc415006778b13e3a71d9ec5f111b282a76a7c8839e7?u=575026414" target="_blank">Prompt Engineering: How to Talk to the AIs</a></li>
+                <li><a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Goldman%20Sachs/NPdeQ43o8P9HJmJzg_Goldman%20Sachs_SDD33Z7ZcLEQWzatn_1705720063979_completion_certificate.pdf" target="_blank">Goldman Sachs Software Engineering Virtual Experience Program on Forage</a></li>
+            </ul>
+            <div class="button-container"> 
+                <a href="Achievements.html" class="previous">Achievements</a>
+                <a href=" Resume.html" class="next">Resume </a>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume" class="big-box">
+            <h2>RESUME 🎯 </h2>
+            <p>Want to dive into my experience? Download my resume here...!!!</p>
+            <a href="Ruchitra.K.pdf" class="btn" download>Download Resume</a>
+            <div class="button-container"> 
+                <a href="Certifications.html" class="previous">Certifications</a>
+                <a href=" Contact.html" class="next"> Contact </a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="big-box">
+            <h2>CONTACT ME</h2>
+            <div class="message-form">
+                <h3>Send a Message...!</h3>
+                <form action="send_email.php" method="POST">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required> <br>
+                    <label for="contact">Contact Info:</label>
+                    <input type="text" id="contact" name="contact" placeholder="Email or Phone Number" required> <br>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea> <br>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+            <div class="button-container"> 
+                <a href="Resume.html" class="previous">resume</a>
+                <a href=" Aboutme.html" class="next"> Aboutme </a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // JavaScript to handle smooth scrolling and section visibility
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                // Hide all sections
+                document.querySelectorAll('section').forEach(section => {
+                    section.style.display = 'none';
+                });
+
+                // Show the target section
+                targetSection.style.display = 'block';
+
+                // Smooth scroll to the target section
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Show the intro section by default
+        document.getElementById('intro').style.display = 'block';
+    </script>
+</body>
+</html>
