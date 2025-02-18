@@ -1,46 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruchitra Kumaresan - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* General Styles */
+        :root {
+            --primary-color: #04AA6D;
+            --secondary-color: #333;
+            --background-color: #f4f4f4;
+            --text-color: #333;
+            --white: #fff;
+            --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            background-image: url('8.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
         }
 
         header {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 10px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 20px 0;
             text-align: center;
-            color: white;
+            box-shadow: var(--shadow);
         }
 
         .container {
-            max-width: 90%;
-            margin: auto;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
         }
 
         .intro {
             text-align: center;
-            margin: 30px 0;
+            margin: 50px 0;
         }
 
         .profile-image {
-            width: 120px;
-            height: 120px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            margin: 10px auto;
+            border: 4px solid var(--primary-color);
+            margin: 20px auto;
             display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.1);
+        }
+
+        .intro-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 10px 0;
         }
 
         .nav {
@@ -50,7 +72,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
         }
 
         .nav-item {
@@ -58,65 +80,74 @@
         }
 
         .nav-link {
-            color: white;
+            color: var(--white);
             text-decoration: none;
             padding: 10px 20px;
             border-radius: 5px;
-            background-color: rgba(0, 0, 0, 0.7);
-            transition: background-color 0.3s, color 0.3s;
+            background-color: var(--secondary-color);
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .nav-link:hover {
-            background-color: #04AA6D;
-            color: white;
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
         }
 
         .big-box {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 20px;
+            background-color: var(--white);
+            padding: 30px;
             border-radius: 15px;
             margin: 20px 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
         }
 
-        .big-box p {
-            font-size: 1rem;
-            color: #333;
-            text-align: justify;
+        .big-box:hover {
+            transform: translateY(-5px);
         }
 
-        .social-icons {
+        .project-details {
             display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin: 20px 0;
-        }
-
-        .social-icons img {
-            width: 40px;
-            height: 40px;
-        }
-
-        .Project-box {
-            background-color: rgba(255, 255, 255, 0.95);
-            padding: 15px;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+            background-color: var(--white);
+            padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            text-align: center;
+            box-shadow: var(--shadow);
+            text-align: left;
+            transition: all 0.5s ease-in-out;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
         }
 
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 -15px;
+        .project-details:hover {
+            clip-path: polygon(20% 0%, 80% 0%, 100% 50%, 80% 100%, 20% 100%, 0% 50%);
+            transform: scale(1.05);
+            background-color: var(--primary-color);
+            color: var(--white);
         }
 
-        .col-md-6 {
-            flex: 1;
-            max-width: 50%;
-            padding: 15px;
-            box-sizing: border-box;
+        .project-details h3 {
+            min-width: 250px;
+            margin: 0;
+            font-size: 1.2em;
+            color: var(--primary-color);
+            transition: color 0.5s ease-in-out;
+        }
+
+        .project-details:hover h3 {
+            color: var(--white);
+        }
+
+        .project-details p {
+            flex-grow: 1;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            transition: color 0.5s ease-in-out;
+        }
+
+        .project-details:hover p {
+            color: var(--white);
         }
 
         .button-container {
@@ -130,46 +161,46 @@
             display: inline-block;
             padding: 10px 20px;
             border-radius: 5px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .button-container a:hover {
-            background-color: #ddd;
-            color: black;
+            transform: translateY(-3px);
         }
 
         .previous {
-            background-color: #f1f1f1;
-            color: black;
+            background-color: var(--secondary-color);
+            color: var(--white);
         }
 
         .next {
-            background-color: #04AA6D;
-            color: white;
+            background-color: var(--primary-color);
+            color: var(--white);
         }
 
         .message-form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
         }
 
         .message-form label {
+            display: block;
             margin-top: 10px;
-            width: 100%;
-            max-width: 400px;
-            text-align: left;
-            color: #333;
+            font-weight: bold;
         }
 
         .message-form input,
         .message-form textarea {
             width: 100%;
-            max-width: 400px;
             padding: 10px;
             margin-top: 5px;
             border-radius: 5px;
             border: 1px solid #ccc;
+            box-sizing: border-box;
         }
 
         .message-form textarea {
@@ -181,8 +212,8 @@
             padding: 10px 20px;
             border-radius: 5px;
             border: none;
-            background-color: #04AA6D;
-            color: white;
+            background-color: var(--primary-color);
+            color: var(--white);
             cursor: pointer;
             transition: background-color 0.3s;
         }
@@ -191,53 +222,67 @@
             background-color: #028a53;
         }
 
-        /* Hide all sections except intro initially */
-        section:not(#intro) {
+        .email-button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: var(--primary-color);
+            color: var(--white);
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .email-button:hover {
+            background-color: #028a53;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .col-md-6 {
+                max-width: 100%;
+            }
+
+            .nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-link {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Hide all sections by default */
+        section {
             display: none;
         }
 
-        .button-container {
-            display: flex;
-            justify-content: space-between;
-            margin: 20px 0;
-        }
-
-        a {
-            text-decoration: none;
-            display: inline-block;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        .previous {
-            background-color: #f1f1f1;
-            color: black;
-        }
-
-        .next {
-            background-color: #04AA6D;
-            color: white;
+        /* Show only the intro section by default */
+        #intro {
+            display: block;
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1>🙏🏻 WELCOME 🙏🏻</h1>
     </header>
 
-    <div class="container">
+    <main class="container">
         <!-- Intro Section -->
         <section id="intro" class="intro">
             <img src="1.jpg" alt="Ruchitra Kumaresan" class="profile-image">
             <p class="intro-text">Ruchitra Kumaresan <br> Front-End Developer | UX / UI Designer | Software Developer</p>
+            <main class="container"> 
             <nav>
                 <ul class="nav">
+                    <li class="nav-item"><a href="#intro" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="#about" class="nav-link">About Me</a></li>
                     <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
                     <li class="nav-item"><a href="#achievements" class="nav-link">Achievements</a></li>
@@ -246,119 +291,194 @@
                     <li class="nav-item"><a href="#contact" class="nav-link">Contact Me</a></li>
                 </ul>
             </nav>
+        </main>
         </section>
 
-        <!-- About Me Section -->
+        <!-- About Me Section -->    
         <section id="about" class="big-box">
-            <h2>ABOUT ME 👩🏻‍💼</h2>
+            <header> <h2>ABOUT ME 👩🏻‍💼</h2> </header>
+            <main class="container">
+            <nav>
+            <ul class="nav">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About Me</a></li>
+                <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="achievements.html" class="nav-link">Achievements</a></li>
+                <li class="nav-item"><a href="certifications.html" class="nav-link">Certifications</a></li>
+                <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact Me</a></li>
+            </ul>
+        </nav>
             <p>I am Ruchitra Kumaresan, a dedicated front-end developer with a Master's in Computer Science from New York Institute of Technology (NYIT) and a Bachelor's in Computer Science from REVA University, India. I specialize in front-end development, with technical expertise in JavaScript, React.js, HTML5, CSS, and software testing. Throughout my academic and professional career, I have successfully delivered robust applications and systems, demonstrating my ability to tackle complex challenges and provide high-quality solutions.</p>
             <p>In addition to my technical skills, I am well-versed in software development methodologies and have experience working in agile environments. My internships at Lernov and Sain Solutions in Bangalore, India, provided me with hands-on experience in front-end web development. I contributed to projects that improved user interaction and functionality. Furthermore, my coursework and projects, such as product recommendation systems and utilizing Recurrent Neural Networks (RNNs) for trading, have honed my analytical and problem-solving abilities.</p>
             <p>I am eager to explore new opportunities to apply my skills and creativity to drive impactful software development and tech industry projects. Let’s connect and discuss how we can collaborate to make a significant difference in this ever-evolving field.</p>
-            <div class="button-container"> 
-                <a href="Project.html" class="next">Project</a>
-            </div>
+            </main>
         </section>
 
         <!-- Projects Section -->
+        
         <section id="projects" class="big-box">
-            <h2>PROJECTS 👩‍💻</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="Project-box">
-                        <a href="#">
-                            <h3>Computer Graphics</h3>
-                        </a>
-                    </div>
+            <header> <h2>PROJECTS</h2> </header>
+
+            <main class="container">
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About Me</a></li>
+                    <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="achievements.html" class="nav-link">Achievements</a></li>
+                    <li class="nav-item"><a href="certifications.html" class="nav-link">Certifications</a></li>
+                    <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact Me</a></li>
+                </ul>
+            </nav>
+
+            <div id="project-details-container">
+                <div id="project1" class="project-details">
+                    <h3>Computer Graphics</h3>
+                    <p>
+                        Developed a computer graphics project using OpenGL to create interactive 3D models and animations.
+                        The project involved implementing various rendering techniques, including shading, texture mapping,
+                        and lighting effects, to enhance visual realism.
+                    </p>
                 </div>
-                <div class="col-md-6">
-                    <div class="Project-box">
-                        <a href="#">
-                            <h3>Product Recommendation System</h3>
-                        </a>
-                    </div>
+                <div id="project2" class="project-details">
+                    <h3>Product Recommendation System</h3>
+                    <p>
+                        Designed and implemented a product recommendation system using collaborative filtering and
+                        content-based filtering techniques. The system analyzes user behavior and preferences to suggest
+                        personalized products, improving user engagement and satisfaction.
+                    </p>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="Project-box">
-                        <a href="#">
-                            <h3>RNN for Trading: Multivariate Time Series and Text Data</h3>
-                        </a>
-                    </div>
+                <div id="project3" class="project-details">
+                    <h3>RNN for Trading: Multivariate Time Series and Text Data</h3>
+                    <p>
+                        Built a Recurrent Neural Network (RNN) model to predict stock market trends using multivariate
+                        time series data and text data from financial news. The project involved data preprocessing,
+                        feature engineering, and model evaluation to achieve accurate predictions.
+                    </p>
                 </div>
-                <div class="col-md-6">
-                    <div class="Project-box">
-                        <a href="#">
-                            <h3>Lotto Bot</h3>
-                        </a>
-                    </div>
+                <div id="project4" class="project-details">
+                    <h3>Lotto Bot</h3>
+                    <p>
+                        Created an automated lottery number generator bot using Python. The bot uses statistical analysis
+                        and randomization techniques to generate potential winning numbers, providing users with a fun
+                        and interactive way to play the lottery.
+                    </p>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="Project-box">
-                        <a href="#">
-                            <h3>Water Quality Monitoring and Filter System Using IoT</h3>
-                        </a>
-                    </div>
+                <div id="project5" class="project-details">
+                    <h3>Water Quality Monitoring and Filter System Using IoT</h3>
+                    <p>
+                        Developed an IoT-based system to monitor and filter water quality in real-time. The system uses
+                        sensors to measure parameters like pH, turbidity, and temperature, and sends alerts if the water
+                        quality falls below acceptable standards. The project aims to ensure safe drinking water in
+                        remote areas.
+                    </p>
+                    <div><a href="https://youtu.be/SniVsKWIpDA?si=3RX2R_FwWfxZIfdk" class="nav-link">Project</a></div>
                 </div>
-                <div class="col-md-6">
-                    <div class="Project-box">
-                        <a href="#">
-                            <h3>Clustering of Cancerous Profiles Using Machine Learning</h3>
-                        </a>
-                    </div>
+                <div id="project6" class="project-details">
+                    <h3>Clustering of Cancerous Profiles Using Machine Learning</h3>
+                    <p>
+                        Implemented a machine learning model to cluster cancerous profiles based on gene expression data.
+                        The project involved using clustering algorithms like K-Means and hierarchical clustering to
+                        identify patterns and group similar cancer profiles, aiding in personalized treatment strategies.
+                    </p>
                 </div>
-            </div>
-            <div class="button-container"> 
-                <a href="Aboutme.html" class="previous">About Me</a>
-                <a href="Achievements.html" class="next">Achievements</a>
-            </div>
+                </div>
+            </main>
         </section>
 
         <!-- Achievements Section -->
         <section id="achievements" class="big-box">
-            <h2>ACHIEVEMENTS 🏆</h2>
+            <header> 
+            <h2>ACHIEVEMENTS 🏆</h2> </header>
+
+             <main class="container">
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About Me</a></li>
+                    <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="achievements.html" class="nav-link">Achievements</a></li>
+                    <li class="nav-item"><a href="certifications.html" class="nav-link">Certifications</a></li>
+                    <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact Me</a></li>
+                </ul>
+            </nav>
+
             <ul>
                 <li>Research Paper International Conference Advance in Computing and Information Technology IACIT-2020, conducted and organized by the School of Computing & Information Technology, REVA University, Bangalore, INDIA.</li>
                 <li>Engaged with the college's Career & Placement center, discussed effective strategies for securing positions within specific companies, and gained valuable insights into the expectations of hiring panels when evaluating candidates.</li>
                 <li>A dedicated volunteer with YuWaah (Generation Unlimited India), actively contributing to empowering youth and fostering their holistic development. I've gained valuable insights into youth challenges and the potential of youth-focused initiatives.</li>
             </ul>
-            <div class="button-container"> 
-                <a href="Projects" class="previous">Projects</a>
-                <a href="Certifications" class="next">Certifications</a>
-            </div>
+            </main>
         </section>
 
         <!-- Certifications Section -->
         <section id="certifications" class="big-box">
+            <header>
             <h2>CERTIFICATIONS & SKILLS 🖥️</h2>
+            </header>
+             <main class="container">
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About Me</a></li>
+                    <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="achievements.html" class="nav-link">Achievements</a></li>
+                    <li class="nav-item"><a href="certifications.html" class="nav-link">Certifications</a></li>
+                    <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact Me</a></li>
+                </ul>
+            </nav>
             <ul>
                 <li><a href="https://www.coursera.org/account/accomplishments/verify/PB9T3XX2G598?utm_product=course" target="_blank">Coursera Fundamental of UX designer</a></li>
                 <li><a href="https://www.linkedin.com/learning/certificates/03da69d2bb5e305ddb2d41f79627b136ddcb8275f7d04fe8956db17714f23b1b?u=57502641" target="_blank">Introduction to Career Skills in Software Development</a></li>
                 <li><a href="https://www.linkedin.com/learning/certificates/c15b3155f12f28d5bcfbdc415006778b13e3a71d9ec5f111b282a76a7c8839e7?u=575026414" target="_blank">Prompt Engineering: How to Talk to the AIs</a></li>
                 <li><a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Goldman%20Sachs/NPdeQ43o8P9HJmJzg_Goldman%20Sachs_SDD33Z7ZcLEQWzatn_1705720063979_completion_certificate.pdf" target="_blank">Goldman Sachs Software Engineering Virtual Experience Program on Forage</a></li>
             </ul>
-            <div class="button-container"> 
-                <a href="Achievements.html" class="previous">Achievements</a>
-                <a href="Resume.html" class="next">Resume</a>
-            </div>
+            </main>
         </section>
 
         <!-- Resume Section -->
         <section id="resume" class="big-box">
-            <h2>RESUME 🎯</h2>
+            <header>
+                <h2>RESUME 🎯</h2>
+            </header>
+             <main class="container">
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About Me</a></li>
+                    <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="achievements.html" class="nav-link">Achievements</a></li>
+                    <li class="nav-item"><a href="certifications.html" class="nav-link">Certifications</a></li>
+                    <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact Me</a></li>
+                </ul>
+            </nav>
             <p>Want to dive into my experience? Download my resume here...!!!</p>
             <a href="Ruchitra.K.pdf" class="btn" download>Download Resume</a>
-            <div class="button-container"> 
-                <a href="Certifications.html" class="previous">Certifications</a>
-                <a href="Contact.html" class="next">Contact Me</a>
-            </div>
+           </main>
         </section>
 
         <!-- Contact Section -->
         <section id="contact" class="big-box">
-            <h2>CONTACT ME</h2>
+            <header>
+                <h2>CONTACT ME</h2>
+            </header>
+            <main class="container">
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About Me</a></li>
+                    <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="achievements.html" class="nav-link">Achievements</a></li>
+                    <li class="nav-item"><a href="certifications.html" class="nav-link">Certifications</a></li>
+                    <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact Me</a></li>
+                </ul>
+            </nav>
             <div class="message-form">
                 <h3>Send a Message...!</h3>
                 <form action="send_email.php" method="POST">
@@ -368,15 +488,17 @@
                     <input type="text" id="contact" name="contact" placeholder="Email or Phone Number" required> <br>
                     <label for="message">Message:</label>
                     <textarea id="message" name="message" rows="4" required></textarea> <br>
-                    <button type="submit">Send Message</button>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <!-- Email Me Button -->
+                        <a href="mailto:ruchitrak98@gmail.com" class="email-button">Email Me</a>
+                        <!-- Send Message Button -->
+                        <button type="submit">Send Message</button>
+                    </div>
                 </form>
-            </div>
-            <div class="button-container"> 
-                <a href="Resume.html" class="previous">Resume</a>
-                <a href="Aboutme.html" class="next">About Me</a>
-            </div>
+           </div>
+            </main>
         </section>
-    </div>
+    </main>
 
     <script>
         // JavaScript to handle smooth scrolling and section visibility
@@ -403,4 +525,5 @@
         document.getElementById('intro').style.display = 'block';
     </script>
 </body>
+
 </html>
