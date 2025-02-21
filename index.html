@@ -1,554 +1,608 @@
-    <!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ruchitra Kumaresan - Portfolio</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <style>
-            /* General Styles */
-            :root {
-                --primary-color: #04AA6D;
-                --secondary-color: #333;
-                --background-color: #f4f4f4;
-                --text-color: #333;
-                --white: #fff;
-                --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruchitra Kumaresan - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* General Styles */
+        :root {
+            --primary-color:  #2C3E50; /* Deep Blue for a strong, professional feel */
+            --secondary-color: #555; /* Dark Gray for better readability */
+            --background-color: #D3D3D3; /* Soft off-white for a clean look */
+            --accent-color:#BDC3C7;
+            --text-color: #222; /* Darker text for better contrast */
+            --white: #FFFFFF; /* Pure white for clarity */
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow for a premium look */
+        }
 
-            body {
-                font-family: 'Arial', sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: var(--background-color);
-                color: var(--text-color);
-                line-height: 1.6;
-            }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
-            header {
-                background-color: var(--primary-color);
-                color: var(--white);
-                padding: 20px 0;
-                text-align: center;
-                box-shadow: var(--shadow);
-            }
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
 
-            .container {
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 20px;
-            }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-            .intro {
-                text-align: center;
-                margin: 50px 0;
-            }
+        .intro {
+            text-align: center;
+            margin: 50px 0;
+        }
 
-            .profile-image {
-                width: 150px;
-                height: 150px;
-                border-radius: 50%;
-                border: 4px solid var(--primary-color);
-                margin: 20px auto;
-                display: block;
-                transition: transform 0.3s ease;
-            }
+        .profile-image {
+            width: 120px; /* Adjusted to passport photo width */
+            height: 160px; /* Adjusted to passport photo height */
+            border-radius: 0; /* Remove rounded corners for a square shape */
+            border: 4px solid var(--primary-color);
+            margin: 20px auto;
+            display: block;
+            transition: transform 0.3s ease;
+            object-fit: cover; /* Ensures image fills the space without distortion */
+        }
 
-            .profile-image:hover {
-                transform: scale(1.1);
-            }
+        .profile-image:hover {
+            transform: scale(1.05); /* Slight zoom effect on hover */
+        }
 
-            .intro-text {
-                font-size: 1.5rem;
-                font-weight: bold;
-                margin: 10px 0;
+        .intro-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .nav {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .nav-item {
+            margin: 0;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: var(--secondary-color);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .big-box {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .big-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        .button-container a {
+            text-decoration: none;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .button-container a:hover {
+            transform: translateY(-3px);
+        }
+
+        .previous {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        .next {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Project Section Styles */
+        .project-section {
+            display: none; /* Hide all sections by default */
+        }
+
+        .project-section.active {
+            display: flex; /* Show the active section */
+        }
+
+        .image-box {
+            flex: 1;
+            margin-right: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .content-box {
+            flex: 2;
+            text-align: justify;
+        }
+
+        .box {
+            padding: 20px;
+            border: 2px solid #333;
+            background-color: #f9f9f9;
+            width: fit-content;
+            border-radius: 8px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .box h2 {
+            margin: 0;
+            color: #333;
+        }
+
+        .project-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .project-navigation button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #04AA6D;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .project-navigation button:hover {
+            background-color: #028a53;
+        }
+
+        .project-navigation button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+         
+        
+
+        /* Certifications Section */
+        .certifications-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .certificate-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .certificate-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .certification-item p {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+
+        /* Contact Form */
+        .message-form {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .message-form label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .message-form input,
+        .message-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .message-form textarea {
+            resize: vertical;
+        }
+
+        .message-form button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: var(--primary-color);
+            color: var(--white);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .message-form button:hover {
+            background-color: #028a53;
+        }
+
+        .email-button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: var(--primary-color);
+            color: var(--white);
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .email-button:hover {
+            background-color: #028a53;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .col-md-6 {
+                max-width: 100%;
             }
 
             .nav {
-                list-style-type: none;
-                padding: 0;
-                margin: 20px 0;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-            }
-
-            .nav-item {
-                margin: 0;
+                flex-direction: column;
+                align-items: center;
             }
 
             .nav-link {
-                color: var(--white);
-                text-decoration: none;
-                padding: 10px 20px;
-                border-radius: 5px;
-                background-color: var(--secondary-color);
-                transition: background-color 0.3s, transform 0.3s;
-            }
-
-            .nav-link:hover {
-                background-color: var(--primary-color);
-                transform: translateY(-3px);
-            }
-
-            .big-box {
-                background-color: var(--white);
-                padding: 30px;
-                border-radius: 15px;
-                margin: 20px 0;
-                box-shadow: var(--shadow);
-                transition: transform 0.3s ease;
-            }
-
-            .big-box:hover {
-                transform: translateY(-5px);
-            }
-
-
-            .button-container {
-                display: flex;
-                justify-content: space-between;
-                margin: 20px 0;
-            }
-
-            .button-container a {
-                text-decoration: none;
-                display: inline-block;
-                padding: 10px 20px;
-                border-radius: 5px;
-                transition: background-color 0.3s, transform 0.3s;
-            }
-
-            /* Project Header Styles */
-            .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-            }
-
-            .project-header h3 {
-            margin: 0;
-            flex-grow: 1;
-            color: black;
-            }
-
-            .view-more {
-            font-size: 0.9rem;
-            color: var(--primary-color);
-            text-decoration: none;
-            border: 1px solid var(--primary-color);
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-            margin-left: 10px;
-            }
-
-            .view-more:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
-            }
-
-            /* Project Details Styles */
-            .project-details {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 20px;
-            background-color: var(--white);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            text-align: left;
-            transition: all 0.5s ease-in-out;
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-            }
-
-            .project-details:hover {
-            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-            transform: scale(1.05);
-            background-color: var(--primary-color);
-            color: var(--white);
-            }
-
-            .project-details h3 {
-            min-width: 250px;
-            margin: 0;
-            font-size: 1.2em;
-            color: black;
-            transition: color 0.5s ease-in-out;
-            }
-
-            .project-details:hover h3 {
-            color: var(--white);
-            }
-
-            .project-details p {
-            flex-grow: 1;
-            font-size: 0.9rem;
-            color: var(--text-color);
-            transition: color 0.5s ease-in-out;
-            }
-
-            .project-details:hover p {
-            color: var(--white);
-            }
-
-
-            .previous {
-                background-color: var(--secondary-color);
-                color: var(--white);
-            }
-
-            .next {
-                background-color: var(--primary-color);
-                color: var(--white);
-            }
-
-            .certifications-container {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 20px;
-                justify-content: center;
-            }
-
-     
-            .certificate-image {
                 width: 100%;
-                height: auto;
-                border-radius: 10px;
-                box-shadow: var(--shadow);
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                text-align: center;
             }
+        }
 
-            .certificate-image:hover {
-                transform: scale(1.05);
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            }
+        /* Hide all sections by default */
+        section {
+            display: block; /* Show all sections by default */
+        }
 
-            .certification-item p {
-                margin-top: 10px;
-                font-size: 0.9rem;
-                color: var(--text-color);
-            }
+        .social-icons img {
+            width: 60px;
+            height: 60px;
+        }
 
-            .message-form {
-                max-width: 500px;
-                margin: 50px auto;
-                padding: 20px;
-                background-color: var(--white);
-                border-radius: 8px;
-                box-shadow: var(--shadow);
-            }
+        #back-to-top {
+          position: fixed;
+          bottom: 10px;
+          right: 10px;
+          background-color: #0078d4;
+          color: white;
+          padding: 10px 15px;
+          border-radius: 5px;
+          text-decoration: none;
+          display: none; /* Hide by default */
+          font-size: 24px;
+          text-align: center;
+          line-height: 24px;
+        }
 
-            .message-form label {
-                display: block;
-                margin-top: 10px;
-                font-weight: bold;
-            }
+        #back-to-top:hover {
+          background-color: #005a9e;
+        }
 
-            .message-form input,
-            .message-form textarea {
-                width: 100%;
-                padding: 10px;
-                margin-top: 5px;
-                border-radius: 5px;
-                border: 1px solid #ccc;
-                box-sizing: border-box;
-            }
-
-            .message-form textarea {
-                resize: vertical;
-            }
-
-            .message-form button {
-                margin-top: 15px;
-                padding: 10px 20px;
-                border-radius: 5px;
-                border: none;
-                background-color: var(--primary-color);
-                color: var(--white);
-                cursor: pointer;
-                transition: background-color 0.3s;
-            }
-
-            .message-form button:hover {
-                background-color: #028a53;
-            }
-
-            .email-button {
-                margin-top: 15px;
-                padding: 10px 20px;
-                border-radius: 5px;
-                border: none;
-                background-color: var(--primary-color);
-                color: var(--white);
-                cursor: pointer;
-                transition: background-color 0.3s;
-                text-decoration: none;
-                display: inline-block;
-                margin-right: 10px;
-            }
-
-            .email-button:hover {
-                background-color: #028a53;
-            }
-
-            /* Responsive Design */
-            @media (max-width: 768px) {
-                .col-md-6 {
-                    max-width: 100%;
-                }
-
-                .nav {
-                    flex-direction: column;
-                    align-items: center;
-                }
-
-                .nav-link {
-                    width: 100%;
-                    text-align: center;
-                }
-            }
-
-            /* Hide all sections by default */
-            section {
-                display: none;
-            }
-
-            /* Show only the intro section by default */
-            #intro {
-                display: block;
-            }
-
-            .social-icons img {
-                width: 50px;
-                height: 50px;
-            }
-
-        </style>
-    </head>
-
-    <body>
-        <header>
+    </style>
+</head>
+<body>
+    <header>
         <h1>🙏🏻 WELCOME 🙏🏻</h1>
     </header>
 
-        <main class="container">
-            <!-- Intro Section -->
-            <section id="intro" class="intro">
-                <img src="1.jpg" alt="Ruchitra Kumaresan" class="profile-image">
-                <p class="intro-text">Ruchitra Kumaresan <br> Front-End Developer | UX / UI Designer | Software Developer</p>
-                <nav>
-                    <ul class="nav">
-                        <li class="nav-item"><a href="#intro" class="nav-link">HOME</a></li>
-                        <li class="nav-item"><a href="#about" class="nav-link">ABOUT ME</a></li>
-                        <li class="nav-item"><a href="#projects" class="nav-link">PROJECTS</a></li>
-                        <li class="nav-item"><a href="#achievements" class="nav-link">ACHIEVEMENTS</a></li>
-                        <li class="nav-item"><a href="#certifications" class="nav-link">CERTIFICATIONS</a></li>
-                        <li class="nav-item"><a href="#resume" class="nav-link">RESUME</a></li>
-                        <li class="nav-item"><a href="#contact" class="nav-link">CONTACT ME</a></li>
-                    </ul>
-                </nav>
-                <div class="social-icons">
+<!-- Intro -->
+    <main class="container">
+        <!-- Intro Section -->
+        <section id="intro" class="intro">
+            <img src="1.jpg" alt="Ruchitra Kumaresan" class="profile-image">
+            <p class="intro-text">Ruchitra Kumaresan <br> Full Stack-FrontEnd Developer | UX/UI Designer | Software Developer</p>
+            <p><h3> Scroll down to learn more about me! ⬇️ </h3></p>
+            
+            
+        </section>
+
+<!-- About Me Section -->
+        <section id="about" class="big-box">
+            <h2>ABOUT ME 👩🏻‍💼</h2>
+            <p>I am Ruchitra Kumaresan, a dedicated front-end developer with a Master's in Computer Science from New York Institute of Technology (NYIT) and a Bachelor's in Computer Science from REVA University, India. I specialize in front-end development, with technical expertise in JavaScript, React.js, HTML5, CSS, and software testing. Throughout my academic and professional career, I have successfully delivered robust applications and systems, demonstrating my ability to tackle complex challenges and provide high-quality solutions.</p>
+            <p>In addition to my technical skills, I am well-versed in software development methodologies and have experience working in agile environments. My internships at Lernov and Sain Solutions in Bangalore, India, provided me with hands-on experience in front-end web development. I contributed to projects that improved user interaction and functionality. Furthermore, my coursework and projects, such as product recommendation systems and utilizing Recurrent Neural Networks (RNNs) for trading, have honed my analytical and problem-solving abilities.</p>
+            <p>I am eager to explore new opportunities to apply my skills and creativity to drive impactful software development and tech industry projects. Let’s connect and discuss how we can collaborate to make a significant difference in this ever-evolving field.</p>
+            
+        </section>
+
+<!-- Projects Section -->
+        <section id="projects" class="big-box">
+            <h2>PROJECTS 👩‍💻 </h2>     
+            
+        <!-- Project 1: Computer Graphics -->
+            <div id="project1" class="project-section active">
+                <div class="image-box">
+                    <img src="CG-1.jpg" alt="Computer Graphics">
+                </div>
+                <div class="content-box">
+                    <div class="box">
+                        <h2>1.Computer Graphics</h2>
+                    </div>
+                    <p><strong>Advanced Rendering Techniques:</strong> I focus heavily on Advanced Rendering Techniques, especially Projective Texturing. This technique enables high-fidelity simulations of real-world elements like shadows, reflections, and decals. Projective Texturing enhances realism by adding details like shadows and reflections, significantly elevating visual quality and immersing users in the experience.</p>
+                    <p><strong>Vertex and Fragment Shaders:</strong> To achieve real-time rendering and interactivity, I leverage Vertex and Fragment Shaders. Vertex shaders modify 3D model geometry, while fragment shaders handle pixel-level rendering. This approach allows me to apply effects like reflections, dynamic lighting, and textures, enhancing realism through precise control over light and materials.</p>
+                    <p><strong>GPU Optimization and Performance Enhancement:</strong> I focus on optimizing performance by using GPU capabilities for intensive computations. By offloading tasks like lighting and reflections to the GPU, my applications run smoother and more efficiently, making the experience visually impressive and responsive.</p>
+                    <p><strong>Customizing Materials and Textures:</strong> My expertise extends to customizing materials and textures for specific visual effects. Adjusting shader parameters, I can simulate materials ranging from rough concrete to reflective surfaces. Techniques like specularity, diffusivity, and bump mapping help create authentic textures, even when viewed up close.</p>
+                    <div class="project-navigation">
+                        <button class="next" onclick="showProject('project2')"> PROJECT-2 (Product Recommendation System) </button>
+                    </div>
+                </div>
+            </div> 
+
+        <!-- Project 2: Product Recommendation System -->
+            <div id="project2" class="project-section">
+                <div class="image-box">
+                    <img src="PRS-1.jpg" alt="Product Recommendation System">
+                </div>
+                <div class="content-box">
+                    <div class="box">
+                        <h2>2.Product Recommendation System</h2>
+                    </div>
+                    <p>An academic project on collaborative filtering and rank-based recommendation systems. It includes: -Similarity-Based Collaborative Filtering: Calculates user similarity using cosine scores based on product interactions, recommending products liked by similar users but not yet interacted with by the target user. Provides top 10 personalized recommendations. -Rank-Based Approach: Ranks products by average rating, filtering out those with low interaction counts, and recommends the top 5 popular items to engage new customers. - Model-Based Collaborative Filtering:Compresses the user-product interaction matrix using SVD with 50 latent features, predicts ratings for each user, and provides the top 5 personalized product recommendations based on predictions.</p>
+                    <div class="project-navigation">
+                        <button class="previous" onclick="showProject('project1')">PROJECT-1 (Computer Graphics)</button>
+                        <button class="next" onclick="showProject('project3')"> PROJECT-3 (RNN for Trading: Multivariate Time Series and Text Data) </button>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Project 3: RNN for Trading -->
+            <div id="project3" class="project-section">
+                <div class="image-box">
+                    <img src="RNN-1.jpg" alt="RNN for Trading">
+                </div>
+                <div class="content-box">
+                    <div class="box">
+                        <h2>3.RNN for Trading: Multivariate Time Series and Text Data</h2>
+                    </div>
+                    <p>A research project on using Recurrent Neural Networks (RNNs) for predicting stock market trends. The primary objective is to explore trading strategies using AI technologies such as Deep Learning and RNNs. The project involved an in-depth analysis of factors like the Dropout ratio and Hidden Neurons, achieving an accuracy range of 70% to 90% with time series datasets. Technologies used include Google Colab for coding, RNN for modeling sequential data, and TensorFlow for machine learning models.</p>
+                    <div class="project-navigation">
+                        <button class="previous" onclick="showProject('project2')"> PROJECT-2 (Product Recommendation System) </button>
+                        <button class="next" onclick="showProject('project4')">PROJECT-4 (Lotto Bot) </button>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Project 4: Lotto Bot -->
+            <div id="project4" class="project-section">
+                <div class="image-box">
+                    <img src="Bot-1.jpg" alt="Lotto Bot">
+                </div>
+                <div class="content-box">
+                    <div class="box">
+                        <h2>4.Lotto Bot</h2>
+                    </div>
+                    <p>LottoBot is a Discord game bot designed for hosting raffles and Powerball-style lottery games. It uses Python, SQLite, and the Hikari Discord REST API wrapper. LottoBot employs agile methodologies and features in-game currency, customizable options for additional features, and various games within Discord servers.</p>
+                    <div class="project-navigation">
+                        <button class="previous" onclick="showProject('project3')">PROJECT-3 (RNN for Trading: Multivariate Time Series and Text Data) </button>
+                        <button class="next" onclick="showProject('project5')"> PROJECT-5 (Water Quality Monitoring And Filter System To Conserve Water Resources Using IoT(Internet of Things)) </button>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Project 5: Water Quality Monitoring -->
+            <div id="project5" class="project-section">
+                <div class="image-box">
+                    <img src="water.jpg" alt="Water Quality Monitoring">
+                </div>
+                <div class="content-box">
+                    <div class="box">
+                        <h2>5.Water Quality Monitoring And Filter System To Conserve Water Resources Using IoT</h2>
+                    </div>
+                    <p>We aim to revolutionize environmental sustainability in water bodies affected by industrial waste through IoT technology. By deploying connected sensors and devices, we can collect real-time data on water quality, temperature, and other critical parameters. This data allows us to promptly detect and respond to pollution incidents, reducing their ecological impact. Our primary objective is to use IoT technologies to continuously assess water quality in various aquatic ecosystems such as lakes, ponds, and rivers. This innovative water management system transmits data to the AWS cloud, enabling real-time monitoring of water quality and purification processes. Once the water reaches a 90% purity level, it becomes safe for various purposes, including consumption and industrial use. This approach ensures responsible utilization of water resources, minimizes waste and contamination, and actively contributes to environmental preservation by safeguarding the precious resource of clean water.</p>
+                     <div class="certification-item">
+                    <a href="https://youtu.be/SniVsKWIpDA?si=cAlx_1lDBzgYJNTE">Vedio Link</a>
+                    </div>
+                    <div class="project-navigation">
+                        <button class="previous" onclick="showProject('project4')"> PROJECT-4 (Lotto Bot)  </button>
+                        <button class="next" onclick="showProject('project6')"> PROJECT-6 (Clustering Of Cancerous Profiles Using Machine Learning) </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6: Clustering of Cancerous Profiles -->
+            <div id="project6" class="project-section">
+                <div class="image-box">
+                    <img src="ML.jpg" alt="Clustering of Cancerous Profiles">
+                </div>
+                <div class="content-box">
+                    <div class="box">
+                        <h2>6.Clustering Of Cancerous Profiles Using Machine Learning</h2>
+                    </div>
+                    <p>Accurate staging is crucial for determining appropriate treatment modalities and prognostic assessments. Machine learning algorithms automatically detect and highlight disparities, inaccuracies, or contradictions within diagnostic reports, ensuring reliable information delivery to medical professionals. Advanced analytics and machine learning methodologies will provide valuable insights and predictive capabilities, facilitating accurate diagnosis and treatment planning for individuals with hematologic cancers.</p>
+                    <div class="project-navigation">
+                        <button class="previous" onclick="showProject('project5')"> PROJECT-5 (Water Quality Monitoring And Filter System To Conserve Water Resources Using IoT(Internet of Things)) </button>
+                        <button class="next" onclick="showProject('project1')">PROJECT-1 (Computer Graphics)</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Achievements Section -->
+        <section id="achievements" class="big-box">
+            <h2>ACHIEVEMENTS 🏆</h2>
+            <ul>
+                <li>1. Research Paper International Conference Advance in Computing and Information Technology IACIT-2020, conducted and organized by the School of Computing & Information Technology, REVA University, Bangalore, INDIA. 
+                    <a href="http://www.testmagzine.biz/index.php/testmagzine/article/view/8020/6071"> <h4> PUBLICATION </h4> </a> </li>
+                <li>2. Engaged with the college's Career & Placement center, discussed effective strategies for securing positions within specific companies, and gained valuable insights into the expectations of hiring panels when evaluating candidates.</li>
+                <li>3. A dedicated volunteer with YuWaah (Generation Unlimited India), actively contributing to empowering youth and fostering their holistic development. I've gained valuable insights into youth challenges and the potential of youth-focused initiatives.</li>
+            </ul>  
+        </section>
+
+<!-- Certifications Section -->
+        <section id="certifications" class="big-box">
+            <h2>CERTIFICATIONS & SKILLS 🖥️</h2>
+            <div class="certifications-container">
+                <!-- Certification 1 -->
+                <div class="certification-item">
+                    <a href="https://www.coursera.org/account/accomplishments/verify/PB9T3XX2G598?utm_product=course">1. Coursera-Fundamental of UX Designer</a>
+                </div>
+
+                <!-- Certification 2 -->
+                <div class="certification-item">
+                    <a href="https://www.sololearn.com/certificates/CC-BVBMOMJ8">2. Project planning with AI</a>
+                </div>
+
+                <!-- Certification 3 -->
+                <div class="certification-item">
+                    <a href="https://www.sololearn.com/en/certificates/CC-FDBAO6OJ">3. front-end for begineers</a>
+                </div>
+
+                <!-- Certification 4 -->
+                <div class="certification-item">
+                    <a href="https://www.sololearn.com/en/certificates/CC-FDBAO6OJ">4. Angular</a>
+                </div>
+
+                <!-- Certification 5 -->
+                <div class="certification-item">
+                    <a href="https://www.sololearn.com/en/certificates/CC-WNDH1R9B"> 5. Javascript</a>
+                </div>
+
+                <!-- Certification 6 -->
+                <div class="certification-item">
+                    <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Goldman%20Sachs/NPdeQ43o8P9HJmJzg_Goldman%20Sachs_SDD33Z7ZcLEQWzatn_1705720063979_completion_certificate.pdf">6. Goldman Sachs</a>
+                </div>
+
+            </div>
+           
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume" class="big-box">
+            <h2>RESUME 🎯</h2>
+            <p>Want to dive into my experience? click on the link to download cv 📨 </p>
+            <a href="Ruchitra.K.pdf" class="btn" download> <h4> Ruchitra.K </h4></a>
+            
+        </section>
+
+                <!-- Contact Section -->
+        <section id="contact" class="big-box">
+            <h2>CONTACT ME  📲📞</h2>
+            <div class="social-icons">
                 <a href="https://www.linkedin.com/in/ruchitrakumaresan"><img src="Linkedin.jpg" alt="LinkedIn"></a>
                 <a href="https://github.com/Ruchitra98"><img src="Github.jpg" alt="GitHub"></a>
-            </div>
-            </section>
-
-            <!-- About Me Section -->
-            <section id="about" class="big-box">
-                <h2>ABOUT ME 👩🏻‍💼</h2>
-                <p>I am Ruchitra Kumaresan, a dedicated front-end developer with a Master's in Computer Science from New York Institute of Technology (NYIT) and a Bachelor's in Computer Science from REVA University, India. I specialize in front-end development, with technical expertise in JavaScript, React.js, HTML5, CSS, and software testing. Throughout my academic and professional career, I have successfully delivered robust applications and systems, demonstrating my ability to tackle complex challenges and provide high-quality solutions.</p>
-                <p>In addition to my technical skills, I am well-versed in software development methodologies and have experience working in agile environments. My internships at Lernov and Sain Solutions in Bangalore, India, provided me with hands-on experience in front-end web development. I contributed to projects that improved user interaction and functionality. Furthermore, my coursework and projects, such as product recommendation systems and utilizing Recurrent Neural Networks (RNNs) for trading, have honed my analytical and problem-solving abilities.</p>
-                <p>I am eager to explore new opportunities to apply my skills and creativity to drive impactful software development and tech industry projects. Let’s connect and discuss how we can collaborate to make a significant difference in this ever-evolving field.</p>
-                <div class="button-container">
-                    <a href="#intro" class="previous">Home</a>
-                    <a href="#projects" class="next">Projects</a>
-                </div>
-            </section>
-
-            <!-- Projects Section -->
-            <!-- Back to Projects Button -->
-                       
-            <section id="projects" class="big-box">
-                <h2>PROJECTS 👩‍💻 </h2>
-                <div id="project-details-container">
-                    <div id="project1" class="project-details">  
-                    <!-- Project 01  -->
-                        <p> <h3>Computer Graphics  <br> <a href="CG Project.html" class="view-more">View More</a> </h3> </p>
-                        <p> Developed an interactive 3D modeling and animation project using OpenGL, implementing shading, texture mapping, and lighting for enhanced realism. </p>
-                    </div>
-
-
-                <!-- Project 02  -->
-                    <div id="project2" class="project-details">
-                        <p> <h3>Product Recommendation System <br> <a href="Product Recommendation System.html" class="view-more">View More</a> </h3> </p>
-                        <p>Developed a product recommendation system using collaborative and content-based filtering to personalize suggestions and enhance user engagement.</p> 
-                    </div>
-
-                <!-- Project 03  -->
-                    <div id="project3" class="project-details">
-                        <p> <h3>RNN for Trading: Multivariate Time Series and Text Data  <br> <a href="RNN.html" class="view-more">View More</a></h3> </p>
-                        <p> Developed an RNN model for stock market prediction using multivariate time series and financial news data, enhancing forecasting accuracy.</p>
-                    </div>
-
-                <!-- Project 04 -->
-                    <div id="project4" class="project-details">
-                        <p> <h3>Lotto Bot <br> <a href="Bot.html" class="view-more">View More</a> </h3> </p>
-                        <p>Developed a Python-based lottery number generator bot using statistical analysis and randomization for an engaging user experience. </p>
-                    </div>
-
-                <!-- Project 05  -->
-                    <div id="project5" class="project-details">
-                        <p> <h3>Water Quality Monitoring and Filter System Using IoT <br> <a href="Water.html" class="view-more">View More</a> </h3> </p>
-                        <p> Developed an IoT-based water quality monitoring and filtration system using sensors to ensure safe drinking water in real-time. </p>
-                    </div>
-
-                <!-- Project 06 -->
-                    <div id="project6" class="project-details">
-                        <p> <h3>Clustering of Cancerous Profiles Using Machine Learning <br> <a href="ML.html" class="view-more">View More</a> </h3> </p>
-                        <p> Developed a machine learning model using clustering algorithms like K-Means and hierarchical clustering to analyze gene expression data, grouping similar cancer profiles to support personalized treatment strategies.</p>
-                    </div>
-                </div>
-
-                <div class="button-container">
-                    <a href="#about" class="previous">About Me</a>
-                    <a href="#achievements" class="next">Achievements</a>
-                </div>
-            </section>
-
-            <!-- Achievements Section -->
-            <section id="achievements" class="big-box">
-                <h2>ACHIEVEMENTS 🏆</h2>
-                <ul>
-                    <li>Research Paper International Conference Advance in Computing and Information Technology IACIT-2020, conducted and organized by the School of Computing & Information Technology, REVA University, Bangalore, INDIA.</li>
-                    <li>Engaged with the college's Career & Placement center, discussed effective strategies for securing positions within specific companies, and gained valuable insights into the expectations of hiring panels when evaluating candidates.</li>
-                    <li>A dedicated volunteer with YuWaah (Generation Unlimited India), actively contributing to empowering youth and fostering their holistic development. I've gained valuable insights into youth challenges and the potential of youth-focused initiatives.</li>
-                </ul>
-                <div class="button-container">
-                    <a href="#projects" class="previous">Projects</a>
-                    <a href="#certifications" class="next">Certifications</a>
-                </div>
-            </section>
-
-            <!-- Certifications Section -->
-                <section id="certifications" class="big-box">
-                <h2>CERTIFICATIONS & SKILLS 🖥️</h2>
-            <div class="certifications-container">
-             <!-- Certification 1 -->
-                <div class="certification-item">
-                <a href="https://www.coursera.org/account/accomplishments/verify/PB9T3XX2G598?utm_product=course">Coursera Fundamental of UX Designer </a>
-                
-            
-            <!-- Certification 2 -->
-                <div class="certification-item">
-                <a href="https://www.sololearn.com/certificates/CC-BVBMOMJ8">Project planning with AI</a> 
+                <a href="mailto:ruchitrakumaresan@gmail.com" target="_blank"><img src="Gmail.jpg"></a><br>
                 
             </div>
-
-            <!-- Certification 3 -->
-                <div class="certification-item">
-                    <a href="https://www.sololearn.com/en/certificates/CC-FDBAO6OJ">front-end for begineers</a>     
-                </div>
-
-            <!-- Certification 4 -->
-                <div class="certification-item">
-                    <a href="https://www.sololearn.com/en/certificates/CC-FDBAO6OJ">Angular</a> 
-                </a>
-                </div>
+        </section>
 
 
-        <div class="button-container">
-            <a href="#achievements" class="previous">Achievements</a>
-            <a href="#resume" class="next">Resume</a>
-        </div>
-    </section>
 
-            <!-- Resume Section -->
-            <section id="resume" class="big-box">
-                <h2>RESUME 🎯</h2>
-                <p>Want to dive into my experience? Download my resume here...!!!</p>
-                <a href="Ruchitra.K.pdf" class="btn" download>Download Resume</a>
-                <div class="button-container">
-                    <a href="#certifications" class="previous">Certifications</a>
-                    <a href="#contact" class="next">Contact Me</a>
-                </div>
-            </section>
+<!-- Back to Top arrow -->
+        <section> 
+            <a href="#" id="back-to-top">⬆️</a>
+        </section>
 
-            <!-- Contact Section -->
-            <section id="contact" class="big-box">
-                <h2>CONTACT ME</h2>
-                <div class="message-form">
-                    <h3>Send a Message...!</h3>
-                    <form action="send_email.php" method="POST">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required> <br>
-                        <label for="contact">Contact Info:</label>
-                        <input type="text" id="contact" name="contact" placeholder="Email or Phone Number" required> <br>
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message" rows="4" required></textarea> <br>
-                        <div style="text-align: center; margin-top: 20px;">
-                            <!-- Email Me Button -->
-                            <a href="mailto:ruchitrak98@gmail.com" class="email-button">Email Me</a>
-                            <!-- Send Message Button -->
-                            <button type="submit">Send Message</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="button-container">
-                    <a href="#resume" class="previous">Resume</a>
-                    <a href="#about" class="next">About Me</a>
-                </div>
-            </section>
-        </main>
+    </main>
 
-        <script>
-            // Function to hide the header on all pages except the Home page
-                function toggleHeaderVisibility() {
-                const header = document.querySelector('header');
-                const currentSection = document.querySelector('section[style="display: block;"]');
-
-            // Show the header only on the Home page (intro section)
-                if (currentSection && currentSection.id === 'intro') {
-                    header.style.display = 'block'; // Show the header
-                } else {
-                    header.style.display = 'none'; // Hide the header
-                }
-            }
-
-            // JavaScript to handle smooth scrolling and section visibility
-
-            // JavaScript function to navigate back to the Projects section
-        function goBackToProjects() {
-            // Replace "your-portfolio-page.html" with the actual filename of your portfolio page
-            window.location.href = "index.html#projects";
-        }
-
-            document.querySelectorAll('.nav-link, .button-container a').forEach(link => {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetSection = document.getElementById(targetId);
-
-                    // Hide all sections
-                    document.querySelectorAll('section').forEach(section => {
-                        section.style.display = 'none';
-                    });
-
-                    // Show the target section
-                    targetSection.style.display = 'block';
-
-                    // Smooth scroll to the target section
-                    targetSection.scrollIntoView({ behavior: 'smooth' });
-                });
+    <script>
+        // Function to show a specific project and hide others
+        function showProject(projectId) {
+            // Hide all project sections
+            document.querySelectorAll('.project-section').forEach(section => {
+                section.style.display = 'none';
             });
 
-            // Show the intro section by default
-            document.getElementById('intro').style.display = 'block';
-        </script>
-    </body>
+            // Show the selected project section
+            document.getElementById(projectId).style.display = 'flex';
+        }
 
-    </html>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-link, .button-container a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault(); // Prevent default anchor behavior
+                const targetId = this.getAttribute('href').substring(1); // Get the target section ID
+                const targetSection = document.getElementById(targetId); // Find the target section
+
+                if (targetSection) {
+                    // Smooth scroll to the target section
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+        // Show "Back to Top" link after scrolling down
+        window.addEventListener('scroll', function() {
+            var backToTop = document.getElementById('back-to-top');
+            if (window.pageYOffset > 100) { // Show after scrolling 100px
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+
+        // Smooth scroll to top when "Back to Top" link is clicked
+        document.getElementById('back-to-top').addEventListener('click', function(event) {
+            event.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
