@@ -47,11 +47,11 @@
         }
 
         .profile-image {
-            width: 120px; /* Adjusted to passport photo width */
-            height: 160px; /* Adjusted to passport photo height */
+            width: 200px; /* Adjusted to passport photo width */
+            height: 250px; /* Adjusted to passport photo height */
             border-radius: 0; /* Remove rounded corners for a square shape */
             border: 4px solid var(--primary-color);
-            margin: 20px auto;
+            margin: 30px auto;
             display: block;
             transition: transform 0.3s ease;
             object-fit: cover; /* Ensures image fills the space without distortion */
@@ -62,7 +62,7 @@
         }
 
         .intro-text {
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             font-weight: bold;
             margin: 10px 0;
         }
@@ -136,7 +136,7 @@
             color: var(--white);
         }
 
-        /* Project Section Styles */
+/* Project Section Styles */
         .project-section {
             display: none; /* Hide all sections by default */
         }
@@ -205,10 +205,26 @@
             background-color: #ccc;
             cursor: not-allowed;
         }
-         
-        
 
-        /* Certifications Section */
+        .project-skills {
+        margin-top: 20px;
+        display: flex;
+        justify-content: left;
+        gap: 30px;
+        }
+
+        .project-skills img {
+            width: 60px; /* Small icons */
+            height: auto;
+            transition: transform 0.2s;
+        }
+
+        .project-skills img:hover {
+            transform: scale(1.1); /* Slight zoom on hover */
+        }
+      
+         
+/* Certifications Section */
         .certifications-container {
             display: flex;
             flex-wrap: wrap;
@@ -234,7 +250,8 @@
             font-size: 0.9rem;
             color: var(--text-color);
         }
-
+         
+        
         /* Contact Form */
         .message-form {
             max-width: 500px;
@@ -355,16 +372,15 @@
     <main class="container">
         <!-- Intro Section -->
         <section id="intro" class="intro">
-            <img src="1.jpg" alt="Ruchitra Kumaresan" class="profile-image">
+            
             <p class="intro-text">Ruchitra Kumaresan <br> Full Stack-FrontEnd Developer | UX/UI Designer | Software Developer</p>
+            <img src="1.jpg" alt="Ruchitra Kumaresan" class="profile-image">
             <p><h3> Scroll down to learn more about me! ⬇️ </h3></p>
-            
-            
         </section>
 
 <!-- About Me Section -->
         <section id="about" class="big-box">
-            <h2>ABOUT ME 👩🏻‍💼</h2>
+            <h2><u> ABOUT ME 👩🏻‍💼</u> </h2>
             <p>I am Ruchitra Kumaresan, a dedicated front-end developer with a Master's in Computer Science from New York Institute of Technology (NYIT) and a Bachelor's in Computer Science from REVA University, India. I specialize in front-end development, with technical expertise in JavaScript, React.js, HTML5, CSS, and software testing. Throughout my academic and professional career, I have successfully delivered robust applications and systems, demonstrating my ability to tackle complex challenges and provide high-quality solutions.</p>
             <p>In addition to my technical skills, I am well-versed in software development methodologies and have experience working in agile environments. My internships at Lernov and Sain Solutions in Bangalore, India, provided me with hands-on experience in front-end web development. I contributed to projects that improved user interaction and functionality. Furthermore, my coursework and projects, such as product recommendation systems and utilizing Recurrent Neural Networks (RNNs) for trading, have honed my analytical and problem-solving abilities.</p>
             <p>I am eager to explore new opportunities to apply my skills and creativity to drive impactful software development and tech industry projects. Let’s connect and discuss how we can collaborate to make a significant difference in this ever-evolving field.</p>
@@ -373,23 +389,30 @@
 
 <!-- Projects Section -->
         <section id="projects" class="big-box">
-            <h2>PROJECTS 👩‍💻 </h2>     
+            <h2><u> PROJECTS 👩‍💻 </u></h2>   
             
         <!-- Project 1: Computer Graphics -->
             <div id="project1" class="project-section active">
                 <div class="image-box">
-                    <img src="CG-1.jpg" alt="Computer Graphics">
+                    <img src="CG-1.jpg" alt="Computer Graphics"> <br>
                 </div>
                 <div class="content-box">
                     <div class="box">
                         <h2>1.Computer Graphics</h2>
                     </div>
-                    <p><strong>Advanced Rendering Techniques:</strong> I focus heavily on Advanced Rendering Techniques, especially Projective Texturing. This technique enables high-fidelity simulations of real-world elements like shadows, reflections, and decals. Projective Texturing enhances realism by adding details like shadows and reflections, significantly elevating visual quality and immersing users in the experience.</p>
-                    <p><strong>Vertex and Fragment Shaders:</strong> To achieve real-time rendering and interactivity, I leverage Vertex and Fragment Shaders. Vertex shaders modify 3D model geometry, while fragment shaders handle pixel-level rendering. This approach allows me to apply effects like reflections, dynamic lighting, and textures, enhancing realism through precise control over light and materials.</p>
-                    <p><strong>GPU Optimization and Performance Enhancement:</strong> I focus on optimizing performance by using GPU capabilities for intensive computations. By offloading tasks like lighting and reflections to the GPU, my applications run smoother and more efficiently, making the experience visually impressive and responsive.</p>
-                    <p><strong>Customizing Materials and Textures:</strong> My expertise extends to customizing materials and textures for specific visual effects. Adjusting shader parameters, I can simulate materials ranging from rough concrete to reflective surfaces. Techniques like specularity, diffusivity, and bump mapping help create authentic textures, even when viewed up close.</p>
+                    <p><strong>Advanced Rendering Techniques:</strong> I focus heavily on Advanced Rendering Techniques, especially Projective Texturing. This technique enables high-fidelity simulations of real-world elements like shadows, reflections, and decals. Projective Texturing enhances realism by adding details like shadows and reflections, significantly elevating visual quality and immersing users in the experience.<br>
+                    <strong>Vertex and Fragment Shaders:</strong> To achieve real-time rendering and interactivity, I leverage Vertex and Fragment Shaders. Vertex shaders modify 3D model geometry, while fragment shaders handle pixel-level rendering. This approach allows me to apply effects like reflections, dynamic lighting, and textures, enhancing realism through precise control over light and materials.<br>
+                    <strong>GPU Optimization and Performance Enhancement:</strong> I focus on optimizing performance by using GPU capabilities for intensive computations. By offloading tasks like lighting and reflections to the GPU, my applications run smoother and more efficiently, making the experience visually impressive and responsive.<br>
+                    <strong>Customizing Materials and Textures:</strong> My expertise extends to customizing materials and textures for specific visual effects. Adjusting shader parameters, I can simulate materials ranging from rough concrete to reflective surfaces. Techniques like specularity, diffusivity, and bump mapping help create authentic textures, even when viewed up close.</p>
+            <!-- Skills Used in the Project -->
+                    <div class="project-skills">
+                        <p> <b> <u> Skills:- </u></b> </p>
+                        <img src="opengl.jpg" alt="OpenGL" title="OpenGL">
+                        <img src="c++.jpg" alt="C++" title="C++">
+                    </div>
+
                     <div class="project-navigation">
-                        <button class="next" onclick="showProject('project2')"> PROJECT-2 (Product Recommendation System) </button>
+                        <button class="next" onclick="showProject('project2')"> PROJECT-2  </button>
                     </div>
                 </div>
             </div> 
@@ -401,12 +424,16 @@
                 </div>
                 <div class="content-box">
                     <div class="box">
-                        <h2>2.Product Recommendation System</h2>
+                        <h2><h2> 2. Product Recommendation System </h2></h2>
                     </div>
                     <p>An academic project on collaborative filtering and rank-based recommendation systems. It includes: -Similarity-Based Collaborative Filtering: Calculates user similarity using cosine scores based on product interactions, recommending products liked by similar users but not yet interacted with by the target user. Provides top 10 personalized recommendations. -Rank-Based Approach: Ranks products by average rating, filtering out those with low interaction counts, and recommends the top 5 popular items to engage new customers. - Model-Based Collaborative Filtering:Compresses the user-product interaction matrix using SVD with 50 latent features, predicts ratings for each user, and provides the top 5 personalized product recommendations based on predictions.</p>
+                    <div class="project-skills">
+                        <p> <b> <u> Skills:-</u> </b> </p>
+                        <img src="python.jpg" alt="Product" title="python">
+                    </div>
                     <div class="project-navigation">
-                        <button class="previous" onclick="showProject('project1')">PROJECT-1 (Computer Graphics)</button>
-                        <button class="next" onclick="showProject('project3')"> PROJECT-3 (RNN for Trading: Multivariate Time Series and Text Data) </button>
+                        <button class="previous" onclick="showProject('project1')">PROJECT-1 </button>
+                        <button class="next" onclick="showProject('project3')"> PROJECT-3  </button>
                     </div>
                 </div>
             </div>
@@ -421,9 +448,15 @@
                         <h2>3.RNN for Trading: Multivariate Time Series and Text Data</h2>
                     </div>
                     <p>A research project on using Recurrent Neural Networks (RNNs) for predicting stock market trends. The primary objective is to explore trading strategies using AI technologies such as Deep Learning and RNNs. The project involved an in-depth analysis of factors like the Dropout ratio and Hidden Neurons, achieving an accuracy range of 70% to 90% with time series datasets. Technologies used include Google Colab for coding, RNN for modeling sequential data, and TensorFlow for machine learning models.</p>
+                    <!-- Skills Used in the Project -->
+                    <div class="project-skills">
+                        <p> <b> <u> Skills:- </u></b> </p>
+                        <img src="python.jpg" alt="OpenGL" title="python">
+                        <img src="rnn.jpg" alt="OpenGL" title="rnn">
+                    </div>
                     <div class="project-navigation">
-                        <button class="previous" onclick="showProject('project2')"> PROJECT-2 (Product Recommendation System) </button>
-                        <button class="next" onclick="showProject('project4')">PROJECT-4 (Lotto Bot) </button>
+                        <button class="previous" onclick="showProject('project2')"> PROJECT-2  </button>
+                        <button class="next" onclick="showProject('project4')">PROJECT-4  </button>
                     </div>
                 </div>
             </div>
@@ -438,9 +471,15 @@
                         <h2>4.Lotto Bot</h2>
                     </div>
                     <p>LottoBot is a Discord game bot designed for hosting raffles and Powerball-style lottery games. It uses Python, SQLite, and the Hikari Discord REST API wrapper. LottoBot employs agile methodologies and features in-game currency, customizable options for additional features, and various games within Discord servers.</p>
+                    <div class="project-skills">
+                        <p> <b> <u> Skills:- </u></b> </p>
+                        <img src="python.jpg" alt="Bot" title="python">
+                        <img src="sql.jpg" alt="sql" title="sql">
+                        <img src="Bot-1.jpg" alt="Lotto Bot">
+                    </div>
                     <div class="project-navigation">
-                        <button class="previous" onclick="showProject('project3')">PROJECT-3 (RNN for Trading: Multivariate Time Series and Text Data) </button>
-                        <button class="next" onclick="showProject('project5')"> PROJECT-5 (Water Quality Monitoring And Filter System To Conserve Water Resources Using IoT(Internet of Things)) </button>
+                        <button class="previous" onclick="showProject('project3')">PROJECT-3  </button>
+                        <button class="next" onclick="showProject('project5')"> PROJECT-5  </button>
                     </div>
                 </div>
             </div>
@@ -455,12 +494,18 @@
                         <h2>5.Water Quality Monitoring And Filter System To Conserve Water Resources Using IoT</h2>
                     </div>
                     <p>We aim to revolutionize environmental sustainability in water bodies affected by industrial waste through IoT technology. By deploying connected sensors and devices, we can collect real-time data on water quality, temperature, and other critical parameters. This data allows us to promptly detect and respond to pollution incidents, reducing their ecological impact. Our primary objective is to use IoT technologies to continuously assess water quality in various aquatic ecosystems such as lakes, ponds, and rivers. This innovative water management system transmits data to the AWS cloud, enabling real-time monitoring of water quality and purification processes. Once the water reaches a 90% purity level, it becomes safe for various purposes, including consumption and industrial use. This approach ensures responsible utilization of water resources, minimizes waste and contamination, and actively contributes to environmental preservation by safeguarding the precious resource of clean water.</p>
-                     <div class="certification-item">
+                     <div class="project-navigation">
                     <a href="https://youtu.be/SniVsKWIpDA?si=cAlx_1lDBzgYJNTE">Vedio Link</a>
                     </div>
+                    <div class="project-skills">
+                        <p> <b> <u> Skills:-</u> </b> </p>
+                        <img src="iot.jpg" alt="iot" title="iot">
+                        <img src="aws.jpg" alt="aws" title="aws">
+                        <img src="c.jpg" alt="c" title="c">
+                    </div>
                     <div class="project-navigation">
-                        <button class="previous" onclick="showProject('project4')"> PROJECT-4 (Lotto Bot)  </button>
-                        <button class="next" onclick="showProject('project6')"> PROJECT-6 (Clustering Of Cancerous Profiles Using Machine Learning) </button>
+                        <button class="previous" onclick="showProject('project4')"> PROJECT-4   </button>
+                        <button class="next" onclick="showProject('project6')"> PROJECT-6  </button>
                     </div>
                 </div>
             </div>
@@ -475,9 +520,14 @@
                         <h2>6.Clustering Of Cancerous Profiles Using Machine Learning</h2>
                     </div>
                     <p>Accurate staging is crucial for determining appropriate treatment modalities and prognostic assessments. Machine learning algorithms automatically detect and highlight disparities, inaccuracies, or contradictions within diagnostic reports, ensuring reliable information delivery to medical professionals. Advanced analytics and machine learning methodologies will provide valuable insights and predictive capabilities, facilitating accurate diagnosis and treatment planning for individuals with hematologic cancers.</p>
+                    <div class="project-skills">
+                        <p> <b> <u> Skills:- </u> </b> </p>
+                        <img src="python.jpg" alt="Bot" title="python">
+                        <img src="panda.jpg" alt="Bot" title="python">
+                    </div>
                     <div class="project-navigation">
-                        <button class="previous" onclick="showProject('project5')"> PROJECT-5 (Water Quality Monitoring And Filter System To Conserve Water Resources Using IoT(Internet of Things)) </button>
-                        <button class="next" onclick="showProject('project1')">PROJECT-1 (Computer Graphics)</button>
+                        <button class="previous" onclick="showProject('project5')"> PROJECT-5  </button>
+                        <button class="next" onclick="showProject('project1')">PROJECT-1 </button>
                     </div>
                 </div>
             </div>
@@ -485,7 +535,7 @@
 
 <!-- Achievements Section -->
         <section id="achievements" class="big-box">
-            <h2>ACHIEVEMENTS 🏆</h2>
+            <h2><u> ACHIEVEMENTS 🏆</u></h2>
             <ul>
                 <li>1. Research Paper International Conference Advance in Computing and Information Technology IACIT-2020, conducted and organized by the School of Computing & Information Technology, REVA University, Bangalore, INDIA. 
                     <a href="http://www.testmagzine.biz/index.php/testmagzine/article/view/8020/6071"> <h4> PUBLICATION </h4> </a> </li>
@@ -494,13 +544,15 @@
             </ul>  
         </section>
 
+
 <!-- Certifications Section -->
         <section id="certifications" class="big-box">
-            <h2>CERTIFICATIONS & SKILLS 🖥️</h2>
+            <h2><u> CERTIFICATIONS & Skills 🖥️</u></h2>
             <div class="certifications-container">
                 <!-- Certification 1 -->
                 <div class="certification-item">
-                    <a href="https://www.coursera.org/account/accomplishments/verify/PB9T3XX2G598?utm_product=course">1. Coursera-Fundamental of UX Designer</a>
+                    <a href="https://www.coursera.org/account/accomplishments/verify/PB9T3XX2G598?utm_product=course">1. Coursera-Fundamental of UX Designer</a> <br>
+                   
                 </div>
 
                 <!-- Certification 2 -->
@@ -534,7 +586,7 @@
 
         <!-- Resume Section -->
         <section id="resume" class="big-box">
-            <h2>RESUME 🎯</h2>
+            <h2><u> RESUME 🎯</u></h2>
             <p>Want to dive into my experience? click on the link to download cv 📨 </p>
             <a href="Ruchitra.K.pdf" class="btn" download> <h4> Ruchitra.K </h4></a>
             
@@ -542,7 +594,7 @@
 
                 <!-- Contact Section -->
         <section id="contact" class="big-box">
-            <h2>CONTACT ME  📲📞</h2>
+            <h2><u> CONTACT ME  📲📞</u></h2>
             <div class="social-icons">
                 <a href="https://www.linkedin.com/in/ruchitrakumaresan"><img src="Linkedin.jpg" alt="LinkedIn"></a>
                 <a href="https://github.com/Ruchitra98"><img src="Github.jpg" alt="GitHub"></a>
