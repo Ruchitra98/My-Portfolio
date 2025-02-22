@@ -136,6 +136,100 @@
             color: var(--white);
         }
 
+                     /* Experience Section Styling */
+            .experience-list {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .experience-item {
+                margin-bottom: 30px;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .experience-item:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            }
+
+            .experience-box {
+                background-color: rgba(255, 255, 255, 0.95);
+                padding: 25px;
+                border-radius: 15px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: background-color 0.3s ease;
+            }
+
+            .experience-box:hover {
+                background-color: rgba(245, 245, 245, 0.95); /* Slightly darker on hover */
+            }
+
+            .experience-item h3 {
+                margin-top: 0;
+                font-size: 1.5rem;
+                color: var(--primary-color);
+                border-bottom: 2px solid var(--primary-color);
+                padding-bottom: 10px;
+                margin-bottom: 15px;
+            }
+
+            .experience-item p {
+                margin-bottom: 0;
+                text-align: justify;
+                font-size: 1rem;
+                line-height: 1.6;
+                color: var(--text-color);
+            }
+
+            .experience-item p strong {
+                color: var(--primary-color);
+                font-weight: bold;
+            }
+
+            .experience-item p em {
+                font-style: italic;
+                color: var(--secondary-color);
+            }
+
+            /* Responsive Design for Experience Section */
+            @media (min-width: 768px) {
+                .experience-list {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                }
+
+                .experience-item {
+                    flex: 1 1 calc(50% - 20px); /* Two columns with gap */
+                    padding: 15px;
+                    box-sizing: border-box;
+                }
+            }
+
+            @media (max-width: 767px) {
+                .experience-item {
+                    flex: 1 1 100%; /* Single column on smaller screens */
+                }
+            }
+
+            .experience-skills {
+        margin-top: 10px;
+        display: flex;
+        justify-content: left;
+        gap: 20px;
+        }
+
+        .experience-skills img {
+            width: 40px; /* Small icons */
+            height: auto;
+            transition: transform 0.2s;
+        }
+
+        .experience-skills img:hover {
+            transform: scale(1.1); /* Slight zoom on hover */
+        }
+
 /* Project Section Styles */
         .project-section {
             display: none; /* Hide all sections by default */
@@ -385,6 +479,58 @@
             <p>In addition to my technical skills, I am well-versed in software development methodologies and have experience working in agile environments. My internships at Lernov and Sain Solutions in Bangalore, India, provided me with hands-on experience in front-end web development. I contributed to projects that improved user interaction and functionality. Furthermore, my coursework and projects, such as product recommendation systems and utilizing Recurrent Neural Networks (RNNs) for trading, have honed my analytical and problem-solving abilities.</p>
             <p>I am eager to explore new opportunities to apply my skills and creativity to drive impactful software development and tech industry projects. Let’s connect and discuss how we can collaborate to make a significant difference in this ever-evolving field.</p>
             
+        </section>
+
+         <!-- Experience Section -->
+        <section id="experience" class="big-box">
+            <h2><u> EXPERIENCE 💼</u></h2>
+            <ul class="experience-list">
+                  <li class="experience-item">
+                    <div class="experience-box">
+                        <h3>  Website Developer <p>  Lernov, Bangalore, India (July-2021 to August 2021)  </p> </h3>
+                        <p>Employed Sublime Text to systematically organize and optimize HTML code, actively contributing to the website's layout. Attained significant success in project advancement, developing a fully functional website closely aligned with 90% of detailed client specifications. Building user interfaces that are elegant and encourage exploration. Developed practical expertise in front-end development using Sublime Text-3, achieving proficiency levels of 50% to 60% in crafting template designs. Acquired a versatile skill set encompassing JavaScript, CSS, React.js, PHP, WordPress, and HTML, and utilizing tools like Bootstrap and Font Awesome. The cultivation of solid communication abilities complemented these skills.</p>
+                    </div>
+                    <!-- Skills Used in the EXPERIENCE -->
+                    <div class="project-skills">
+                        <p> <b> <u> SKILLS:- </u></b> </p>
+                        <img src="html.jpg" alt="html" title="html">
+                        <img src="js.jpg" alt="js" title="js">
+                        <img src="vs.jpg" alt="vs" title="vs">
+                    </div>
+                </li>
+
+
+                <li class="experience-item">
+                    <div class="experience-box">
+                        <h3>  Frontend Web Developer <p>  Sain Solutions, Bangalore, India (Feb 2020 to May 2020)   </p>  </h3>
+                        <p>Successfully designed aesthetically pleasing interfaces with advanced functionality, enhanced teamwork, and problem-solving skills. Implemented new user interfaces for a retail client, leading to a 20% improvement in user engagement within two months of deployment. Augmented coding abilities through acquiring advanced techniques, staying at the forefront of web development practices, and gaining hands-on experience, including PHP. Demonstrated expertise in diverse design methodologies, achieving 70-80% project completion rates and staying current with advanced coding techniques, fostering effective teamwork and collaborative problem-solving.</p>
+                    </div>
+                     <!-- Skills Used in the Project -->
+                    <div class="project-skills">
+                        <p> <b> <u> SKILLS:- </u></b> </p>
+                        <img src="html.jpg" alt="html" title="html">
+                        <img src="js.jpg" alt="js" title="js">
+                        <img src="bts.jpg" alt="bts" title="bts">
+                        <img src="sub.jpg" alt="sub" title="sub">
+                    </div>
+                </li>
+
+                <li class="experience-item">
+                    <div class="experience-box">
+                <h3>   9/11 Memorial & Museum <br> <p> Retail Greeter Volunteer, New York (Jan 2025 - Present)  <p> </h3>
+                        <p> I involves in welcoming and greeting guests, providing guidance on resources, and assisting with navigation and accessibility. Engaging visitors in thoughtful discussions, sharing the historical significance of exhibits, and preserving personal stories help foster deeper connections. Given the emotional nature of the museum, maintaining a respectful atmosphere, supporting visitors, and encouraging reflection are essential. </p>
+                       </div> 
+
+                <li class="experience-item">
+                    <div class="experience-box">
+                        <h3>Computer Science Tutor <br>  <p> UPchive, Brooklyn, New York (Sept-2024 to Present)  </p> </h3>
+                        <p>Provided guidance and academic support to students in College Applications and Essay Writing for admission purposes. Assisted students in Computer Science courses to enhance their understanding and skills. Collaborated with students to develop personalized strategies for academic success.</p>
+                    </div>
+                </li>
+
+           
+
+            </ul>
         </section>
 
 <!-- Projects Section -->
