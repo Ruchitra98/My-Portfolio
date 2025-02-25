@@ -139,7 +139,7 @@
             color: var(--white);
         }
 
-        /* Experience Section Styling */
+       /* Experience Section Styling */
             .experience-list {
                 list-style-type: none;
                 padding: 0;
@@ -233,7 +233,9 @@
                 transform: scale(1.1); /* Slight zoom on hover */
             }
 
-/* Project Section Styles */
+
+
+ /* acadamic Project Section Styles */
         .project-section {
             display: none; /* Hide all sections by default */
         }
@@ -251,12 +253,14 @@
         }
 
         .image-box img {
-            width: 100%;
+            width: 60%;
             height: auto;
             max-width: 300px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
+
 
         .content-box {
             flex: 2;
@@ -536,8 +540,26 @@
         </section>
 
 <!-- Projects Section -->
+
+        
         <section id="projects" class="big-box">
-            <h2><u> PROJECTS 👩‍💻 </u></h2>   
+            <h2><u> PERSONAL PROJECTS 👩‍💻 </u></h2>   
+          
+                <div class="content-box">
+                    <div class="box">
+                        <h2>MoodTunes - Mood-Based Playlist Generator 🎵</h2>
+                    </div>
+                        <p> MoodTunes is an interactive web app that curates personalized playlists based on a user’s mood. By simply describing how they feel, the app analyzes their input using basic NLP and suggests songs matching emotions like happy, sad, calm, or nostalgic, with direct YouTube links for instant playback. Built with HTML, CSS, and JavaScript, MoodTunes features responsive UI, local storage, and dynamic playlist generation to enhance the user experience. This project deepened my understanding of event handling, conditional rendering, and music-emotion mapping in web development. <br>
+                        <strong> <u> Skills </u> :- Javascript & NLP </strong> </p>
+                     <a href="https://ruchitra98.github.io/Mood-Based-Playlist-Generator-Web-App/"> 🌐 Explore Project </a>
+                    
+                </div>
+            </div> 
+
+        </section>
+
+        <section id="projects" class="big-box">
+            <h2><u> ACADAMIC PROJECTS 👩‍💻 </u></h2>   
             
         <!-- Project 1: Computer Graphics -->
             <div id="project1" class="project-section active">
@@ -596,7 +618,7 @@
                         <h2>3.RNN for Trading: Multivariate Time Series and Text Data</h2>
                     </div>
                     <p>A research project on using Recurrent Neural Networks (RNNs) for predicting stock market trends. The primary objective is to explore trading strategies using AI technologies such as Deep Learning and RNNs. The project involved an in-depth analysis of factors like the Dropout ratio and Hidden Neurons, achieving an accuracy range of 70% to 90% with time series datasets. Technologies used include Google Colab for coding, RNN for modeling sequential data, and TensorFlow for machine learning models.</p>
-                    <!-- Skills Used in the Project -->
+                <!-- Skills Used in the Project -->
                     <div class="project-skills">
                         <p> <b> <u> Skills:- </u></b> </p>
                         <img src="python.jpg" alt="OpenGL" title="python">
@@ -606,6 +628,7 @@
                         <button class="previous" onclick="showProject('project2')"> PROJECT-2  </button>
                         <button class="next" onclick="showProject('project4')">PROJECT-4  </button>
                     </div>
+                
                 </div>
             </div>
 
@@ -762,6 +785,7 @@
     </main>
 
     <script>
+
         // Function to show a specific project and hide others
         function showProject(projectId) {
             // Hide all project sections
@@ -804,6 +828,8 @@
                 behavior: 'smooth'
             });
         });
+
+       
     </script>
 </body>
 </html>
