@@ -69,6 +69,10 @@
             font-weight: bold;
             margin: 10px 0;
         }
+        #about p {
+                text-align: justify; /* Justify text for even alignment on both sides */
+                margin-bottom: 15px; /* Add spacing between paragraphs */
+            }
 
         .nav {
             list-style-type: none;
@@ -224,7 +228,7 @@
                     }
 
             .experience-skills img {
-                width: 10px; /* Small icons */
+                width: 30px; /* Small icons */
                 height: auto;
                 transition: transform 0.2s;
             }
@@ -234,6 +238,66 @@
             }
 
 
+            /* Projects Section Layout */
+                .projects-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px; /* Space between projects */
+                    justify-content: space-between; /* Distribute space evenly */
+                }
+
+                .project-item {
+                    flex: 1 1 calc(50% - 20px); /* Two columns with gap */
+                    background-color: var(--white);
+                    padding: 20px;
+                    border-radius: 15px;
+                    box-shadow: var(--shadow);
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+
+                .project-item:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                }
+
+                .project-item h2 {
+                    margin-top: 0;
+                    font-size: 1.5rem;
+                    color: var(--primary-color);
+                    border-bottom: 2px solid var(--primary-color);
+                    padding-bottom: 10px;
+                    margin-bottom: 15px;
+                }
+
+                .project-item p {
+                    margin-bottom: 0;
+                    text-align: justify;
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    color: var(--text-color);
+                }
+
+                .project-item a {
+                    display: inline-block;
+                    margin-top: 15px;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    background-color: var(--primary-color);
+                    color: var(--white);
+                    text-decoration: none;
+                    transition: background-color 0.3s;
+                }
+
+                .project-item a:hover {
+                    background-color: #028a53;
+                }
+
+                /* Responsive Design for Projects Section */
+                @media (max-width: 768px) {
+                    .project-item {
+                        flex: 1 1 100%; /* Single column on smaller screens */
+                    }
+                }
 
  /* acadamic Project Section Styles */
         .project-section {
@@ -274,7 +338,7 @@
             width: fit-content;
             border-radius: 8px;
             margin: 20px;
-            text-align: center;
+            text-align: justify;
         }
 
         .box h2 {
@@ -315,7 +379,7 @@
         }
 
         .project-skills img {
-            width: 60px; /* Small icons */
+            width: 40px; /* Small icons */
             height: auto;
             transition: transform 0.2s;
         }
@@ -500,7 +564,6 @@
                     <!-- Skills Used in the EXPERIENCE -->
                     <div class="project-skills">
                         <p> <b> <u> SKILLS:- </u></b> </p>
-                        <img src="html.jpg" alt="html" title="html">
                         <img src="js.jpg" alt="js" title="js">
                         <img src="vs.jpg" alt="vs" title="vs">
                     </div>
@@ -544,20 +607,29 @@
         
         <section id="projects" class="big-box">
             <h2><u> PROJECTS 👩‍💻 </u></h2>   
-          
-                <div class="content-box">
+            <div class=" project-container"> 
+
+                <div class="project-item">
                     <div class="box">
-                        <h2>MoodTunes - Mood-Based Playlist Generator 🎵</h2>
+                        <h2>MoodTunes - Mood-Based Playlist Generator 🎵 </h2>
                     </div>
                         <p> MoodTunes is an interactive web app that curates personalized playlists based on a user’s mood. By simply describing how they feel, the app analyzes their input using basic NLP and suggests songs matching emotions like happy, sad, calm, or nostalgic, with direct YouTube links for instant playback. Built with HTML, CSS, and JavaScript, MoodTunes features responsive UI, local storage, and dynamic playlist generation to enhance the user experience. This project deepened my understanding of event handling, conditional rendering, and music-emotion mapping in web development. <br>
                         The emotions used in the code include happy, sad, angry, calm, energetic, romantic, nostalgic and focused. These emotions are detected based on keywords in the user's input. For example, words like "happy" or "joyful" trigger a **happy** mood playlist, while "sad" or "heartbroken" lead to a sad mood playlist. Similarly, "angry" or "frustrated" result in an angry mood playlist, and "calm" or "relaxed" default to a calm mood playlist. Additional moods like energetic, romantic**, nostalgic, and focused are also supported, each with their own curated playlists to match the user's feelings.  <br> 
                         <strong> <h4> <u> Skills </u> :- Javascript & NLP  </h4></strong> </p>
                      <a href="https://ruchitra98.github.io/Mood-Based-Playlist-Generator-Web-App/"> 🌐 EXPLORE PROJECT </a>
-                    
                 </div>
-            </div> 
 
-        </section>
+
+                 <div class="project-item">
+                    <div class="box">
+                        <h2> GiftGenie - Personalized Gift Suggestion Platform </h2>
+                    </div>
+                        <p> GiftGenie is an interactive web application designed to help users find the perfect gift for any occasion or recipient. The platform offers two main features: Occasion-Based Gift Suggestions, where users can select an occasion, specify the recipient's age and relationship, and receive tailored gift ideas, and the Gift Personality Quiz, a fun and engaging quiz that determines the recipient's personality type based on their preferences and suggests personalized gifts accordingly. With a responsive design, dynamic gift suggestions, and an intuitive user interface, GiftGenie ensures a seamless experience across both mobile and desktop devices. Built using HTML, CSS, and JavaScript, this project simplifies the gift-finding process, making it easier for users to celebrate special moments with thoughtful and personalized suggestions.<br> </p> <h4> <u> Skills:- </u> Responsive layout with media queries & Dynamic content rendering using JavaScript. <br> </h4>
+                        <p> <a href = "https://ruchitra98.github.io/Gift-Suggestion-Website-for-Occasions-and-Ages/"> 🌐 EXPLORE PROJECT </a>  </p>
+                 </div>
+             </div>
+            </section>
+
 
         <section id="projects" class="big-box">
             <h2><u> ACADAMIC PROJECTS 👩‍💻 </u></h2>   
@@ -645,7 +717,6 @@
                     <p>LottoBot is a Discord game bot designed for hosting raffles and Powerball-style lottery games. It uses Python, SQLite, and the Hikari Discord REST API wrapper. LottoBot employs agile methodologies and features in-game currency, customizable options for additional features, and various games within Discord servers.</p>
                     <div class="project-skills">
                         <p> <b> <u> Skills:- </u></b> </p>
-                        <img src="python.jpg" alt="Bot" title="python">
                         <img src="sql.jpg" alt="sql" title="sql">
                         <img src="Bot-1.jpg" alt="Lotto Bot">
                     </div>
@@ -749,7 +820,12 @@
 
                 <!-- Certification 6 -->
                 <div class="certification-item">
-                    <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Goldman%20Sachs/NPdeQ43o8P9HJmJzg_Goldman%20Sachs_SDD33Z7ZcLEQWzatn_1705720063979_completion_certificate.pdf">6. Goldman Sachs</a>
+                    <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Goldman%20Sachs/NPdeQ43o8P9HJmJzg_Goldman%20Sachs_SDD33Z7ZcLEQWzatn_1705720063979_completion_certificate.pdf">6. Goldman Sachs (FORAGE)</a>
+                </div>
+
+                 <!-- Certification 7 -->
+                <div class="certification-item">
+                    <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Datacom/L3NcyCoAjLno9d3T9_Datacom_SDD33Z7ZcLEQWzatn_1725566580521_completion_certificate.pdf">7. DATACOM (FORAGE) </a>
                 </div>
 
             </div>
@@ -759,7 +835,7 @@
         <!-- Resume Section -->
         <section id="resume" class="big-box">
             <h2><u> RESUME 🎯</u></h2>
-            <p>Want to dive into my experience? click on the link to download cv 📨 </p>
+            <p>Want to dive into my experience? click on the link to download CV 📨 </p>
             <a href="Ruchitra.K.pdf" class="btn" download> <h4> Ruchitra.K </h4></a>
             
         </section>
@@ -771,8 +847,6 @@
             <div class="social-icons">
                 <a href="https://www.linkedin.com/in/ruchitrakumaresan"><img src="Linkedin.jpg" alt="LinkedIn"></a>
                 <a href="https://github.com/Ruchitra98"><img src="Github.jpg" alt="GitHub"></a>
-                <a href="https://mailto:ruchitrakumaresan@gmail.com" target="_blank"><img src="Gmail.jpg"></a><br>
-                
             </div>
         </section>
 
