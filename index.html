@@ -33,8 +33,6 @@
             transition: background-color 0.3s, color 0.3s; /* Smooth transition for dark mode */
         }
 
-      
-
         header {
             background-color: var(--primary-color);
             color: var(--white);
@@ -330,8 +328,6 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-
-
 
         .content-box {
             flex: 2;
@@ -758,6 +754,27 @@
 
         .contact-form button:hover {
             background-color: #028a53;
+        }
+
+/* Social Icons Container */
+        .social-icons-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between icons */
+            margin-top: 20px;
+        }
+
+        /* Social Icon Styling */
+        .social-icon {
+            font-size: 2rem; /* Icon size */
+            color: var(--primary-color); /* Use your primary color */
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: #028a53; /* Darker shade on hover */
+            transform: translateY(-5px); /* Slight lift on hover */
         }
 
 /* Back to Top Button Styling */
@@ -1291,6 +1308,21 @@
                 <button type="submit">Send Message</button>
             </form>
         </section>
+
+        <footer>
+    <div class="social-icons-container">
+        <a href="https://www.linkedin.com/in/ruchitrakumaresan/" target="_blank" class="social-icon">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href=" https://github.com/Ruchitra98" target="_blank" class="social-icon">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://mail.google.com/mail/u/1/#inbox?compose=new" target="_blank" class="social-icon">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+    <p>&copy; Copyrigh 2025 Ruchitra Kumaresan. All rights reserved.</p>
+</footer>
     
 <!-- Back to Top Button -->
     <section>
