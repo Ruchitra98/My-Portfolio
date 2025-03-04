@@ -19,16 +19,21 @@
             --background-size: cover;
             --background-repeat: no-repeat;
             --background-position: center;
+            --dark-mode-bg: #121212; /* Dark mode background */
+            --dark-mode-text: #e0e0e0; /* Light text for dark mode */
         }
 
         body {
-            font-family: 'STSong', serif;
+            font-family: 'STSong';
             margin: 0;
             padding: 0;
             background-color: var(--background-color);
             color: var(--text-color);
             line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition for dark mode */
         }
+
+      
 
         header {
             background-color: var(--primary-color);
@@ -144,7 +149,7 @@
             color: var(--white);
         }
 
-       /* Experience Section Styling */
+/* Experience Section Styling */
             .experience-list {
                 list-style-type: none;
                 padding: 0;
@@ -200,7 +205,7 @@
                 color: var(--secondary-color);
             }
 
-            /* Responsive Design for Experience Section */
+        /* Responsive Design for Experience Section */
             @media (min-width: 768px) {
                 .experience-list {
                     display: flex;
@@ -240,7 +245,7 @@
 
 
 
-            /* Projects Section Layout */
+        /* Projects Section Layout */
                 .projects-container {
                     display: flex;
                     flex-wrap: wrap;
@@ -301,7 +306,7 @@
                     }
                 }
 
- /* acadamic Project Section Styles */
+/* acadamic Project Section Styles */
         .project-section {
             display: none; /* Hide all sections by default */
         }
@@ -390,7 +395,7 @@
             transform: scale(1.1); /* Slight zoom on hover */
         }
       
-        /* Certifications Section */
+/* Certifications Section */
                 .certifications-container {
                     display: grid;
                     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -512,97 +517,250 @@
                     background-color: #028a53;
                 }
 
-        /* Contact Form */
-        .message-form {
-            max-width: 500px;
-            margin: 50px auto;
+
+/* Additional Styles for New Features */
+/* Skills Container */
+    .skills-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    /* Skill Item */
+    .skill-item {
+        text-align: center;
+        width: 150px;
+        position: relative;
+        perspective: 1000px; /* For 3D effect */
+    }
+
+    .skill-item:hover .skill-circle {
+        transform: rotateY(180deg);
+    }
+
+    .skill-item:hover .skill-tooltip {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Skill Progress */
+    .skill-progress {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+    }
+
+    .skill-circle {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: conic-gradient(
+            var(--primary-color) 0%,
+            var(--primary-color) var(--progress),
+            var(--accent-color) var(--progress),
+            var(--accent-color) 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.8s ease;
+    }
+
+    .skill-circle::before {
+        content: '';
+        position: absolute;
+        width: 90%;
+        height: 90%;
+        border-radius: 50%;
+        background: linear-gradient(145deg, var(--white), #f0f0f0);
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .skill-value {
+        position: relative;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--primary-color);
+        transform: translateZ(50px); /* 3D effect */
+    }
+
+    /* Skill Title */
+    .skill-item h3 {
+        margin-top: 15px;
+        font-size: 1.2rem;
+        color: var(--primary-color);
+        transition: color 0.3s ease;
+    }
+
+    .skill-item:hover h3 {
+        color: #028a53; /* Darker shade on hover */
+    }
+
+    /* Skill Tooltip */
+    .skill-tooltip {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(10px);
+        background-color: var(--primary-color);
+        color: var(--white);
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        pointer-events: none;
+        width: 200px;
+        text-align: center;
+        z-index: 10;
+    }
+
+    /* Animation for Skill Progress */
+    @keyframes progress {
+        0% {
+            --progress: 0%;
+        }
+        100% {
+            --progress: var(--data-progress);
+        }
+    }
+
+    .skill-progress {
+        animation: progress 1.5s ease-out forwards;
+    }
+            /* Timeline Container */
+            .timeline-container {
+                position: relative;
+                max-width: 800px;
+                margin: 0 auto;
             padding: 20px;
+        }
+
+        /* Timeline Item */
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        /* Timeline Icon */
+        .timeline-icon {
+            background-color: var(--primary-color);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-right: 20px;
+            flex-shrink: 0;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .timeline-icon:hover {
+            transform: scale(1.1);
+            background-color: #028a53; /* Darker shade on hover */
+        }
+
+        /* Timeline Content */
+        .timeline-content {
             background-color: var(--white);
-            border-radius: 8px;
+            padding: 20px;
+            border-radius: 10px;
             box-shadow: var(--shadow);
+            flex-grow: 1;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .message-form label {
-            display: block;
-            margin-top: 10px;
-            font-weight: bold;
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
-        .message-form input,
-        .message-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
+        .timeline-content h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
         }
 
-        .message-form textarea {
-            resize: vertical;
+        .timeline-content p {
+            margin: 5px 0;
+            color: var(--text-color);
         }
 
-        .message-form button {
-            margin-top: 15px;
-            padding: 10px 20px;
-            border-radius: 5px;
-            border: none;
+        .timeline-content p strong {
+            color: var(--primary-color);
+        }
+
+        /* Timeline Line */
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 25px; /* Adjust based on icon size */
+            width: 4px;
             background-color: var(--primary-color);
-            color: var(--white);
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .message-form button:hover {
-            background-color: #028a53;
-        }
-
-        .email-button {
-            margin-top: 15px;
-            padding: 10px 20px;
-            border-radius: 5px;
-            border: none;
-            background-color: var(--primary-color);
-            color: var(--white);
-            cursor: pointer;
-            transition: background-color 0.3s;
-            text-decoration: none;
-            display: inline-block;
-            margin-right: 10px;
-        }
-
-        .email-button:hover {
-            background-color: #028a53;
+            z-index: -1;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .col-md-6 {
-                max-width: 100%;
-            }
-
-            .nav {
+            .timeline-item {
                 flex-direction: column;
                 align-items: center;
-            }
-
-            .nav-link {
-                width: 100%;
                 text-align: center;
             }
+
+            .timeline-icon {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .timeline-container::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
         }
 
-        /* Hide all sections by default */
-        section {
-            display: block; /* Show all sections by default */
+/* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .social-icons img {
-            width: 60px;
-            height: 60px;
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid var(--secondary-color);
         }
 
-       /* Back to Top Button Styling */
+        .contact-form button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #028a53;
+        }
+
+/* Back to Top Button Styling */
     #back-to-top {
         position: fixed;
         bottom: 20px;
@@ -637,30 +795,32 @@
 </head>
 
 <body>
+
+<!-- Rest of your portfolio content -->
     <header>
         <h1>Welcome to My Portfolio 💼</h1>
     </header>
 
-    <!-- Intro -->
+<!-- Intro -->
     <main class="container">
         <!-- Intro Section -->
         <section id="intro" class="intro">
             <p class="intro-text">Ruchitra Kumaresan<br>Front-End Developer | UX/UI Designer | Software Developer</p>
             <img src="1.jpg" alt="Ruchitra Kumaresan" class="profile-image">
-            <p><h1>Explore my professional journey below</h1></p>
+            <p><h3>Explore my professional journey below</h3></p>
         </section>
 
-        <!-- About Me Section -->
+<!-- About Me Section -->
         <section id="about" class="big-box">
-            <h1><u>About Me</u></h1>
+            <h2><u>About Me</u></h2>
             <p>I am Ruchitra Kumaresan, a dedicated front-end developer with a Master's in Computer Science from New York Institute of Technology (NYIT) and a Bachelor's in Computer Science from REVA University, India. I specialize in front-end development, with technical expertise in JavaScript, React.js, HTML5, CSS, and software testing. Throughout my academic and professional career, I have successfully delivered robust applications and systems, demonstrating my ability to tackle complex challenges and provide high-quality solutions.</p>
             <p>In addition to my technical skills, I am well-versed in software development methodologies and have experience working in agile environments. My internships at Lernov and Sain Solutions in Bangalore, India, provided me with hands-on experience in front-end web development. I contributed to projects that improved user interaction and functionality. Furthermore, my coursework and projects, such as product recommendation systems and utilizing Recurrent Neural Networks (RNNs) for trading, have honed my analytical and problem-solving abilities.</p>
             <p>I am eager to explore new opportunities to apply my skills and creativity to drive impactful software development and tech industry projects. Let’s connect and discuss how we can collaborate to make a significant difference in this ever-evolving field.</p>
         </section>
 
-        <!-- Experience Section -->
+<!-- Experience Section -->
         <section id="experience" class="big-box">
-            <h1><u>Experience</u></h1>
+            <h2><u>Experience</u></h2>
             <ul class="experience-list">
                 <li class="experience-item">
                     <div class="experience-box">
@@ -709,10 +869,41 @@
             </ul>
         </section>
 
-        <!-- Projects Section -->
-<section id="projects" class="big-box">
-    <h1>Personal Projects</h1> 
-    <!-- Removed <u> tag -->
+<!-- Education Timeline Section -->
+    <section id="timeline" class="big-box">
+        <h2><u>Education Timeline</u></h2>
+        <div class="timeline-container">
+            <!-- Timeline Item 1 -->
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fas fa-graduation-cap"></i> <!-- Icon for education -->
+                </div>
+                <div class="timeline-content">
+                    <h3>New York Institute of Technology</h3>
+                    <p><strong>Master's in Computer Science</strong></p>
+                    <p>Sept 2022 - May 2024</p>
+                    <p>Specialized in advanced topics such as machine learning, data structures, and software engineering.</p>
+                </div>
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fas fa-university"></i> <!-- Icon for university -->
+                </div>
+                <div class="timeline-content">
+                    <h3>REVA University</h3>
+                    <p><strong>Bachelor's in Computer Science</strong></p>
+                    <p>Aug 2016 - May 2020</p>
+                    <p>Focused on foundational computer science concepts, including algorithms, databases, and web development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Projects Section -->
+        <section id="projects" class="big-box">
+    <h2> <u> Personal Projects </u> </h2> <!-- Removed <u> tag -->
     <div class="projects-container">
         <!-- Project 1: MoodTunes -->
         <div class="project-item">
@@ -753,10 +944,10 @@
             </div>
         </div>
     </div>
-</section>
+    </section>
 
 
-  <section id="projects" class="big-box">
+        <section id="projects" class="big-box">
             <h2><u> ACADAMIC PROJECTS 👩‍💻 </u></h2>   
 
   <!-- Project 1: Computer Graphics -->
@@ -901,10 +1092,10 @@
             </div>
         </section>
 
-        <!-- Achievements Section -->
-<section id="achievements" class="big-box">
-    <h1><u>Achievements</u></h1>
-    <ul class="achievements-list">
+<!-- Achievements Section -->
+        <section id="achievements" class="big-box">
+            <h2><u>Achievements</u></h2>
+             <ul class="achievements-list">
         <!-- Achievement 1 -->
         <li class="achievement-item">
             <div class="achievement-box">
@@ -939,8 +1130,8 @@
         
       
 <!-- Certifications Section -->
-<section id="certifications" class="big-box">
-    <h1><u>Certifications & Skills</u></h1>
+    <section id="certifications" class="big-box">
+    <h2><u>Certifications </u></h2>
     <div class="certifications-container">
         <!-- Certification 1 -->
         <div class="certification-item">
@@ -998,26 +1189,110 @@
             <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Datacom/L3NcyCoAjLno9d3T9_Datacom_SDD33Z7ZcLEQWzatn_1725566580521_completion_certificate.pdf" class="certificate-link">View Credential</a>
         </div>
     </div>
-</section>
+    </section>
 
-    <!-- Resume Section -->
+<!-- Skills Matrix Section -->
+    <section id="skills" class="big-box">
+        <h2><u>Skills</u></h2>
+        <div class="skills-container">
+            <!-- Skill 1: HTML -->
+            <div class="skill-item">
+                <div class="skill-progress" data-progress="90">
+                    <div class="skill-circle">
+                        <div class="skill-value">90%</div>
+                    </div>
+                </div>
+                <h3>HTML</h3>
+                <div class="skill-tooltip">Proficient in semantic HTML5 and accessibility best practices.</div>
+            </div>
+
+            <!-- Skill 2: CSS -->
+            <div class="skill-item">
+                <div class="skill-progress" data-progress="85">
+                    <div class="skill-circle">
+                        <div class="skill-value">85%</div>
+                    </div>
+                </div>
+                <h3>CSS</h3>
+                <div class="skill-tooltip">Expert in CSS3, Flexbox, Grid, and responsive design.</div>
+            </div>
+
+            <!-- Skill 3: JavaScript -->
+            <div class="skill-item">
+                <div class="skill-progress" data-progress="80">
+                    <div class="skill-circle">
+                        <div class="skill-value">80%</div>
+                    </div>
+                </div>
+                <h3>JavaScript</h3>
+                <div class="skill-tooltip">Strong knowledge of ES6+, DOM manipulation, and AJAX.</div>
+            </div>
+
+            <!-- Skill 4: React -->
+            <div class="skill-item">
+                <div class="skill-progress" data-progress="75">
+                    <div class="skill-circle">
+                        <div class="skill-value">75%</div>
+                    </div>
+                </div>
+                <h3>React</h3>
+                <div class="skill-tooltip">Experience with React hooks, state management, and component lifecycle.</div>
+            </div>
+
+            <!-- Skill 5: Responsive Web Design -->
+            <div class="skill-item">
+                <div class="skill-progress" data-progress="80">
+                    <div class="skill-circle">
+                        <div class="skill-value">80%</div>
+                    </div>
+                </div>
+                <h3>Responsive Web Design</h3>
+                <div class="skill-tooltip">Ensuring a seamless experience across various screen sizes using CSS media queries and flexible layouts in HTML, CSS, JavaScript.</div>
+            </div>
+
+            <!-- Skill 6: User Research & Analysis -->
+            <div class="skill-item">
+                <div class="skill-progress" data-progress="85">
+                    <div class="skill-circle">
+                        <div class="skill-value">85%</div>
+                    </div>
+                </div>
+                <h3>User Research & Analysis</h3>
+                <div class="skill-tooltip">Conducting surveys, interviews, and usability tests to understand user needs.</div>
+            </div>
+
+            <!-- Skill 7: Version Control -->
+            <div class="skill-item">
+                <div class="skill-progress" data-progress="85">
+                    <div class="skill-circle">
+                        <div class="skill-value">85%</div>
+                    </div>
+                </div>
+                <h3>Version Control</h3>
+                <div class="skill-tooltip">Managing code efficiently using Git, GitHub, and GitLab for collaboration.</div>
+            </div>
+        </div>
+    </section>
+
+<!-- Resume Section -->
         <section id="resume" class="big-box">
-            <h1><u>Resume</u></h1>
+            <h2><u>Resume</u></h2>
             <p>Want to dive into my experience? Click on the link to download my CV.</p>
             <a href="Ruchitra.K.pdf" class="btn" download><h4>Download Resume</h4></a>
         </section>
 
-        <!-- Contact Section -->
+ <!-- Contact Section -->
         <section id="contact" class="big-box">
-            <h1><u>Contact Me</u></h1>
-            <p>Email: <a href="mailto:ruchitrak98@gmail.com">ruchitrak98@gmail.com</a></p>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/ruchitrakumaresan"><img src="Linkedin.jpg" alt="LinkedIn"></a>
-                <a href="https://github.com/Ruchitra98"><img src="Github.jpg" alt="GitHub"></a>
-            </div>
+            <h2><u>Contact Me</u></h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required> <br> 
+                <input type="email" placeholder="Your Email" required> <br>
+                <textarea placeholder="Your Message" rows="5" required></textarea> <br>
+                <button type="submit">Send Message</button>
+            </form>
         </section>
     
-        <!-- Back to Top Button -->
+<!-- Back to Top Button -->
     <section>
         <a href="#" id="back-to-top" title="Go to top">
             <i class="fas fa-chevron-up"></i> <!-- Font Awesome arrow icon -->
@@ -1026,8 +1301,10 @@
 
     </main>
 
-    <script>
-        // Function to show a specific project and hide others
+<!-- Javascript Coding -->
+    <script> 
+
+// Function to show a specific project and hide others
         function showProject(projectId) {
             // Hide all project sections
             document.querySelectorAll('.project-section').forEach(section => {
@@ -1038,7 +1315,7 @@
             document.getElementById(projectId).style.display = 'flex';
         }
 
-        // Smooth scrolling for navigation links
+// Smooth scrolling for navigation links
         document.querySelectorAll('.nav-link, .button-container a').forEach(link => {
             link.addEventListener('click', function (e) {
                 e.preventDefault(); // Prevent default anchor behavior
@@ -1052,8 +1329,21 @@
             });
         });
 
+       // Function to animate skill progress bars
+        function animateSkills() {
+            const skillProgressElements = document.querySelectorAll('.skill-progress');
+
+            skillProgressElements.forEach((skillProgress) => {
+                const progress = skillProgress.getAttribute('data-progress');
+                skillProgress.style.setProperty('--progress', `${progress}%`);
+                skillProgress.style.setProperty('--data-progress', `${progress}%`);
+            });
+        }
+
+        // Run the animation when the page loads
+        window.addEventListener('load', animateSkills);
                    
-                    // Show "Back to Top" button after scrolling down
+// Show "Back to Top" button after scrolling down
             window.addEventListener('scroll', function () {
                 var backToTop = document.getElementById('back-to-top');
                 if (window.pageYOffset > 300) { // Show after scrolling 300px
