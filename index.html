@@ -9,10 +9,10 @@
     <style>
         /* General Styles */
         :root {
-            --primary-color:  #2C3E50; /* Deep Blue for a strong, professional feel */
+            --primary-color: #2C3E50; /* Deep Blue for a strong, professional feel */
             --secondary-color: #555; /* Dark Gray for better readability */
             --background-color: #D3D3D3; /* Soft off-white for a clean look */
-            --accent-color:#BDC3C7;
+            --accent-color: #BDC3C7;
             --text-color: #222; /* Darker text for better contrast */
             --white: #FFFFFF; /* Pure white for clarity */
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow for a premium look */
@@ -22,7 +22,7 @@
         }
 
         body {
-            font-family: STsong;
+            font-family: 'STSong', serif;
             margin: 0;
             padding: 0;
             background-color: var(--background-color);
@@ -69,10 +69,11 @@
             font-weight: bold;
             margin: 10px 0;
         }
+
         #about p {
-                text-align: justify; /* Justify text for even alignment on both sides */
-                margin-bottom: 15px; /* Add spacing between paragraphs */
-            }
+            text-align: justify; /* Justify text for even alignment on both sides */
+            margin-bottom: 15px; /* Add spacing between paragraphs */
+        }
 
         .nav {
             list-style-type: none;
@@ -238,6 +239,7 @@
             }
 
 
+
             /* Projects Section Layout */
                 .projects-container {
                     display: flex;
@@ -388,35 +390,128 @@
             transform: scale(1.1); /* Slight zoom on hover */
         }
       
-         
-/* Certifications Section */
-        .certifications-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
+        /* Certifications Section */
+                .certifications-container {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    gap: 20px;
+                    justify-content: center;
+                    padding: 20px;
+                }
 
-        .certificate-image {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+                .certification-item {
+                    background-color: var(--white);
+                    padding: 20px;
+                    border-radius: 10px;
+                    box-shadow: var(--shadow);
+                    text-align: center;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
 
-        .certificate-image:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
+                .certification-item:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                }
 
-        .certification-item p {
-            margin-top: 10px;
-            font-size: 0.9rem;
-            color: var(--text-color);
-        }
-         
-        
+                .certificate-image {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 10px;
+                    margin-bottom: 15px;
+                }
+
+                .certification-item p {
+                    margin: 10px 0;
+                    font-size: 0.9rem;
+                    color: var(--text-color);
+                }
+
+                .certification-item p strong {
+                    font-size: 1rem;
+                    color: var(--primary-color);
+                }
+
+                .certificate-link {
+                    display: inline-block;
+                    margin-top: 10px;
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    background-color: var(--primary-color);
+                    color: var(--white);
+                    text-decoration: none;
+                    transition: background-color 0.3s;
+                }
+
+                .certificate-link:hover {
+                    background-color: #028a53;
+                }
+
+
+                /* Achievements Section Styling */
+                .achievements-list {
+                    list-style-type: none;
+                    padding: 0;
+                    margin: 0;
+                }
+
+                .achievement-item {
+                    margin-bottom: 30px;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+
+                .achievement-item:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                }
+
+                .achievement-box {
+                    background-color: rgba(255, 255, 255, 0.95);
+                    padding: 25px;
+                    border-radius: 15px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    transition: background-color 0.3s ease;
+                }
+
+                .achievement-box:hover {
+                    background-color: rgba(245, 245, 245, 0.95); /* Slightly darker on hover */
+                }
+
+                .achievement-box h3 {
+                    margin-top: 0;
+                    font-size: 1.5rem;
+                    color: var(--primary-color);
+                    border-bottom: 2px solid var(--primary-color);
+                    padding-bottom: 10px;
+                    margin-bottom: 15px;
+                }
+
+                .achievement-box p {
+                    margin-bottom: 10px;
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    color: var(--text-color);
+                }
+
+                .achievement-box p strong {
+                    color: var(--primary-color);
+                    font-weight: bold;
+                }
+
+                .achievement-link {
+                    display: inline-block;
+                    margin-top: 10px;
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    background-color: var(--primary-color);
+                    color: var(--white);
+                    text-decoration: none;
+                    transition: background-color 0.3s;
+                }
+
+                .achievement-link:hover {
+                    background-color: #028a53;
+                }
+
         /* Contact Form */
         .message-form {
             max-width: 500px;
@@ -507,134 +602,163 @@
             height: 60px;
         }
 
-        #back-to-top {
-          position: fixed;
-          bottom: 10px;
-          right: 10px;
-          background-color: #0078d4;
-          color: white;
-          padding: 10px 15px;
-          border-radius: 5px;
-          text-decoration: none;
-          display: none; /* Hide by default */
-          font-size: 24px;
-          text-align: center;
-          line-height: 24px;
-        }
+       /* Back to Top Button Styling */
+    #back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: var(--primary-color); /* Use your primary color */
+        color: var(--white);
+        padding: 12px 15px;
+        border-radius: 50%; /* Circular shape */
+        text-decoration: none;
+        display: none; /* Hidden by default */
+        font-size: 18px;
+        text-align: center;
+        line-height: 24px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+        opacity: 0.9; /* Slightly transparent */
+        z-index: 1000; /* Ensure it's above other elements */
+    }
 
-        #back-to-top:hover {
-          background-color: #005a9e;
-        }
+    #back-to-top:hover {
+        background-color: #028a53; /* Darker shade on hover */
+        transform: translateY(-3px); /* Slight lift on hover */
+        opacity: 1; /* Fully visible on hover */
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+    }
+
+    #back-to-top i {
+        vertical-align: middle; /* Center the icon */
+    }
 
     </style>
 </head>
+
 <body>
     <header>
-        <h1>🙏🏻 WELCOME 🙏🏻</h1>
+        <h1>Welcome to My Portfolio 💼</h1>
     </header>
 
-<!-- Intro -->
+    <!-- Intro -->
     <main class="container">
         <!-- Intro Section -->
         <section id="intro" class="intro">
-            
-            <p class="intro-text"> <br> Ruchitra Kumaresan <br> Front-End Developer | UX/UI Designer | Software Developer</p>
+            <p class="intro-text">Ruchitra Kumaresan<br>Front-End Developer | UX/UI Designer | Software Developer</p>
             <img src="1.jpg" alt="Ruchitra Kumaresan" class="profile-image">
-            <p><h3> Scroll down to learn more about me! ⬇️ </h3></p>
+            <p><h3>Explore my professional journey below</h3></p>
         </section>
 
-<!-- About Me Section -->
+        <!-- About Me Section -->
         <section id="about" class="big-box">
-            <h2><u> ABOUT ME 👩🏻‍💼</u> </h2>
+            <h2><u>About Me</u></h2>
             <p>I am Ruchitra Kumaresan, a dedicated front-end developer with a Master's in Computer Science from New York Institute of Technology (NYIT) and a Bachelor's in Computer Science from REVA University, India. I specialize in front-end development, with technical expertise in JavaScript, React.js, HTML5, CSS, and software testing. Throughout my academic and professional career, I have successfully delivered robust applications and systems, demonstrating my ability to tackle complex challenges and provide high-quality solutions.</p>
             <p>In addition to my technical skills, I am well-versed in software development methodologies and have experience working in agile environments. My internships at Lernov and Sain Solutions in Bangalore, India, provided me with hands-on experience in front-end web development. I contributed to projects that improved user interaction and functionality. Furthermore, my coursework and projects, such as product recommendation systems and utilizing Recurrent Neural Networks (RNNs) for trading, have honed my analytical and problem-solving abilities.</p>
             <p>I am eager to explore new opportunities to apply my skills and creativity to drive impactful software development and tech industry projects. Let’s connect and discuss how we can collaborate to make a significant difference in this ever-evolving field.</p>
-            
         </section>
 
-         <!-- Experience Section -->
+        <!-- Experience Section -->
         <section id="experience" class="big-box">
-            <h2><u> EXPERIENCE 💼</u></h2>
+            <h2><u>Experience</u></h2>
             <ul class="experience-list">
-                  <li class="experience-item">
+                <li class="experience-item">
                     <div class="experience-box">
-                        <h3>  Website Developer <p>  Lernov, Bangalore, India (July-2021 to August 2021)  </p> </h3>
+                        <h3>Website Developer</h3>
+                        <p>Lernov, Bangalore, India <br> (July 2021 to August 2021)</p>
                         <p>Employed Sublime Text to systematically organize and optimize HTML code, actively contributing to the website's layout. Attained significant success in project advancement, developing a fully functional website closely aligned with 90% of detailed client specifications. Building user interfaces that are elegant and encourage exploration. Developed practical expertise in front-end development using Sublime Text-3, achieving proficiency levels of 50% to 60% in crafting template designs. Acquired a versatile skill set encompassing JavaScript, CSS, React.js, PHP, WordPress, and HTML, and utilizing tools like Bootstrap and Font Awesome. The cultivation of solid communication abilities complemented these skills.</p>
                     </div>
-                    <!-- Skills Used in the EXPERIENCE -->
+                    <!-- Skills Used in the Experience -->
                     <div class="project-skills">
-                        <p> <b> <u> SKILLS:- </u></b> </p>
-                        <img src="js.jpg" alt="js" title="js">
-                        <img src="vs.jpg" alt="vs" title="vs">
+                        <p><b><u>Skills:</u></b></p>
+                        <img src="js.jpg" alt="JavaScript" title="JavaScript">
+                        <img src="vs.jpg" alt="Visual Studio" title="Visual Studio">
                     </div>
                 </li>
 
-
                 <li class="experience-item">
                     <div class="experience-box">
-                        <h3>  Frontend Web Developer <p>  Sain Solutions, Bangalore, India (Feb 2020 to May 2020)   </p>  </h3>
+                        <h3>Frontend Web Developer</h3>
+                        <p>Sain Solutions, Bangalore, India <br> (February 2020 to May 2020)</p>
                         <p>Successfully designed aesthetically pleasing interfaces with advanced functionality, enhanced teamwork, and problem-solving skills. Implemented new user interfaces for a retail client, leading to a 20% improvement in user engagement within two months of deployment. Augmented coding abilities through acquiring advanced techniques, staying at the forefront of web development practices, and gaining hands-on experience, including PHP. Demonstrated expertise in diverse design methodologies, achieving 70-80% project completion rates and staying current with advanced coding techniques, fostering effective teamwork and collaborative problem-solving.</p>
                     </div>
-                     <!-- Skills Used in the Project -->
+                    <!-- Skills Used in the Project -->
                     <div class="project-skills">
-                        <p> <b> <u> SKILLS:- </u></b> </p>
-                        <img src="html.jpg" alt="html" title="html">
-                        <img src="bts.jpg" alt="bts" title="bts">
-                        <img src="sub.jpg" alt="sub" title="sub">
+                        <p><b><u>Skills:</u></b></p>
+                        <img src="html.jpg" alt="HTML" title="HTML">
+                        <img src="bts.jpg" alt="Bootstrap" title="Bootstrap">
+                        <img src="sub.jpg" alt="Sublime Text" title="Sublime Text">
                     </div>
                 </li>
 
                 <li class="experience-item">
                     <div class="experience-box">
-                <h3>   9/11 Memorial & Museum <br> <p> Retail Greeter Volunteer, New York (Jan 2025 - Present)  <p> </h3>
-                        <p> I involves in welcoming and greeting guests, providing guidance on resources, and assisting with navigation and accessibility. Engaging visitors in thoughtful discussions, sharing the historical significance of exhibits, and preserving personal stories help foster deeper connections. Given the emotional nature of the museum, maintaining a respectful atmosphere, supporting visitors, and encouraging reflection are essential. </p>
-                       </div> 
+                        <h3>9/11 Memorial & Museum</h3>
+                        <p>Retail Greeter Volunteer, New York <br> (January 2025 - Present)</p>
+                        <p>I am involved in welcoming and greeting guests, providing guidance on resources, and assisting with navigation and accessibility. Engaging visitors in thoughtful discussions, sharing the historical significance of exhibits, and preserving personal stories help foster deeper connections. Given the emotional nature of the museum, maintaining a respectful atmosphere, supporting visitors, and encouraging reflection are essential.</p>
+                    </div>
+                </li>
 
                 <li class="experience-item">
                     <div class="experience-box">
-                        <h3>Computer Science Tutor <br>  <p> UPchive, Brooklyn, New York (Sept-2024 to Present)  </p> </h3>
+                        <h3>Computer Science Tutor</h3>
+                        <p>UPchive, Brooklyn, New York <br> (September 2024 to Present)</p>
                         <p>Provided guidance and academic support to students in College Applications and Essay Writing for admission purposes. Assisted students in Computer Science courses to enhance their understanding and skills. Collaborated with students to develop personalized strategies for academic success.</p>
                     </div>
                 </li>
-
-           
-
             </ul>
         </section>
 
-<!-- Projects Section -->
-
-        
-        <section id="projects" class="big-box">
-            <h2><u> PROJECTS 👩‍💻 </u></h2>   
-            <div class=" project-container"> 
-
-                <div class="project-item">
-                    <div class="box">
-                        <h2>MoodTunes - Mood-Based Playlist Generator 🎵 </h2>
-                    </div>
-                        <p> MoodTunes is an interactive web app that curates personalized playlists based on a user’s mood. By simply describing how they feel, the app analyzes their input using basic NLP and suggests songs matching emotions like happy, sad, calm, or nostalgic, with direct YouTube links for instant playback. Built with HTML, CSS, and JavaScript, MoodTunes features responsive UI, local storage, and dynamic playlist generation to enhance the user experience. This project deepened my understanding of event handling, conditional rendering, and music-emotion mapping in web development. <br>
-                        The emotions used in the code include happy, sad, angry, calm, energetic, romantic, nostalgic and focused. These emotions are detected based on keywords in the user's input. For example, words like "happy" or "joyful" trigger a **happy** mood playlist, while "sad" or "heartbroken" lead to a sad mood playlist. Similarly, "angry" or "frustrated" result in an angry mood playlist, and "calm" or "relaxed" default to a calm mood playlist. Additional moods like energetic, romantic**, nostalgic, and focused are also supported, each with their own curated playlists to match the user's feelings.  <br> 
-                        <strong> <h4> <u> Skills </u> :- Javascript & NLP  </h4></strong> </p>
-                     <a href="https://ruchitra98.github.io/Mood-Based-Playlist-Generator-Web-App/"> 🌐 EXPLORE PROJECT </a>
+        <!-- Projects Section -->
+<section id="projects" class="big-box">
+    <h2>Personal Projects</h2> <!-- Removed <u> tag -->
+    <div class="projects-container">
+        <!-- Project 1: MoodTunes -->
+        <div class="project-item">
+            <div class="project-header">
+                <h2>MoodTunes - Mood-Based Playlist Generator</h2>
+            </div>
+            <div class="project-content">
+                <p>MoodTunes is an interactive web app that curates personalized playlists based on a user’s mood. By simply describing how they feel, the app analyzes their input using basic NLP and suggests songs matching emotions like happy, sad, calm, or nostalgic, with direct YouTube links for instant playback. Built with <strong>HTML, CSS, and JavaScript</strong>, MoodTunes features:</p>
+                <ul>
+                    <li>Responsive UI for seamless cross-device compatibility.</li>
+                    <li>Local storage for saving user preferences.</li>
+                    <li>Dynamic playlist generation for a personalized experience.</li>
+                </ul>
+                <p>This project deepened my understanding of <strong>event handling, conditional rendering, and music-emotion mapping</strong> in web development.</p>
+                <div class="project-skills">
+                    <p><strong>Skills:</strong> JavaScript, Natural Language Processing (NLP), Responsive Design</p>
                 </div>
+                <a href="https://ruchitra98.github.io/Mood-Based-Playlist-Generator-Web-App/" class="project-link">🌐 Explore Project</a>
+            </div>
+        </div>
+
+        <!-- Project 2: GiftGenie -->
+        <div class="project-item">
+            <div class="project-header">
+                <h2>GiftGenie - Personalized Gift Suggestion Platform</h2>
+            </div>
+            <div class="project-content">
+                <p>GiftGenie is an interactive web application designed to help users find the perfect gift for any occasion or recipient. The platform offers two main features:</p>
+                <ul>
+                    <li><strong>Occasion-Based Gift Suggestions:</strong> Users select an occasion, specify the recipient's age and relationship, and receive tailored gift ideas.</li>
+                    <li><strong>Gift Personality Quiz:</strong> A fun and engaging quiz that determines the recipient's personality type based on their preferences and suggests personalized gifts.</li>
+                </ul>
+                <p>Built with <strong>HTML, CSS, and JavaScript</strong>, GiftGenie ensures a seamless experience across both mobile and desktop devices. This project highlights my expertise in <strong>responsive design, dynamic content rendering, and user-centric development</strong>.</p>
+                <div class="project-skills">
+                    <p><strong>Skills:</strong> Responsive Design, JavaScript, Media Queries, Dynamic Content Rendering</p>
+                </div>
+                <a href="https://ruchitra98.github.io/Gift-Suggestion-Website-for-Occasions-and-Ages/" class="project-link">🌐 Explore Project</a>
+            </div>
+        </div>
+    </div>
+</section>
 
 
-                 <div class="project-item">
-                    <div class="box">
-                        <h2> GiftGenie - Personalized Gift Suggestion Platform </h2>
-                    </div>
-                        <p> GiftGenie is an interactive web application designed to help users find the perfect gift for any occasion or recipient. The platform offers two main features: Occasion-Based Gift Suggestions, where users can select an occasion, specify the recipient's age and relationship, and receive tailored gift ideas, and the Gift Personality Quiz, a fun and engaging quiz that determines the recipient's personality type based on their preferences and suggests personalized gifts accordingly. With a responsive design, dynamic gift suggestions, and an intuitive user interface, GiftGenie ensures a seamless experience across both mobile and desktop devices. Built using HTML, CSS, and JavaScript, this project simplifies the gift-finding process, making it easier for users to celebrate special moments with thoughtful and personalized suggestions.<br> </p> <h4> <u> Skills:- </u> Responsive layout with media queries & Dynamic content rendering using JavaScript. <br> </h4>
-                        <p> <a href = "https://ruchitra98.github.io/Gift-Suggestion-Website-for-Occasions-and-Ages/"> 🌐 EXPLORE PROJECT </a>  </p>
-                 </div>
-             </div>
-            </section>
-
-
-        <section id="projects" class="big-box">
+  <section id="projects" class="big-box">
             <h2><u> ACADAMIC PROJECTS 👩‍💻 </u></h2>   
-            
-        <!-- Project 1: Computer Graphics -->
+
+  <!-- Project 1: Computer Graphics -->
             <div id="project1" class="project-section active">
                 <div class="image-box">
                     <img src="CG-1.jpg" alt="Computer Graphics"> <br>
@@ -655,7 +779,7 @@
                     </div>
 
                     <div class="project-navigation">
-                        <button class="next" onclick="showProject('project2')"> PROJECT-2  </button>
+                        <button class="next" onclick="showProject('project2')"> Next Project  </button>
                     </div>
                 </div>
             </div> 
@@ -675,8 +799,8 @@
                         <img src="python.jpg" alt="Product" title="python">
                     </div>
                     <div class="project-navigation">
-                        <button class="previous" onclick="showProject('project1')">PROJECT-1 </button>
-                        <button class="next" onclick="showProject('project3')"> PROJECT-3  </button>
+                        <button class="previous" onclick="showProject('project1')"> First Project </button>
+                        <button class="next" onclick="showProject('project3')"> Next Project  </button>
                     </div>
                 </div>
             </div>
@@ -698,8 +822,8 @@
                         <img src="rnn.jpg" alt="OpenGL" title="rnn">
                     </div>
                     <div class="project-navigation">
-                        <button class="previous" onclick="showProject('project2')"> PROJECT-2  </button>
-                        <button class="next" onclick="showProject('project4')">PROJECT-4  </button>
+                        <button class="previous" onclick="showProject('project2')"> Previous Project </button>
+                        <button class="next" onclick="showProject('project4')"> Next Project </button>
                     </div>
                 
                 </div>
@@ -721,8 +845,8 @@
                         <img src="Bot-1.jpg" alt="Lotto Bot">
                     </div>
                     <div class="project-navigation">
-                        <button class="previous" onclick="showProject('project3')">PROJECT-3  </button>
-                        <button class="next" onclick="showProject('project5')"> PROJECT-5  </button>
+                        <button class="previous" onclick="showProject('project3')">  Previous Project </button>
+                        <button class="next" onclick="showProject('project5')"> Next Project </button>
                     </div>
                 </div>
             </div>
@@ -747,8 +871,8 @@
                         <img src="c.jpg" alt="c" title="c">
                     </div>
                     <div class="project-navigation">
-                        <button class="previous" onclick="showProject('project4')"> PROJECT-4   </button>
-                        <button class="next" onclick="showProject('project6')"> PROJECT-6  </button>
+                        <button class="previous" onclick="showProject('project4')">Previous Project   </button>
+                        <button class="next" onclick="showProject('project6')"> Next Project </button>
                     </div>
                 </div>
             </div>
@@ -769,98 +893,139 @@
                         <img src="panda.jpg" alt="Bot" title="python">
                     </div>
                     <div class="project-navigation">
-                        <button class="previous" onclick="showProject('project5')"> PROJECT-5  </button>
-                        <button class="next" onclick="showProject('project1')">PROJECT-1 </button>
+                        <button class="previous" onclick="showProject('project5')"> Previous Project </button>
+                        <button class="next" onclick="showProject('project1')"> First Project </button>
                     </div>
                 </div>
             </div>
         </section>
 
-<!-- Achievements Section -->
-        <section id="achievements" class="big-box">
-            <h2><u> ACHIEVEMENTS 🏆</u></h2>
-            <ul>
-                <li>1. Research Paper International Conference Advance in Computing and Information Technology IACIT-2020, conducted and organized by the School of Computing & Information Technology, REVA University, Bangalore, INDIA. 
-                    <a href="http://www.testmagzine.biz/index.php/testmagzine/article/view/8020/6071"> <h4> PUBLICATION </h4> </a> </li>
-                <li>2. Engaged with the college's Career & Placement center, discussed effective strategies for securing positions within specific companies, and gained valuable insights into the expectations of hiring panels when evaluating candidates.</li>
-                <li>3. A dedicated volunteer with YuWaah (Generation Unlimited India), actively contributing to empowering youth and fostering their holistic development. I've gained valuable insights into youth challenges and the potential of youth-focused initiatives.</li>
-            </ul>  
-        </section>
-
-
-<!-- Certifications Section -->
-        <section id="certifications" class="big-box">
-            <h2><u> CERTIFICATIONS & Skills 🖥️</u></h2>
-            <div class="certifications-container">
-                <!-- Certification 1 -->
-                <div class="certification-item">
-                    <a href="https://www.coursera.org/account/accomplishments/verify/PB9T3XX2G598?utm_product=course">1. Coursera-Fundamental of UX Designer</a> <br>
-                   
-                </div>
-
-                <!-- Certification 2 -->
-                <div class="certification-item">
-                    <a href="https://www.sololearn.com/certificates/CC-BVBMOMJ8">2. Project planning with AI</a>
-                </div>
-
-                <!-- Certification 3 -->
-                <div class="certification-item">
-                    <a href="https://www.sololearn.com/en/certificates/CC-FDBAO6OJ">3. front-end for begineers</a>
-                </div>
-
-                <!-- Certification 4 -->
-                <div class="certification-item">
-                    <a href="https://www.sololearn.com/en/certificates/CC-FDBAO6OJ">4. Angular</a>
-                </div>
-
-                <!-- Certification 5 -->
-                <div class="certification-item">
-                    <a href="https://www.sololearn.com/en/certificates/CC-WNDH1R9B"> 5. Javascript</a>
-                </div>
-
-                <!-- Certification 6 -->
-                <div class="certification-item">
-                    <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Goldman%20Sachs/NPdeQ43o8P9HJmJzg_Goldman%20Sachs_SDD33Z7ZcLEQWzatn_1705720063979_completion_certificate.pdf">6. Goldman Sachs (FORAGE)</a>
-                </div>
-
-                 <!-- Certification 7 -->
-                <div class="certification-item">
-                    <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Datacom/L3NcyCoAjLno9d3T9_Datacom_SDD33Z7ZcLEQWzatn_1725566580521_completion_certificate.pdf">7. DATACOM (FORAGE) </a>
-                </div>
-
+        <!-- Achievements Section -->
+<section id="achievements" class="big-box">
+    <h2><u>Achievements</u></h2>
+    <ul class="achievements-list">
+        <!-- Achievement 1 -->
+        <li class="achievement-item">
+            <div class="achievement-box">
+                <h3>Published Research Paper</h3>
+                <p><strong>Conference:</strong> International Conference on Advances in Computing and Information Technology (IACIT-2020)</p>
+                <p><strong>Organized by:</strong> School of Computing & Information Technology, REVA University, Bangalore, India</p>
+                <p><strong>Contribution:</strong> Conducted research and presented findings on innovative computing techniques, contributing to the advancement of the field.</p>
+                <a href="http://www.testmagzine.biz/index.php/testmagzine/article/view/8020/6071" class="achievement-link">View Publication</a>
             </div>
-           
-        </section>
+        </li>
 
-        <!-- Resume Section -->
+        <!-- Achievement 2 -->
+        <li class="achievement-item">
+            <div class="achievement-box">
+                <h3>  Career Development & Placement Strategies </h3>
+                <p><strong>Role:</strong> Engaged with the Career & Placement Center at REVA University</p>
+                <p><strong>Contribution:</strong> Collaborated with the placement team to develop effective strategies for securing positions in top-tier companies. Gained insights into hiring panel expectations and candidate evaluation processes.</p>
+            </div>
+        </li>
+
+        <!-- Achievement 3 -->
+        <li class="achievement-item">
+            <div class="achievement-box">
+                <h3> Youth Empowerment Volunteer  </h3>
+                <p><strong>Organization:</strong> YuWaah (Generation Unlimited India)</p>
+                <p><strong>Role:</strong> Volunteer</p>
+                <p><strong>Contribution:</strong> Contributed to empowering youth through initiatives focused on skill development, education, and holistic growth. Gained valuable insights into youth challenges and the impact of youth-focused programs.</p>
+            </div>
+        </li>
+    </ul>
+</section>
+        
+      
+<!-- Certifications Section -->
+<section id="certifications" class="big-box">
+    <h2><u>Certifications & Skills</u></h2>
+    <div class="certifications-container">
+        <!-- Certification 1 -->
+        <div class="certification-item">
+            <p><strong>Fundamentals of UX Design</strong></p>
+            <p>Issued by: Coursera</p>
+            <p>Date: 2023</p>
+            <a href="https://www.coursera.org/account/accomplishments/verify/PB9T3XX2G598?utm_product=course" class="certificate-link">View Credential</a>
+        </div>
+
+        <!-- Certification 2 -->
+        <div class="certification-item">
+            <p><strong>Project Planning with AI</strong></p>
+            <p>Issued by: Sololearn</p>
+            <p>Date: 2023</p>
+            <a href="https://www.sololearn.com/certificates/CC-BVBMOMJ8" class="certificate-link">View Credential</a>
+        </div>
+
+        <!-- Certification 3 -->
+        <div class="certification-item">
+            <p><strong>Front-End Development for Beginners</strong></p>
+            <p>Issued by: Sololearn</p>
+            <p>Date: 2023</p>
+            <a href="https://www.sololearn.com/en/certificates/CC-FDBAO6OJ" class="certificate-link">View Credential</a>
+        </div>
+
+        <!-- Certification 4 -->
+        <div class="certification-item"> 
+            <p><strong>Angular Framework</strong></p>
+            <p>Issued by: Sololearn</p>
+            <p>Date: 2023</p>
+            <a href="https://www.sololearn.com/en/certificates/CC-FDBAO6OJ" class="certificate-link">View Credential</a>
+        </div>
+
+        <!-- Certification 5 -->
+        <div class="certification-item">
+            <p><strong>JavaScript Programming</strong></p>
+            <p>Issued by: Sololearn</p>
+            <p>Date: 2023</p>
+            <a href="https://www.sololearn.com/en/certificates/CC-WNDH1R9B" class="certificate-link">View Credential</a>
+        </div>
+
+        <!-- Certification 6 -->
+        <div class="certification-item">
+            <p><strong>Goldman Sachs Virtual Experience</strong></p>
+            <p>Issued by: Forage</p>
+            <p>Date: 2023</p>
+            <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Goldman%20Sachs/NPdeQ43o8P9HJmJzg_Goldman%20Sachs_SDD33Z7ZcLEQWzatn_1705720063979_completion_certificate.pdf" class="certificate-link">View Credential</a>
+        </div>
+
+        <!-- Certification 7 -->
+        <div class="certification-item">
+            <p><strong>Datacom Virtual Experience</strong></p>
+            <p>Issued by: Forage</p>
+            <p>Date: 2023</p>
+            <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Datacom/L3NcyCoAjLno9d3T9_Datacom_SDD33Z7ZcLEQWzatn_1725566580521_completion_certificate.pdf" class="certificate-link">View Credential</a>
+        </div>
+    </div>
+</section>
+
+    <!-- Resume Section -->
         <section id="resume" class="big-box">
-            <h2><u> RESUME 🎯</u></h2>
-            <p>Want to dive into my experience? click on the link to download CV 📨 </p>
-            <a href="Ruchitra.K.pdf" class="btn" download> <h4> Ruchitra.K </h4></a>
-            
+            <h2><u>Resume</u></h2>
+            <p>Want to dive into my experience? Click on the link to download my CV.</p>
+            <a href="Ruchitra.K.pdf" class="btn" download><h4>Download Resume</h4></a>
         </section>
 
-                <!-- Contact Section -->
+        <!-- Contact Section -->
         <section id="contact" class="big-box">
-            <h2><u> CONTACT ME  📲📞</u></h2>
-             <p>  Email:- ruchitrak98@gmail.com  </p>
+            <h2><u>Contact Me</u></h2>
+            <p>Email: <a href="mailto:ruchitrak98@gmail.com">ruchitrak98@gmail.com</a></p>
             <div class="social-icons">
                 <a href="https://www.linkedin.com/in/ruchitrakumaresan"><img src="Linkedin.jpg" alt="LinkedIn"></a>
                 <a href="https://github.com/Ruchitra98"><img src="Github.jpg" alt="GitHub"></a>
             </div>
         </section>
-
-
-
-<!-- Back to Top arrow -->
-        <section> 
-            <a href="#" id="back-to-top">⬆️</a>
-        </section>
+    
+        <!-- Back to Top Button -->
+    <section>
+        <a href="#" id="back-to-top" title="Go to top">
+            <i class="fas fa-chevron-up"></i> <!-- Font Awesome arrow icon -->
+        </a>
+    </section>
 
     </main>
 
     <script>
-
         // Function to show a specific project and hide others
         function showProject(projectId) {
             // Hide all project sections
@@ -885,26 +1050,27 @@
                 }
             });
         });
-        // Show "Back to Top" link after scrolling down
-        window.addEventListener('scroll', function() {
-            var backToTop = document.getElementById('back-to-top');
-            if (window.pageYOffset > 100) { // Show after scrolling 100px
-                backToTop.style.display = 'block';
-            } else {
-                backToTop.style.display = 'none';
-            }
-        });
 
-        // Smooth scroll to top when "Back to Top" link is clicked
-        document.getElementById('back-to-top').addEventListener('click', function(event) {
-            event.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+                   
+                    // Show "Back to Top" button after scrolling down
+            window.addEventListener('scroll', function () {
+                var backToTop = document.getElementById('back-to-top');
+                if (window.pageYOffset > 300) { // Show after scrolling 300px
+                    backToTop.style.display = 'block';
+                } else {
+                    backToTop.style.display = 'none';
+                }
             });
-        });
 
-       
+            // Smooth scroll to top when "Back to Top" button is clicked
+            document.getElementById('back-to-top').addEventListener('click', function (event) {
+                event.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' // Smooth scrolling
+                });
+            });
     </script>
 </body>
+
 </html>
