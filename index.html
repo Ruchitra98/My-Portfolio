@@ -26,7 +26,7 @@
         }
 
         body {
-            font-family: 'STSong';
+            font-family: 'Roboto';
             margin: 0;
             padding: 0;
             background-color: var(--background-color);
@@ -44,6 +44,7 @@
             position: relative; /* Add this to position the dark mode button */
         }
 
+       
         #dark-mode-toggle {
             position: absolute; /* Position the button absolutely within the header */
             top: 20px; /* Adjust the top position as needed */
@@ -180,102 +181,81 @@
         }
 
 /* Experience Section Styling */
-            .experience-list {
-                list-style-type: none;
-                padding: 0;
-                margin: 0;
-            }
-
-            .experience-item {
-                margin-bottom: 30px;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-            }
-
-            .experience-item:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            }
-
-            .experience-box {
-                background-color: rgba(255, 255, 255, 0.95);
-                padding: 25px;
-                border-radius: 15px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                transition: background-color 0.3s ease;
-            }
-
-            .experience-box:hover {
-                background-color: rgba(245, 245, 245, 0.95); /* Slightly darker on hover */
-            }
-
-            .experience-item h3 {
-                margin-top: 0;
-                font-size: 1.5rem;
-                color: var(--primary-color);
-                border-bottom: 2px solid var(--primary-color);
-                padding-bottom: 10px;
-                margin-bottom: 15px;
-            }
-
-            .experience-item p {
-                margin-bottom: 0;
-                text-align: justify;
-                font-size: 1rem;
-                line-height: 1.6;
-                color: var(--text-color);
-            }
-
-            .experience-item p strong {
-                color: var(--primary-color);
-                font-weight: bold;
-            }
-
-            .experience-item p em {
-                font-style: italic;
-                color: var(--secondary-color);
-            }
-
-        /* Responsive Design for Experience Section */
-            @media (min-width: 768px) {
+           
                 .experience-list {
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 20px;
+                    list-style-type: none;
+                    padding: 0;
+                    margin: 0;
                 }
 
-            .experience-item {
-                    flex: 1 1 calc(50% - 20px); /* Two columns with gap */
-                    padding: 15px;
-                    box-sizing: border-box;
-                }
-            }
-
-            @media (max-width: 767px) {
                 .experience-item {
-                    flex: 1 1 100%; /* Single column on smaller screens */
+                    margin-bottom: 30px;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
                 }
-            }
+
+                .experience-item:hover {
+                    transform: translateY(-5px); /* Slight lift on hover */
+                    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+                }
+
+                .experience-box {
+                    background-color: rgba(255, 255, 255, 0.95);
+                    padding: 25px;
+                    border-radius: 15px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    transition: background-color 0.3s ease, transform 0.3s ease;
+                }
+
+                .experience-box:hover {
+                    background-color: rgba(245, 245, 245, 0.95); /* Slightly darker on hover */
+                    transform: scale(1.02); /* Slight zoom effect on hover */
+                }
+
+                .experience-item h3 {
+                    margin-top: 0;
+                    font-size: 1.5rem;
+                    color: var(--primary-color);
+                    border-bottom: 2px solid var(--primary-color);
+                    padding-bottom: 10px;
+                    margin-bottom: 15px;
+                    transition: color 0.3s ease; /* Smooth color transition */
+                }
+
+                .experience-item:hover h3 {
+                    color: #028a53; /* Change heading color on hover */
+                }
+
+                .experience-item p {
+                    margin-bottom: 0;
+                    text-align: justify;
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    color: var(--text-color);
+                    transition: color 0.3s ease; /* Smooth text color transition */
+                }
+
+                .experience-item:hover p {
+                    color: var(--primary-color); /* Change text color on hover */
+                }
 
                 .experience-skills {
                     margin-top: 10px;
                     display: flex;
                     justify-content: left;
                     gap: 20px;
-                    }
+                }
 
-            .experience-skills img {
-                width: 30px; /* Small icons */
-                height: auto;
-                transition: transform 0.2s;
-            }
+                .experience-skills img {
+                    width: 30px;
+                    height: auto;
+                    transition: transform 0.2s ease; /* Smooth icon transition */
+                }
 
-            .experience-skills img:hover {
-                transform: scale(1.1); /* Slight zoom on hover */
-            }
+                .experience-skills img:hover {
+                    transform: scale(1.2); /* Slight zoom on hover */
+                }
 
-
-
-        /* Projects Section Layout */
+/* Projects Section Layout */
                 .projects-container {
                     display: flex;
                     flex-wrap: wrap;
@@ -480,7 +460,7 @@
                 }
 
 
-                /* Achievements Section Styling */
+/* Achievements Section Styling */
                 .achievements-list {
                     list-style-type: none;
                     padding: 0;
@@ -548,7 +528,7 @@
 
 /* Additional Styles for New Features */
 /* Skills Container */
-    .skills-container {
+                .skills-container {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -634,7 +614,7 @@
         position: absolute;
         top: 100%;
         left: 50%;
-        transform: translateX(-50%) translateY(10px);
+        transform: translateX(-50%) translateY(-10px);
         background-color: var(--primary-color);
         color: var(--white);
         padding: 10px;
@@ -648,28 +628,27 @@
         z-index: 10;
     }
 
+    .skill:hover .skill-tooltip {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-15px);
+        pointer-events: auto;
+    }
+
     /* Animation for Skill Progress */
-    @keyframes progress {
-        0% {
-            --progress: 0%;
-        }
-        100% {
-            --progress: var(--data-progress);
-        }
-    }
-
-    .skill-progress {
-        animation: progress 1.5s ease-out forwards;
-    }
-            /* Timeline Container */
-            .timeline-container {
-                position: relative;
-                max-width: 800px;
-                margin: 0 auto;
-            padding: 20px;
+        @keyframes progress {
+            0% {
+                --progress: 0%;
+            }
+            100% {
+                --progress: var(--data-progress);
+            }
         }
 
-        /* Timeline Item */
+        .skill-progress {
+            animation: progress 1.5s ease-out forwards;
+    }
+
+/* Timeline Item */
         .timeline-item {
             display: flex;
             align-items: flex-start;
@@ -788,6 +767,23 @@
             background-color: #028a53;
         }
 
+/* Call-to-Action Button */
+        .cta-button {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
 /* Social Icons Container */
         .social-icons-container {
             display: flex;
@@ -828,7 +824,6 @@
         opacity: 0.9; /* Slightly transparent */
         z-index: 1000; /* Ensure it's above other elements */
     }
-
     #back-to-top:hover {
         background-color: #028a53; /* Darker shade on hover */
         transform: translateY(-3px); /* Slight lift on hover */
@@ -841,12 +836,11 @@
     }
     </style>
 </head>
-
 <body>
 
 <!-- Rest of your portfolio content -->
     <header>
-        <h1>Welcome to My Portfolio 💼</h1>
+         <h1> Welcome My Portfolio 💼 </h1>
         <button id="dark-mode-toggle" onclick="toggleDarkMode()">🌙/☀️</button>
     </header>
 
@@ -856,7 +850,7 @@
         <section id="intro" class="intro">
             <p class="intro-text">Ruchitra Kumaresan<br>Front-End Developer | UX/UI Designer | Software Developer</p>
             <img src="1.jpg" alt="Ruchitra Kumaresan" class="profile-image">
-            <p><h3>Explore my professional journey below</h3></p>
+            <p><h3>Take a closer look at the milestones and experiences that have shaped my career path, detailed below.</h3></p>
         </section>
 
 <!-- About Me Section -->
@@ -1077,7 +1071,7 @@
                     <div class="project-skills">
                         <p> <b> <u> Skills:- </u></b> </p>
                         <img src="sql.jpg" alt="sql" title="sql">
-                        <img src="Bot-1.jpg" alt="Lotto Bot">
+                        <img src="python.jpg" alt="Product" title="python">
                     </div>
                     <div class="project-navigation">
                         <button class="previous" onclick="showProject('project3')">  Previous Project </button>
@@ -1251,7 +1245,7 @@
             <div class="skill-item">
                 <div class="skill-progress" data-progress="90">
                     <div class="skill-circle">
-                        <div class="skill-value">90%</div>
+                        <div class="skill-value">100%</div>
                     </div>
                 </div>
                 <h3>HTML</h3>
@@ -1277,7 +1271,7 @@
                     </div>
                 </div>
                 <h3>JavaScript</h3>
-                <div class="skill-tooltip">Strong knowledge of ES6+, DOM manipulation, and AJAX.</div>
+                <div class="skill-tooltip">Knowledge of ES6+, DOM manipulation, and AJAX.</div>
             </div>
 
             <!-- Skill 4: React -->
@@ -1295,7 +1289,7 @@
             <div class="skill-item">
                 <div class="skill-progress" data-progress="80">
                     <div class="skill-circle">
-                        <div class="skill-value">80%</div>
+                        <div class="skill-value">85%</div>
                     </div>
                 </div>
                 <h3>Responsive Web Design</h3>
@@ -1323,6 +1317,39 @@
                 <h3>Version Control</h3>
                 <div class="skill-tooltip">Managing code efficiently using Git, GitHub, and GitLab for collaboration.</div>
             </div>
+
+            <!-- Skill 8: Front-End Development -->
+            <div class="skill-item">
+                <div class="skill-progress" data-progress="90">
+                    <div class="skill-circle">
+                        <div class="skill-value">91%</div>
+                    </div>
+                </div>
+                <h3>Front-End Development</h3>
+                <div class="skill-tooltip">Building interactive and dynamic web applications using modern frameworks like React, Vue.js, and Angular, along with HTML, CSS, and JavaScript.</div>
+            </div>
+
+            <!-- Skill 9: Cross-Browser Compatibility -->
+            <div class="skill-item">
+                <div class="skill-progress" data-progress="88">
+                    <div class="skill-circle">
+                        <div class="skill-value">90%</div>
+                    </div>
+                </div>
+                <h3>Cross-Browser Compatibility</h3>
+                <div class="skill-tooltip">Ensuring websites function consistently across different browsers (Chrome, Firefox, Safari, Edge) using progressive enhancement and feature detection.</div>
+            </div>
+
+            <!-- Skill 10: User Experience (UX) Design -->
+            <div class="skill-item">
+                <div class="skill-progress" data-progress="75">
+                    <div class="skill-circle">
+                        <div class="skill-value">70%</div>
+                    </div>
+                </div>
+                <h3>User Experience (UX) Design</h3>
+                <div class="skill-tooltip">Designing user-centered experiences through research, wireframing, prototyping, and usability testing to enhance user satisfaction.</div>
+            </div>
         </div>
     </section>
 
@@ -1335,15 +1362,16 @@
 
 <!-- Contact Section -->
         <section id="contact" class="big-box">
+            <div class="right-content">
             <h2><u>Contact Me📞</u></h2>
             <form class="contact-form">
                 <input type="text" placeholder="Your Name" required> <br> 
                 <input type="email" placeholder="Your Email" required> <br>
                 <textarea placeholder="Your Message" rows="5" required></textarea> <br>
                 <button type="submit">Send Message</button>
-                <a href="ruchitrak98@gmail.com" class="cta-button">Let's Work Together!</a>
             </form>
         </section>
+
  
 <!-- Google Analytics Integration -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXX-X"></script>
@@ -1380,7 +1408,8 @@
     <p>&copy; Copyright 2025 Ruchitra Kumaresan. All rights reserved.</p>
 
 </footer>
-    
+
+
 <!-- Back to Top Button -->
     <section>
         <a href="#" id="back-to-top" title="Go to top">
