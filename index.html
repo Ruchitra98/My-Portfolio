@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,7 +41,6 @@
             position: relative; /* Add this to position the dark mode button */
         }
 
-       
         #dark-mode-toggle {
             position: absolute; /* Position the button absolutely within the header */
             top: 20px; /* Adjust the top position as needed */
@@ -74,7 +72,7 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 30px;
         }
 
         .intro {
@@ -86,7 +84,7 @@
             width: 200px; /* Adjusted to passport photo width */
             height: 250px; /* Adjusted to passport photo height */
             border-radius: 0; /* Remove rounded corners for a square shape */
-            border: 4px solid var(--primary-color);
+            border: 1px solid var(--primary-color);  
             margin: 30px auto;
             display: block;
             transition: transform 0.3s ease;
@@ -180,50 +178,50 @@
 
 /* Experience Section Styling */
            
-                .experience-list {
-                    list-style-type: none;
-                    padding: 0;
-                    margin: 0;
-                }
+        .experience-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
 
-                .experience-item {
-                    margin-bottom: 30px;
-                    transition: transform 0.3s ease, box-shadow 0.3s ease;
-                }
+        .experience-item {
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-                .experience-item:hover {
-                    transform: translateY(-5px); /* Slight lift on hover */
-                    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
-                }
+        .experience-item:hover {
+            transform: translateY(-5px); /* Slight lift on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+        }
 
-                .experience-box {
-                    background-color: rgba(255, 255, 255, 0.95);
-                    padding: 25px;
-                    border-radius: 15px;
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                    transition: background-color 0.3s ease, transform 0.3s ease;
-                }
+        .experience-box {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
 
-                .experience-box:hover {
-                    background-color: rgba(245, 245, 245, 0.95); /* Slightly darker on hover */
-                    transform: scale(1.02); /* Slight zoom effect on hover */
-                }
+        .experience-box:hover {
+            background-color: rgba(245, 245, 245, 0.95); /* Slightly darker on hover */
+            transform: scale(1.02); /* Slight zoom effect on hover */
+        }
 
-                .experience-item h3 {
-                    margin-top: 0;
-                    font-size: 1.5rem;
-                    color: var(--primary-color);
-                    border-bottom: 2px solid var(--primary-color);
-                    padding-bottom: 10px;
-                    margin-bottom: 15px;
-                    transition: color 0.3s ease; /* Smooth color transition */
-                }
+        .experience-item h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            transition: color 0.3s ease; /* Smooth color transition */
+        }
 
-                .experience-item:hover h3 {
-                    color: #028a53; /* Change heading color on hover */
-                }
+        .experience-item:hover h3 {
+            color: #028a53; /* Change heading color on hover */
+        }
 
-                .experience-item p {
+        .experience-item p {
                     margin-bottom: 0;
                     text-align: justify;
                     font-size: 1rem;
@@ -632,7 +630,7 @@
         pointer-events: auto;
     }
 
-    /* Animation for Skill Progress */
+/* Animation for Skill Progress */
         @keyframes progress {
             0% {
                 --progress: 0%;
@@ -675,7 +673,7 @@
             background-color: #028a53; /* Darker shade on hover */
         }
 
-        /* Timeline Content */
+/* Timeline Content */
         .timeline-content {
             background-color: var(--white);
             padding: 20px;
@@ -719,7 +717,7 @@
             z-index: -1;
         }
 
-        /* Responsive Design */
+/* Responsive Design */
         @media (max-width: 768px) {
             .timeline-item {
                 flex-direction: column;
@@ -782,6 +780,22 @@
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
 
+
+        /* Feedback Form */
+.rating {
+    margin: 10px 0;
+}
+
+.stars i {
+    cursor: pointer;
+    color: var(--accent-color);
+    transition: color 0.3s;
+}
+
+.stars i.active {
+    color: #FFD700; /* Gold color for selected stars */
+}
+
 /* Social Icons Container */
         .social-icons-container {
             display: flex;
@@ -799,7 +813,7 @@
         }
 
         .social-icon:hover {
-            color: #028a53; /* Darker shade on hover */
+            color: 01663A; /* Darker shade on hover */
             transform: translateY(-5px); /* Slight lift on hover */
         }
 
@@ -838,22 +852,24 @@
 
 <!-- Rest of your portfolio content -->
     <header>
-         <h1> Welcome My Portfolio 💼 </h1>
+         <h1> Welcome To My Portfolio 💼 </h1>
         <button id="dark-mode-toggle" onclick="toggleDarkMode()">🌙/☀️</button>
+    </div>
+   
     </header>
 
 <!-- Intro -->
     <main class="container">
         <!-- Intro Section -->
         <section id="intro" class="intro">
-            <p class="intro-text">Ruchitra Kumaresan<br>Front-End Developer | UX/UI Designer | Software Developer</p>
+            <p class="intro-text">Ruchitra Kumaresan <br> Front-End Developer | UX/UI Designer | Software Developer </p>
             <img src="1.jpg" alt="Ruchitra Kumaresan" class="profile-image">
-            <p><h3>Take a closer look at the milestones and experiences that have shaped my career path, detailed below.</h3></p>
+            <p><h3>Take a closer look at the milestones and experiences that have shaped my career path, detailed below 📖</h3></p>
         </section>
 
 <!-- About Me Section -->
         <section id="about" class="big-box">
-            <h2><u>About Me</u></h2>
+            <h2><u>About Me 👩🏻‍💼 </u></h2>
             <p>I am Ruchitra Kumaresan, a dedicated front-end developer with a Master's in Computer Science from New York Institute of Technology (NYIT) and a Bachelor's in Computer Science from REVA University, India. I specialize in front-end development, with technical expertise in JavaScript, React.js, HTML5, CSS, and software testing. Throughout my academic and professional career, I have successfully delivered robust applications and systems, demonstrating my ability to tackle complex challenges and provide high-quality solutions.</p>
             <p>In addition to my technical skills, I am well-versed in software development methodologies and have experience working in agile environments. My internships at Lernov and Sain Solutions in Bangalore, India, provided me with hands-on experience in front-end web development. I contributed to projects that improved user interaction and functionality. Furthermore, my coursework and projects, such as product recommendation systems and utilizing Recurrent Neural Networks (RNNs) for trading, have honed my analytical and problem-solving abilities.</p>
             <p>I am eager to explore new opportunities to apply my skills and creativity to drive impactful software development and tech industry projects. Let’s connect and discuss how we can collaborate to make a significant difference in this ever-evolving field.</p>
@@ -861,7 +877,7 @@
 
 <!-- Experience Section -->
         <section id="experience" class="big-box">
-            <h2><u>Experience</u></h2>
+            <h2><u>Experience 👩‍💻 </u></h2>
             <ul class="experience-list">
                 <li class="experience-item">
                     <div class="experience-box">
@@ -912,7 +928,7 @@
 
 <!-- Education Timeline Section -->
     <section id="timeline" class="big-box">
-        <h2><u>Education </u></h2>
+        <h2><u>Education 👩‍🎓 </u></h2>
         <div class="timeline-container">
             <!-- Timeline Item 1 -->
             <div class="timeline-item">
@@ -920,7 +936,7 @@
                     <i class="fas fa-graduation-cap"></i> <!-- Icon for education -->
                 </div>
                 <div class="timeline-content">
-                    <h3>New York Institute of Technology   <br> New York, USA. </h3>
+                    <h3>New York Institute of Technology <br> New York, USA. </h3>
                     <p><strong>Master's in Computer Science</strong></p>
                     <p>Sept 2022 - May 2024</p>
                 </div>
@@ -942,7 +958,7 @@
 
 <!-- Projects Section -->
         <section id="projects" class="big-box">
-    <h2> <u> Personal Projects </u> </h2> <!-- Removed <u> tag -->
+    <h2> <u> Personal Projects 👩‍💻</u> </h2> <!-- Removed <u> tag -->
     <div class="projects-container">
         <!-- Project 1: MoodTunes -->
         <div class="project-item">
@@ -955,9 +971,7 @@
                     <li>Local storage for saving user preferences.</li>
                     <li>Dynamic playlist generation for a personalized experience.</li></p>
                 <p>This project deepened my understanding of <strong>event handling, conditional rendering, and music-emotion mapping</strong> in web development.</ul></p>
-                <div class="project-skills">
-                    <p><strong>Skills:</strong> JavaScript, Natural Language Processing (NLP), Responsive Design</p>
-                </div>
+                <p><strong>Skills:</strong> JavaScript, Natural Language Processing (NLP), Responsive Design</p>
                 <a href="https://ruchitra98.github.io/Mood-Based-Playlist-Generator-Web-App/" class="project-link">🌐 Explore Project</a>
             </div>
         </div>
@@ -971,9 +985,7 @@
                 <p>  GiftGenie is an interactive web application designed to help users find the perfect gift for any occasion or recipient. The platform offers two main features:</p>
                    <p> <ul> <li><strong>Occasion-Based Gift Suggestions:</strong> Users select an occasion, specify the recipient's age and relationship, and receive tailored gift ideas.</li>
                     <li><strong>Gift Personality Quiz:</strong> A fun and engaging quiz that determines the recipient's personality type based on their preferences and suggests personalized gifts.</ul> </p>
-                <div class="project-skills">
                     <p><strong>Skills:</strong> Responsive Design, JavaScript, Media Queries, Dynamic Content Rendering</p>
-                </div>
                 <a href="https://ruchitra98.github.io/Gift-Suggestion-Website-for-Occasions-and-Ages/" class="project-link">🌐 Explore Project</a>
             </div>
         </div>
@@ -982,7 +994,7 @@
 
 
         <section id="academic-projects" class="big-box">
-            <h2><u> ACADEMIC PROJECTS 👩‍💻 </u></h2>   
+            <h2><u> Academic Projects 👩‍💻 </u></h2>   
 
   <!-- Project 1: Computer Graphics -->
             <div id="project1" class="project-section active">
@@ -1006,7 +1018,7 @@
                     </div>
 
                     <div class="project-navigation">
-                        <button class="next" onclick="showProject('project2')"> Project-2  </button>
+                        <button class="next" onclick="showProject('project2')"> Project-2 </button>
                     </div>
                 </div>
             </div> 
@@ -1028,7 +1040,7 @@
                     </div>
                     <div class="project-navigation">
                         <button class="previous" onclick="showProject('project1')"> Project-1 </button>
-                        <button class="next" onclick="showProject('project3')"> Project-3  </button>
+                        <button class="next" onclick="showProject('project3')">  Project-3  </button>
                     </div>
                 </div>
             </div>
@@ -1075,7 +1087,7 @@
                         <img src="python.jpg" alt="Product" title="python">
                     </div>
                     <div class="project-navigation">
-                        <button class="previous" onclick="showProject('project3')">  Project-3 </button>
+                        <button class="previous" onclick="showProject('project3')"> Project-3 </button>
                         <button class="next" onclick="showProject('project5')"> Project-5 </button>
                     </div>
                 </div>
@@ -1102,8 +1114,8 @@
                         <img src="c.jpg" alt="c" title="c">
                     </div>
                     <div class="project-navigation">
-                        <button class="previous" onclick="showProject('project4')">Project-4   </button>
-                        <button class="next" onclick="showProject('project6')"> Project-6 </button>
+                        <button class="previous" onclick="showProject('project4')">Project-4  </button>
+                        <button class="next" onclick="showProject('project6')">Project-6 </button>
                     </div>
                 </div>
             </div>
@@ -1134,7 +1146,7 @@
 
 <!-- Achievements Section -->
         <section id="achievements" class="big-box">
-            <h2><u>Achievements</u></h2>
+            <h2><u>Achievements 🌟 </u></h2>
              <ul class="achievements-list">
         <!-- Achievement 1 -->
         <li class="achievement-item">
@@ -1171,21 +1183,22 @@
       
 <!-- Certifications Section -->
     <section id="certifications" class="big-box">
-    <h2><u>Certifications </u></h2>
+    <h2><u>Certifications 🔖 </u></h2>
     <div class="certifications-container">
-        <!-- Certification 1 -->
+        
+         <!-- Certification 1 -->
         <div class="certification-item">
-            <p><strong>Fundamentals of UX Design</strong></p>
-            <p>Issued by: Coursera</p>
-            <p>Date: 2023</p>
-            <a href="https://www.coursera.org/account/accomplishments/verify/PB9T3XX2G598?utm_product=course" class="certificate-link">View Credential</a>
+            <p><strong> Career Essentials in Generative AI by Microsoft and LinkedIn </strong></p>
+            <p>Issued by: Microsoft & Linkedin </p>
+            <p>Date: March 2025</p>
+            <a href="https://www.linkedin.com/learning/certificates/10dc4ed6601f557b17dbcbb3ca5850215551bd4830bf88703f32e08916b186ab?trk=share_certificate&accountId=0&u=0&success=true&authUUID=nXNCbiKoQRGg%2F23Fvrs%2Fdw%3D%3D" class="certificate-link">View Credential</a>
         </div>
 
         <!-- Certification 2 -->
         <div class="certification-item">
             <p><strong>Project Planning with AI</strong></p>
             <p>Issued by: Sololearn</p>
-            <p>Date: 2023</p>
+            <p>Date: January 2025</p>
             <a href="https://www.sololearn.com/certificates/CC-BVBMOMJ8" class="certificate-link">View Credential</a>
         </div>
 
@@ -1193,7 +1206,7 @@
         <div class="certification-item">
             <p><strong>Front-End Development for Beginners</strong></p>
             <p>Issued by: Sololearn</p>
-            <p>Date: 2023</p>
+            <p>Date: January 2025</p>
             <a href="https://www.sololearn.com/en/certificates/CC-FDBAO6OJ" class="certificate-link">View Credential</a>
         </div>
 
@@ -1201,7 +1214,7 @@
         <div class="certification-item"> 
             <p><strong>Angular Framework</strong></p>
             <p>Issued by: Sololearn</p>
-            <p>Date: 2023</p>
+            <p>Date: January 2025</p>
             <a href="https://www.sololearn.com/en/certificates/CC-FDBAO6OJ" class="certificate-link">View Credential</a>
         </div>
 
@@ -1209,31 +1222,40 @@
         <div class="certification-item">
             <p><strong>JavaScript Programming</strong></p>
             <p>Issued by: Sololearn</p>
-            <p>Date: 2023</p>
+            <p>Date: January 2025</p>
             <a href="https://www.sololearn.com/en/certificates/CC-WNDH1R9B" class="certificate-link">View Credential</a>
         </div>
 
         <!-- Certification 6 -->
         <div class="certification-item">
+            <p><strong>Datacom Virtual Experience</strong></p>
+            <p>Issued by: Forage</p>
+            <p>Date: September 2024</p>
+            <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Datacom/L3NcyCoAjLno9d3T9_Datacom_SDD33Z7ZcLEQWzatn_1725566580521_completion_certificate.pdf" class="certificate-link">View Credential</a>
+        </div>
+
+         <!-- Certification 7 -->
+        <div class="certification-item">
+            <p><strong>Fundamentals of UX Design</strong></p>
+            <p>Issued by: Coursera</p>
+            <p>Date: July 2024</p>
+            <a href="https://www.coursera.org/account/accomplishments/verify/PB9T3XX2G598?utm_product=course" class="certificate-link">View Credential</a>
+        </div>
+
+        <!-- Certification 8 -->
+        <div class="certification-item">
             <p><strong>Goldman Sachs Virtual Experience</strong></p>
             <p>Issued by: Forage</p>
-            <p>Date: 2023</p>
+            <p>Date: January 2024</p>
             <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Goldman%20Sachs/NPdeQ43o8P9HJmJzg_Goldman%20Sachs_SDD33Z7ZcLEQWzatn_1705720063979_completion_certificate.pdf" class="certificate-link">View Credential</a>
         </div>
 
-        <!-- Certification 7 -->
-        <div class="certification-item">
-            <p><strong>Datacom Virtual Experience</strong></p>
-            <p>Issued by: Forage</p>
-            <p>Date: 2023</p>
-            <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Datacom/L3NcyCoAjLno9d3T9_Datacom_SDD33Z7ZcLEQWzatn_1725566580521_completion_certificate.pdf" class="certificate-link">View Credential</a>
-        </div>
     </div>
     </section>
 
 
         <section id="testimonials" class="big-box">
-        <h2><u>Testimonials</u></h2>
+        <h2><u>Testimonials 💬 </u></h2>
         <div class="testimonial-item">
             <p>I had the pleasure of studying with Ruchitra at Reva University. During this time, she consistently demonstrated exceptional dedication and academic excellence. She is not only highly intelligent but also incredibly supportive and always willing to lend a hand to classmates. She brings a positive attitude and a strong work ethic to everything she does. I am confident that she will excel in any professional setting and would be an asset to any team. I highly recommend her for any opportunity that comes her way. </p>
             <p><strong> Payal. P. Jain, AEM Former Developer<br> Morgan Stantly <br> Bangalore, India. </strong></p>
@@ -1242,7 +1264,7 @@
 
 <!-- Skills Matrix Section -->
     <section id="skills" class="big-box">
-        <h2><u>Skills</u></h2>
+        <h2><u>Skills 📚 </u></h2>
         <div class="skills-container">
             <!-- Skill 1: HTML -->
             <div class="skill-item">
@@ -1358,7 +1380,7 @@
 
 <!-- Resume Section -->
         <section id="resume" class="big-box">
-            <h2><u>Resume</u></h2>
+            <h2><u>Resume 📄</u></h2>
             <p>Want to dive into my experience? Click on the link to download my CV.</p>
             <a href="Ruchitra.K.pdf" class="btn" download><h4>Download Resume</h4></a>
         </section>
@@ -1375,25 +1397,27 @@
             </form>
         </section>
 
- 
-<!-- Google Analytics Integration -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXX-X"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'UA-XXXXXX-X');
-        </script>
-
 
 <!-- Feedback Section -->
         <section id="feedback" class="big-box">
-    <h2><u>Feedback📌 </u></h2>
-    <form class="feedback-form">
-        <textarea placeholder="Your feedback..." rows="3" required></textarea> <br>
-        <button type="submit">Submit Feedback</button>
-    </form>
-</section>
+            <h2><u>Feedback 🎯</u></h2>
+            <form class="feedback-form" onsubmit="submitFeedback(event)">
+                <textarea placeholder="Your feedback..." rows="3" required></textarea>
+                <div class="rating">
+                    <span>Rate my portfolio:</span>
+                    <div class="stars">
+                        <i class="fas fa-star" data-rating="1"></i>
+                        <i class="fas fa-star" data-rating="2"></i>
+                        <i class="fas fa-star" data-rating="3"></i>
+                        <i class="fas fa-star" data-rating="4"></i>
+                        <i class="fas fa-star" data-rating="5"></i>
+                    </div>
+                </div>
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </section>
+    </main>
+
 
 <!-- Footer -->
         <footer>
@@ -1425,6 +1449,7 @@
 <!-- Javascript Coding -->
     <script>
 
+// Dark Mode code
             function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -1432,16 +1457,6 @@
             }
         }
 
-// Function to show a specific project and hide others
-        function showProject(projectId) {
-            // Hide all project sections
-            document.querySelectorAll('.project-section').forEach(section => {
-                section.style.display = 'none';
-            });
-
-            // Show the selected project section
-            document.getElementById(projectId).style.display = 'flex';
-        }
 
 // Smooth scrolling for navigation links
         document.querySelectorAll('.nav-link, .button-container a').forEach(link => {
@@ -1457,6 +1472,7 @@
             });
         });
 
+
 //Contact Form Validation
         function validateForm(event) {
     const email = document.querySelector('input[type="email"]').value;
@@ -1465,6 +1481,30 @@
         event.preventDefault();
     }
 }
+
+// Star Rating System
+    document.querySelectorAll('.stars i').forEach(star => {
+        star.addEventListener('click', () => {
+            const rating = star.getAttribute('data-rating');
+            document.querySelectorAll('.stars i').forEach(s => {
+                s.classList.remove('active');
+                if (s.getAttribute('data-rating') <= rating) {
+                    s.classList.add('active');
+                }
+            });
+        });
+    });
+
+
+// Back to Top Button
+window.addEventListener('scroll', () => {
+    const backToTop = document.getElementById('back-to-top');
+    if (window.pageYOffset > 300) {
+        backToTop.style.display = 'block';
+    } else {
+        backToTop.style.display = 'none';
+    }
+});
 
        // Function to animate skill progress bars
         function animateSkills() {
