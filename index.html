@@ -9,140 +9,98 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* General Styles */
-        :root {
-            --primary-color: #2C3E50; /* Deep Blue for a strong, professional feel */
-            --secondary-color: #555; /* Dark Gray for better readability */
-            --background-color: #D3D3D3; /* Soft off-white for a clean look */
-            --accent-color: #BDC3C7;
-            --text-color: #222; /* Darker text for better contrast */
-            --white: #FFFFFF; /* Pure white for clarity */
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow for a premium look */
-            --background-position: center;
-            --dark-mode-bg: #121212; /* Dark mode background */
-            --dark-mode-text: #e0e0e0; /* Light text for dark mode */
-        }
+:root {
+    --primary-color: #2C3E50;
+    --secondary-color: #555;
+    --background-color: #D3D3D3;
+    --accent-color: #BDC3C7;
+    --text-color: #222;
+    --white: #FFFFFF;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --dark-mode-bg: #121212;
+    --dark-mode-text: #e0e0e0;
+}
 
-        body {
-            font-family: 'Roboto';
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            transition: background-color 0.3s, color 0.3s; /* Smooth transition for dark mode */
-        }
+body {
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
 
-        header {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: var(--shadow);
-            position: relative; /* Add this to position the dark mode button */
-        }
+/* Header Styles */
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: var(--shadow);
+    position: center;
+}
 
-        #dark-mode-toggle {
-            position: absolute; /* Position the button absolutely within the header */
-            top: 20px; /* Adjust the top position as needed */
-            right: 20px; /* Align the button to the right */
-            background-color: var(--primary-color);
-            color: var(--white);
-            border: none;
-            border-radius: 5px;
-            padding: 10px 15px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
+#dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
-        #dark-mode-toggle:hover {
-            background-color: #028a53; /* Darker shade on hover */
-            transform: translateY(-3px); /* Slight lift on hover */
-        }
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: var(--dark-mode-bg);
+    color: var(--dark-mode-text);
+}
 
-        body.dark-mode {
-            background-color: #121212;
-            color: #e0e0e0;
-        }
-        body.dark-mode .big-box {
-            background-color: #1e1e1e;
-            color: #e0e0e0;
-        }
+body.dark-mode .big-box {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 30px;
-        }
+/* Container Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+}
 
-        .intro {
-            text-align: center;
-            margin: 40px 0;
-        }
+.intro{
+    text-align: center;
+    margin: 40px 0;
+}
 
-       .profile-image {
-            width: 200px; /* Adjusted to passport photo width */
-            height: 250px; /* Adjusted to passport photo height */
-            border-radius: 0; /* Remove rounded corners for a square shape */
-            border: 1px solid var(--primary-color);  
-            margin: 30px auto;
-            display: block;
-            transition: transform 0.3s ease;
-            object-fit: cover; /* Ensures image fills the space without distortion */
-        }
+/* Profile Image Styles */
+.profile-image {
+    width: 200px;
+    height: 250px;
+    border-radius: 0;
+    border: 1px solid var(--primary-color);
+    margin: 30px auto;
+    display: block;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+}
 
-        .profile-image:hover {
-            transform: scale(1.05); /* Slight zoom effect on hover */
-        }
+/* Big Box Styles */
+.big-box {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-        .intro-text {
-            font-size: 1.7rem;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-
-        #about p {
-            text-align: justify; /* Justify text for even alignment on both sides */
-            margin-bottom: 15px; /* Add spacing between paragraphs */
-        }
-
-        .nav {
-            list-style-type: none;
-            padding: 0;
-            margin: 20px 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .nav-item {
-            margin: 0;
-        }
-
-        .nav-link {
-            color: var(--white);
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            background-color: var(--secondary-color);
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .nav-link:hover {
-            background-color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-
-        .big-box {
-            background-color: var(--white);
-            padding: 30px;
-            border-radius: 15px;
-            margin: 20px 0;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
+/* Add all other CSS styles from your original file here... */
         .big-box:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -176,8 +134,7 @@
             color: var(--white);
         }
 
-/* Experience Section Styling */
-           
+/* Experience Section Styling */ 
         .experience-list {
             list-style-type: none;
             padding: 0;
@@ -371,10 +328,13 @@
             color: white;
             cursor: pointer;
             transition: background-color 0.3s;
+            transition: all 0.3s ease;
         }
 
         .project-navigation button:hover {
             background-color: #028a53;
+            transform: scale(1.05);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         .project-navigation button:disabled {
@@ -862,7 +822,7 @@
     <main class="container">
         <!-- Intro Section -->
         <section id="intro" class="intro">
-            <p class="intro-text">Ruchitra Kumaresan <br> Front-End Developer | UX/UI Designer | Software Developer </p>
+            <p class="intro-text"> <h2> Ruchitra Kumaresan <br> Front-End Developer | UX/UI Designer | Software Developer </h2> </p>
             <img src="1.jpg" alt="Ruchitra Kumaresan" class="profile-image">
             <p><h3>Take a closer look at the milestones and experiences that have shaped my career path, detailed below 📖</h3></p>
         </section>
@@ -939,6 +899,7 @@
                     <h3>New York Institute of Technology <br> New York, USA. </h3>
                     <p><strong>Master's in Computer Science</strong></p>
                     <p>Sept 2022 - May 2024</p>
+                    <p> <b> Coursework </b>:-  Software Engineering, Programmimg Lamguage.</p>
                 </div>
             </div>
 
@@ -951,6 +912,7 @@
                     <h3>REVA University <br> Bangalore, India. </h3>
                     <p><strong>Bachelor's in Computer Science</strong></p>
                     <p>Aug 2016 - May 2020</p>
+                    <p> <b> Coursework </b>:- Web Development, Software Engineering, Artificial Intelligence. </p>
                 </div>
             </div>
         </div>
@@ -958,7 +920,11 @@
 
 <!-- Projects Section -->
         <section id="projects" class="big-box">
-    <h2> <u> Personal Projects 👩‍💻</u> </h2> <!-- Removed <u> tag -->
+    <h2> <u> Personal Projects 👩‍💻</u> </h2> 
+    <div class="project-indicator">
+    Project <span id="current-project-num">1</span>/6
+    </div>
+    <!-- Removed <u> tag -->
     <div class="projects-container">
         <!-- Project 1: MoodTunes -->
         <div class="project-item">
@@ -1448,30 +1414,74 @@
 
 <!-- Javascript Coding -->
     <script>
-
-// Dark Mode code
-            function toggleDarkMode() {
+// Dark Mode Toggle
+        document.getElementById('dark-mode-toggle').addEventListener('click', function() {
             document.body.classList.toggle('dark-mode');
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
                 document.body.classList.add('dark-mode');
             }
-        }
-
-
-// Smooth scrolling for navigation links
-        document.querySelectorAll('.nav-link, .button-container a').forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault(); // Prevent default anchor behavior
-                const targetId = this.getAttribute('href').substring(1); // Get the target section ID
-                const targetSection = document.getElementById(targetId); // Find the target section
-
-                if (targetSection) {
-                    // Smooth scroll to the target section
-                    targetSection.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
         });
 
+// Project Navigation System
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize first project as active
+    let currentProject = 1;
+    const totalProjects = 6;
+    
+    // Function to show a specific project
+    function showProject(projectNumber) {
+        // Hide all project sections
+        document.querySelectorAll('.project-section').forEach(section => {
+            section.classList.remove('active');
+        });
+        
+        // Show the requested project
+        const projectToShow = document.getElementById(`project${projectNumber}`);
+        if (projectToShow) {
+            projectToShow.classList.add('active');
+        }
+        
+        // Update current project
+        currentProject = projectNumber;
+    }
+    
+    // Next button functionality
+    document.querySelectorAll('.next').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            let nextProject = currentProject + 1;
+            if (nextProject > totalProjects) {
+                nextProject = 1; // Wrap around to first project
+            }
+            showProject(nextProject);
+        });
+    });
+    
+    // Previous button functionality
+    document.querySelectorAll('.previous').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            let prevProject = currentProject - 1;
+            if (prevProject < 1) {
+                prevProject = totalProjects; // Wrap around to last project
+            }
+            showProject(prevProject);
+        });
+    });
+    
+    // Initialize first project
+    showProject(1);
+    
+    // Add click handlers for direct project links if needed
+    document.querySelectorAll('[onclick^="showProject"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const projectId = this.getAttribute('onclick').match(/'([^']+)'/)[1];
+            const projectNum = parseInt(projectId.replace('project', ''));
+            showProject(projectNum);
+        });
+    });
+});
 
 //Contact Form Validation
         function validateForm(event) {
@@ -1495,18 +1505,34 @@
         });
     });
 
+// Smooth Scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
 
 // Back to Top Button
-window.addEventListener('scroll', () => {
-    const backToTop = document.getElementById('back-to-top');
-    if (window.pageYOffset > 300) {
-        backToTop.style.display = 'block';
-    } else {
-        backToTop.style.display = 'none';
-    }
-});
+            window.addEventListener('scroll', () => {
+                const backToTop = document.getElementById('back-to-top');
+                backToTop.style.display = window.pageYOffset > 300 ? 'block' : 'none';
+            });
 
-       // Function to animate skill progress bars
+            document.getElementById('back-to-top').addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+// Initialize on load
+            document.addEventListener('DOMContentLoaded', () => {
+                showProject('project1');
+                animateSkills();
+            });
+
+         // Function to animate skill progress bars
         function animateSkills() {
             const skillProgressElements = document.querySelectorAll('.skill-progress');
 
@@ -1520,24 +1546,7 @@ window.addEventListener('scroll', () => {
         // Run the animation when the page loads
         window.addEventListener('load', animateSkills);
                    
-// Show "Back to Top" button after scrolling down
-            window.addEventListener('scroll', function () {
-                var backToTop = document.getElementById('back-to-top');
-                if (window.pageYOffset > 300) { // Show after scrolling 300px
-                    backToTop.style.display = 'block';
-                } else {
-                    backToTop.style.display = 'none';
-                }
-            });
 
-            // Smooth scroll to top when "Back to Top" button is clicked
-            document.getElementById('back-to-top').addEventListener('click', function (event) {
-                event.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth' // Smooth scrolling
-                });
-            });
     </script>
 </body>
 
