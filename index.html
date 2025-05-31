@@ -7,778 +7,867 @@
     <meta name="keywords" content="Ruchitra Kumaresan, Front-End Developer, UX/UI Designer, Software Developer, Portfolio"> 
     <title>Ruchitra Kumaresan - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* General Styles */
-:root {
-    --primary-color: #2C3E50;
-    --secondary-color: #555;
-    --background-color: #D3D3D3;
-    --accent-color: #BDC3C7;
-    --text-color: #222;
-    --white: #FFFFFF;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    --dark-mode-bg: #121212;
-    --dark-mode-text: #e0e0e0;
-}
-
-body {
-    font-family: 'Roboto';
-    margin: 0;
-    padding: 0;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-/* Header Styles */
-header {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 20px 0;
-    text-align: center;
-    box-shadow: var(--shadow);
-    position: center;
-}
-
-#dark-mode-toggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: var(--primary-color);
-    color: var(--white);
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: var(--dark-mode-bg);
-    color: var(--dark-mode-text);
-}
-
-body.dark-mode .big-box {
-    background-color: #1e1e1e;
-    color: #e0e0e0;
-}
-
-/* Container Styles */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 30px;
-}
-
-.intro{
-    text-align: center;
-    margin: 40px 0;
-}
-
-/* Profile Image Styles */
-.profile-image {
-    width: 200px;
-    height: 250px;
-    border-radius: 0;
-    border: 1px solid var(--primary-color);
-    margin: 30px auto;
-    display: block;
-    transition: transform 0.3s ease;
-    object-fit: cover;
-}
-
-/* Big Box Styles */
-.big-box {
-    background-color: var(--white);
-    padding: 30px;
-    border-radius: 15px;
-    text-align: justify;
-    margin: 20px 0;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Add all other CSS styles from your original file here... */
-        .big-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        /* Modern Color Scheme and Variables */
+        :root {
+            --primary-color: #2563eb;  /* Vibrant blue */
+            --primary-dark: #1e40af;
+            --primary-light: #93c5fd;
+            --secondary-color: #10b981; /* Emerald green */
+            --dark-color: #1e293b;
+            --light-color: #f8fafc;
+            --gray-color: #64748b;
+            --light-gray: #e2e8f0;
+            --accent-color: #f59e0b; /* Amber */
+            --danger-color: #ef4444;
+            
+            --text-color: var(--dark-color);
+            --text-light: var(--light-color);
+            --bg-color: var(--light-color);
+            --card-bg: #ffffff;
+            
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.2);
+            
+            --border-radius-sm: 4px;
+            --border-radius-md: 8px;
+            --border-radius-lg: 12px;
+            --border-radius-xl: 16px;
+            
+            --transition-base: all 0.3s ease;
+            --transition-fast: all 0.15s ease;
+            
+            --max-width: 1200px;
+            --section-padding: 80px 0;
+            
+            /* Dark mode variables */
+            --dark-bg: #0f172a;
+            --dark-card: #1e293b;
+            --dark-text: #e2e8f0;
+            --dark-border: #334155;
         }
 
-        .button-container {
-            display: flex;
-            justify-content: justify;
-            margin: 20px 0;
-        }
-
-        .button-container a {
-            text-decoration: none;
-            display: inline-block;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .button-container a:hover {
-            transform: translateY(-3px);
-        }
-
-        .previous {
-            background-color: var(--secondary-color);
-            color: var(--white);
-        }
-
-        .next {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-
-/* Experience Section Styling */ 
-        .experience-list {
-            list-style-type: none;
+        /* Base Styles */
+        * {
+            margin: 0;
             padding: 0;
-            margin: 0;
+            box-sizing: border-box;
         }
 
-        .experience-item {
-            margin-bottom: 30px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: var(--transition-base);
+            overflow-x: hidden;
         }
 
-        .experience-item:hover {
-            transform: translateY(-5px); /* Slight lift on hover */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+        body.dark-mode {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
         }
 
-        .experience-box {
-            background-color: rgba(255, 255, 255, 0.95);
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease, transform 0.3s ease;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            line-height: 1;
+            margin-bottom: 1rem;
+
         }
 
-        .experience-box:hover {
-            background-color: rgba(245, 245, 245, 0.95); /* Slightly darker on hover */
-            transform: scale(1.02); /* Slight zoom effect on hover */
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
         }
 
-        .experience-item h3 {
-            margin-top: 0;
-            font-size: 1.5rem;
+        a {
+            text-decoration: none;
             color: var(--primary-color);
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-            transition: color 0.3s ease; /* Smooth color transition */
+            transition: var(--transition-fast);
         }
 
-        .experience-item:hover h3 {
-            color: #028a53; /* Change heading color on hover */
+        a:hover {
+            color: var(--primary-dark);
         }
 
-        .experience-item p {
-                    margin-bottom: 0;
-                    text-align: justify;
-                    font-size: 1rem;
-                    line-height: 1.6;
-                    color: var(--text-color);
-                    transition: color 0.3s ease; /* Smooth text color transition */
-                }
-
-                .experience-item:hover p {
-                    color: var(--primary-color); /* Change text color on hover */
-                }
-
-                .experience-skills {
-                    margin-top: 10px;
-                    display: flex;
-                    justify-content: left;
-                    gap: 20px;
-                }
-
-                .experience-skills img {
-                    width: 30px;
-                    height: auto;
-                    transition: transform 0.2s ease; /* Smooth icon transition */
-                }
-
-                .experience-skills img:hover {
-                    transform: scale(1.2); /* Slight zoom on hover */
-                }
-
-/* Projects Section Layout */
-                .projects-container {
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 20px; /* Space between projects */
-                    justify-content: space-between; /* Distribute space evenly */
-                }
-
-                .project-item {
-                    flex: 1 1 calc(50% - 20px); /* Two columns with gap */
-                    background-color: var(--white);
-                    padding: 20px;
-                    border-radius: 15px;
-                    box-shadow: var(--shadow);
-                    transition: transform 0.3s ease, box-shadow 0.3s ease;
-                }
-
-                .project-item:hover {
-                    transform: translateY(-5px);
-                    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-                }
-
-                .project-item h2 {
-                    margin-top: 0;
-                    font-size: 1.5rem;
-                    color: var(--primary-color);
-                    border-bottom: 2px solid var(--primary-color);
-                    padding-bottom: 10px;
-                    margin-bottom: 15px;
-                }
-
-                .project-item p {
-                    margin-bottom: 0;
-                    text-align: justify;
-                    font-size: 1rem;
-                    line-height: 1.6;
-                    color: var(--text-color);
-                }
-
-                .project-item a {
-                    display: inline-block;
-                    margin-top: 15px;
-                    padding: 10px 20px;
-                    border-radius: 5px;
-                    background-color: var(--primary-color);
-                    color: var(--white);
-                    text-decoration: none;
-                    transition: background-color 0.3s;
-                }
-
-                .project-item a:hover {
-                    background-color: #028a53;
-                }
-
-                /* Responsive Design for Projects Section */
-                @media (max-width: 768px) {
-                    .project-item {
-                        flex: 1 1 100%; /* Single column on smaller screens */
-                    }
-                }
-
-/* acadamic Project Section Styles */
-        .project-section {
-            display: none; /* Hide all sections by default */
+        img {
+            max-width: 100%;
+            height: 50%;
+            display: block;
         }
 
-        .project-section.active {
-            display: flex; /* Show the active section */
+        ul, ol {
+            list-style: none;
         }
 
-        .image-box {
-            flex: 1;
-            margin-right: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 5px;
         }
 
-        .image-box img {
-            width: 60%;
-            height: auto;
-            max-width: 300px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        .section {
+            padding: var(--section-padding);
         }
 
-        .content-box {
-            flex: 2;
-            text-align: justify;
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
         }
 
-        .box {
-            padding: 20px;
-            border: 2px solid #333;
-            background-color: #f9f9f9;
-            width: fit-content;
-            border-radius: 8px;
-            margin: 20px;
-            text-align: justify;
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
         }
 
-        .box h2 {
-            margin: 0;
-            color: #333;
+        .text-center {
+            text-align: center;
         }
 
-        .project-navigation {
+        .text-center .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: var(--border-radius-md);
+            font-weight: 500;
+            transition: var(--transition-base);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            color: white;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: #0d9488;
+        }
+
+        .btn-accent {
+            background-color: var(--accent-color);
+        }
+
+        .btn-accent:hover {
+            background-color: #d97706;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            position: relative;
+            z-index: 100;
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-container {
             display: flex;
             justify-content: space-between;
-            margin-top: 20px;
+            align-items: center;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        .project-navigation button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            background-color: #04AA6D;
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
             color: white;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            transition: all 0.3s ease;
         }
 
-        .project-navigation button:hover {
-            background-color: #028a53;
-            transform: scale(1.05);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        .logo span {
+            color: var(--accent-color);
         }
 
-        .project-navigation button:disabled {
-            background-color: #ccc;
-            cursor: not-allowed;
-        }
-
-        .project-skills {
-        margin-top: 20px;
-        display: flex;
-        justify-content: left;
-        gap: 30px;
-        }
-
-        .project-skills img {
-            width: 40px; /* Small icons */
-            height: auto;
-            transition: transform 0.2s;
-        }
-
-        .project-skills img:hover {
-            transform: scale(1.1); /* Slight zoom on hover */
-        }
-      
-/* Certifications Section */
-                .certifications-container {
-                    display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                    gap: 20px;
-                    justify-content: center;
-                    padding: 20px;
-                }
-
-                .certification-item {
-                    background-color: var(--white);
-                    padding: 20px;
-                    border-radius: 10px;
-                    box-shadow: var(--shadow);
-                    text-align: center;
-                    transition: transform 0.3s ease, box-shadow 0.3s ease;
-                }
-
-                .certification-item:hover {
-                    transform: translateY(-5px);
-                    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-                }
-
-                .certificate-image {
-                    width: 100%;
-                    height: auto;
-                    border-radius: 10px;
-                    margin-bottom: 15px;
-                }
-
-                .certification-item p {
-                    margin: 10px 0;
-                    font-size: 0.9rem;
-                    color: var(--text-color);
-                }
-
-                .certification-item p strong {
-                    font-size: 1rem;
-                    color: var(--primary-color);
-                }
-
-                .certificate-link {
-                    display: inline-block;
-                    margin-top: 10px;
-                    padding: 10px 15px;
-                    border-radius: 5px;
-                    background-color: var(--primary-color);
-                    color: var(--white);
-                    text-decoration: none;
-                    transition: background-color 0.3s;
-                }
-
-                .certificate-link:hover {
-                    background-color: #028a53;
-                }
-
-
-/* Achievements Section Styling */
-                .achievements-list {
-                    list-style-type: none;
-                    padding: 0;
-                    margin: 0;
-                }
-
-                .achievement-item {
-                    margin-bottom: 30px;
-                    transition: transform 0.3s ease, box-shadow 0.3s ease;
-                }
-
-                .achievement-item:hover {
-                    transform: translateY(-5px);
-                    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-                }
-
-                .achievement-box {
-                    background-color: rgba(255, 255, 255, 0.95);
-                    padding: 25px;
-                    border-radius: 15px;
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                    transition: background-color 0.3s ease;
-                }
-
-                .achievement-box:hover {
-                    background-color: rgba(245, 245, 245, 0.95); /* Slightly darker on hover */
-                }
-
-                .achievement-box h3 {
-                    margin-top: 0;
-                    font-size: 1.5rem;
-                    color: var(--primary-color);
-                    border-bottom: 2px solid var(--primary-color);
-                    padding-bottom: 10px;
-                    margin-bottom: 15px;
-                }
-
-                .achievement-box p {
-                    margin-bottom: 10px;
-                    font-size: 1rem;
-                    line-height: 1.6;
-                    color: var(--text-color);
-                }
-
-                .achievement-box p strong {
-                    color: var(--primary-color);
-                    font-weight: bold;
-                }
-
-                .achievement-link {
-                    display: inline-block;
-                    margin-top: 10px;
-                    padding: 10px 15px;
-                    border-radius: 5px;
-                    background-color: var(--primary-color);
-                    color: var(--white);
-                    text-decoration: none;
-                    transition: background-color 0.3s;
-                }
-
-                .achievement-link:hover {
-                    background-color: #028a53;
-                }
-
-
-/* Additional Styles for New Features */
-/* Skills Container */
-                .skills-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
-        padding: 20px;
-    }
-
-    /* Skill Item */
-    .skill-item {
-        text-align: center;
-        width: 150px;
-        position: relative;
-        perspective: 1000px; /* For 3D effect */
-    }
-
-    .skill-item:hover .skill-circle {
-        transform: rotateY(180deg);
-    }
-
-    .skill-item:hover .skill-tooltip {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    /* Skill Progress */
-    .skill-progress {
-        position: relative;
-        width: 120px;
-        height: 120px;
-        margin: 0 auto;
-    }
-
-    .skill-circle {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background: conic-gradient(
-            var(--primary-color) 0%,
-            var(--primary-color) var(--progress),
-            var(--accent-color) var(--progress),
-            var(--accent-color) 100%
-        );
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        transform-style: preserve-3d;
-        transition: transform 0.8s ease;
-    }
-
-    .skill-circle::before {
-        content: '';
-        position: absolute;
-        width: 90%;
-        height: 90%;
-        border-radius: 50%;
-        background: linear-gradient(145deg, var(--white), #f0f0f0);
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.5);
-    }
-
-    .skill-value {
-        position: relative;
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: var(--primary-color);
-        transform: translateZ(50px); /* 3D effect */
-    }
-
-    /* Skill Title */
-    .skill-item h3 {
-        margin-top: 15px;
-        font-size: 1.2rem;
-        color: var(--primary-color);
-        transition: color 0.3s ease;
-    }
-
-    .skill-item:hover h3 {
-        color: #028a53; /* Darker shade on hover */
-    }
-
-    /* Skill Tooltip */
-    .skill-tooltip {
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%) translateY(-10px);
-        background-color: var(--primary-color);
-        color: var(--white);
-        padding: 10px;
-        border-radius: 5px;
-        font-size: 0.9rem;
-        opacity: 0;
-        transition: opacity 0.3s ease, transform 0.3s ease;
-        pointer-events: none;
-        width: 200px;
-        text-align: center;
-        z-index: 10;
-    }
-
-    .skill:hover .skill-tooltip {
-        opacity: 1;
-        transform: translateX(-50%) translateY(-15px);
-        pointer-events: auto;
-    }
-
-/* Animation for Skill Progress */
-        @keyframes progress {
-            0% {
-                --progress: 0%;
-            }
-            100% {
-                --progress: var(--data-progress);
-            }
-        }
-
-        .skill-progress {
-            animation: progress 1.5s ease-out forwards;
-    }
-
-/* Timeline Item */
-        .timeline-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        /* Timeline Icon */
-        .timeline-icon {
-            background-color: var(--primary-color);
-            color: var(--white);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+        /* Navigation */
+        nav {
             display: flex;
             align-items: center;
-            justify-content: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: var(--transition-base);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
             font-size: 1.5rem;
-            margin-right: 20px;
-            flex-shrink: 0;
-            transition: transform 0.3s ease, background-color 0.3s ease;
+            cursor: pointer;
         }
 
-        .timeline-icon:hover {
-            transform: scale(1.1);
-            background-color: #028a53; /* Darker shade on hover */
+        /* Dark Mode Toggle */
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+            cursor: pointer;
         }
 
-/* Timeline Content */
-        .timeline-content {
-            background-color: var(--white);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            flex-grow: 1;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .theme-toggle i {
+            font-size: 1.2rem;
+            color: white;
         }
 
-        .timeline-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
         }
 
-        .timeline-content h3 {
-            margin-top: 0;
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-        }
-
-        .timeline-content p {
-            margin: 5px 0;
-            color: var(--text-color);
-        }
-
-        .timeline-content p strong {
-            color: var(--primary-color);
-        }
-
-        /* Timeline Line */
-        .timeline-container::before {
+        .hero::before {
             content: '';
             position: absolute;
             top: 0;
-            bottom: 0;
-            left: 25px; /* Adjust based on icon size */
-            width: 4px;
-            background-color: var(--primary-color);
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+            opacity: 0.5;
             z-index: -1;
         }
 
-/* Responsive Design */
-        @media (max-width: 768px) {
-            .timeline-item {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .timeline-icon {
-                margin-right: 0;
-                margin-bottom: 20px;
-            }
-
-            .timeline-container::before {
-                left: 50%;
-                transform: translateX(-50%);
-            }
+        .hero-content {
+            max-width: 600px;
         }
 
-/* Contact Form */
-        .contact-form {
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-color);
+            margin-bottom: 2rem;
+        }
+
+        .hero-image {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45%;
             max-width: 600px;
+            border-radius: var(--border-radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            margin-top: 2rem;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--card-bg);
+            position: relative;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.3) 0%, rgba(16, 185, 129, 0.3) 100%);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-content {
+            position: relative;
+        }
+
+        .about-text {
+            margin-bottom: 2rem;
+        }
+
+        .about-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 2rem;
+        }
+
+        .skill-tag {
+            background-color: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Experience Section */
+        .experience {
+            background-color: var(--light-gray);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-left: 50px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 25px;
+            height: 100%;
+            width: 2px;
+            background: var(--primary-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-base);
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -50px;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 4px solid var(--light-color);
+        }
+
+        .timeline-date {
+            position: absolute;
+            left: -120px;
+            top: 30px;
+            width: 80px;
+            text-align: right;
+            color: var(--gray-color);
+            font-weight: 500;
+        }
+
+        .timeline-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-company {
+            display: inline-block;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .timeline-description {
+            margin-bottom: 1rem;
+        }
+
+        .timeline-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        /* Projects Section */
+        .projects {
+            background-color: var(--card-bg);
+        }
+
+        .projects-filter {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: var(--transition-base);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-base);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-base);
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .project-description {
+            margin-bottom: 1.5rem;
+            color: var(--gray-color);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tag {
+            background-color: var(--light-gray);
+            color: var(--dark-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Skills Section */
+        .skills {
+            background-color: var(--light-gray);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: var(--transition-base);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .skill-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-description {
+            color: var(--gray-color);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--card-bg);
+        }
+
+        .testimonials-container {
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        .contact-form input, .contact-form textarea {
+        .testimonial-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: var(--primary-light);
+            font-family: serif;
+            line-height: 1;
+            opacity: 0.3;
+        }
+
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            color: var(--gray-color);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+
+        .author-image img {
             width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 1px solid var(--secondary-color);
+            height: 100%;
+            object-fit: cover;
+        }
+       
+
+        .author-info h4 {
+            margin-bottom: 0.25rem;
+            color: var(--primary-color);
         }
 
-        .contact-form button {
+        .author-info p {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--light-gray);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            min-width: 40px;
+        }
+
+        .contact-details h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .contact-form {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius-md);
+            font-family: inherit;
+            transition: var(--transition-base);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-logo span {
+            color: var(--accent-color);
+        }
+
+        .footer-about {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition-base);
+        }
+
+        .social-link:hover {
             background-color: var(--primary-color);
-            color: var(--white);
-            padding: 10px 20px;
+            transform: translateY(-3px);
+        }
+
+        .footer-links h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+        }
+
+        .footer-links ul {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: var(--transition-base);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-newsletter p {
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .newsletter-form {
+            display: flex;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 12px 15px;
             border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            border-radius: var(--border-radius-md) 0 0 var(--border-radius-md);
+            font-family: inherit;
         }
 
-        .contact-form button:hover {
-            background-color: #028a53;
-        }
-
-/* Call-to-Action Button */
-        .cta-button {
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
+        .newsletter-btn {
+            padding: 0 20px;
+            background-color: var(--primary-color);
             color: white;
             border: none;
-            border-radius: 50px;
-            padding: 15px 30px;
-            font-size: 18px;
+            border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: var(--transition-base);
         }
 
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        .newsletter-btn:hover {
+            background-color: var(--primary-dark);
         }
 
-
-        /* Feedback Form */
-.rating {
-    margin: 10px 0;
-}
-
-.stars i {
-    cursor: pointer;
-    color: var(--accent-color);
-    transition: color 0.3s;
-}
-
-.stars i.active {
-    color: #FFD700; /* Gold color for selected stars */
-}
-
-/* Social Icons Container */
-        .social-icons-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px; /* Space between icons */
-            margin-top: 20px;
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
         }
 
-        /* Social Icon Styling */
-        .social-icon {
-            font-size: 2rem; /* Icon size */
-            color: var(--primary-color); /* Use your primary color */
-            text-decoration: none;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        .social-icon:hover {
-            color: 01663A; /* Darker shade on hover */
-            transform: translateY(-5px); /* Slight lift on hover */
-        }
-
-/* Back to Top Button Styling */
+        /* Back to Top Button Styling */
     #back-to-top {
         position: fixed;
         bottom: 20px;
@@ -807,779 +896,870 @@ body.dark-mode .big-box {
     #back-to-top i {
         vertical-align: middle; /* Center the icon */
     }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
+
+        body.dark-mode .hero {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+        }
+
+        body.dark-mode .about,
+        body.dark-mode .projects,
+        body.dark-mode .testimonials,
+        body.dark-mode .contact-form {
+            background-color: var(--dark-card);
+        }
+
+        body.dark-mode .experience,
+        body.dark-mode .skills,
+        body.dark-mode .contact {
+            background-color: #0f172a;
+        }
+
+        body.dark-mode .section-title,
+        body.dark-mode h1,
+        body.dark-mode h2,
+        body.dark-mode h3,
+        body.dark-mode h4,
+        body.dark-mode h5,
+        body.dark-mode h6 {
+            color: var(--dark-text);
+        }
+
+        body.dark-mode .hero-subtitle,
+        body.dark-mode .about-text,
+        body.dark-mode .project-description,
+        body.dark-mode .skill-description,
+        body.dark-mode .testimonial-content,
+        body.dark-mode .form-label {
+            color: rgba(226, 232, 240, 0.8);
+        }
+
+        body.dark-mode .project-card,
+        body.dark-mode .skill-card,
+        body.dark-mode .testimonial-card,
+        body.dark-mode .timeline-item {
+            background-color: var(--dark-card);
+            border: 1px solid var(--dark-border);
+        }
+
+        body.dark-mode .form-control {
+            background-color: var(--dark-card);
+            border-color: var(--dark-border);
+            color: var(--dark-text);
+        }
+
+        body.dark-mode .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        .delay-5 { animation-delay: 1s; }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-image {
+                width: 40%;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 15px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-dark);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                gap: 20px;
+                transform: translateY(-150%);
+                transition: var(--transition-base);
+                z-index: 99;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+            }
+            
+            .hero {
+                padding-top: 100px;
+                text-align: center;
+            }
+            
+            .hero-content {
+                max-width: 100%;
+            }
+            
+            .hero-image {
+                position: relative;
+                width: 100%;
+                max-width: 500px;
+                margin: 0 auto;
+                transform: none;
+                margin-top: 40px;
+            }
+            
+            .hero-cta {
+                justify-content: center;
+            }
+            
+            .about-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+            
+            .timeline::before {
+                left: 15px;
+            }
+            
+            .timeline-item {
+                padding-left: 40px;
+            }
+            
+            .timeline-item::before {
+                left: -40px;
+            }
+            
+            .timeline-date {
+                position: relative;
+                left: auto;
+                top: auto;
+                width: auto;
+                text-align: left;
+                margin-bottom: 5px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .projects-filter {
+                flex-wrap: wrap;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-input {
+                border-radius: var(--border-radius-md);
+                margin-bottom: 10px;
+            }
+            
+            .newsletter-btn {
+                border-radius: var(--border-radius-md);
+                padding: 12px;
+            }
+        }
+
+
     </style>
 </head>
 <body>
-
-<!-- Rest of your portfolio content -->
+    <!-- Header -->
     <header>
-         <h1> Welcome To My Portfolio 💼 </h1>
-        <button id="dark-mode-toggle" onclick="toggleDarkMode()">🌙/☀️</button>
-    </div>
-   
+        <div class="header-container">
+            <a href="#" class="logo">Ruchitra.K </a>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                
+                <div class="theme-toggle" id="dark-mode-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
     </header>
 
-<!-- Intro -->
-    <main class="container">
-        <!-- Intro Section -->
-        <section id="intro" class="intro">
-            <p class="intro-text"> <h2> Ruchitra Kumaresan <br> Front-End Developer | UX/UI Designer | Software Developer </h2> </p>
-            <img src="1.jpg" alt="Ruchitra Kumaresan" class="profile-image">
-            <p><h3>Take a closer look at the milestones and experiences that have shaped my career path, detailed below 📖</h3></p>
-        </section>
-
-<!-- About Me Section -->
-        <section id="about" class="big-box">
-            <h2><u>About Me 👩🏻‍💼 </u></h2>
-           <p> I’m Ruchitra Kumaresan, a dedicated front-end developer with a Master’s degree in Computer Science from New York Institute of Technology (NYIT) and a Bachelor’s degree from REVA University, India. Over the past two years, I’ve gained professional experience at Ambica Constructions & Contractors, where I focused on full-cycle front-end development—designing interfaces, writing code, testing, and supporting real-world applications. My technical expertise centers around building intuitive, responsive user interfaces using React and TypeScript, alongside strong skills in JavaScript, HTML5, CSS, and software testing. I enjoy crafting digital experiences that are both functional and visually engaging, with a keen attention to detail and a quick ability to adapt to new tools and technologies. Beyond my technical background, I have hands-on experience working in agile environments and collaborating closely with cross-functional teams—including designers, backend developers, and project managers—to deliver scalable, business-focused solutions. My internships at Lernov and Sain Solutions in Bangalore further enriched my front-end development skills and user-focused mindset. I’m passionate about problem-solving and collaboration, and I thrive under pressure and tight deadlines. I’m always excited to embrace new challenges and bring creativity, energy, and thoughtful precision to every project I work on. Let’s connect and explore how we can build impactful software solutions together. </p>
-        </section>
-
-<!-- Experience Section -->
-        <section id="experience" class="big-box">
-            <h2><u>Experience 👩‍💻 </u></h2>
-            <ul class="experience-list">
-                <li class="experience-item">
-                    <div class="experience-box">
-                        <h3>Software Engineer</h3>
-                        <p>Ambica Constructions and Contractors, Bangalore, India <br> (June 2020 to July 2022)</p>
-                        <p> At Ambica Constructions & Contractors, I worked as a front-end-focused Software Engineer involved in full-cycle development. My work spanned from designing and coding interfaces to testing, deploying, and supporting software solutions used across the company.
-                        •   Built and maintained user interfaces with React and TypeScript, ensuring accessibility, responsiveness, and performance.
-                        •   Collaborated closely with designers, backend developers, and project managers to deliver efficient, scalable front-end solutions.
-                        •   Took ownership of problem-solving and was often the go-to for debugging UI issues and improving user experience.
-                        •   Gained a reputation for being proactive, detail-oriented, and able to stay calm and effective under tight project timelines. </p>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content animate">
+                <h1 class="hero-title">Namaste🙏🏻,  I'm Ruchitra Kumaresan</h1>
+                <p class="hero-subtitle">Front-End Developer | UX/UI Designer | Software Engineer</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn">View My Work</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
                 </div>
-                </li>
-                
-                <li class="experience-item">
-                    <div class="experience-box">
-                        <h3>Website Developer</h3>
-                        <p>Lernov, Bangalore, India <br> (July 2021 to August 2021)</p>
-                        <p>Employed Sublime Text to systematically organize and optimize HTML code, actively contributing to the website's layout. Attained significant success in project advancement, developing a fully functional website closely aligned with 90% of detailed client specifications. Building user interfaces that are elegant and encourage exploration. Developed practical expertise in front-end development using Sublime Text-3, achieving proficiency levels of 50% to 60% in crafting template designs. Acquired a versatile skill set encompassing JavaScript, CSS, React.js, PHP, WordPress, and HTML, and utilizing tools like Bootstrap and Font Awesome. The cultivation of solid communication abilities complemented these skills.</p>
-                   
-                </li>
+            </div>
+        </div>
+    </section>
 
-                <li class="experience-item">
-                    <div class="experience-box">
-                        <h3>Website Developer and designer</h3>
-                        <p>Sain Solutions, Bangalore, India <br> (February 2020 to May 2020)</p>
-                        <p>Successfully designed aesthetically pleasing interfaces with advanced functionality, enhanced teamwork, and problem-solving skills. Implemented new user interfaces for a retail client, leading to a 20% improvement in user engagement within two months of deployment. Augmented coding abilities through acquiring advanced techniques, staying at the forefront of web development practices, and gaining hands-on experience, including PHP. Demonstrated expertise in diverse design methodologies, achieving 70-80% project completion rates and staying current with advanced coding techniques, fostering effective teamwork and collaborative problem-solving.</p>
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title text-center animate">About Me</h2>
+            
+            <div class="about-container">
+                <div class="about-content animate delay-1">
+                    <p class="about-text">
+                        I'm Ruchitra Kumaresan, a dedicated front-end developer with a Master's degree in Computer Science from New York Institute of Technology (NYIT) and a Bachelor's degree from REVA University, India. Over the past two years, I've gained professional experience at Ambica Constructions & Contractors, where I focused on full-cycle front-end development—designing interfaces, writing code, testing, and supporting real-world applications.
+                    </p>
+                    <p class="about-text">
+                        My technical expertise centers around building intuitive, responsive user interfaces using React and TypeScript, alongside strong skills in JavaScript, HTML5, CSS, and software testing. I enjoy crafting digital experiences that are both functional and visually engaging, with a keen attention to detail and a quick ability to adapt to new tools and technologies.
+                    </p>
+
+                    <p class="about-text">
+                        I’m passionate about problem-solving and collaboration, and I thrive under pressure and tight deadlines. I’m always excited to embrace new challenges and bring creativity, energy, and thoughtful precision to every project I work on. Let’s connect and explore how we can build impactful software solutions together.
+                    </p>
+
+                    <p class=" about-text"> When I'm not coding, you might find me:
+                        • Volunteering at the 9/11 Memorial, helping visitors connect with history
+                        • Building passion projects like Gift Genie, as we know, who doesn't struggle with gift ideas?
+                        • Experimenting with 3D graphics – I built a rendering engine to understand how games create immersive worlds. </p>
                     
+                    <div class="about-skills">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">UX/UI Design</span>
+                        <span class="skill-tag">Responsive Design</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                    
+                    <a href="Ruchitra.K .pdf" class="btn" download style="margin-top: 20px;">Download Resume</a>
                 </div>
-                </li>
-
-                <li class="experience-item">
-                    <div class="experience-box">
-                        <h3>9/11 Memorial & Museum</h3>
-                        <p>Retail Greeter Volunteer, New York <br> (January 2025 - Present)</p>
-                        <p>I welcome 1000+ guests monthly by providing guidance on resources and assisting with navigation and accessibility. Engaging visitors in thoughtful discussions, sharing the historical significance of exhibits, and preserving personal stories help foster deeper connections. Given the emotional nature of the museum, maintaining a respectful atmosphere, supporting visitors, and encouraging reflection are essential.</p>
-                    </div>
-                </li>
-
-                <li class="experience-item">
-                    <div class="experience-box">
-                        <h3>Computer Science Tutor</h3>
-                        <p>UPchive, Brooklyn, New York <br> (September 2024 to Present)</p>
-                        <p>Provided guidance and academic support to students in College Applications and Essay Writing for admission purposes. Assisted students in Computer Science courses to enhance their understanding and skills. Collaborated with students to develop personalized strategies for academic success.</p>
-                    </div>
-                </li>
-            </ul>
-        </section>
-
-<!-- Education Timeline Section -->
-    <section id="timeline" class="big-box">
-        <h2><u>Education 👩‍🎓 </u></h2>
-        <div class="timeline-container">
-            <!-- Timeline Item 1 -->
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fas fa-graduation-cap"></i> <!-- Icon for education -->
-                </div>
-                <div class="timeline-content">
-                    <h3>New York Institute of Technology <br> New York, USA. </h3>
-                    <p><strong>Master's in Computer Science</strong></p>
-                    <p>Sept 2022 - May 2024</p>
-                    <p> <b> Coursework </b>:-  Software Engineering, Programmimg Language(Javascript), Artificial Intelligence.</p>
-                </div>
-            </div>
-
-            <!-- Timeline Item 2 -->
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fas fa-university"></i> <!-- Icon for university -->
-                </div>
-                <div class="timeline-content">
-                    <h3>REVA University <br> Bangalore, India. </h3>
-                    <p><strong>Bachelor's in Computer Science</strong></p>
-                    <p>Aug 2016 - May 2020</p>
-                    <p> <b> Coursework </b>:- Web Development, Software Engineering, Artificial Intelligence, Programming Language(Python). </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<!-- Projects Section -->
-        <section id="projects" class="big-box">
-    <h2> <u> Personal Projects 👩‍💻</u> </h2> 
-    
-    <!-- Removed <u> tag -->
-    <div class="projects-container">
-        <!-- Project 1: MoodTunes -->
-        <div class="project-item">
-            <div class="project-header">
-                <h2>MoodTunes - Mood-Based Playlist Generator</h2>
-            </div>
-            <div class="project-content">
-                <p>MoodTunes is an interactive web app that curates personalized playlists based on a user’s mood. By simply describing how they feel, the app analyzes their input using basic NLP and suggests songs matching emotions like happy, sad, calm, or nostalgic, with direct YouTube links for instant playback. Built with <strong>HTML, CSS, and JavaScript</strong>, MoodTunes features:</p>
-                  <p><ul> <li>Responsive UI for seamless cross-device compatibility.</li>
-                    <li>Local storage for saving user preferences.</li>
-                    <li>Dynamic playlist generation for a personalized experience.</li></p>
-                <p>This project deepened my understanding of <strong>event handling, conditional rendering, and music-emotion mapping</strong> in web development.</ul></p>
-                <p><strong>Skills:</strong> JavaScript, Natural Language Processing (NLP), Responsive Design</p>
-                <a href="https://ruchitra98.github.io/Mood-Based-Playlist-Generator-Web-App/" class="project-link">🌐 Explore Project</a>
-            </div>
-        </div>
-
-        <!-- Project 2: GiftGenie -->
-        <div class="project-item">
-            <div class="project-header">
-                <h2>GiftGenie - Personalized Gift Suggestion Platform</h2>
-            </div>
-            <div class="project-content">
-                <p>  GiftGenie is an interactive web application designed to help users find the perfect gift for any occasion or recipient. The platform offers two main features:</p>
-                   <p> <ul> <li><strong>Occasion-Based Gift Suggestions:</strong> Users select an occasion, specify the recipient's age and relationship, and receive tailored gift ideas.</li>
-                    <li><strong>Gift Personality Quiz:</strong> A fun and engaging quiz that determines the recipient's personality type based on their preferences and suggests personalized gifts.</ul> </p>
-                    <p><strong>Skills:</strong> Responsive Design, JavaScript, Media Queries, Dynamic Content Rendering</p>
-                <a href="https://ruchitra98.github.io/Gift-Suggestion-Website-for-Occasions-and-Ages/" class="project-link">🌐 Explore Project</a>
-            </div>
-        </div>
-    </div>
-    </section>
-
-
-        <section id="academic-projects" class="big-box">
-            <h2><u> Academic Projects 👩‍💻 </u></h2>   
-
-  <!-- Project 1: Computer Graphics -->
-            <div id="project1" class="project-section active">
-                <div class="image-box">
-                    <img src="CG-1.jpg" alt="Computer Graphics"> <br>
-                </div>
-                <div class="content-box">
-                    <div class="box">
-                        <h2>1.Computer Graphics</h2>
-                    </div>
-                    <p><strong>Advanced Rendering Techniques:</strong> I focus heavily on Advanced Rendering Techniques, especially Projective Texturing. This technique enables high-fidelity simulations of real-world elements like shadows, reflections, and decals. Projective Texturing enhances realism by adding details like shadows and reflections, significantly elevating visual quality and immersing users in the experience.<br>
-                    <strong>Vertex and Fragment Shaders:</strong> To achieve real-time rendering and interactivity, I leverage Vertex and Fragment Shaders. Vertex shaders modify 3D model geometry, while fragment shaders handle pixel-level rendering. This approach allows me to apply effects like reflections, dynamic lighting, and textures, enhancing realism through precise control over light and materials.<br>
-                    <strong>GPU Optimization and Performance Enhancement:</strong> I focus on optimizing performance by using GPU capabilities for intensive computations. By offloading tasks like lighting and reflections to the GPU, my applications run smoother and more efficiently, making the experience visually impressive and responsive.<br>
-                    <strong>Customizing Materials and Textures:</strong> My expertise extends to customizing materials and textures for specific visual effects. Adjusting shader parameters, I can simulate materials ranging from rough concrete to reflective surfaces. Techniques like specularity, diffusivity, and bump mapping help create authentic textures, even when viewed up close.</p>
-                    <a href="Computer Graphics-ppt.pdf" class="btn" download>Graphics presentation Report</a>
-            <!-- Skills Used in the Project -->
-                    <div class="project-skills">
-                        <p> <b> <u> Skills:- </u></b> </p>
-                        <img src="opengl.jpg" alt="OpenGL" title="OpenGL">
-                        <img src="C++.jpg" alt="C++" title="C++">
-                    </div>
-
-                    <div class="project-navigation">
-                        <button class="next" onclick="showProject('project2')"> Project-2 </button>
-                    </div>
-                </div>
-            </div> 
-
-        <!-- Project 2: Product Recommendation System -->
-            <div id="project2" class="project-section">
-                <div class="image-box">
-                    <img src="PRS-1.jpg" alt="Product Recommendation System">
-                </div>
-                <div class="content-box">
-                    <div class="box">
-                        <h2> 2. Product Recommendation System </h2>
-                    </div>
-                    <p>An academic project on collaborative filtering and rank-based recommendation systems. It includes: -Similarity-Based Collaborative Filtering: Calculates user similarity using cosine scores based on product interactions, recommending products liked by similar users but not yet interacted with by the target user. Provides top 10 personalized recommendations. -Rank-Based Approach: Ranks products by average rating, filtering out those with low interaction counts, and recommends the top 5 popular items to engage new customers. - Model-Based Collaborative Filtering:Compresses the user-product interaction matrix using SVD with 50 latent features, predicts ratings for each user, and provides the top 5 personalized product recommendations based on predictions.</p> 
-                    <a href="Product Recommendation-Report.pdf" class="btn" download>Product Recommendation-Report</a>
-                    <div class="project-skills">
-                        <p> <b> <u> Skills:-</u> </b> </p>
-                        <img src="python.jpg" alt="Product" title="python">
-                    </div>
-                    <div class="project-navigation">
-                        <button class="previous" onclick="showProject('project1')"> Project-1 </button>
-                        <button class="next" onclick="showProject('project3')">  Project-3  </button>
-                    </div>
-                </div>
-            </div>
-
-        <!-- Project 3: RNN for Trading -->
-            <div id="project3" class="project-section">
-                <div class="image-box">
-                    <img src="RNN-1.jpg" alt="RNN for Trading">
-                </div>
-                <div class="content-box">
-                    <div class="box">
-                        <h2>3.RNN for Trading: Multivariate Time Series and Text Data</h2>
-                    </div>
-                    <p>A research project on using Recurrent Neural Networks (RNNs) for predicting stock market trends. The primary objective is to explore trading strategies using AI technologies such as Deep Learning and RNNs. The project involved an in-depth analysis of factors like the Dropout ratio and Hidden Neurons, achieving an accuracy range of 70% to 90% with time series datasets. Technologies used include Google Colab for coding, RNN for modeling sequential data, and TensorFlow for machine learning models.</p>
-                    <a href="RNN.pdf" class="btn" download>Project Presentation Report</a>
-                <!-- Skills Used in the Project -->
-                    <div class="project-skills">
-                        <p> <b> <u> Skills:- </u></b> </p>
-                        <img src="python.jpg" alt="OpenGL" title="python">
-                        <img src="rnn.jpg" alt="OpenGL" title="rnn">
-                    </div>
-                    <div class="project-navigation">
-                        <button class="previous" onclick="showProject('project2')"> Project-2 </button>
-                        <button class="next" onclick="showProject('project4')"> Project-4 </button>
-                    </div>
                 
+                <div class="about-image animate delay-2">
+                    <img src="1.jpg" alt="Ruchitra Kumaresan">
                 </div>
-            </div>
-
-        <!-- Project 4: Lotto Bot -->
-            <div id="project4" class="project-section">
-                <div class="image-box">
-                    <img src="Bot-1.jpg" alt="Lotto Bot">
-                </div>
-                <div class="content-box">
-                    <div class="box">
-                        <h2>4.Lotto Bot</h2>
-                    </div>
-                    <p>LottoBot is a Discord game bot designed for hosting raffles and Powerball-style lottery games. It uses Python, SQLite, and the Hikari Discord REST API wrapper. LottoBot employs agile methodologies and features in-game currency, customizable options for additional features, and various games within Discord servers.</p>
-                    <a href="Bot.pdf" class="btn" download>Final Report</a>
-                    <div class="project-skills">
-                        <p> <b> <u> Skills:- </u></b> </p>
-                        <img src="sql.jpg" alt="sql" title="sql">
-                        <img src="python.jpg" alt="Product" title="python">
-                    </div>
-                    <div class="project-navigation">
-                        <button class="previous" onclick="showProject('project3')"> Project-3 </button>
-                        <button class="next" onclick="showProject('project5')"> Project-5 </button>
-                    </div>
-                </div>
-            </div>
-
-        <!-- Project 5: Water Quality Monitoring -->
-            <div id="project5" class="project-section">
-                <div class="image-box">
-                    <img src="water.jpg" alt="Water Quality Monitoring">
-                </div>
-                <div class="content-box">
-                    <div class="box">
-                        <h2>5.Water Quality Monitoring And Filter System To Conserve Water Resources Using IoT</h2>
-                    </div>
-                    <p>We aim to revolutionize environmental sustainability in water bodies affected by industrial waste through IoT technology. By deploying connected sensors and devices, we can collect real-time data on water quality, temperature, and other critical parameters. This data allows us to promptly detect and respond to pollution incidents, reducing their ecological impact. Our primary objective is to use IoT technologies to continuously assess water quality in various aquatic ecosystems such as lakes, ponds, and rivers. This innovative water management system transmits data to the AWS cloud, enabling real-time monitoring of water quality and purification processes. Once the water reaches a 90% purity level, it becomes safe for various purposes, including consumption and industrial use. This approach ensures responsible utilization of water resources, minimizes waste and contamination, and actively contributes to environmental preservation by safeguarding the precious resource of clean water.</p>
-                     <div class="project-navigation">
-                    <a href="https://youtu.be/SniVsKWIpDA?si=cAlx_1lDBzgYJNTE">Vedio Link</a>
-                    <a href="Water Report.pdf" class="btn" download>Final Report</a>
-                    </div>
-                    <div class="project-skills">
-                        <p> <b> <u> Skills:-</u> </b> </p>
-                        <img src="iot.jpg" alt="iot" title="iot">
-                        <img src="aws.jpg" alt="aws" title="aws">
-                        <img src="c.jpg" alt="c" title="c">
-                    </div>
-                    <div class="project-navigation">
-                        <button class="previous" onclick="showProject('project4')">Project-4  </button>
-                        <button class="next" onclick="showProject('project6')">Project-6 </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 6: Clustering of Cancerous Profiles -->
-            <div id="project6" class="project-section">
-                <div class="image-box">
-                    <img src="ML.jpg" alt="Clustering of Cancerous Profiles">
-                </div>
-                <div class="content-box">
-                    <div class="box">
-                        <h2>6.Clustering Of Cancerous Profiles Using Machine Learning</h2>
-                    </div>
-                    <p>Accurate staging is crucial for determining appropriate treatment modalities and prognostic assessments. Machine learning algorithms automatically detect and highlight disparities, inaccuracies, or contradictions within diagnostic reports, ensuring reliable information delivery to medical professionals. Advanced analytics and machine learning methodologies will provide valuable insights and predictive capabilities, facilitating accurate diagnosis and treatment planning for individuals with hematologic cancers.</p>
-                    <a href="Cancer Report.pdf" class="btn" download>Final Report</a>
-                    <div class="project-skills">
-                        <p> <b> <u> Skills:- </u> </b> </p>
-                        <img src="python.jpg" alt="Bot" title="python">
-                        <img src="panda.jpg" alt="Bot" title="python">
-                    </div>
-                    <div class="project-navigation">
-                        <button class="previous" onclick="showProject('project5')"> Project-5 </button>
-                        <button class="next" onclick="showProject('project1')"> Project-1 </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-<!-- Achievements Section -->
-        <section id="achievements" class="big-box">
-            <h2><u>Achievements 🌟 </u></h2>
-             <ul class="achievements-list">
-        <!-- Achievement 1 -->
-        <li class="achievement-item">
-            <div class="achievement-box">
-                <h3> Represented 9/11 Meseum - Film Project </h3>
-                <p><strong>Organization:</strong> 9/11 National Memorial and Meseum</p>
-                <p><strong>Role:</strong> Volunteer</p>
-                <p><strong>Contribution:</strong>  It was a privilege to serve as a volunteer contributor to the 9/11 Memorial & Museum’s educational film project, where I had the opportunity to support the museum’s powerful mission of remembrance, education, and public engagement. By participating in this initiative, I contributed to preserving the stories, emotions, and reflections tied to one of the most pivotal moments in modern history. Being part of a project that honors the resilience of individuals and communities affected by 9/11 was both a humbling and deeply meaningful experience that strengthened my commitment to civic responsibility and historical awareness. </p>
-            </div>
-        </li>
-                 
-        <!-- Achievement 2 -->
-        <li class="achievement-item">
-            <div class="achievement-box">
-                <h3>Published Research Paper</h3>
-                <p><strong>Conference:</strong> International Conference on Advances in Computing and Information Technology (IACIT-2020)</p>
-                <p><strong>Organized by:</strong> School of Computing & Information Technology, REVA University, Bangalore, India</p>
-                <p><strong>Contribution:</strong> Conducted research and presented findings on innovative computing techniques, contributing to the advancement of the field.</p>
-                <a href="http://www.testmagzine.biz/index.php/testmagzine/article/view/8020/6071" class="achievement-link">View Publication</a>
-            </div>
-        </li>
-
-        <!-- Achievement 3 -->
-        <li class="achievement-item">
-            <div class="achievement-box">
-                <h3>  Career Development & Placement Strategies </h3>
-                <p><strong>Role:</strong> Engaged with the Career & Placement Center at REVA University</p>
-                <p><strong>Contribution:</strong> Collaborated with the placement team to develop effective strategies for securing positions in top-tier companies. Gained insights into hiring panel expectations and candidate evaluation processes.</p>
-            </div>
-        </li>
-
-        <!-- Achievement 4 -->
-        <li class="achievement-item">
-            <div class="achievement-box">
-                <h3> Youth Empowerment Volunteer  </h3>
-                <p><strong>Organization:</strong> YuWaah (Generation Unlimited India)</p>
-                <p><strong>Role:</strong> Volunteer</p>
-                <p><strong>Contribution:</strong> Contributed to empowering youth through initiatives focused on skill development, education, and holistic growth. Gained valuable insights into youth challenges and the impact of youth-focused programs.</p>
-            </div>
-        </li>
-    </ul>
-</section>
-        
-      
-<!-- Certifications Section -->
-    <section id="certifications" class="big-box">
-    <h2><u>Certifications 🔖 </u></h2>
-    <div class="certifications-container">
-        
-        <!-- Certification 1 -->
-        <div class="certification-item">
-            <p><strong> Learn UI UX Design Adobe XD : Learn User Experience Design </strong></p>
-            <p>Issued by: Udemy </p>
-            <p>Date: April 2025</p>
-            <a href="https://www.udemy.com/certificate/UC-c7dca038-53e2-4497-85bc-93b822612dc7/" class="certificate-link">View Credential</a>
-        </div>
-
-         <!-- Certification 2 -->
-        <div class="certification-item">
-            <p><strong> Career Essentials in Generative AI by Microsoft and LinkedIn </strong></p>
-            <p>Issued by: Microsoft & Linkedin </p>
-            <p>Date: March 2025</p>
-            <a href="https://www.linkedin.com/learning/certificates/10dc4ed6601f557b17dbcbb3ca5850215551bd4830bf88703f32e08916b186ab?trk=share_certificate&accountId=0&u=0&success=true&authUUID=nXNCbiKoQRGg%2F23Fvrs%2Fdw%3D%3D" class="certificate-link">View Credential</a>
-        </div>
-
-        <!-- Certification 3 -->
-        <div class="certification-item">
-            <p><strong>Project Planning with AI</strong></p>
-            <p>Issued by: Sololearn</p>
-            <p>Date: January 2025</p>
-            <a href="https://www.sololearn.com/certificates/CC-BVBMOMJ8" class="certificate-link">View Credential</a>
-        </div>
-
-        <!-- Certification 4 -->
-        <div class="certification-item">
-            <p><strong>Front-End Development for Beginners</strong></p>
-            <p>Issued by: Sololearn</p>
-            <p>Date: January 2025</p>
-            <a href="https://www.sololearn.com/en/certificates/CC-FDBAO6OJ" class="certificate-link">View Credential</a>
-        </div>
-
-        <!-- Certification 5 -->
-        <div class="certification-item"> 
-            <p><strong>Angular Framework</strong></p>
-            <p>Issued by: Sololearn</p>
-            <p>Date: January 2025</p>
-            <a href="https://www.sololearn.com/en/certificates/CC-FDBAO6OJ" class="certificate-link">View Credential</a>
-        </div>
-
-        <!-- Certification 6 -->
-        <div class="certification-item">
-            <p><strong>JavaScript Programming</strong></p>
-            <p>Issued by: Sololearn</p>
-            <p>Date: January 2025</p>
-            <a href="https://www.sololearn.com/en/certificates/CC-WNDH1R9B" class="certificate-link">View Credential</a>
-        </div>
-
-        <!-- Certification 7 -->
-        <div class="certification-item">
-            <p><strong>Datacom Virtual Experience</strong></p>
-            <p>Issued by: Forage</p>
-            <p>Date: September 2024</p>
-            <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Datacom/L3NcyCoAjLno9d3T9_Datacom_SDD33Z7ZcLEQWzatn_1725566580521_completion_certificate.pdf" class="certificate-link">View Credential</a>
-        </div>
-
-         <!-- Certification 8 -->
-        <div class="certification-item">
-            <p><strong>Fundamentals of UX Design</strong></p>
-            <p>Issued by: Coursera</p>
-            <p>Date: July 2024</p>
-            <a href="https://www.coursera.org/account/accomplishments/verify/PB9T3XX2G598?utm_product=course" class="certificate-link">View Credential</a>
-        </div>
-
-        <!-- Certification 9 -->
-        <div class="certification-item">
-            <p><strong>Goldman Sachs Virtual Experience</strong></p>
-            <p>Issued by: Forage</p>
-            <p>Date: January 2024</p>
-            <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Goldman%20Sachs/NPdeQ43o8P9HJmJzg_Goldman%20Sachs_SDD33Z7ZcLEQWzatn_1705720063979_completion_certificate.pdf" class="certificate-link">View Credential</a>
-        </div>
-
-    </div>
-    </section>
-
-
-        <section id="testimonials" class="big-box">
-        <h2><u>Testimonials 💬 </u></h2>
-        <div class="testimonial-item">
-            <p>I had the pleasure of studying with Ruchitra at Reva University. During this time, she consistently demonstrated exceptional dedication and academic excellence. She is not only highly intelligent but also incredibly supportive and always willing to lend a hand to classmates. She brings a positive attitude and a strong work ethic to everything she does. I am confident that she will excel in any professional setting and would be an asset to any team. I highly recommend her for any opportunity that comes her way. </p>
-            <p><strong> Payal. P. Jain, AEM Former Developer<br> Morgan Stantly <br> Bangalore, India. </strong></p>
-        </div>
-    </section>
-
-<!-- Skills Matrix Section -->
-    <section id="skills" class="big-box">
-        <h2><u>Skills 📚 </u></h2>
-        <div class="skills-container">
-            <!-- Skill 1: HTML -->
-            <div class="skill-item">
-                <div class="skill-progress" data-progress="90">
-                    <div class="skill-circle">
-                        <div class="skill-value">100%</div>
-                    </div>
-                </div>
-                <h3>HTML</h3>
-                <div class="skill-tooltip">Proficient in semantic HTML5 and accessibility best practices.</div>
-            </div>
-
-            <!-- Skill 2: CSS -->
-            <div class="skill-item">
-                <div class="skill-progress" data-progress="85">
-                    <div class="skill-circle">
-                        <div class="skill-value">85%</div>
-                    </div>
-                </div>
-                <h3>CSS</h3>
-                <div class="skill-tooltip">Expert in CSS3, Flexbox, Grid, and responsive design.</div>
-            </div>
-
-            <!-- Skill 3: JavaScript -->
-            <div class="skill-item">
-                <div class="skill-progress" data-progress="80">
-                    <div class="skill-circle">
-                        <div class="skill-value">80%</div>
-                    </div>
-                </div>
-                <h3>JavaScript</h3>
-                <div class="skill-tooltip">Knowledge of ES6+, DOM manipulation, and AJAX.</div>
-            </div>
-
-            <!-- Skill 4: React -->
-            <div class="skill-item">
-                <div class="skill-progress" data-progress="75">
-                    <div class="skill-circle">
-                        <div class="skill-value">75%</div>
-                    </div>
-                </div>
-                <h3>React</h3>
-                <div class="skill-tooltip">Experience with React hooks, state management, and component lifecycle.</div>
-            </div>
-
-            <!-- Skill 5: Responsive Web Design -->
-            <div class="skill-item">
-                <div class="skill-progress" data-progress="80">
-                    <div class="skill-circle">
-                        <div class="skill-value">85%</div>
-                    </div>
-                </div>
-                <h3>Responsive Web Design</h3>
-                <div class="skill-tooltip">Ensuring a seamless experience across various screen sizes using CSS media queries and flexible layouts in HTML, CSS, JavaScript.</div>
-            </div>
-
-            <!-- Skill 6: User Research & Analysis -->
-            <div class="skill-item">
-                <div class="skill-progress" data-progress="85">
-                    <div class="skill-circle">
-                        <div class="skill-value">85%</div>
-                    </div>
-                </div>
-                <h3>User Research & Analysis</h3>
-                <div class="skill-tooltip">Conducting surveys, interviews, and usability tests to understand user needs.</div>
-            </div>
-
-            <!-- Skill 7: Version Control -->
-            <div class="skill-item">
-                <div class="skill-progress" data-progress="85">
-                    <div class="skill-circle">
-                        <div class="skill-value">85%</div>
-                    </div>
-                </div>
-                <h3>Version Control</h3>
-                <div class="skill-tooltip">Managing code efficiently using Git, GitHub, and GitLab for collaboration.</div>
-            </div>
-
-            <!-- Skill 8: Front-End Development -->
-            <div class="skill-item">
-                <div class="skill-progress" data-progress="90">
-                    <div class="skill-circle">
-                        <div class="skill-value">91%</div>
-                    </div>
-                </div>
-                <h3>Front-End Development</h3>
-                <div class="skill-tooltip">Building interactive and dynamic web applications using modern frameworks like React, Vue.js, and Angular, along with HTML, CSS, and JavaScript.</div>
-            </div>
-
-            <!-- Skill 9: Cross-Browser Compatibility -->
-            <div class="skill-item">
-                <div class="skill-progress" data-progress="88">
-                    <div class="skill-circle">
-                        <div class="skill-value">90%</div>
-                    </div>
-                </div>
-                <h3>Cross-Browser Compatibility</h3>
-                <div class="skill-tooltip">Ensuring websites function consistently across different browsers (Chrome, Firefox, Safari, Edge) using progressive enhancement and feature detection.</div>
-            </div>
-
-            <!-- Skill 10: User Experience (UX) Design -->
-            <div class="skill-item">
-                <div class="skill-progress" data-progress="75">
-                    <div class="skill-circle">
-                        <div class="skill-value">70%</div>
-                    </div>
-                </div>
-                <h3>User Experience (UX) Design</h3>
-                <div class="skill-tooltip">Designing user-centered experiences through research, wireframing, prototyping, and usability testing to enhance user satisfaction.</div>
             </div>
         </div>
     </section>
 
-<!-- Resume Section -->
-        <section id="resume" class="big-box">
-            <h2><u>Resume 📄</u></h2>
-            <p>Want to dive into my experience? Click on the link to download my CV.</p>
-            <a href="Ruchitra.K.pdf" class="btn" download><h4>Download Resume</h4></a>
-        </section>
-
-<!-- Contact Section -->
-         <section id="contact" class="big-box">
-        <h2><u>Contact Me📞</u></h2>
-        <form class="contact-form" id="contactForm">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
-
-
-<!-- Feedback Section -->
-        <section id="feedback" class="big-box">
-        <h2><u>Feedback 🎯</u></h2>
-        <form class="feedback-form" id="feedbackForm">
-            <textarea name="feedback" placeholder="Your feedback..." rows="3" required></textarea>
-            <div class="rating">
-                <span>Rate my portfolio:</span>
-                <div class="stars">
-                    <i class="fas fa-star" data-rating="1"></i>
-                    <i class="fas fa-star" data-rating="2"></i>
-                    <i class="fas fa-star" data-rating="3"></i>
-                    <i class="fas fa-star" data-rating="4"></i>
-                    <i class="fas fa-star" data-rating="5"></i>
+    <!-- Experience Section -->
+    <section class="section experience" id="experience">
+        <div class="container">
+            <h2 class="section-title text-center animate">My Experience</h2>
+            
+            <div class="timeline">
+                <!-- Experience 1 -->
+                <div class="timeline-item animate delay-1">
+                    <span class="timeline-date">2020 - 2022</span>
+                    <div class="timeline-content">
+                        <h3>Software Engineer</h3>
+                        <span class="timeline-company">Ambica Constructions and Contractors, Bangalore, India</span>
+                        <p class="timeline-description">
+                            At Ambica Constructions & Contractors, I worked as a front-end-focused Software Engineer involved in full-cycle development. My work spanned from designing and coding interfaces to testing, deploying, and supporting software solutions used across the company.
+                        </p>
+                        <ul>
+                            <li>Built and maintained user interfaces with React and TypeScript, ensuring accessibility, responsiveness, and performance.</li>
+                            <li>Collaborated closely with designers, backend developers, and project managers to deliver efficient, scalable front-end solutions.</li>
+                            <li>Took ownership of problem-solving and was often the go-to for debugging UI issues and improving user experience.</li>
+                        </ul>
+                        <div class="timeline-skills">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">HTML/CSS</span>
+                        </div>
+                    </div>
                 </div>
-                <input type="hidden" name="rating" id="ratingValue" value="0">
+                
+                <!-- Experience 2 -->
+                <div class="timeline-item animate delay-2">
+                    <span class="timeline-date">2021</span>
+                    <div class="timeline-content">
+                        <h3>Website Developer</h3>
+                        <span class="timeline-company">Lernov, Bangalore, India</span>
+                        <p class="timeline-description">
+                            Employed Sublime Text to systematically organize and optimize HTML code, actively contributing to the website's layout. Attained significant success in project advancement, developing a fully functional website closely aligned with 90% of detailed client specifications.
+                        </p>
+                        <div class="timeline-skills">
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience 3 -->
+                <div class="timeline-item animate delay-3">
+                    <span class="timeline-date">2020</span>
+                    <div class="timeline-content">
+                        <h3>Website Developer and Designer</h3>
+                        <span class="timeline-company">Sain Solutions, Bangalore, India</span>
+                        <p class="timeline-description">
+                            Successfully designed aesthetically pleasing interfaces with advanced functionality, enhanced teamwork, and problem-solving skills. Implemented new user interfaces for a retail client, leading to a 20% improvement in user engagement within two months of deployment.
+                        </p>
+                        <div class="timeline-skills">
+                            <span class="skill-tag">UI Design</span>
+                            <span class="skill-tag">Front-End Development</span>
+                            <span class="skill-tag">PHP</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience 4 -->
+                <div class="timeline-item animate delay-4">
+                    <span class="timeline-date">2025 - Present</span>
+                    <div class="timeline-content">
+                        <h3>9/11 Memorial & Museum</h3>
+                        <span class="timeline-company">Retail Greeter Volunteer, New York</span>
+                        <p class="timeline-description">
+                            I welcome 1000+ guests monthly by providing guidance on resources and assisting with navigation and accessibility. Engaging visitors in thoughtful discussions, sharing the historical significance of exhibits, and preserving personal stories help foster deeper connections.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Experience 5 -->
+                <div class="timeline-item animate delay-5">
+                    <span class="timeline-date">2024 - Present</span>
+                    <div class="timeline-content">
+                        <h3>Computer Science Tutor</h3>
+                        <span class="timeline-company">UPchive, Brooklyn, New York</span>
+                        <p class="timeline-description">
+                            Provided guidance and academic support to students in College Applications and Essay Writing for admission purposes. Assisted students in Computer Science courses to enhance their understanding and skills. Collaborated with students to develop personalized strategies for academic success.
+                        </p>
+                    </div>
+                </div>
             </div>
-            <button type="submit">Submit Feedback</button>
-        </form>
+        </div>
     </section>
 
-<!-- Footer -->
-        <footer>
-    <div class="social-icons-container">
-        <a href="https://www.linkedin.com/in/ruchitrakumaresan/" target="_blank" class="social-icon">
-            <i class="fab fa-linkedin"></i>
-        </a>
-        <a href=" https://github.com/Ruchitra98" target="_blank" class="social-icon">
-            <i class="fab fa-github"></i>
-        </a>
-        <a href="https://mail.google.com/mail/u/1/#inbox?compose=new" target="_blank" class="social-icon">
-            <i class="fas fa-envelope"></i>
-        </a>
-    </div>
-    <p>&copy; Copyright 2025 Ruchitra Kumaresan. All rights reserved.</p>
+    <!-- Projects Section -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <h2 class="section-title text-center animate">My Projects</h2>
+            
+            <div class="projects-filter animate delay-1">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="design">UI/UX Design</button>
+                <button class="filter-btn" data-filter="academic">Academic</button>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card animate delay-2" data-category="design">
+                    <div class="project-image">
+                        <img src="Mood.jpg" alt="MoodTunes Project">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">MoodTunes - Mood-Based Playlist Generator</h3>
+                        <p class="project-description">
+                            An interactive web app that curates personalized playlists based on a user's mood. Analyzes input using basic NLP and suggests songs matching emotions with direct YouTube links.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">NLP</span>
+                            <span class="project-tag">Responsive Design</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://ruchitra98.github.io/Mood-Based-Playlist-Generator-Web-App/" class="btn btn-sm">View Project</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card animate delay-3" data-category="design">
+                    <div class="project-image">
+                        <img src="Gift.jpg" alt="GiftGenie Project">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">GiftGenie - Personalized Gift Suggestion Platform</h3>
+                        <p class="project-description">
+                            Interactive web application designed to help users find the perfect gift for any occasion or recipient through occasion-based suggestions and personality quizzes.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Responsive Design</span>
+                            <span class="project-tag">Dynamic Content</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://ruchitra98.github.io/Gift-Suggestion-Website-for-Occasions-and-Ages/" class="btn btn-sm">View Project</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card animate delay-4" data-category="academic">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Computer Graphics Project">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Computer Graphics - Advanced Rendering</h3>
+                        <p class="project-description">
+                            Focused on Advanced Rendering Techniques, especially Projective Texturing for high-fidelity simulations of real-world elements like shadows, reflections, and decals.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">OpenGL</span>
+                            <span class="project-tag">C++</span>
+                            <span class="project-tag">Shaders</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="Computer Graphics-ppt.pdf" class="btn btn-sm" download>Download Report</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card animate delay-5" data-category="academic">
+                    <div class="project-image">
+                        <img src="PRS-1.jpg" alt="Product Recommendation System">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Product Recommendation System</h3>
+                        <p class="project-description">
+                            Academic project on collaborative filtering and rank-based recommendation systems using similarity-based approaches and model-based collaborative filtering with SVD.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">SVD</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="Product Recommendation-Report.pdf" class="btn btn-sm" download>Download Report</a>
+                            
+                        </div>
+                    </div>
+                </div>
 
-</footer>
+                 <!-- Project 5 -->
+                <div class="project-card animate delay-5" data-category="academic">
+                    <div class="project-image">
+                        <img src="RNN.jpg" alt="RNN for Trading: Multivariate Time Series and Text Data">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">RNN for Trading: Multivariate Time Series and Text Data</h3>
+                        <p class="project-description">
+                            A research project on using Recurrent Neural Networks (RNNs) for predicting stock market trends. The primary objective is to explore trading strategies using AI technologies such as Deep Learning and RNNs. The project involved an in-depth analysis of factors like the Dropout ratio and Hidden Neurons, achieving an accuracy range of 70% to 90% with time s
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="RNN.pdf" class="btn btn-sm" download>Download Report</a>
+    
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <h2 class="section-title text-center animate">My Skills</h2>
+            
+            <div class="skills-container">
+                <!-- Skill 1 -->
+                <div class="skill-card animate delay-1">
+                    <div class="skill-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3 class="skill-title">HTML5</h3>
+                    <p class="skill-description">
+                        Proficient in semantic HTML5 and accessibility best practices with extensive experience building accessible web applications.
+                    </p>
+                </div>
+                
+                <!-- Skill 2 -->
+                <div class="skill-card animate delay-2">
+                    <div class="skill-icon">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h3 class="skill-title">CSS3</h3>
+                    <p class="skill-description">
+                        Expert in CSS3, Flexbox, Grid, animations and responsive design principles to create visually appealing interfaces.
+                    </p>
+                </div>
+                
+                <!-- Skill 3 -->
+                <div class="skill-card animate delay-3">
+                    <div class="skill-icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h3 class="skill-title">JavaScript</h3>
+                    <p class="skill-description">
+                        Strong knowledge of ES6+, DOM manipulation, AJAX, and modern JavaScript frameworks and libraries.
+                    </p>
+                </div>
+                
+                <!-- Skill 4 -->
+                <div class="skill-card animate delay-4">
+                    <div class="skill-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3 class="skill-title">React</h3>
+                    <p class="skill-description">
+                        Experience with React hooks, state management, component lifecycle, and building reusable component libraries.
+                    </p>
+                </div>
+                
+                <!-- Skill 5 -->
+                <div class="skill-card animate delay-5">
+                    <div class="skill-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="skill-title">Responsive Design</h3>
+                    <p class="skill-description">
+                        Creating fluid layouts that work seamlessly across all device sizes using modern CSS techniques and media queries.
+                    </p>
+                </div>
+                
+                <!-- Skill 6 -->
+                <div class="skill-card animate delay-1">
+                    <div class="skill-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="skill-title">User Research</h3>
+                    <p class="skill-description">
+                        Conducting surveys, interviews, and usability tests to understand user needs and validate design decisions.
+                    </p>
+                </div>
+                
+                <!-- Skill 7 -->
+                <div class="skill-card animate delay-2">
+                    <div class="skill-icon">
+                        <i class="fab fa-git-alt"></i>
+                    </div>
+                    <h3 class="skill-title">Version Control</h3>
+                    <p class="skill-description">
+                        Managing code efficiently using Git, GitHub, and GitLab for collaboration and version control.
+                    </p>
+                </div>
+                
+                <!-- Skill 8 -->
+                <div class="skill-card animate delay-3">
+                    <div class="skill-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="skill-title">UI/UX Design</h3>
+                    <p class="skill-description">
+                        Designing user-centered experiences through wireframing, prototyping, and usability testing.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <h2 class="section-title text-center animate">Testimonials</h2>
+            
+            <div class="testimonials-container">
+                <div class="testimonial-card animate delay-1">
+                    <p class="testimonial-content">
+                        I had the pleasure of studying with Ruchitra at Reva University. During this time, she consistently demonstrated exceptional dedication and academic excellence. She is not only highly intelligent but also incredibly supportive and always willing to lend a hand to classmates.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Payal P. Jain">
+                        </div>
+                        <div class="author-info">
+                            <h4>Payal P. Jain</h4>
+                            <p>AEM Former Developer, Morgan Stanley</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title text-center animate">Get In Touch</h2>
+            
+            <div class="contact-container">
+                <div class="contact-info animate delay-1">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <a href="mailto:ruchitrak98@gmail.com">ruchitrak98@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <a href="tel:+1 201-889-7904">+1 201-889-7904</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>New York, USA</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/ruchitrakumaresan/" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/Ruchitra98" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form animate delay-2">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Your Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">Ruchitra.K</div>
+                    <p class="footer-about-text">
+                        Front-End Developer | UX/UI Designer | Software Engineer creating beautiful, functional digital experiences.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/ruchitrakumaresan/" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/Ruchitra98" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">Front-End Consulting</a></li>
+                        <li><a href="#">Responsive Design</a></li>
+                        <li><a href="#">Web Accessibility</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to my newsletter for the latest updates and articles.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" class="newsletter-input" required>
+                        <button type="submit" class="newsletter-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ruchitra Kumaresan. All rights reserved.</p> <br>
+                <p> Thank You </p>
+            </div>
+        </div>
+    </footer>
 
 
-<!-- Back to Top Button -->
+   <!-- Back to Top Button -->
     <section>
         <a href="#" id="back-to-top" title="Go to top">
             <i class="fas fa-chevron-up"></i> <!-- Font Awesome arrow icon -->
         </a>
     </section>
 
-    </main>
 
-<!-- Javascript Coding -->
+    <!-- JavaScript -->
     <script>
-// Dark Mode Toggle
-        document.getElementById('dark-mode-toggle').addEventListener('click', function() {
-            document.body.classList.toggle('dark-mode');
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                document.body.classList.add('dark-mode');
-            }
-        });
-
-// Project Navigation System
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize first project as active
-    let currentProject = 1;
-    const totalProjects = 6;
-    
-    // Function to show a specific project
-    function showProject(projectNumber) {
-        // Hide all project sections
-        document.querySelectorAll('.project-section').forEach(section => {
-            section.classList.remove('active');
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
         
-        // Show the requested project
-        const projectToShow = document.getElementById(`project${projectNumber}`);
-        if (projectToShow) {
-            projectToShow.classList.add('active');
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const themeIcon = darkModeToggle.querySelector('i');
+        
+        // Check for saved theme preference or use preferred color scheme
+        const currentTheme = localStorage.getItem('theme') || 
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
         }
         
-        // Update current project
-        currentProject = projectNumber;
-    }
-    
-    // Next button functionality
-    document.querySelectorAll('.next').forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            let nextProject = currentProject + 1;
-            if (nextProject > totalProjects) {
-                nextProject = 1; // Wrap around to first project
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
             }
-            showProject(nextProject);
         });
-    });
-    
-    // Previous button functionality
-    document.querySelectorAll('.previous').forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            let prevProject = currentProject - 1;
-            if (prevProject < 1) {
-                prevProject = totalProjects; // Wrap around to last project
-            }
-            showProject(prevProject);
-        });
-    });
-    
-    // Initialize first project
-    showProject(1);
-    
-    // Add click handlers for direct project links if needed
-    document.querySelectorAll('[onclick^="showProject"]').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const projectId = this.getAttribute('onclick').match(/'([^']+)'/)[1];
-            const projectNum = parseInt(projectId.replace('project', ''));
-            showProject(projectNum);
-        });
-    });
-});
-
-//Contact Form Validation
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const form = event.target;
-            const formData = new FormData(form);
-            
-            if (!formData.get('email').includes('@')) {
-                alert('ruchitrak98@gmail.com');
-                return;
-            }
-            
-            fetch('https://formsubmit.co/ajax/ruchitrak98@gmail .com', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({
-                    name: formData.get('name'),
-                    email: formData.get('email'),
-                    message: formData.get('message'),
-                    _subject: 'New Contact Form Submission',
-                    _template: 'box'
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                alert('Thank you for your message! I will get back to you soon.');
-                form.reset();
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('There was an error submitting your message. Please try again.');
-            });
-        });
-
-
-// Feebback form
-document.getElementById('feedbackForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const form = event.target;
-            const formData = new FormData(form);
-            
-            fetch('https://formsubmit.co/ajax/ruchitrak98@gmail.com', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({
-                    rating: formData.get('rating'),
-                    feedback: formData.get('feedback'),
-                    _subject: `New ${formData.get('rating')}-Star Portfolio Feedback`,
-                    _template: 'box'
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                alert('Thank you for your feedback!');
-                form.reset();
-                document.querySelectorAll('.stars i').forEach(star => {
-                    star.classList.remove('active');
+        
+        // Projects Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
                 });
-                document.getElementById('ratingValue').value = "0";
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('There was an error submitting your feedback. Please try again.');
             });
         });
-
-// Smooth Scrolling
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
-                });
+                }
             });
-
-// Back to Top Button
+        });
+        
+        // Back to Top Button
             window.addEventListener('scroll', () => {
                 const backToTop = document.getElementById('back-to-top');
                 backToTop.style.display = window.pageYOffset > 300 ? 'block' : 'none';
@@ -1589,28 +1769,45 @@ document.getElementById('feedbackForm').addEventListener('submit', function(even
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
-
-// Initialize on load
-            document.addEventListener('DOMContentLoaded', () => {
-                showProject('project1');
-                animateSkills();
-            });
-
-         // Function to animate skill progress bars
-        function animateSkills() {
-            const skillProgressElements = document.querySelectorAll('.skill-progress');
-
-            skillProgressElements.forEach((skillProgress) => {
-                const progress = skillProgress.getAttribute('data-progress');
-                skillProgress.style.setProperty('--progress', `${progress}%`);
-                skillProgress.style.setProperty('--data-progress', `${progress}%`);
-            });
-        }
-
-        // Run the animation when the page loads
-        window.addEventListener('load', animateSkills);
+        
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
             
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the form data to a server
+            // For demonstration, we'll just show an alert
+            alert(`Thank you for your message, ${name}! I'll get back to you soon at ${email}.`);
+            
+            // Reset the form
+            contactForm.reset();
+        });
+        
+        // Animate elements when they come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Initial check on load
+        window.addEventListener('load', animateOnScroll);
+        // Check on scroll
+        window.addEventListener('scroll', animateOnScroll);
     </script>
 </body>
-
 </html>
