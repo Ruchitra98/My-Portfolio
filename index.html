@@ -443,86 +443,294 @@
             font-weight: 500;
         }
 
-        /* Experience Section */
-        .experience {
-            background-color: var(--light-gray);
-        }
+        /* Education Section */
+.education {
+    background-color: var(--card-bg);
+    position: relative;
+    overflow: hidden;
+}
 
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-            padding-left: 50px;
-        }
+.education-container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
 
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 25px;
-            height: 100%;
-            width: 2px;
-            background: var(--primary-color);
-        }
+.education-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: var(--primary-light);
+    z-index: 1;
+}
 
-        .timeline-item {
-            position: relative;
-            margin-bottom: 40px;
-            padding: 20px;
-            background-color: var(--card-bg);
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-md);
-            transition: var(--transition-base);
-        }
+.education-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
 
-        .timeline-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
+.education-content {
+    width: calc(50% - 40px);
+    padding: 30px;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-base);
+}
 
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -50px;
-            top: 30px;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: var(--primary-color);
-            border: 4px solid var(--light-color);
-        }
+.education-item:hover .education-content {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
 
-        .timeline-date {
-            position: absolute;
-            left: -120px;
-            top: 30px;
-            width: 80px;
-            text-align: right;
-            color: var(--gray-color);
-            font-weight: 500;
-        }
+.left-aligned {
+    margin-right: auto;
+    text-align: right;
+}
 
-        .timeline-content h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
+.right-aligned {
+    margin-left: auto;
+    text-align: left;
+}
 
-        .timeline-company {
-            display: inline-block;
-            margin-bottom: 1rem;
-            color: var(--secondary-color);
-            font-weight: 500;
-        }
+.education-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin: 0 20px;
+    box-shadow: var(--shadow-md);
+    z-index: 3;
+}
 
-        .timeline-description {
-            margin-bottom: 1rem;
-        }
+.education-institution {
+    display: block;
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
 
-        .timeline-skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+.education-date {
+    display: block;
+    color: var(--gray-color);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.education-description {
+    margin-bottom: 1.5rem;
+}
+
+.education-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Dark Mode Styles for Education */
+body.dark-mode .education-content {
+    background-color: var(--dark-card);
+    border: 1px solid var(--dark-border);
+}
+
+body.dark-mode .education-icon {
+    background-color: var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .education-container::before {
+        left: 30px;
+    }
+    
+    .education-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .education-content {
+        width: calc(100% - 80px);
+        margin-left: 80px !important;
+        text-align: left !important;
+    }
+    
+    .education-icon {
+        position: absolute;
+        left: 0;
+        margin: 0;
+    }
+    
+    .right-aligned, .left-aligned {
+        margin-right: 0;
+        margin-left: 80px;
+        text-align: left;
+    }
+}
+
+       /* Experience Section */
+.experience {
+    background-color: var(--light-gray);
+    position: relative;
+    overflow: hidden;
+}
+
+.experience-container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.experience-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: var(--primary-light);
+    z-index: 1;
+}
+
+.experience-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.experience-content {
+    width: calc(50% - 40px);
+    padding: 30px;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-base);
+}
+
+.experience-item:hover .experience-content {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.left-aligned {
+    margin-right: auto;
+    text-align: right;
+}
+
+.right-aligned {
+    margin-left: auto;
+    text-align: left;
+}
+
+.experience-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin: 0 20px;
+    box-shadow: var(--shadow-md);
+    z-index: 3;
+}
+
+.experience-company {
+    display: block;
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.experience-date {
+    display: block;
+    color: var(--gray-color);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.experience-description {
+    margin-bottom: 1.5rem;
+}
+
+.experience-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.experience-content ul {
+    margin-bottom: 1.5rem;
+    padding-left: 20px;
+}
+
+.experience-content li {
+    position: relative;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+/* Dark Mode Styles for Experience */
+body.dark-mode .experience-content {
+    background-color: var(--dark-card);
+    border: 1px solid var(--dark-border);
+}
+
+body.dark-mode .experience-icon {
+    background-color: var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .experience-container::before {
+        left: 30px;
+    }
+    
+    .experience-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .experience-content {
+        width: calc(100% - 80px);
+        margin-left: 80px !important;
+        text-align: left !important;
+    }
+    
+    .experience-icon {
+        position: absolute;
+        left: 0;
+        margin: 0;
+    }
+    
+    .right-aligned, .left-aligned {
+        margin-right: 0;
+        margin-left: 80px;
+        text-align: left;
+    }
+    
+    .experience-content ul {
+        padding-left: 20px;
+    }
+}
 
         /* Projects Section */
         .projects {
@@ -640,46 +848,162 @@
     transform: translateX(10px);
 }
 
-        /* Skills Section */
-        .skills {
-            background-color: var(--light-gray);
-        }
+        /* Skills Section - Motion Pop-Up */
+.skills {
+    background-color: var(--card-bg);
+    position: relative;
+    overflow: hidden;
+}
 
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-        }
+.skills::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+    opacity: 0.05;
+    z-index: 0;
+}
 
-        .skill-card {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-md);
-            text-align: center;
-            transition: var(--transition-base);
-        }
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+}
 
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
+.skill-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateY(50px) scale(0.95);
+    opacity: 0;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(37, 99, 235, 0.1);
+}
 
-        .skill-icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
+.skill-card.visible {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
 
-        .skill-title {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-        }
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+}
 
-        .skill-description {
-            color: var(--gray-color);
-        }
+.skill-card.visible::before {
+    transform: scaleX(1);
+}
 
+.skill-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(37, 99, 235, 0.3);
+}
+
+.skill-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    transition: transform 0.5s ease;
+}
+
+.skill-card:hover .skill-icon {
+    transform: rotate(15deg) scale(1.1);
+    color: var(--secondary-color);
+}
+
+.skill-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.skill-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover .skill-title::after {
+    width: 80px;
+    background: var(--secondary-color);
+}
+
+.skill-description {
+    color: var(--gray-color);
+    margin-bottom: 1.5rem;
+    min-height: 60px;
+}
+
+.skill-progress {
+    height: 8px;
+    background-color: var(--light-gray);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 4px;
+    transition: width 1.5s ease-out;
+    transform-origin: left;
+}
+
+.skill-card:not(.visible) .progress-bar {
+    width: 0 !important;
+}
+
+/* Dark Mode Styles */
+body.dark-mode .skill-card {
+    background-color: var(--dark-card);
+    border-color: var(--dark-border);
+}
+
+body.dark-mode .skill-description {
+    color: rgba(226, 232, 240, 0.8);
+}
+
+body.dark-mode .skill-progress {
+    background-color: var(--dark-bg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .skill-card {
+        padding: 25px;
+    }
+}
         
         /* Contact Section */
         .contact {
@@ -711,7 +1035,7 @@
         }
 
         .contact-details h3 {
-            margin-bottom: 0.5rem;
+            margin-bottom: 1 rem;
             color: var(--primary-color);
         }
 
@@ -722,9 +1046,6 @@
             box-shadow: var(--shadow-md);
         }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
 
         .form-label {
             display: block;
@@ -799,12 +1120,12 @@
         }
 
         .social-link:hover {
-            background-color: var(--primary-color);
+            background-color: yellowgreen;
             transform: translateY(-3px);
         }
 
         .footer-links h3 {
-            color: white;
+            color: red;
             margin-bottom: 1.5rem;
             font-size: 1.25rem;
         }
@@ -1121,6 +1442,7 @@
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
+                     <li><a href="#education">Education</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -1182,96 +1504,162 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section class="section experience" id="experience">
-        <div class="container">
-            <h2 class="section-title text-center animate">Experience</h2>
+
+    <!-- Education Section -->
+<section class="section education" id="education">
+    <div class="container">
+        <h2 class="section-title text-center animate">Education</h2>
+        
+        <div class="education-container">
+            <!-- Education 1 - Left aligned -->
+            <div class="education-item animate delay-1">
+                <div class="education-content left-aligned">
+                    <h3>Master of Science in Computer Science</h3>
+                    <span class="education-institution">New York Institute of Technology (NYIT)</span>
+                    <span class="education-date">2022 - 2024</span>
+                    <p class="education-description">
+                        Specialized in Advanced Computing Concepts, Artificial Intelligence, and Human-Computer Interaction. <br>
+                        GPA: 3.2/4.0
+                    </p>
+                    <div class="education-skills">
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Data Structures</span>
+                        <span class="skill-tag">Algorithms</span>
+                    </div>
+                </div>
+                <div class="education-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+            </div>
             
-            <div class="timeline">
-                <!-- Experience 1 -->
-                <div class="timeline-item animate delay-1">
-                    <span class="timeline-date">2020 - 2022</span>
-                    <div class="timeline-content">
-                        <h3>Software Engineer</h3>
-                        <span class="timeline-company">Ambica Constructions and Contractors, Bangalore, India</span>
-                        <p class="timeline-description">
-                            At Ambica Constructions & Contractors, I worked as a front-end-focused Software Engineer involved in full-cycle development. My work spanned from designing and coding interfaces to testing, deploying, and supporting software solutions used across the company.
-                        </p>
-                        <ul>
-                            <li>Built and maintained user interfaces with React and TypeScript, ensuring accessibility, responsiveness, and performance.</li>
-                            <li>Collaborated closely with designers, backend developers, and project managers to deliver efficient, scalable front-end solutions.</li>
-                            <li>Took ownership of problem-solving and was often the go-to for debugging UI issues and improving user experience.</li>
-                        </ul>
-                        <div class="timeline-skills">
-                            <span class="skill-tag">React</span>
-                            <span class="skill-tag">TypeScript</span>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">HTML/CSS</span>
-                        </div>
-                    </div>
+            <!-- Education 2 - Right aligned -->
+            <div class="education-item animate delay-2">
+                <div class="education-icon">
+                    <i class="fas fa-university"></i>
                 </div>
-                
-                <!-- Experience 2 -->
-                <div class="timeline-item animate delay-2">
-                    <span class="timeline-date">2021</span>
-                    <div class="timeline-content">
-                        <h3>Website Developer</h3>
-                        <span class="timeline-company">Lernov, Bangalore, India</span>
-                        <p class="timeline-description">
-                            Designed Sublime Text to systematically organize and optimize HTML code, actively contributing to the website's layout. Attained significant success in project advancement, developing a fully functional website closely aligned with 90% of detailed client specifications.
-                        </p>
-                        <div class="timeline-skills">
-                            <span class="skill-tag">HTML</span>
-                            <span class="skill-tag">CSS</span>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">Bootstrap</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Experience 3 -->
-                <div class="timeline-item animate delay-3">
-                    <span class="timeline-date">2020</span>
-                    <div class="timeline-content">
-                        <h3>Website Developer and Designer</h3>
-                        <span class="timeline-company">Sain Solutions, Bangalore, India</span>
-                        <p class="timeline-description">
-                            Successfully designed aesthetically pleasing interfaces with advanced functionality, enhanced teamwork, and problem-solving skills. Implemented new user interfaces for a retail client, leading to a 20% improvement in user engagement within two months of deployment.
-                        </p>
-                        <div class="timeline-skills">
-                            <span class="skill-tag">UI Design</span>
-                            <span class="skill-tag">Front-End Development</span>
-                            <span class="skill-tag">PHP</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Experience 4 -->
-                <div class="timeline-item animate delay-4">
-                    <span class="timeline-date">2025 - Present</span>
-                    <div class="timeline-content">
-                        <h3>9/11 Memorial & Museum</h3>
-                        <span class="timeline-company">Retail Greeter Volunteer, New York</span>
-                        <p class="timeline-description">
-                            I welcome 1000+ guests monthly by providing guidance on resources and assisting with navigation and accessibility. Engaging visitors in thoughtful discussions, sharing the historical significance of exhibits, and preserving personal stories help foster deeper connections.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Experience 5 -->
-                <div class="timeline-item animate delay-5">
-                    <span class="timeline-date">2024 - Present</span>
-                    <div class="timeline-content">
-                        <h3>Computer Science Tutor</h3>
-                        <span class="timeline-company">UPchive, Brooklyn, New York</span>
-                        <p class="timeline-description">
-                            Provided guidance and academic support to students in College Applications and Essay Writing for admission purposes. Assisted students in Computer Science courses to enhance their understanding and skills. Collaborated with students to develop personalized strategies for academic success.
-                        </p>
+                <div class="education-content right-aligned">
+                    <h3>Bachelor of Technology in Computer Science</h3>
+                    <span class="education-institution">REVA University,Bangalore, India</span>
+                    <span class="education-date">2016 - 2022</span>
+                    <p class="education-description">
+                        Focused on Software Development, Web Technologies, and Database Systems. Graduated with First Class Honors.
+                    </p>
+                    <div class="education-skills">
+                        <span class="skill-tag">Web Development</span>
+                        <span class="skill-tag">Database Systems</span>
+                        <span class="skill-tag">Software Engineering</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+    <!-- Experience Section -->
+<section class="section experience" id="experience">
+    <div class="container">
+        <h2 class="section-title text-center animate">Experience</h2>
+        
+        <div class="experience-container">
+            <!-- Experience 1 - Right aligned -->
+            <div class="experience-item animate delay-1">
+                <div class="experience-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="experience-content right-aligned">
+                    <span class="experience-date">June 2020 - July 2022</span>
+                    <h3>Software Engineer</h3>
+                    <span class="experience-company"><b> Ambica Constructions and Contractors</b>, Bangalore, India</span>
+                    <p class="experience-description">
+                        At Ambica Constructions & Contractors, I worked as a front-end-focused Software Engineer involved in full-cycle development. My work spanned from designing and coding interfaces to testing, deploying, and supporting software solutions used across the company.
+                    </p>
+                    <ul>
+                        <li>Built and maintained user interfaces with React and TypeScript, ensuring accessibility, responsiveness, and performance.</li>
+                        <li>Collaborated closely with designers, backend developers, and project managers to deliver efficient, scalable front-end solutions.</li>
+                        <li>Took ownership of problem-solving and was often the go-to for debugging UI issues and improving user experience.</li>
+                    </ul>
+                    <div class="experience-skills">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Experience 2 - Left aligned -->
+            <div class="experience-item animate delay-2">
+                <div class="experience-content left-aligned">
+                    <span class="experience-date">July 2021 - August 2021</span>
+                    <h3>Website Developer</h3>
+                    <span class="experience-company"><b> Lernov,</b> Bangalore, India</span>
+                    <p class="experience-description">
+                        Designed Sublime Text to systematically organize and optimize HTML code, actively contributing to the website's layout. Attained significant success in project advancement, developing a fully functional website closely aligned with 90% of detailed client specifications.
+                    </p>
+                    <div class="experience-skills">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Bootstrap</span>
+                    </div>
+                </div>
+                <div class="experience-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+            </div>
+            
+            <!-- Experience 3 - Right aligned -->
+            <div class="experience-item animate delay-3">
+                <div class="experience-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <div class="experience-content right-aligned">
+                    <span class="experience-date">Feb 2020 - May 2020</span>
+                    <h3>Website Developer and Designer</h3>
+                    <span class="experience-company"><b> Sain Solutions,</b> Bangalore, India</span>
+                    <p class="experience-description">
+                        Successfully designed aesthetically pleasing interfaces with advanced functionality, enhanced teamwork, and problem-solving skills. Implemented new user interfaces for a retail client, leading to a 20% improvement in user engagement within two months of deployment.
+                    </p>
+                    <div class="experience-skills">
+                        <span class="skill-tag">UI Design</span>
+                        <span class="skill-tag">Front-End Development</span>
+                        <span class="skill-tag">PHP</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Experience 4 - Left aligned -->
+            <div class="experience-item animate delay-4">
+                <div class="experience-content left-aligned">
+                    <span class="experience-date">January 2025 - Present</span>
+                    <h3>Retail Greeter Volunteer</h3>
+                    <span class="experience-company">9/11 Memorial & Museum, New York</span>
+                    <p class="experience-description">
+                        I welcome 1000+ guests monthly by providing guidance on resources and assisting with navigation and accessibility. Engaging visitors in thoughtful discussions, sharing the historical significance of exhibits, and preserving personal stories help foster deeper connections.
+                    </p>
+                </div>
+                <div class="experience-icon">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+            </div>
+            
+            <!-- Experience 5 - Right aligned -->
+            <div class="experience-item animate delay-5">
+                <div class="experience-icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <div class="experience-content right-aligned">
+                    <span class="experience-date">Sept 2024 - June 2025</span>
+                    <h3>Computer Science Tutor</h3>
+                    <span class="experience-company"> <b> UPchive, </b> Brooklyn, New York</span>
+                    <p class="experience-description">
+                        Provided guidance and academic support to students in College Applications and Essay Writing for admission purposes. Assisted students in Computer Science courses to enhance their understanding and skills. Collaborated with students to develop personalized strategies for academic success.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Projects Section -->
     <section class="section projects" id="projects">
@@ -1424,115 +1812,124 @@
         </div>
     </section>
 
+    
     <!-- Skills Section -->
-    <section class="section skills" id="skills">
-        <div class="container">
-            <h2 class="section-title text-center animate">My Skills</h2>
-            
-            <div class="skills-container">
-                <!-- Skill 1 -->
-                <div class="skill-card animate delay-1">
-                    <div class="skill-icon">
-                        <i class="fab fa-html5"></i>
-                    </div>
-                    <h3 class="skill-title">HTML5</h3>
-                    <p class="skill-description">
-                        Proficient in semantic HTML5 and accessibility best practices with extensive experience building accessible web applications.
-                    </p>
-                </div>
-                
-                <!-- Skill 2 -->
-                <div class="skill-card animate delay-2">
-                    <div class="skill-icon">
-                        <i class="fab fa-css3-alt"></i>
-                    </div>
-                    <h3 class="skill-title">CSS3</h3>
-                    <p class="skill-description">
-                        Expert in CSS3, Flexbox, Grid, animations and responsive design principles to create visually appealing interfaces.
-                    </p>
-                </div>
-                
-                <!-- Skill 3 -->
-                <div class="skill-card animate delay-3">
-                    <div class="skill-icon">
-                        <i class="fab fa-js"></i>
-                    </div>
-                    <h3 class="skill-title">JavaScript</h3>
-                    <p class="skill-description">
-                        Strong knowledge of ES6+, DOM manipulation, AJAX, and modern JavaScript frameworks and libraries.
-                    </p>
-                </div>
-                
-                <!-- Skill 4 -->
-                <div class="skill-card animate delay-4">
-                    <div class="skill-icon">
-                        <i class="fab fa-react"></i>
-                    </div>
-                    <h3 class="skill-title">React</h3>
-                    <p class="skill-description">
-                        Experience with React hooks, state management, component lifecycle, and building reusable component libraries.
-                    </p>
-                </div>
-                
-                <!-- Skill 5 -->
-                <div class="skill-card animate delay-5">
-                    <div class="skill-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3 class="skill-title">Responsive Design</h3>
-                    <p class="skill-description">
-                        Creating fluid layouts that work seamlessly across all device sizes using modern CSS techniques and media queries.
-                    </p>
-                </div>
-                
-                <!-- Skill 6 -->
-                <div class="skill-card animate delay-1">
-                    <div class="skill-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3 class="skill-title">User Research</h3>
-                    <p class="skill-description">
-                        Conducting surveys, interviews, and usability tests to understand user needs and validate design decisions.
-                    </p>
-                </div>
-                
-                <!-- Skill 7 -->
-                <div class="skill-card animate delay-2">
-                    <div class="skill-icon">
-                        <i class="fab fa-git-alt"></i>
-                    </div>
-                    <h3 class="skill-title">Version Control</h3>
-                    <p class="skill-description">
-                        Managing code efficiently using Git, GitHub, and GitLab for collaboration and version control.
-                    </p>
-                </div>
-                
-                <!-- Skill 8 -->
-                <div class="skill-card animate delay-3">
-                    <div class="skill-icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <h3 class="skill-title">UI/UX Design</h3>
-                    <p class="skill-description">
-                        Designing user-centered experiences through wireframing, prototyping, and usability testing.
-                    </p>
-                </div>
-
-                <!-- Skill 9 -->
-                <div class="skill-card animate delay-4">
+<section class="section skills" id="skills">
+    <div class="container">
+        <h2 class="section-title text-center animate">My Skills</h2>
+        
+        <div class="skills-grid">
+            <!-- Skill 1 -->
+            <div class="skill-card" data-skill="html5">
                 <div class="skill-icon">
-                    <i class="fas fa-film"></i> <!-- Using film icon for motion design -->
+                    <i class="fab fa-html5"></i>
+                </div>
+                <h3 class="skill-title">HTML5</h3>
+                <p class="skill-description">
+                    Proficient in semantic HTML5 and accessibility best practices with extensive experience building accessible web applications.
+                </p>
+                
+            </div>
+            
+            <!-- Skill 2 -->
+            <div class="skill-card" data-skill="css3">
+                <div class="skill-icon">
+                    <i class="fab fa-css3-alt"></i>
+                </div>
+                <h3 class="skill-title">CSS3</h3>
+                <p class="skill-description">
+                    Expert in CSS3, Flexbox, Grid, animations and responsive design principles to create visually appealing interfaces.
+                </p>
+                
+            </div>
+            
+            <!-- Skill 3 -->
+            <div class="skill-card" data-skill="javascript">
+                <div class="skill-icon">
+                    <i class="fab fa-js"></i>
+                </div>
+                <h3 class="skill-title">JavaScript</h3>
+                <p class="skill-description">
+                    Strong knowledge of ES6+, DOM manipulation, AJAX, and modern JavaScript frameworks and libraries.
+                </p>
+                
+            </div>
+            
+            <!-- Skill 4 -->
+            <div class="skill-card" data-skill="react">
+                <div class="skill-icon">
+                    <i class="fab fa-react"></i>
+                </div>
+                <h3 class="skill-title">React</h3>
+                <p class="skill-description">
+                    Experience with React hooks, state management, component lifecycle, and building reusable component libraries.
+                </p>
+                
+            </div>
+            
+            <!-- Skill 5 -->
+            <div class="skill-card" data-skill="responsive">
+                <div class="skill-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3 class="skill-title">Responsive Design</h3>
+                <p class="skill-description">
+                    Creating fluid layouts that work seamlessly across all device sizes using modern CSS techniques and media queries.
+                </p>
+                
+            </div>
+            
+            <!-- Skill 6 -->
+            <div class="skill-card" data-skill="research">
+                <div class="skill-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3 class="skill-title">User Research</h3>
+                <p class="skill-description">
+                    Conducting surveys, interviews, and usability tests to understand user needs and validate design decisions.
+                </p>
+               
+            </div>
+            
+            <!-- Skill 7 -->
+            <div class="skill-card" data-skill="git">
+                <div class="skill-icon">
+                    <i class="fab fa-git-alt"></i>
+                </div>
+                <h3 class="skill-title">Version Control</h3>
+                <p class="skill-description">
+                    Managing code efficiently using Git, GitHub, and GitLab for collaboration and version control.
+                </p>
+                
+            </div>
+            
+            <!-- Skill 8 -->
+            <div class="skill-card" data-skill="design">
+                <div class="skill-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3 class="skill-title">UI/UX Design</h3>
+                <p class="skill-description">
+                    Designing user-centered experiences through wireframing, prototyping, and usability testing.
+                </p>
+                
+            </div>
+            
+            <!-- Skill 9 -->
+            <div class="skill-card" data-skill="motion">
+                <div class="skill-icon">
+                    <i class="fas fa-film"></i>
                 </div>
                 <h3 class="skill-title">Motion Design</h3>
                 <p class="skill-description">
-                    Creating engaging animations and micro-interactions to enhance user experience and bring interfaces to life with smooth transitions.
+                    Creating engaging animations and micro-interactions to enhance user experience and bring interfaces to life.
                 </p>
-            </div>
+                
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    
     <!-- Contact Section -->
     <section class="section contact" id="contact">
         <div class="container">
@@ -1628,6 +2025,7 @@
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
+                        <li><a href="#Education">Education</a></li>
                         <li><a href="#experience">Experience</a></li>
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#contact">Contact</a></li>
@@ -1786,6 +2184,25 @@ document.querySelectorAll('a, button').forEach(el => {
             });
         });
         
+        // Skill Cards Animation
+const skillCards = document.querySelectorAll('.skill-card');
+
+const animateSkills = () => {
+    skillCards.forEach(card => {
+        const cardPosition = card.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+        
+        if (cardPosition < screenPosition) {
+            card.classList.add('visible');
+        }
+    });
+};
+
+// Initial check
+window.addEventListener('load', animateSkills);
+// Check on scroll
+window.addEventListener('scroll', animateSkills);
+
         // Smooth Scrolling for Anchor Links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
