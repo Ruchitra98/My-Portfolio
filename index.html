@@ -848,6 +848,39 @@ body.dark-mode .experience-icon {
     transform: translateX(10px);
 }
 
+    
+    /* Sequential Image Animation */
+    .project-image-container {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+    }
+    
+    .project-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 1s ease-in-out, transform 0.8s ease;
+        transform: scale(0.95);
+    }
+    
+    .project-image.active {
+        opacity: 1;
+        transform: scale(1);
+    }
+    
+    .project-image.next {
+        transform: scale(1.05);
+    }
+    
+
+    /* Project card hover effect */
+    .project-card:hover .project-image.active {
+        transform: scale(1.05);
+    }
+
         /* Skills Section - Motion Pop-Up */
 .skills {
     background-color: var(--card-bg);
@@ -1578,12 +1611,7 @@ body.dark-mode .skill-progress {
                         <li>Collaborated closely with designers, backend developers, and project managers to deliver efficient, scalable front-end solutions.</li>
                         <li>Took ownership of problem-solving and was often the go-to for debugging UI issues and improving user experience.</li>
                     </ul>
-                    <div class="experience-skills">
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">TypeScript</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">HTML/CSS</span>
-                    </div>
+                    
                 </div>
             </div>
             
@@ -1596,12 +1624,7 @@ body.dark-mode .skill-progress {
                     <p class="experience-description">
                         Designed Sublime Text to systematically organize and optimize HTML code, actively contributing to the website's layout. Attained significant success in project advancement, developing a fully functional website closely aligned with 90% of detailed client specifications.
                     </p>
-                    <div class="experience-skills">
-                        <span class="skill-tag">HTML</span>
-                        <span class="skill-tag">CSS</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Bootstrap</span>
-                    </div>
+                    
                 </div>
                 <div class="experience-icon">
                     <i class="fas fa-code"></i>
@@ -1620,11 +1643,7 @@ body.dark-mode .skill-progress {
                     <p class="experience-description">
                         Successfully designed aesthetically pleasing interfaces with advanced functionality, enhanced teamwork, and problem-solving skills. Implemented new user interfaces for a retail client, leading to a 20% improvement in user engagement within two months of deployment.
                     </p>
-                    <div class="experience-skills">
-                        <span class="skill-tag">UI Design</span>
-                        <span class="skill-tag">Front-End Development</span>
-                        <span class="skill-tag">PHP</span>
-                    </div>
+                    
                 </div>
             </div>
             
@@ -1675,9 +1694,13 @@ body.dark-mode .skill-progress {
             <div class="projects-grid">
                 <!-- Project 1 -->
                 <div class="project-card animate delay-3" data-category="design">
-                    <div class="project-image">
-                        <img src="Task.jpg" alt="TaskFlow Pro Project">
+                       <div class="project-image-container">
+                         <img src="Task.jpg" alt="TaskFlow Pro Project" class="project-image active">
+                          <img src="Task1.jpg" alt="TaskFlow Pro Project" class="project-image active">
+                          <img src="Task2.jpg" alt="TaskFlow Pro Project" class="project-image active">
+                          <img src="Task3.jpg" alt="TaskFlow Pro Project" class="project-image active">
                     </div>
+
                     <div class="project-content">
                         <h3 class="project-title">TaskFlow Pro | AI-Powered Task Management</h3>
                         <p class="project-description">
@@ -1699,8 +1722,10 @@ body.dark-mode .skill-progress {
 
                 <!-- Project 2 -->
                 <div class="project-card animate delay-3" data-category="design">
-                    <div class="project-image">
-                        <img src="Mood.jpg" alt="MoodTunes Project">
+                    <div class="project-image-container">
+                         <img src="Mood.jpg" alt="Mood-Based-Playlist-Generator-Web-App" class="project-image active">
+                         <img src="Mood1.jpg" alt="Mood-Based-Playlist-Generator-Web-App" class="project-image active">
+                         
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">MoodTunes - Mood-Based Playlist Generator</h3>
@@ -1721,8 +1746,10 @@ body.dark-mode .skill-progress {
                 
                 <!-- Project 3 -->
                 <div class="project-card animate delay-3" data-category="design">
-                    <div class="project-image">
-                        <img src="Gift.jpg" alt="GiftGenie Project">
+                    <div class="project-image-container">
+                        <img src="Gift.jpg" alt="GiftGenie Project" class="project-image active">
+                        <img src="Gift1.jpg" alt="GiftGenie Project" class="project-image active">
+                        <img src="Gift2.jpg" alt="GiftGenie Project" class="project-image active">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">GiftGenie - Personalized Gift Suggestion Platform</h3>
@@ -2183,6 +2210,51 @@ document.querySelectorAll('a, button').forEach(el => {
                 });
             });
         });
+
+        
+    // Sequential Image Animation for Projects
+    document.addEventListener('DOMContentLoaded', function() {
+        const projectContainers = document.querySelectorAll('.project-image-container');
+        
+        projectContainers.forEach(container => {
+            const images = container.querySelectorAll('.project-image');
+            let currentIndex = 0;
+            
+            // Only animate if there are multiple images
+            if (images.length > 1) {
+                // Set interval to cycle through images
+                setInterval(() => {
+                    // Remove active class from current image
+                    images[currentIndex].classList.remove('active');
+                    
+                    // Add next class for smooth transition
+                    images[currentIndex].classList.add('next');
+                    
+                    // Calculate next index
+                    currentIndex = (currentIndex + 1) % images.length;
+                    
+                    // Add active class to next image
+                    setTimeout(() => {
+                        images.forEach(img => img.classList.remove('next'));
+                        images[currentIndex].classList.add('active');
+                    }, 100);
+                    
+                }, 3000); // Change image every 3 seconds
+            }
+        });
+        
+        // Pause animation on hover
+        projectContainers.forEach(container => {
+            container.addEventListener('mouseenter', () => {
+                container.dataset.paused = 'true';
+            });
+            
+            container.addEventListener('mouseleave', () => {
+                container.dataset.paused = 'false';
+            });
+        });
+    });
+
         
         // Skill Cards Animation
 const skillCards = document.querySelectorAll('.skill-card');
