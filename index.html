@@ -98,13 +98,22 @@
 
         img {
             max-width: 100%;
-            height: 50%;
+            height: 30%;
             display: block;
         }
 
         /* Add to your about image */
 .about-image {
-    animation: float 6s ease-in-out infinite;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: var(--border-radius-lg);
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 @keyframes float {
@@ -115,8 +124,7 @@
 
         ul, ol {
             list-style: none;
-        }
-
+        } 
         .container {
             max-width: var(--max-width);
             margin: 0 auto;
@@ -1514,24 +1522,14 @@ body.dark-mode .skill-progress {
             <div class="about-container">
                 <div class="about-content animate delay-1">
                     <p class="about-text">
-                        I'm Ruchitra Kumaresan, a dedicated front-end developer with a Master's degree in Computer Science from New York Institute of Technology (NYIT) and a Bachelor's degree from REVA University, India. Over the past two years, I've gained professional experience at Ambica Constructions & Contractors, where I focused on full-cycle front-end development—designing interfaces, writing code, testing, and supporting real-world applications.
-                    </p>
-
-                    <p class="about-text">
-                        I’m passionate about problem-solving and collaboration, and I thrive under pressure and tight deadlines. I’m always excited to embrace new challenges and bring creativity, energy, and thoughtful precision to every project I work on. Let’s connect and explore how we can build impactful software solutions together.
-                    </p>
-
-                    <p class=" about-text"> When I'm not coding, you might find me:
-                        • Volunteering at the 9/11 Memorial, helping visitors connect with history
-                        • Building passion projects like Gift Genie, as we know, who doesn't struggle with gift ideas?
-                        • Experimenting with 3D graphics – I built a rendering engine to understand how games create immersive worlds. </p>
+                        I’m Ruchitra Kumaresan, a front-end developer with a Master’s in Computer Science from NYIT and a Bachelor’s from REVA University, India. With two years of experience at Ambica Constructions & Contractors, I’ve worked across the full front-end development cycle—designing, coding, testing, and maintaining real-world applications. I thrive in collaborative environments, love solving problems under pressure, and bring creativity and precision to every project. Outside of work, I volunteer at the 9/11 Memorial, build passion projects like Gift Genie, and explore 3D graphics through projects like my custom rendering engine. Let’s connect and create meaningful software together! </p>
                     
                     
                     <a href="Ruchitra.K .pdf" class="btn" download style="margin-top: 20px;">Download Resume</a>
                 </div>
                 
                 <div class="about-image animate delay-2">
-                    <img src="1.jpg" alt="Ruchitra Kumaresan">
+                    <img src="11.jpg" alt="Ruchitra Kumaresan">
                 </div>
             </div>
         </div>
@@ -1552,7 +1550,6 @@ body.dark-mode .skill-progress {
                     <span class="education-date">2022 - 2024</span>
                     <p class="education-description">
                         Specialized in Advanced Computing Concepts, Artificial Intelligence, and Human-Computer Interaction. <br>
-                        GPA: 3.2/4.0
                     </p>
                     <div class="education-skills">
                         <span class="skill-tag">Machine Learning</span>
@@ -1572,7 +1569,7 @@ body.dark-mode .skill-progress {
                 </div>
                 <div class="education-content right-aligned">
                     <h3>Bachelor of Technology in Computer Science</h3>
-                    <span class="education-institution">REVA University,Bangalore, India</span>
+                    <span class="education-institution">REVA University (RU), Bangalore, India</span>
                     <span class="education-date">2016 - 2022</span>
                     <p class="education-description">
                         Focused on Software Development, Web Technologies, and Database Systems. Graduated with First Class Honors.
