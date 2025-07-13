@@ -774,6 +774,10 @@ body.dark-mode .experience-icon {
         }
 
         .project-card {
+          border: 2px solid var(--primary-color);
+        }
+
+        .project-card {
             background-color: var(--card-bg);
             border-radius: var(--border-radius-lg);
             overflow: hidden;
@@ -796,9 +800,25 @@ body.dark-mode .experience-icon {
             height: 100%;
             object-fit: cover;
             transition: var(--transition-base);
+            border: 3px solid var(--primary-color);
+            border-radius: var(--border-radius-md);
+}
         }
 
-        .project-card:hover .project-image img {
+
+        .project-image-container {
+          padding: 5px;
+          background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+          border-radius: var(--border-radius-lg);
+        }
+
+        .project-image-container img {
+          border-radius: var(--border-radius-md);
+          display: block;
+        }
+
+        .project-card:hover 
+        .project-image img {
             transform: scale(1.05);
         }
 
@@ -1603,7 +1623,11 @@ body.dark-mode .skill-progress {
                     <p class="experience-description">
                         At Ambica Constructions & Contractors, I worked as a front-end-focused Software Engineer involved in full-cycle development. My work spanned from designing and coding interfaces to testing, deploying, and supporting software solutions used across the company.
                     </p>
-                   
+                    <ul>
+                        <li>Built and maintained user interfaces with React and TypeScript, ensuring accessibility, responsiveness, and performance.</li>
+                        <li>Collaborated closely with designers, backend developers, and project managers to deliver efficient, scalable front-end solutions.</li>
+                        <li>Took ownership of problem-solving and was often the go-to for debugging UI issues and improving user experience.</li>
+                    </ul>
                     
                 </div>
             </div>
@@ -1686,7 +1710,7 @@ body.dark-mode .skill-progress {
             
             <div class="projects-grid">
                 <!-- Project 1 -->
-                <div class="project-card animate delay-3" data-category="design">
+                <div class="project-card animate delay-2" data-category="design">
                        <div class="project-image-container">
                          <img src="Task.jpg" alt="TaskFlow Pro Project" class="project-image active">
                           <img src="Task1.jpg" alt="TaskFlow Pro Project" class="project-image active">
@@ -1696,7 +1720,9 @@ body.dark-mode .skill-progress {
 
                     <div class="project-content">
                         <h3 class="project-title">TaskFlow Pro | AI-Powered Task Management</h3>
-                        
+                        <p class="project-description">
+                            Built a fully responsive web app with AI assistant, real-time dashboard, priority filters, calendar scheduling, and animated UI, improving task completion by 12%.
+                        </p>
                         <div class="project-tags">
                             <span class="project-tag">JavaScript</span>
                             <span class="project-tag">NLP</span>
@@ -1710,7 +1736,7 @@ body.dark-mode .skill-progress {
                 </div>
 
                 <!-- Project 2 -->
-                <div class="project-card animate delay-3" data-category="design">
+                <div class="project-card animate delay-2" data-category="design">
                     <div class="project-image-container">
                          <img src="Mood.jpg" alt="Mood-Based-Playlist-Generator-Web-App" class="project-image active">
                          <img src="Mood1.jpg" alt="Mood-Based-Playlist-Generator-Web-App" class="project-image active">
@@ -1718,7 +1744,9 @@ body.dark-mode .skill-progress {
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">MoodTunes - Mood-Based Playlist Generator</h3>
-                        
+                        <p class="project-description">
+                            An interactive web app that curates personalized playlists based on a user's mood. Analyzes input using basic NLP and suggests songs matching emotions with direct YouTube links.
+                        </p>
                         <div class="project-tags">
                             <span class="project-tag">JavaScript</span>
                             <span class="project-tag">NLP</span>
@@ -1732,7 +1760,7 @@ body.dark-mode .skill-progress {
                 </div>
                 
                 <!-- Project 3 -->
-                <div class="project-card animate delay-3" data-category="design">
+                <div class="project-card animate delay-2" data-category="design">
                     <div class="project-image-container">
                         <img src="Gift.jpg" alt="GiftGenie Project" class="project-image active">
                         <img src="Gift1.jpg" alt="GiftGenie Project" class="project-image active">
@@ -1740,7 +1768,9 @@ body.dark-mode .skill-progress {
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">GiftGenie - Personalized Gift Suggestion Platform</h3>
-                        
+                        <p class="project-description">
+                            Interactive web application designed to help users find the perfect gift for any occasion or recipient through occasion-based suggestions and personality quizzes.
+                        </p>
                         <div class="project-tags">
                             <span class="project-tag">JavaScript</span>
                             <span class="project-tag">Responsive Design</span>
@@ -1754,13 +1784,18 @@ body.dark-mode .skill-progress {
                 </div>
                 
                 <!-- Project 4 -->
-                <div class="project-card animate delay-4" data-category="academic">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Computer Graphics Project">
+                <div class="project-card animate delay-2" data-category="academic">
+                    <div class="project-image-container">
+                         <img src="CG-1.jpg" alt="Computer Graphics" class="project-image active">
+                        <img src="CG-2.jpg" alt="Computer Graphics" class="project-image active">
+                        <img src="CG-3.jpg" alt="Computer Graphics" class="project-image active">
+                        <img src="CG-4.jpg" alt="Computer Graphics" class="project-image active">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Computer Graphics - Advanced Rendering</h3>
-                       
+                        <p class="project-description">
+                            Focused on Advanced Rendering Techniques, especially Projective Texturing for high-fidelity simulations of real-world elements like shadows, reflections, and decals.
+                        </p>
                         <div class="project-tags">
                             <span class="project-tag">OpenGL</span>
                             <span class="project-tag">C++</span>
@@ -1774,13 +1809,19 @@ body.dark-mode .skill-progress {
                 </div>
                 
                 <!-- Project 5 -->
-                <div class="project-card animate delay-5" data-category="academic">
-                    <div class="project-image">
-                        <img src="PRS-1.jpg" alt="Product Recommendation System">
+                <div class="project-card animate delay-2" data-category="academic">
+                    <div class="project-image-container">
+                        <img src="PRS-1.jpg" alt="Product Recommendation System" class="project-image active">
+                        <img src="PRS-2.jpg" alt="Product Recommendation System" class="project-image active">
+                        <img src="PRS-3.jpg" alt="Product Recommendation System" class="project-image active">
+                        <img src="PRS-4.jpg" alt="Product Recommendation System" class="project-image active">
+                        <img src="PRS-5.jpg" alt="Product Recommendation System" class="project-image active">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Product Recommendation System</h3>
-                        
+                        <p class="project-description">
+                            Academic project on collaborative filtering and rank-based recommendation systems using similarity-based approaches and model-based collaborative filtering with SVD.
+                        </p>
                         <div class="project-tags">
                             <span class="project-tag">Python</span>
                             <span class="project-tag">Machine Learning</span>
@@ -1794,13 +1835,19 @@ body.dark-mode .skill-progress {
                 </div>
 
                  <!-- Project 6 -->
-                <div class="project-card animate delay-5" data-category="academic">
-                    <div class="project-image">
-                        <img src="water.jpg" alt="Water Quality Monitoring And Filter System To Conserve Water Resources Using IoT">
+                <div class="project-card animate delay-2" data-category="academic">
+                    <div class="project-image-container">
+                        <img src="water-1.jpg" alt="Water Quality Monitoring And Filter System To Conserve Water Resources Using IoT" class="project-image active">
+                        <img src="water-2.jpg" alt="Water Quality Monitoring And Filter System To Conserve Water Resources Using IoT" class="project-image active">
+                        <img src="water-3.jpg" alt="Water Quality Monitoring And Filter System To Conserve Water Resources Using IoT" class="project-image active">
+                        <img src="water-4.jpg" alt="Water Quality Monitoring And Filter System To Conserve Water Resources Using IoT" class="project-image active">
+                        <img src="water-5.jpg" alt="Water Quality Monitoring And Filter System To Conserve Water Resources Using IoT" class="project-image active">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Water Quality Monitoring And Filter System To Conserve Water Resources Using IoT</h3>
-                       
+                        <p class="project-description">
+                            Leveraged IoT and AWS Cloud to monitor and purify polluted water sources in real time, achieving 90% purification for sustainable reuse.
+                        </p>
                         <div class="project-tags">
                             <span class="project-tag">Embedded C </span>
                             <span class="project-tag">Java Programimg </span>
@@ -2052,7 +2099,7 @@ body.dark-mode .skill-progress {
                 </div>
                 
                 <div class="footer-newsletter">
-                    <h3>Newsletter : Idea's Overflow </h3>
+                    <h3>Newsletter</h3>
                     <p>Subscribe to my newsletter for the latest updates and articles.</p>
                     <form class="newsletter-form">
                         <input type="email" placeholder="Your Email" class="newsletter-input" required>
