@@ -1855,7 +1855,7 @@ body.dark-mode .skill-progress {
                     <i class="fas fa-chalkboard-teacher"></i>
                 </div>
                 <div class="experience-content right-aligned">
-                    <span class="experience-date">Sept 2024 - June 2025</span>
+                    <span class="experience-date">Sept 2024 - Sept 2025</span>
                     <h3>Computer Science Tutor</h3>
                     <span class="experience-company"> <b> UPchive, </b> Brooklyn, New York</span>
                     <p class="experience-description">
@@ -2156,7 +2156,7 @@ body.dark-mode .skill-progress {
     <!-- Contact Section -->
     <section class="section contact" id="contact">
         <div class="container">
-            <h2 class="section-title text-center animate">Get In Touch</h2>
+            <h2 class="section-title text-center animate"> Get in Touch </h2>
             
             <div class="contact-container">
                 <div class="contact-info animate delay-1">
@@ -2301,9 +2301,12 @@ body.dark-mode .skill-progress {
                 </div>
             </div>
             <div class="ai-quick-questions">
-                <button class="ai-quick-question" data-question="What are Ruchitra's technical skills?">Skills</button>
-                <button class="ai-quick-question" data-question="What projects has Ruchitra worked on?">Projects</button>
-                <button class="ai-quick-question" data-question="How can I contact Ruchitra?">Contact</button>
+                <button class="ai-quick-question" data-target="about">About</button>
+        <button class="ai-quick-question" data-target="education">Education</button>
+        <button class="ai-quick-question" data-target="experience">Experience</button>
+        <button class="ai-quick-question" data-target="projects">Projects</button>
+        <button class="ai-quick-question" data-target="skills">Skills</button>
+        <button class="ai-quick-question" data-target="contact">Contact</button>
             </div>
             <div class="ai-chat-input">
                 <input type="text" id="aiUserInput" placeholder="Type your question...">
@@ -2312,7 +2315,8 @@ body.dark-mode .skill-progress {
         </div>
     </div>
 
-   <!-- Back to Top Button -->
+
+ <!-- Back to Top Button -->
     <section>
         <a href="#" id="back-to-top" title="Go to top">
             <i class="fas fa-chevron-up"></i> <!-- Font Awesome arrow icon -->
@@ -2549,6 +2553,7 @@ const animateOnScroll = () => {
 
        
         // AI Assistant Functionality
+        // AI Assistant Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const aiButton = document.getElementById('aiAssistantButton');
     const chatWindow = document.getElementById('aiChatWindow');
@@ -2557,6 +2562,40 @@ document.addEventListener('DOMContentLoaded', function() {
     const userInput = document.getElementById('aiUserInput');
     const sendButton = document.getElementById('aiSendButton');
     const chatMessages = document.getElementById('aiChatMessages');
+
+    // Section information database
+    const sectionsDB = {
+        'about': {
+            name: 'About Me',
+            description: 'Learn about Ruchitra\'s background, education, and professional journey as a front-end developer and UX/UI designer.',
+            target: '#about'
+        },
+        'education': {
+            name: 'Education',
+            description: 'View Ruchitra\'s academic qualifications including Master\'s in Computer Science from NYIT and Bachelor\'s from REVA University.',
+            target: '#education'
+        },
+        'experience': {
+            name: 'Experience',
+            description: 'Explore Ruchitra\'s professional experience including roles at Ambica Constructions & Contractors, Lernov, and Sain Solutions.',
+            target: '#experience'
+        },
+        'projects': {
+            name: 'Projects',
+            description: 'Discover Ruchitra\'s portfolio projects including TaskFlow Pro, MoodTunes, GiftGenie, and academic projects.',
+            target: '#projects'
+        },
+        'skills': {
+            name: 'Skills',
+            description: 'See Ruchitra\'s technical skills in HTML5, CSS3, JavaScript, React, responsive design, and UI/UX design.',
+            target: '#skills'
+        },
+        'contact': {
+            name: 'Contact',
+            description: 'Get in touch with Ruchitra via email, phone, or through the contact form.',
+            target: '#contact'
+        }
+    };
 
     // Project information database
     const projectsDB = {
@@ -2611,9 +2650,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Quick question buttons
     quickQuestions.forEach(button => {
         button.addEventListener('click', function() {
-            const question = this.getAttribute('data-question');
-            addMessage(question, 'user');
-            respondToQuestion(question);
+            const target = this.getAttribute('data-target');
+            handleSectionNavigation(target);
         });
     });
 
@@ -2647,106 +2685,280 @@ document.addEventListener('DOMContentLoaded', function() {
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
+    function handleSectionNavigation(sectionKey) {
+        const section = sectionsDB[sectionKey];
+        if (section) {
+            // Add message about the section
+            addMessage(`Taking you to the ${section.name} section...`, 'bot');
+            
+            // Close chat window after a brief delay
+            setTimeout(() => {
+                chatWindow.style.display = 'none';
+                
+                // Scroll to the section
+                document.querySelector(section.target).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Highlight the section briefly
+                const sectionElement = document.querySelector(section.target);
+                const originalBg = sectionElement.style.backgroundColor;
+                sectionElement.style.backgroundColor = 'rgba(37, 99, 235, 0.1)';
+                sectionElement.style.transition = 'background-color 0.5s ease';
+                
+                setTimeout(() => {
+                    sectionElement.style.backgroundColor = originalBg;
+                }, 2000);
+            }, 1000);
+        }
+    }
+
     function respondToQuestion(question) {
-        // Simple response logic - you can expand this
         let response = "I'm sorry, I don't have information about that yet.";
         
         question = question.toLowerCase();
         
-        // General questions
-        if (question.includes('skill') || question.includes('technolog')) {
-            response = "Ruchitra has skills in HTML, CSS, JavaScript, React, and various web development technologies. You can find more details in the Skills section of the portfolio.";
-        } 
-        else if (question.includes('project') || question.includes('work')) {
-            response = "Ruchitra has worked on several projects including TaskFlow Pro, MoodTunes, and GiftGenie. You can ask about specific projects like 'Tell me about MoodTunes' or 'Explain the Water Quality project'.";
-        } 
-        else if (question.includes('contact') || question.includes('reach')) {
-            response = "You can contact Ruchitra through the Contact section of this portfolio or via email at ruchitrak98@gmail.com.";
-        } 
-        else if (question.includes('hello') || question.includes('hi')) {
-            response = "Hello there! How can I help you today? You can ask about projects, skills, or experience.";
-        } 
-        else if (question.includes('experience') || question.includes('background')) {
-            response = "Ruchitra has 2 years of professional experience as a Software Engineer at Ambica Constructions & Contractors, along with several academic and personal projects. Check the Experience section for details.";
-        } 
-        else if (question.includes('education') || question.includes('degree')) {
-            response = "Ruchitra holds a Master's in Computer Science from NYIT and a Bachelor's in Computer Science from REVA University. See the Education section for details.";
-        } 
-        else if (question.includes('message') || question.includes('leave')) {
-            response = "I'll make sure Ruchitra gets your message! You can also use the contact form in the Contact section.";
-        }
-        // Project-specific questions
-        else {
-            // Check if question matches any project
-            for (const projectKey in projectsDB) {
-                if (question.includes(projectKey)) {
-                    const project = projectsDB[projectKey];
-                    response = `${project.name}: ${project.description}\n\nTechnologies: ${project.technologies.join(', ')}\n\n`;
+        // Check if question matches any section
+        for (const sectionKey in sectionsDB) {
+            if (question.includes(sectionKey)) {
+                const section = sectionsDB[sectionKey];
+                response = `${section.name}: ${section.description}\n\nWould you like me to take you to this section?`;
+                
+                // Add this to the chat immediately
+                setTimeout(() => {
+                    addMessage(response, 'bot');
                     
-                    // Add link if available
-                    if (project.link) {
-                        if (project.link.startsWith('http')) {
-                            response += ` click me to view it here: ${project.link}`;
-                        } else {
-                            response += `Click me to Download the report: ${project.link}`;
-                        }
-                    }
+                    // Add a follow-up button to scroll to the section
+                    const buttonDiv = document.createElement('div');
+                    buttonDiv.style.marginTop = '10px';
                     
-                    // Add option to view in portfolio
-                    response += "\n\nWould you like me to take you to this project in the portfolio?";
+                    const viewButton = document.createElement('button');
+                    viewButton.textContent = 'Take me there';
+                    viewButton.classList.add('ai-quick-question');
+                    viewButton.style.margin = '5px 0';
+                    viewButton.addEventListener('click', function() {
+                        handleSectionNavigation(sectionKey);
+                    });
                     
-                    // Add this to the chat immediately
-                    setTimeout(() => {
-                        addMessage(response, 'bot');
-                        
-                        // Add a follow-up button to scroll to the project
-                        const buttonDiv = document.createElement('div');
-                        buttonDiv.style.marginTop = '10px';
-                        
-                        const viewButton = document.createElement('button');
-                        viewButton.textContent = 'click me to veiw the project';
-                        viewButton.classList.add('ai-quick-question');
-                        viewButton.style.margin = '5px 0';
-                        viewButton.addEventListener('click', function() {
-                            // Close chat window
-                            chatWindow.style.display = 'none';
-                            
-                            // Scroll to projects section
-                            document.querySelector('#projects').scrollIntoView({
-                                behavior: 'smooth'
-                            });
-                            
-                            // Highlight the specific project after a delay
-                            setTimeout(() => {
-                                const projectCards = document.querySelectorAll('.project-card');
-                                projectCards.forEach(card => {
-                                    if (card.querySelector('.project-title').textContent.toLowerCase().includes(projectKey)) {
-                                        card.style.boxShadow = '0 0 0 3px var(--accent-color)';
-                                        card.style.transition = 'box-shadow 0.3s ease';
-                                        
-                                        // Remove highlight after some time
-                                        setTimeout(() => {
-                                            card.style.boxShadow = 'var(--shadow-md)';
-                                        }, 3000);
-                                    }
-                                });
-                            }, 800);
-                        });
-                        
-                        buttonDiv.appendChild(viewButton);
-                        chatMessages.appendChild(buttonDiv);
-                        chatMessages.scrollTop = chatMessages.scrollHeight;
-                    }, 500);
-                    
-                    return; // Exit the function after handling project-specific question
-                }
+                    buttonDiv.appendChild(viewButton);
+                    chatMessages.appendChild(buttonDiv);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 500);
+                
+                return; // Exit the function after handling section-specific question
             }
         }
         
-        // For non-project-specific responses
-        setTimeout(() => {
-            addMessage(response, 'bot');
-        }, 500);
+        // Check if question matches any project
+        for (const projectKey in projectsDB) {
+            if (question.includes(projectKey)) {
+                const project = projectsDB[projectKey];
+                response = `${project.name}: ${project.description}\n\nTechnologies: ${project.technologies.join(', ')}\n\n`;
+                
+                // Add link if available
+                if (project.link) {
+                    if (project.link.startsWith('http')) {
+                        response += `View it here: ${project.link}`;
+                    } else {
+                        response += `Download the report: ${project.link}`;
+                    }
+                }
+                
+                // Add option to view in portfolio
+                response += "\n\nWould you like me to take you to this project in the portfolio?";
+                
+                // Add this to the chat immediately
+                setTimeout(() => {
+                    addMessage(response, 'bot');
+                    
+                    // Add a follow-up button to scroll to the project
+                    const buttonDiv = document.createElement('div');
+                    buttonDiv.style.marginTop = '10px';
+                    
+                    const viewButton = document.createElement('button');
+                    viewButton.textContent = 'Take me to projects';
+                    viewButton.classList.add('ai-quick-question');
+                    viewButton.style.margin = '5px 0';
+                    viewButton.addEventListener('click', function() {
+                        // Close chat window
+                        chatWindow.style.display = 'none';
+                        
+                        // Scroll to projects section
+                        document.querySelector('#projects').scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                        
+                        // Highlight the specific project after a delay
+                        setTimeout(() => {
+                            const projectCards = document.querySelectorAll('.project-card');
+                            projectCards.forEach(card => {
+                                if (card.querySelector('.project-title').textContent.toLowerCase().includes(projectKey)) {
+                                    card.style.boxShadow = '0 0 0 3px var(--accent-color)';
+                                    card.style.transition = 'box-shadow 0.3s ease';
+                                    
+                                    // Remove highlight after some time
+                                    setTimeout(() => {
+                                        card.style.boxShadow = 'var(--shadow-md)';
+                                    }, 3000);
+                                }
+                            });
+                        }, 800);
+                    });
+                    
+                    buttonDiv.appendChild(viewButton);
+                    chatMessages.appendChild(buttonDiv);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 500);
+                
+                return; // Exit the function after handling project-specific question
+            }
+        }
+        
+        // General questions
+        if (question.includes('skill') || question.includes('technolog')) {
+            response = "Ruchitra has skills in HTML, CSS, JavaScript, React, and various web development technologies. Would you like me to take you to the Skills section?";
+            
+            setTimeout(() => {
+                addMessage(response, 'bot');
+                
+                const buttonDiv = document.createElement('div');
+                buttonDiv.style.marginTop = '10px';
+                
+                const viewButton = document.createElement('button');
+                viewButton.textContent = 'Take me to Skills';
+                viewButton.classList.add('ai-quick-question');
+                viewButton.style.margin = '5px 0';
+                viewButton.addEventListener('click', function() {
+                    handleSectionNavigation('skills');
+                });
+                
+                buttonDiv.appendChild(viewButton);
+                chatMessages.appendChild(buttonDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 500);
+        } 
+        else if (question.includes('project') || question.includes('work')) {
+            response = "Ruchitra has worked on several projects including TaskFlow Pro, MoodTunes, and GiftGenie. Would you like me to take you to the Projects section?";
+            
+            setTimeout(() => {
+                addMessage(response, 'bot');
+                
+                const buttonDiv = document.createElement('div');
+                buttonDiv.style.marginTop = '10px';
+                
+                const viewButton = document.createElement('button');
+                viewButton.textContent = 'Take me to Projects';
+                viewButton.classList.add('ai-quick-question');
+                viewButton.style.margin = '5px 0';
+                viewButton.addEventListener('click', function() {
+                    handleSectionNavigation('projects');
+                });
+                
+                buttonDiv.appendChild(viewButton);
+                chatMessages.appendChild(buttonDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 500);
+        } 
+        else if (question.includes('contact') || question.includes('reach') || question.includes('email') || question.includes('phone')) {
+            response = "You can contact Ruchitra through the Contact section of this portfolio or via email at ruchitrak98@gmail.com. Would you like me to take you to the Contact section?";
+            
+            setTimeout(() => {
+                addMessage(response, 'bot');
+                
+                const buttonDiv = document.createElement('div');
+                buttonDiv.style.marginTop = '10px';
+                
+                const viewButton = document.createElement('button');
+                viewButton.textContent = 'Take me to Contact';
+                viewButton.classList.add('ai-quick-question');
+                viewButton.style.margin = '5px 0';
+                viewButton.addEventListener('click', function() {
+                    handleSectionNavigation('contact');
+                });
+                
+                buttonDiv.appendChild(viewButton);
+                chatMessages.appendChild(buttonDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 500);
+        } 
+        else if (question.includes('hello') || question.includes('hi')) {
+            response = "Hello there! I'm Ruchitra's AI assistant. I can help you navigate the portfolio, tell you about projects, skills, experience, or connect you directly. What would you like to know?";
+            setTimeout(() => {
+                addMessage(response, 'bot');
+            }, 500);
+        } 
+        else if (question.includes('experience') || question.includes('background') || question.includes('job')) {
+            response = "Ruchitra has 2 years of professional experience as a Software Engineer at Ambica Constructions & Contractors, along with several academic and personal projects. Would you like me to take you to the Experience section?";
+            
+            setTimeout(() => {
+                addMessage(response, 'bot');
+                
+                const buttonDiv = document.createElement('div');
+                buttonDiv.style.marginTop = '10px';
+                
+                const viewButton = document.createElement('button');
+                viewButton.textContent = 'Take me to Experience';
+                viewButton.classList.add('ai-quick-question');
+                viewButton.style.margin = '5px 0';
+                viewButton.addEventListener('click', function() {
+                    handleSectionNavigation('experience');
+                });
+                
+                buttonDiv.appendChild(viewButton);
+                chatMessages.appendChild(buttonDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 500);
+        } 
+        else if (question.includes('education') || question.includes('degree') || question.includes('school')) {
+            response = "Ruchitra holds a Master's in Computer Science from NYIT and a Bachelor's in Computer Science from REVA University. Would you like me to take you to the Education section?";
+            
+            setTimeout(() => {
+                addMessage(response, 'bot');
+                
+                const buttonDiv = document.createElement('div');
+                buttonDiv.style.marginTop = '10px';
+                
+                const viewButton = document.createElement('button');
+                viewButton.textContent = 'Take me to Education';
+                viewButton.classList.add('ai-quick-question');
+                viewButton.style.margin = '5px 0';
+                viewButton.addEventListener('click', function() {
+                    handleSectionNavigation('education');
+                });
+                
+                buttonDiv.appendChild(viewButton);
+                chatMessages.appendChild(buttonDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 500);
+        } 
+        else if (question.includes('about') || question.includes('who')) {
+            response = "Ruchitra is a front-end developer with a Master's in Computer Science from NYIT and a Bachelor's from REVA University, India. Would you like me to take you to the About section?";
+            
+            setTimeout(() => {
+                addMessage(response, 'bot');
+                
+                const buttonDiv = document.createElement('div');
+                buttonDiv.style.marginTop = '10px';
+                
+                const viewButton = document.createElement('button');
+                viewButton.textContent = 'Take me to About';
+                viewButton.classList.add('ai-quick-question');
+                viewButton.style.margin = '5px 0';
+                viewButton.addEventListener('click', function() {
+                    handleSectionNavigation('about');
+                });
+                
+                buttonDiv.appendChild(viewButton);
+                chatMessages.appendChild(buttonDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 500);
+        }
+        else {
+            // For non-specific responses
+            setTimeout(() => {
+                addMessage(response, 'bot');
+            }, 500);
+        }
     }
 });
     </script>
