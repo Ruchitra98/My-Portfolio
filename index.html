@@ -1,2969 +1,966 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ruchitra Kumaresan - Front-End Developer | UX/UI Designer | Software Developer. Explore my portfolio and projects.">
-    <meta name="keywords" content="Ruchitra Kumaresan, Front-End Developer, UX/UI Designer, Software Developer, Portfolio"> 
-    <title>Ruchitra Kumaresan - Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Modern Color Scheme and Variables */
-        :root {
-            --primary-color: #2563eb;  /* Vibrant blue */
-            --primary-dark: #1e40af;
-            --primary-light: #93c5fd;
-            --secondary-color: #10b981; /* Emerald green */
-            --dark-color: #1e293b;
-            --light-color: #f8fafc;
-            --gray-color: #64748b;
-            --light-gray: #e2e8f0;
-            --accent-color: #f59e0b; /* Amber */
-            --danger-color: #ef4444;
-            
-            --text-color: var(--dark-color);
-            --text-light: var(--light-color);
-            --bg-color: var(--light-color);
-            --card-bg: #ffffff;
-            
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
-            --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.2);
-            
-            --border-radius-sm: 4px;
-            --border-radius-md: 8px;
-            --border-radius-lg: 12px;
-            --border-radius-xl: 16px;
-            
-            --transition-base: all 0.3s ease;
-            --transition-fast: all 0.15s ease;
-            
-            --max-width: 1200px;
-            --section-padding: 80px 0;
-            
-            /* Dark mode variables */
-            --dark-bg: #0f172a;
-            --dark-card: #1e293b;
-            --dark-text: #e2e8f0;
-            --dark-border: #334155;
-        }
-
-        /* Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            transition: var(--transition-base);
-            overflow-x: hidden;
-        }
-
-        body.dark-mode {
-            background-color: var(--dark-bg);
-            color: var(--dark-text);
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 400;
-            line-height: 1;
-            margin-bottom: 1rem;
-
-        }
-
-        p {
-            margin-bottom: 1rem;
-            text-align: justify;
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--primary-color);
-            transition: var(--transition-fast);
-        }
-
-        a:hover {
-            color: var(--primary-dark);
-        }
-
-        img {
-            max-width: 100%;
-            height: 30%;
-            display: block;
-        }
-
-        /* Add to your about image */
-.about-image {
-    width: 300px;
-    height: 300px;
-    overflow: hidden;
-    border-radius: var(--border-radius-lg);
-}
-
-.about-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0px); }
-}
-
-        ul, ol {
-            list-style: none;
-        } 
-        .container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 5px;
-        }
-
-        .section {
-            padding: var(--section-padding);
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: var(--primary-color);
-            border-radius: 2px;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .text-center .section-title::after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: var(--border-radius-md);
-            font-weight: 500;
-            transition: var(--transition-base);
-            border: none;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        .btn:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-            color: white;
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .btn-secondary {
-            background-color: var(--secondary-color);
-        }
-
-        .btn-secondary:hover {
-            background-color: #0d9488;
-        }
-
-        .btn-accent {
-            background-color: var(--accent-color);
-        }
-
-        .btn-accent:hover {
-            background-color: #d97706;
-        }
-
-        /* Enhance your button effects */
-.btn {
-    position: relative;
-    overflow: hidden;
-}
-
-.btn::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 5px;
-    height: 5px;
-    background: rgba(255,255,255,0.5);
-    border-radius: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    opacity: 0;
-}
-
-.btn:hover::after {
-    transform: translate(-50%, -50%) scale(20);
-    opacity: 1;
-}
-
-        /* Header Styles */
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 20px 0;
-            position: relative;
-            z-index: 100;
-            box-shadow: var(--shadow-md);
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: white;
-        }
-
-        .logo span {
-            color: var(--accent-color);
-        }
-
-      /* Navigation */
-        nav {
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            color: white;
-            font-weight: 500;
-            position: relative;
-            padding: 5px 0;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--accent-color);
-            transition: var(--transition-base);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-
-        /* Dark Mode Toggle */
-        .theme-toggle {
-            display: flex;
-            align-items: center;
-            margin-left: 20px;
-            cursor: pointer;
-        }
-
-        .theme-toggle i {
-            font-size: 1.2rem;
-            color: white;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
-            opacity: 0.5;
-            z-index: -1;
-        }
-
-        .hero-content {
-            max-width: 600px;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--gray-color);
-            margin-bottom: 2rem;
-        }
-
-        .hero-image {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 45%;
-            max-width: 600px;
-            border-radius: var(--border-radius-xl);
-            overflow: hidden;
-            box-shadow: var(--shadow-xl);
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 20px;
-            margin-top: 2rem;
-        }
-
-        /* Add to your hero section styles */
-.hero::before {
-    animation: patternMove 20s linear infinite;
-}
-
-@keyframes patternMove {
-    0% { background-position: 0 0; }
-    100% { background-position: 40px 40px; }
-}
-
-        /* About Section */
-        .about {
-            background-color: var(--card-bg);
-            position: relative;
-        }
-
-        .about-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-image {
-            position: relative;
-            border-radius: var(--border-radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .about-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.3) 0%, rgba(16, 185, 129, 0.3) 100%);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .about-content {
-            position: relative;
-        }
-
-        .about-text {
-            margin-bottom: 2rem;
-        }
-
-        .about-skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 2rem;
-        }
-
-        .skill-tag {
-            background-color: var(--primary-light);
-            color: var(--primary-dark);
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        /* Education Section */
-.education {
-    background-color: var(--card-bg);
-    position: relative;
-    overflow: hidden;
-}
-
-.education-container {
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.education-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4px;
-    height: 100%;
-    background: var(--primary-light);
-    z-index: 1;
-}
-
-.education-item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px;
-    position: relative;
-    z-index: 2;
-}
-
-.education-content {
-    width: calc(50% - 40px);
-    padding: 30px;
-    background-color: var(--card-bg);
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-md);
-    transition: var(--transition-base);
-}
-
-.education-item:hover .education-content {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.left-aligned {
-    margin-right: auto;
-    text-align: right;
-}
-
-.right-aligned {
-    margin-left: auto;
-    text-align: left;
-}
-
-.education-icon {
-    width: 60px;
-    height: 60px;
-    background-color: var(--primary-color);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    flex-shrink: 0;
-    margin: 0 20px;
-    box-shadow: var(--shadow-md);
-    z-index: 3;
-}
-
-.education-institution {
-    display: block;
-    color: var(--secondary-color);
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-}
-
-.education-date {
-    display: block;
-    color: var(--gray-color);
-    font-weight: 500;
-    margin-bottom: 1rem;
-}
-
-.education-description {
-    margin-bottom: 1.5rem;
-}
-
-.education-skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-/* Dark Mode Styles for Education */
-body.dark-mode .education-content {
-    background-color: var(--dark-card);
-    border: 1px solid var(--dark-border);
-}
-
-body.dark-mode .education-icon {
-    background-color: var(--accent-color);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .education-container::before {
-        left: 30px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ruchitra Kumaresan — Front-End Developer & UX/UI Designer. Crafting intuitive digital experiences with precision and purpose.">
+  <title>Ruchitra Kumaresan — Designer & Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --ink: #0d0d0d;
+      --paper: #f5f2eb;
+      --cream: #faf8f3;
+      --stone: #8a8278;
+      --warm-gray: #d4cfc5;
+      --accent: #c0392b;
+      --accent-soft: rgba(192,57,43,0.08);
+      --border: rgba(13,13,13,0.1);
+      --mono: 'JetBrains Mono', monospace;
     }
-    
-    .education-item {
-        flex-direction: column;
-        align-items: flex-start;
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth;font-size:16px}
+    body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;overflow-x:hidden}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");background-size:200px;pointer-events:none;z-index:9999;opacity:.4}
+    h1,h2,h3{font-family:'DM Serif Display',serif;font-weight:400;line-height:1.1}
+    h4,h5,h6{font-family:'DM Sans',sans-serif;font-weight:500}
+    p{color:#3a3530;line-height:1.75}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1160px;margin:0 auto;padding:0 32px}
+    section{padding:100px 0}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 0;background:rgba(245,242,235,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);transition:padding .3s}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1160px;margin:0 auto;padding:0 32px;gap:20px}
+    .nav-logo{font-family:'DM Serif Display',serif;font-size:1.15rem;letter-spacing:-.02em}
+    .nav-logo span{color:var(--accent);font-style:italic}
+    .nav-links{display:flex;gap:36px;list-style:none}
+    .nav-links a{font-size:.82rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--stone);transition:color .2s;position:relative;padding:5px 0}
+    .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--accent);transition:width .3s ease}
+    .nav-links a:hover{color:var(--ink)}
+    .nav-links a:hover::after{width:100%}
+    .nav-cta{font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);padding:8px 18px;border-radius:2px;transition:all .25s;white-space:nowrap}
+    .nav-cta:hover{background:var(--accent);color:white}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+    .hamburger span{display:block;width:24px;height:1.5px;background:var(--ink);transition:all .3s}
+
+    /* HERO */
+    #hero{min-height:100vh;display:flex;align-items:center;padding-top:80px;background:var(--cream);position:relative;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    .hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+    .hero-eyebrow-line{width:32px;height:1px;background:var(--accent)}
+    .hero-eyebrow span{font-family:var(--mono);font-size:.72rem;color:var(--accent);letter-spacing:.12em;text-transform:uppercase}
+    .hero-title{font-size:clamp(3rem,5.5vw,5rem);line-height:1;letter-spacing:-.03em;margin-bottom:28px}
+    .hero-title em{font-style:italic;color:var(--accent)}
+    .hero-subtitle{font-size:1.1rem;color:var(--stone);font-weight:300;margin-bottom:40px;max-width:440px}
+    .hero-actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+    .btn-primary{background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:14px 28px;border-radius:2px;border:1px solid var(--ink);cursor:pointer;transition:all .25s;display:inline-block}
+    .btn-primary:hover{background:var(--accent);border-color:var(--accent);color:white}
+    .btn-ghost{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);padding:14px 0;display:inline-flex;align-items:center;gap:8px;transition:gap .3s,color .2s}
+    .btn-ghost:hover{gap:14px;color:var(--accent)}
+    .hero-stats{display:flex;gap:40px;margin-top:56px;padding-top:40px;border-top:1px solid var(--border)}
+    .stat-num{font-family:'DM Serif Display',serif;font-size:2.2rem;line-height:1}
+    .stat-label{font-family:var(--mono);font-size:.66rem;color:var(--stone);letter-spacing:.08em;text-transform:uppercase;margin-top:4px}
+    .hero-visual{position:relative}
+    .hero-card{background:var(--ink);color:var(--paper);border-radius:4px;padding:40px;position:relative;overflow:hidden}
+    .hero-card::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:var(--accent);opacity:.15}
+    .profile-ring{width:120px;height:120px;border-radius:50%;border:2px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;margin-bottom:24px;position:relative}
+    .profile-initials{font-family:'DM Serif Display',serif;font-size:2.5rem;color:white;font-style:italic}
+    .profile-dot{position:absolute;bottom:8px;right:8px;width:14px;height:14px;border-radius:50%;background:#22c55e;border:2px solid var(--ink)}
+    .hero-card-name{font-family:'DM Serif Display',serif;font-size:1.6rem;margin-bottom:4px;color:white}
+    .hero-card-role{font-family:var(--mono);font-size:.7rem;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase;margin-bottom:28px}
+    .hero-tags{display:flex;flex-wrap:wrap;gap:8px}
+    .hero-tag{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.75);font-family:var(--mono);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:2px}
+    .shape{position:absolute;border-radius:50%;animation:floatShape 8s ease-in-out infinite;pointer-events:none}
+    .shape-1{width:300px;height:300px;background:radial-gradient(circle,rgba(192,57,43,.06) 0%,transparent 70%);top:-100px;right:-100px}
+    .shape-2{width:200px;height:200px;background:radial-gradient(circle,rgba(181,134,45,.06) 0%,transparent 70%);bottom:0;left:-50px;animation-delay:-3s}
+    @keyframes floatShape{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-20px) scale(1.05)}}
+
+    /* SECTION LABELS */
+    .section-label{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+    .section-label-line{width:40px;height:1px;background:var(--accent)}
+    .section-label span{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+    .section-heading{font-size:clamp(2.2rem,4vw,3.5rem);letter-spacing:-.03em;margin-bottom:40px}
+    .section-heading em{font-style:italic;color:var(--accent)}
+
+    /* ABOUT */
+    #about{background:var(--paper)}
+    .about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start}
+    .about-photo-frame{width:100%;aspect-ratio:3/4;background:var(--warm-gray);border-radius:4px;overflow:hidden;position:relative;margin-bottom:28px}
+    .about-photo-frame img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+    .about-photo-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:linear-gradient(145deg,#e8e4da,#d4cfc5)}
+    .ph-text{font-family:var(--mono);font-size:.65rem;color:var(--stone);letter-spacing:.08em;text-transform:uppercase}
+    .about-quick-info{display:flex;flex-direction:column;gap:0}
+    .info-row{display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--border)}
+    .info-row:last-child{border-bottom:none}
+    .info-label{font-family:var(--mono);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);min-width:80px;padding-top:2px}
+    .info-value{font-size:.9rem;color:var(--ink)}
+    .about-intro{font-size:1.15rem;line-height:1.75;color:var(--ink);font-weight:300;margin-bottom:24px}
+    .about-body{font-size:.95rem;color:#5a5550;margin-bottom:24px}
+    .about-highlights{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:36px}
+    .highlight-card{padding:22px;background:var(--cream);border:1px solid var(--border);border-radius:4px;transition:border-color .2s,transform .2s}
+    .highlight-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .highlight-icon{font-size:1.1rem;color:var(--accent);margin-bottom:8px}
+    .highlight-title{font-size:.85rem;font-weight:600;margin-bottom:5px}
+    .highlight-text{font-size:.8rem;color:var(--stone);line-height:1.5}
+
+    /* SKILLS */
+    #skills{background:var(--ink);color:var(--paper)}
+    #skills .section-label-line{background:rgba(245,242,235,.3)}
+    #skills .section-label span{color:rgba(245,242,235,.5)}
+    #skills .section-heading{color:var(--paper)}
+    #skills .section-heading em{color:var(--accent)}
+    .skills-layout{display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:start}
+    .skills-intro{font-size:1rem;color:rgba(245,242,235,.6);line-height:1.8;font-weight:300;margin-top:20px}
+    .skills-categories{display:flex;flex-direction:column;gap:36px}
+    .skill-category-title{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,242,235,.4);margin-bottom:14px}
+    .skill-pills{display:flex;flex-wrap:wrap;gap:10px}
+    .skill-pill{border:1px solid rgba(245,242,235,.15);color:rgba(245,242,235,.8);padding:8px 16px;border-radius:2px;font-size:.82rem;font-weight:300;transition:all .2s;cursor:default}
+    .skill-pill:hover{background:var(--accent);border-color:var(--accent);color:white}
+    .skill-pill.featured{background:rgba(192,57,43,.15);border-color:rgba(192,57,43,.4)}
+
+    /* EXPERIENCE */
+    #experience{background:var(--cream)}
+    .exp-list{display:flex;flex-direction:column}
+    .exp-item{display:grid;grid-template-columns:200px 1fr;gap:40px;padding:40px 0;border-top:1px solid var(--border)}
+    .exp-item:last-child{border-bottom:1px solid var(--border)}
+    .exp-date{font-family:var(--mono);font-size:.68rem;color:var(--stone);letter-spacing:.06em;margin-bottom:8px;line-height:1.5}
+    .exp-type-badge{display:inline-block;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(192,57,43,.3);padding:3px 8px;border-radius:2px}
+    .exp-role{font-family:'DM Serif Display',serif;font-size:1.5rem;margin-bottom:6px}
+    .exp-company{font-size:.85rem;color:var(--stone);font-weight:500;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+    .exp-company::before{content:'↗';font-size:.75rem;color:var(--accent)}
+    .exp-desc{font-size:.9rem;color:#5a5550;line-height:1.75}
+
+    /* EDUCATION */
+    #education{background:var(--paper)}
+    .edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .edu-card{padding:36px 32px;background:var(--cream);border:1px solid var(--border);border-radius:4px;position:relative;overflow:hidden;transition:all .3s}
+    .edu-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
+    .edu-card:hover{border-color:transparent;box-shadow:0 12px 40px rgba(0,0,0,.08);transform:translateY(-4px)}
+    .edu-card:hover::before{transform:scaleX(1)}
+    .edu-icon{width:44px;height:44px;background:var(--accent-soft);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1rem;margin-bottom:20px}
+    .edu-degree{font-family:'DM Serif Display',serif;font-size:1.15rem;margin-bottom:8px;line-height:1.3}
+    .edu-school{font-size:.82rem;color:var(--accent);font-weight:500;margin-bottom:6px}
+    .edu-date{font-family:var(--mono);font-size:.65rem;color:var(--stone);letter-spacing:.06em;margin-bottom:14px}
+    .edu-desc{font-size:.82rem;color:var(--stone);line-height:1.6}
+
+    /* PROJECTS */
+    #projects{background:var(--paper)}
+    .projects-header{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;margin-bottom:60px}
+    .projects-filter-row{display:flex;gap:0;border:1px solid var(--border);border-radius:2px;overflow:hidden}
+    .filter-btn{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);background:none;border:none;border-right:1px solid var(--border);padding:10px 20px;cursor:pointer;transition:all .2s}
+    .filter-btn:last-child{border-right:none}
+    .filter-btn.active,.filter-btn:hover{background:var(--ink);color:var(--paper)}
+    .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .project-card{background:var(--cream);border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:all .3s;display:flex;flex-direction:column}
+    .project-card:hover{border-color:transparent;box-shadow:0 16px 48px rgba(0,0,0,.1);transform:translateY(-4px)}
+    .project-img-wrap{height:180px;background:linear-gradient(145deg,var(--warm-gray),#c8c3b8);overflow:hidden;position:relative}
+    .project-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+    .project-card:hover .project-img-wrap img{transform:scale(1.05)}
+    .project-img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2rem;color:rgba(255,255,255,.4)}
+    .project-num{position:absolute;top:12px;right:14px;font-family:var(--mono);font-size:.62rem;color:rgba(255,255,255,.6);letter-spacing:.08em}
+    .project-body{padding:24px;flex:1;display:flex;flex-direction:column}
+    .project-category{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+    .project-title{font-family:'DM Serif Display',serif;font-size:1.15rem;margin-bottom:10px;line-height:1.3}
+    .project-desc{font-size:.82rem;color:var(--stone);line-height:1.6;flex:1;margin-bottom:20px}
+    .project-footer{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid var(--border)}
+    .project-tags-row{display:flex;gap:6px;flex-wrap:wrap}
+    .p-tag{font-family:var(--mono);font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:var(--stone);background:var(--paper);border:1px solid var(--border);padding:3px 8px;border-radius:2px}
+    .project-link{font-family:var(--mono);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:6px;white-space:nowrap;transition:gap .2s}
+    .project-link:hover{gap:10px}
+
+    /* UX SHOWCASE */
+    #ux-work{background:var(--ink);color:var(--paper);padding:100px 0}
+    #ux-work .section-label-line{background:rgba(245,242,235,.2)}
+    #ux-work .section-label span{color:rgba(245,242,235,.4)}
+    #ux-work .section-heading{color:var(--paper)}
+    #ux-work .section-heading em{color:var(--accent)}
+    .ux-intro-text{font-size:1rem;color:rgba(245,242,235,.55);font-weight:300;max-width:480px;line-height:1.8;margin-bottom:60px}
+    .ux-process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-bottom:60px;border:1px solid rgba(255,255,255,.08);border-radius:4px;overflow:hidden}
+    .process-step{padding:28px 20px;border-right:1px solid rgba(255,255,255,.08);transition:background .2s}
+    .process-step:last-child{border-right:none}
+    .process-step:hover{background:rgba(255,255,255,.04)}
+    .process-num{font-family:var(--mono);font-size:.62rem;color:var(--accent);margin-bottom:10px;letter-spacing:.1em}
+    .process-name{font-size:.9rem;color:rgba(245,242,235,.8);font-weight:500;margin-bottom:6px}
+    .process-desc{font-size:.75rem;color:rgba(245,242,235,.4);line-height:1.5}
+    .ux-tools-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+    .tools-label{font-family:var(--mono);font-size:.65rem;color:rgba(245,242,235,.35);letter-spacing:.1em;text-transform:uppercase;margin-right:4px}
+    .tool-chip{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:rgba(245,242,235,.7);font-size:.82rem;padding:6px 14px;border-radius:2px}
+
+    /* CONTACT */
+    #contact{background:var(--cream)}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+    .contact-intro{font-size:1.05rem;color:var(--stone);font-weight:300;line-height:1.8;margin-bottom:40px}
+    .contact-links{display:flex;flex-direction:column}
+    .contact-link-row{display:flex;align-items:center;gap:20px;padding:20px 0;border-top:1px solid var(--border);transition:padding-left .3s}
+    .contact-link-row:last-child{border-bottom:1px solid var(--border)}
+    .contact-link-row:hover{padding-left:8px}
+    .contact-link-icon{width:40px;height:40px;background:var(--accent-soft);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:.9rem;flex-shrink:0}
+    .contact-link-label{font-family:var(--mono);font-size:.65rem;color:var(--stone);letter-spacing:.08em;text-transform:uppercase}
+    .contact-link-value{font-size:.9rem;color:var(--ink)}
+    .contact-form-wrap{background:var(--paper);border:1px solid var(--border);border-radius:4px;padding:40px}
+    .form-group{margin-bottom:22px}
+    .form-label{display:block;font-family:var(--mono);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);margin-bottom:8px}
+    .form-input{width:100%;padding:12px 16px;border:1px solid var(--border);border-radius:2px;background:var(--cream);font-family:'DM Sans',sans-serif;font-size:.9rem;color:var(--ink);transition:border-color .2s}
+    .form-input:focus{outline:none;border-color:var(--accent)}
+    textarea.form-input{min-height:120px;resize:vertical}
+    .form-submit{width:100%;padding:14px;background:var(--ink);color:var(--paper);border:none;border-radius:2px;font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .25s}
+    .form-submit:hover{background:var(--accent)}
+
+    /* FOOTER */
+    footer{background:var(--ink);color:rgba(245,242,235,.5);padding:48px 0 32px;border-top:1px solid rgba(255,255,255,.06)}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px}
+    .footer-name{font-family:'DM Serif Display',serif;font-size:1.2rem;color:rgba(245,242,235,.8)}
+    .footer-socials{display:flex;gap:16px}
+    .social-icon{width:36px;height:36px;border:1px solid rgba(255,255,255,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(245,242,235,.4);font-size:.8rem;transition:all .2s}
+    .social-icon:hover{border-color:var(--accent);color:var(--accent)}
+    .footer-copy{font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;color:rgba(245,242,235,.25)}
+
+    /* CHAT */
+    .chat-bubble{position:fixed;bottom:28px;right:28px;z-index:500}
+    .chat-toggle{width:56px;height:56px;border-radius:50%;background:var(--accent);border:none;color:white;font-size:1.2rem;cursor:pointer;box-shadow:0 4px 24px rgba(192,57,43,.35);transition:transform .2s,box-shadow .2s;display:flex;align-items:center;justify-content:center}
+    .chat-toggle:hover{transform:scale(1.08);box-shadow:0 6px 32px rgba(192,57,43,.45)}
+    .chat-window{display:none;width:320px;background:white;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.18);overflow:hidden;margin-bottom:12px;border:1px solid var(--border)}
+    .chat-header{background:var(--ink);color:white;padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
+    .chat-header-left{display:flex;align-items:center;gap:10px}
+    .chat-avatar{width:32px;height:32px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem}
+    .chat-title{font-size:.88rem;font-weight:500}
+    .chat-status{font-size:.68rem;color:rgba(255,255,255,.5)}
+    .chat-close{background:none;border:none;color:rgba(255,255,255,.5);cursor:pointer;font-size:1rem}
+    .chat-close:hover{color:white}
+    .chat-messages{height:260px;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:12px;background:#faf9f7}
+    .msg{max-width:85%;padding:10px 14px;border-radius:12px;font-size:.83rem;line-height:1.5}
+    .msg-bot{background:white;border:1px solid var(--border);color:var(--ink);align-self:flex-start;border-radius:2px 12px 12px 12px}
+    .msg-user{background:var(--accent);color:white;align-self:flex-end;border-radius:12px 2px 12px 12px}
+    .chat-quick-btns{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+    .quick-btn{font-family:var(--mono);font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--border);background:white;color:var(--stone);padding:5px 10px;border-radius:2px;cursor:pointer;transition:all .2s}
+    .quick-btn:hover{background:var(--ink);color:white;border-color:var(--ink)}
+    .chat-input-row{display:flex;border-top:1px solid var(--border);background:white}
+    .chat-input{flex:1;padding:12px 16px;border:none;font-family:'DM Sans',sans-serif;font-size:.85rem;outline:none;background:transparent}
+    .chat-send{width:44px;background:none;border:none;color:var(--accent);cursor:pointer;font-size:.9rem;transition:color .2s}
+    .chat-send:hover{color:var(--ink)}
+
+    /* BACK TO TOP */
+    #back-to-top{position:fixed;bottom:100px;right:28px;width:40px;height:40px;background:var(--paper);border:1px solid var(--border);border-radius:50%;display:none;align-items:center;justify-content:center;color:var(--stone);font-size:.8rem;text-decoration:none;transition:all .2s;z-index:400}
+    #back-to-top:hover{background:var(--ink);color:white;border-color:var(--ink)}
+    #back-to-top.visible{display:flex}
+
+    /* ANIMATIONS */
+    .fade-up{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+    .fade-up.in-view{opacity:1;transform:translateY(0)}
+    .stagger-1{transition-delay:.1s}
+    .stagger-2{transition-delay:.2s}
+    .stagger-3{transition-delay:.3s}
+    .stagger-4{transition-delay:.4s}
+
+    /* RESPONSIVE */
+    @media(max-width:1024px){
+      .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:48px}
+      .skills-layout{grid-template-columns:1fr;gap:48px}
+      .edu-grid{grid-template-columns:1fr 1fr}
+      .projects-grid{grid-template-columns:repeat(2,1fr)}
+      .ux-process-steps{grid-template-columns:repeat(3,1fr)}
+      .hero-visual{display:none}
+      .hero-stats{gap:24px}
+      .projects-header{grid-template-columns:1fr;gap:24px}
     }
-    
-    .education-content {
-        width: calc(100% - 80px);
-        margin-left: 80px !important;
-        text-align: left !important;
+    @media(max-width:768px){
+      section{padding:72px 0}
+      .container{padding:0 20px}
+      .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--cream);flex-direction:column;gap:0;padding:20px 32px;border-bottom:1px solid var(--border)}
+      .nav-links.open{display:flex}
+      .nav-links a{padding:12px 0;border-bottom:1px solid var(--border)}
+      .hamburger{display:flex}
+      .nav-cta{display:none}
+      .edu-grid{grid-template-columns:1fr}
+      .projects-grid{grid-template-columns:1fr}
+      .ux-process-steps{grid-template-columns:repeat(2,1fr)}
+      .exp-item{grid-template-columns:1fr;gap:10px}
+      .about-highlights{grid-template-columns:1fr}
+      .hero-stats{flex-wrap:wrap;gap:20px}
     }
-    
-    .education-icon {
-        position: absolute;
-        left: 0;
-        margin: 0;
+    @media(max-width:480px){
+      .hero-title{font-size:2.6rem}
+      .section-heading{font-size:2rem}
+      .ux-process-steps{grid-template-columns:1fr}
     }
-    
-    .right-aligned, .left-aligned {
-        margin-right: 0;
-        margin-left: 80px;
-        text-align: left;
-    }
-}
-
-       /* Experience Section */
-.experience {
-    background-color: var(--light-gray);
-    position: relative;
-    overflow: hidden;
-}
-
-.experience-container {
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.experience-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4px;
-    height: 100%;
-    background: var(--primary-light);
-    z-index: 1;
-}
-
-.experience-item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px;
-    position: relative;
-    z-index: 2;
-}
-
-.experience-content {
-    width: calc(50% - 40px);
-    padding: 30px;
-    background-color: var(--card-bg);
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-md);
-    transition: var(--transition-base);
-}
-
-.experience-item:hover .experience-content {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.left-aligned {
-    margin-right: auto;
-    text-align: right;
-}
-
-.right-aligned {
-    margin-left: auto;
-    text-align: left;
-}
-
-.experience-icon {
-    width: 60px;
-    height: 60px;
-    background-color: var(--primary-color);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    flex-shrink: 0;
-    margin: 0 20px;
-    box-shadow: var(--shadow-md);
-    z-index: 3;
-}
-
-.experience-company {
-    display: block;
-    color: var(--secondary-color);
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-}
-
-.experience-date {
-    display: block;
-    color: var(--gray-color);
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-}
-
-.experience-description {
-    margin-bottom: 1.5rem;
-}
-
-.experience-skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.experience-content ul {
-    margin-bottom: 1.5rem;
-    padding-left: 20px;
-}
-
-.experience-content li {
-    position: relative;
-    margin-bottom: 0.5rem;
-    text-align: left;
-}
-
-/* Dark Mode Styles for Experience */
-body.dark-mode .experience-content {
-    background-color: var(--dark-card);
-    border: 1px solid var(--dark-border);
-}
-
-body.dark-mode .experience-icon {
-    background-color: var(--accent-color);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .experience-container::before {
-        left: 30px;
-    }
-    
-    .experience-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .experience-content {
-        width: calc(100% - 80px);
-        margin-left: 80px !important;
-        text-align: left !important;
-    }
-    
-    .experience-icon {
-        position: absolute;
-        left: 0;
-        margin: 0;
-    }
-    
-    .right-aligned, .left-aligned {
-        margin-right: 0;
-        margin-left: 80px;
-        text-align: left;
-    }
-    
-    .experience-content ul {
-        padding-left: 20px;
-    }
-}
-
-        /* Projects Section */
-        .projects {
-            background-color: var(--card-bg);
-        }
-
-        .projects-filter {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
-        }
-
-        .filter-btn {
-            padding: 8px 20px;
-            background-color: transparent;
-            border: 1px solid var(--primary-color);
-            color: var(--primary-color);
-            border-radius: 20px;
-            cursor: pointer;
-            transition: var(--transition-base);
-        }
-
-        .filter-btn.active, .filter-btn:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-        }
-
-        .project-card {
-          border: 2px solid var(--primary-color);
-        }
-
-        .project-card {
-            background-color: var(--card-bg);
-            border-radius: var(--border-radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition-base);
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .project-image {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition-base);
-            border: 3px solid var(--primary-color);
-            border-radius: var(--border-radius-md);
-}
-        }
-
-
-        .project-image-container {
-          padding: 5px;
-          background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-          border-radius: var(--border-radius-lg);
-        }
-
-        .project-image-container img {
-          border-radius: var(--border-radius-md);
-          display: block;
-        }
-
-        .project-card:hover 
-        .project-image img {
-            transform: scale(1.05);
-        }
-
-        .project-content {
-            padding: 20px;
-        }
-
-        .project-title {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-
-        .project-description {
-            margin-bottom: 1.5rem;
-            color: var(--gray-color);
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 1.5rem;
-        }
-
-        .project-tag {
-            background-color: var(--light-gray);
-            color: var(--dark-color);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        /* Add to your CSS */
-        .project-card, .skill-card, .timeline-item {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-}
-
-.skill-card:hover {
-    transform: rotate(2deg) scale(1.05);
-}
-
-.timeline-item:hover {
-    transform: translateX(10px);
-}
-
-    
-    /* Sequential Image Animation */
-    .project-image-container {
-        position: relative;
-        height: 200px;
-        overflow: hidden;
-    }
-    
-    .project-image {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0;
-        transition: opacity 1s ease-in-out, transform 0.8s ease;
-        transform: scale(0.95);
-    }
-    
-    .project-image.active {
-        opacity: 1;
-        transform: scale(1);
-    }
-    
-    .project-image.next {
-        transform: scale(1.05);
-    }
-    
-
-    /* Project card hover effect */
-    .project-card:hover .project-image.active {
-        transform: scale(1.05);
-    }
-
-        /* Skills Section - Motion Pop-Up */
-.skills {
-    background-color: var(--card-bg);
-    position: relative;
-    overflow: hidden;
-}
-
-.skills::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
-    opacity: 0.05;
-    z-index: 0;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 30px;
-    position: relative;
-    z-index: 1;
-}
-
-.skill-card {
-    background-color: var(--card-bg);
-    padding: 30px;
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-sm);
-    text-align: center;
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transform: translateY(50px) scale(0.95);
-    opacity: 0;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(37, 99, 235, 0.1);
-}
-
-.skill-card.visible {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-}
-
-.skill-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.5s ease;
-}
-
-.skill-card.visible::before {
-    transform: scaleX(1);
-}
-
-.skill-card:hover {
-    transform: translateY(-5px) !important;
-    box-shadow: var(--shadow-lg);
-    border-color: rgba(37, 99, 235, 0.3);
-}
-
-.skill-icon {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-    transition: transform 0.5s ease;
-}
-
-.skill-card:hover .skill-icon {
-    transform: rotate(15deg) scale(1.1);
-    color: var(--secondary-color);
-}
-
-.skill-title {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    position: relative;
-    display: inline-block;
-}
-
-.skill-title::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 3px;
-    background: var(--primary-color);
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-.skill-card:hover .skill-title::after {
-    width: 80px;
-    background: var(--secondary-color);
-}
-
-.skill-description {
-    color: var(--gray-color);
-    margin-bottom: 1.5rem;
-    min-height: 60px;
-}
-
-.skill-progress {
-    height: 8px;
-    background-color: var(--light-gray);
-    border-radius: 4px;
-    overflow: hidden;
-    margin-top: 20px;
-}
-
-.progress-bar {
-    height: 100%;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    border-radius: 4px;
-    transition: width 1.5s ease-out;
-    transform-origin: left;
-}
-
-.skill-card:not(.visible) .progress-bar {
-    width: 0 !important;
-}
-
-/* Dark Mode Styles */
-body.dark-mode .skill-card {
-    background-color: var(--dark-card);
-    border-color: var(--dark-border);
-}
-
-body.dark-mode .skill-description {
-    color: rgba(226, 232, 240, 0.8);
-}
-
-body.dark-mode .skill-progress {
-    background-color: var(--dark-bg);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .skills-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    }
-    
-    .skill-card {
-        padding: 25px;
-    }
-}
-        
-        /* Contact Section */
-        .contact {
-            background-color: var(--light-gray);
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .contact-method {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-        }
-
-        .contact-icon {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            min-width: 40px;
-        }
-
-        .contact-details h3 {
-            margin-bottom: 1 rem;
-            color: var(--primary-color);
-        }
-
-        .contact-form {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-md);
-        }
-
-
-        .form-label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid var(--light-gray);
-            border-radius: var(--border-radius-md);
-            font-family: inherit;
-            transition: var(--transition-base);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
-        }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 60px 0 30px;
-        }
-
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: white;
-        }
-
-        .footer-logo span {
-            color: var(--accent-color);
-        }
-
-        .footer-about {
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            transition: var(--transition-base);
-        }
-
-        .social-link:hover {
-            background-color: yellowgreen;
-            transform: translateY(-3px);
-        }
-
-        .footer-links h3 {
-            color: red;
-            margin-bottom: 1.5rem;
-            font-size: 1.25rem;
-        }
-
-        .footer-links ul {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            transition: var(--transition-base);
-        }
-
-        .footer-links a:hover {
-            color: white;
-            padding-left: 5px;
-        }
-
-        .footer-newsletter p {
-            margin-bottom: 1.5rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .newsletter-form {
-            display: flex;
-        }
-
-        .newsletter-input {
-            flex: 1;
-            padding: 12px 15px;
-            border: none;
-            border-radius: var(--border-radius-md) 0 0 var(--border-radius-md);
-            font-family: inherit;
-        }
-
-        .newsletter-btn {
-            padding: 0 20px;
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
-            cursor: pointer;
-            transition: var(--transition-base);
-        }
-
-        .newsletter-btn:hover {
-            background-color: var(--primary-dark);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.9rem;
-        }
-
-        /* Back to Top Button Styling */
-    #back-to-top {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: var(--primary-color); /* Use your primary color */
-        color: var(--white);
-        padding: 12px 15px;
-        border-radius: 50%; /* Circular shape */
-        text-decoration: none;
-        display: none; /* Hidden by default */
-        font-size: 18px;
-        text-align: center;
-        line-height: 24px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-        transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
-        opacity: 0.9; /* Slightly transparent */
-        z-index: 1000; /* Ensure it's above other elements */
-    }
-    #back-to-top:hover {
-        background-color: #028a53; /* Darker shade on hover */
-        transform: translateY(-3px); /* Slight lift on hover */
-        opacity: 1; /* Fully visible on hover */
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
-    }
-
-    #back-to-top i {
-        vertical-align: middle; /* Center the icon */
-    }
-
-        /* Dark Mode Styles */
-        body.dark-mode {
-            background-color: var(--dark-bg);
-            color: var(--dark-text);
-        }
-
-        body.dark-mode .hero {
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
-        }
-
-        body.dark-mode .about,
-        body.dark-mode .projects,
-        body.dark-mode .testimonials,
-        body.dark-mode .contact-form {
-            background-color: var(--dark-card);
-        }
-
-        body.dark-mode .experience,
-        body.dark-mode .skills,
-        body.dark-mode .contact {
-            background-color: #0f172a;
-        }
-
-        body.dark-mode .section-title,
-        body.dark-mode h1,
-        body.dark-mode h2,
-        body.dark-mode h3,
-        body.dark-mode h4,
-        body.dark-mode h5,
-        body.dark-mode h6 {
-            color: var(--dark-text);
-        }
-
-        body.dark-mode .hero-subtitle,
-        body.dark-mode .about-text,
-        body.dark-mode .project-description,
-        body.dark-mode .skill-description,
-        body.dark-mode .testimonial-content,
-        body.dark-mode .form-label {
-            color: rgba(226, 232, 240, 0.8);
-        }
-
-        body.dark-mode .project-card,
-        body.dark-mode .skill-card,
-        body.dark-mode .testimonial-card,
-        body.dark-mode .timeline-item {
-            background-color: var(--dark-card);
-            border: 1px solid var(--dark-border);
-        }
-
-        body.dark-mode .form-control {
-            background-color: var(--dark-card);
-            border-color: var(--dark-border);
-            color: var(--dark-text);
-        }
-
-        body.dark-mode .form-control:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .animate {
-            animation: fadeIn 0.8s ease forwards;
-        }
-
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
-        .delay-3 { animation-delay: 0.6s; }
-        .delay-4 { animation-delay: 0.8s; }
-        .delay-5 { animation-delay: 1s; }
-
-        /* AI Assistant Styles */
-        .ai-assistant {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-
-        .ai-button {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 15px 25px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s ease;
-        }
-
-        .ai-button:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .ai-chat-window {
-            display: none;
-            width: 300px;
-            background-color: white;
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-xl);
-            overflow: hidden;
-            margin-bottom: 10px;
-        }
-
-        .ai-chat-header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .ai-chat-messages {
-            height: 300px;
-            padding: 15px;
-            overflow-y: auto;
-            background-color: #f9f9f9;
-        }
-
-        .ai-message {
-            margin-bottom: 10px;
-            padding: 8px 12px;
-            border-radius: 18px;
-            max-width: 80%;
-            font-size: 14px;
-            line-height: 1.4;
-        }
-
-        .ai-bot-message {
-            background-color: #e5e5ea;
-            color: #000;
-            align-self: flex-start;
-        }
-
-        .ai-user-message {
-            background-color: var(--primary-color);
-            color: white;
-            align-self: flex-end;
-            margin-left: auto;
-        }
-
-        .ai-quick-questions {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 10px;
-            gap: 5px;
-            background-color: #f1f1f1;
-        }
-
-        .ai-quick-question {
-            background-color: #e5e5ea;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 12px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .ai-quick-question:hover {
-            background-color: #d1d1d6;
-        }
-
-        .ai-chat-input {
-            display: flex;
-            padding: 10px;
-            background-color: white;
-            border-top: 1px solid #ddd;
-        }
-
-        .ai-chat-input input {
-            flex: 1;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 20px;
-            outline: none;
-            font-size: 14px;
-        }
-
-        .ai-chat-input button {
-            margin-left: 5px;
-            padding: 8px 15px;
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        /* Dark mode styles for AI assistant */
-        body.dark-mode .ai-chat-window {
-            background-color: var(--dark-card);
-            border: 1px solid var(--dark-border);
-        }
-
-        body.dark-mode .ai-chat-messages {
-            background-color: var(--dark-bg);
-        }
-
-        body.dark-mode .ai-bot-message {
-            background-color: var(--dark-border);
-            color: var(--dark-text);
-        }
-
-        body.dark-mode .ai-quick-questions {
-            background-color: var(--dark-bg);
-        }
-
-        body.dark-mode .ai-quick-question {
-            background-color: var(--dark-border);
-            color: var(--dark-text);
-        }
-
-        body.dark-mode .ai-quick-question:hover {
-            background-color: var(--primary-dark);
-        }
-
-        body.dark-mode .ai-chat-input {
-            background-color: var(--dark-card);
-            border-top: 1px solid var(--dark-border);
-        }
-
-        body.dark-mode .ai-chat-input input {
-            background-color: var(--dark-bg);
-            color: var(--dark-text);
-            border-color: var(--dark-border);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .hero-image {
-                width: 40%;
-            }
-            
-            .hero-title {
-                font-size: 3rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .header-container {
-                padding: 0 15px;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background-color: var(--primary-dark);
-                flex-direction: column;
-                align-items: center;
-                padding: 20px 0;
-                gap: 20px;
-                transform: translateY(-150%);
-                transition: var(--transition-base);
-                z-index: 99;
-            }
-            
-            .nav-links.active {
-                transform: translateY(0);
-            }
-            
-            .hero {
-                padding-top: 100px;
-                text-align: center;
-            }
-            
-            .hero-content {
-                max-width: 100%;
-            }
-            
-            .hero-image {
-                position: relative;
-                width: 100%;
-                max-width: 500px;
-                margin: 0 auto;
-                transform: none;
-                margin-top: 40px;
-            }
-            
-            .hero-cta {
-                justify-content: center;
-            }
-            
-            .about-container,
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-image {
-                order: -1;
-            }
-            
-            .timeline::before {
-                left: 15px;
-            }
-            
-            .timeline-item {
-                padding-left: 40px;
-            }
-            
-            .timeline-item::before {
-                left: -40px;
-            }
-            
-            .timeline-date {
-                position: relative;
-                left: auto;
-                top: auto;
-                width: auto;
-                text-align: left;
-                margin-bottom: 5px;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-
-            /* Adjust AI assistant for mobile */
-            .ai-chat-window {
-                width: 90%;
-                max-width: 350px;
-                right: 5%;
-                left: 5%;
-                margin: 0 auto;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .hero-cta {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .btn {
-                width: 100%;
-            }
-            
-            .projects-filter {
-                flex-wrap: wrap;
-            }
-            
-            .newsletter-form {
-                flex-direction: column;
-            }
-            
-            .newsletter-input {
-                border-radius: var(--border-radius-md);
-                margin-bottom: 10px;
-            }
-            
-            .newsletter-btn {
-                border-radius: var(--border-radius-md);
-                padding: 12px;
-            }
-        }
-    </style>
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-container">
-            <a href="#" class="logo">Welcome To My Portfolio  💼 </a>
-            
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                     <li><a href="#education">Education</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                
-                <div class="theme-toggle" id="dark-mode-toggle">
-                    <i class="fas fa-moon"></i>
-                </div>
-                
-                <button class="mobile-menu-btn" id="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </nav>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">R<span>.</span>K</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#ux-work">UX Process</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="Ruchitra.K.pdf" download class="nav-cta">Download CV</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="shape shape-1"></div>
+  <div class="shape shape-2"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="hero-eyebrow">
+          <div class="hero-eyebrow-line"></div>
+          <span> <h1> My Portfolio </h1> </span>
         </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content animate">
-                <h1 class="hero-title">Hi🙋‍♀️,  I'm Ruchitra Kumaresan</h1>
-                <p class="hero-subtitle">Front-End Developer | UX/UI Designer | Software Engineer</p>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn">View My Work</a>
-                    <a href="#contact" class="btn btn-outline">Contact Me</a>
-                </div>
-            </div>
+        <h1 class="hero-title">
+          Designing<br>
+          <em>interfaces</em><br>
+          that feel right.
+        </h1>
+        <p class="hero-subtitle">
+          Front-End Developer &amp; UX/UI Designer <br>
+          Bridging beautiful code with intuitive human experience.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">View My Work</a>
+          <a href="#contact" class="btn-ghost">Let's Connect <i class="fas fa-arrow-right"></i></a>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section about" id="about">
-        <div class="container">
-            <h2 class="section-title text-center animate">About Me</h2>
-            
-            <div class="about-container">
-                <div class="about-content animate delay-1">
-                    <p class="about-text">
-                        I'm Ruchitra Kumaresan, a front-end developer with a Master's in Computer Science from NYIT and a Bachelor's from REVA University, India. With two years of experience at Ambica Constructions & Contractors, I've worked across the full front-end development cycle—designing, coding, testing, and maintaining real-world applications. I thrive in collaborative environments, love solving problems under pressure, and bring creativity and precision to every project. Outside of work, I volunteer at the 9/11 Memorial, build passion projects like Gift Genie, and explore 3D graphics through projects like my custom rendering engine. Let's connect and create meaningful software together! </p>
-                    
-                    
-                    <a href="Ruchitra.K.pdf" class="btn" download style="margin-top: 20px;">Download Resume</a>
-                </div>
-                
-                <div class="about-image animate delay-2">
-                    <img src="1998.jpg" alt="Ruchitra Kumaresan">
-                </div>
-            </div>
+        <div class="hero-stats">
+          <div>
+            <div class="stat-num">2+</div>
+            <div class="stat-label">Years designing</div>
+          </div>
+          <div>
+            <div class="stat-num">6+</div>
+            <div class="stat-label">Projects </div>
+          </div>
+          <div>
+            <div class="stat-num">2</div>
+            <div class="stat-label"> Degrees</div>
+          </div>
         </div>
-    </section>
-
-
-    <!-- Education Section -->
-<section class="section education" id="education">
-    <div class="container">
-        <h2 class="section-title text-center animate">Education</h2>
-        
-        <div class="education-container">
-            <!-- Education 3 - Right aligned -->
-            <div class="education-item animate delay-1">
-                <div class="education-content right-aligned">
-                    <h3>Master of Science in Infromation Technology</h3>
-                    <span class="education-institution">Saint Francis College</span>
-                    <span class="education-date">Sept 2025 - Dec 2026</span>
-                </div>
-            </div>
-
-            <div class="education-container">
-            <!-- Education 2 - Left aligned -->
-            <div class="education-item animate delay-1">
-                <div class="education-content left-aligned">
-                    <h3>Master of Science in Computer Science</h3>
-                    <span class="education-institution">New York Institute of Technology (NYIT)</span>
-                    <span class="education-date">2022 - 2024</span>
-                    <p class="education-description">
-                        Specialized in Advanced Computing Concepts, Artificial Intelligence, and Human-Computer Interaction. <br>
-                    </p>
-                    <div class="education-skills">
-                        <span class="skill-tag">Machine Learning</span>
-                        <span class="skill-tag">Data Structures</span>
-                        <span class="skill-tag">Algorithms</span>
-                    </div>
-                </div>
-                <div class="education-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-            </div>
-            
-            <!-- Education 3 - Right aligned -->
-            <div class="education-item animate delay-2">
-                <div class="education-icon">
-                    <i class="fas fa-university"></i>
-                </div>
-                <div class="education-content right-aligned">
-                    <h3>Bachelor of Technology in Computer Science</h3>
-                    <span class="education-institution">REVA University (RU), Bangalore, India</span>
-                    <span class="education-date">2016 - 2022</span>
-                    <p class="education-description">
-                        Focused on Software Development, Web Technologies, and Database Systems. Graduated with First Class Honors.
-                    </p>
-                    <div class="education-skills">
-                        <span class="skill-tag">Web Development</span>
-                        <span class="skill-tag">Database Systems</span>
-                        <span class="skill-tag">Software Engineering</span>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="profile-ring">
+            <span class="profile-initials">RK</span>
+            <div class="profile-dot"></div>
+          </div>
+          <div class="hero-card-name">Ruchitra Kumaresan</div>
+          <div class="hero-card-role">Front-End Dev · UX/UI Designer </div>
+          <div class="hero-tags">
+            <span class="hero-tag">React</span>
+            <span class="hero-tag">Figma</span>
+            <span class="hero-tag">JavaScript</span>
+            <span class="hero-tag">UX Research</span>
+            <span class="hero-tag">TypeScript</span>
+            <span class="hero-tag">Responsive Design</span>
+            <span class="hero-tag">NYC based</span>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </section>
 
-    <!-- Experience Section -->
-<section class="section experience" id="experience">
-    <div class="container">
-        <h2 class="section-title text-center animate">Experience</h2>
-        
-        <div class="experience-container">
-        <!-- Experience 1 - Left aligned -->
-            <div class="experience-item animate delay-1">
-                <div class="experience-content left-aligned">
-                    <span class="experience-date">January 2025 - Present</span>
-                    <h3>Retail Greeter Volunteer</h3>
-                    <span class="experience-company"> <b> 9/11 Memorial & Museum</b> Manhattan New York</span>
-                    <p class="experience-description">
-                        I welcome 1000+ guests monthly by providing guidance on resources and assisting with navigation and accessibility. Engaging visitors in thoughtful discussions, sharing the historical significance of exhibits, and preserving personal stories help foster deeper connections.
-                    </p>
-                </div>
-                <div class="experience-icon">
-                    <i class="fas fa-hands-helping"></i>
-                </div>
-            </div>
-            
-            <!-- Experience 2 - Right aligned -->
-            <div class="experience-item animate delay-2">
-                <div class="experience-icon">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                </div>
-                <div class="experience-content right-aligned">
-                    <span class="experience-date">Sept 2024 - Sept 2025</span>
-                    <h3>Computer Science Tutor</h3>
-                    <span class="experience-company"> <b> UPchive </b> Brooklyn, New York</span>
-                    <p class="experience-description">
-                        Provided guidance and academic support to students in College Applications and Essay Writing for admission purposes. Assisted students in Computer Science courses to enhance their understanding and skills. Collaborated with students to develop personalized strategies for academic success.
-                    </p>
-                </div>
-            </div>
-            <!-- Experience 3 - Left aligned -->
-            <div class="experience-item animate delay-3">
-                <div class="experience-icon">
-                    <i class="fas fa-laptop-code"></i>
-                </div>
-                <div class="experience-content left-aligned">
-                    <span class="experience-date">June 2020 - July 2022</span>
-                    <h3>Software Engineer</h3>
-                    <span class="experience-company"><b> Ambica Constructions and Contractors </b> Bangalore, India</span>
-                    <p class="experience-description">
-                        At Ambica Constructions & Contractors, I worked as a front-end-focused Software Engineer involved in full-cycle development. My work spanned from designing and coding interfaces to testing, deploying, and supporting software solutions used across the company. </br> Built and maintained user interfaces with React and TypeScript, ensuring accessibility, responsiveness, and performance. <br> Collaborated closely with designers, backend developers, and project managers to deliver efficient, scalable front-end solutions. <br> Look ownership of problem-solving and was often the go-to for debugging UI issues and improving user experience.
-                    </p>
-                </div>
-            </div>
-            
-            <!-- Experience 4 - Right aligned -->
-            <div class="experience-item animate delay-4">
-                <div class="experience-content right-aligned">
-                    <span class="experience-date">July 2021 - August 2021</span>
-                    <h3>Website Developer</h3>
-                    <span class="experience-company"><b> Lernov</b> Bangalore, India</span>
-                    <p class="experience-description">
-                        Designed Sublime Text to systematically organize and optimize HTML code, actively contributing to the website's layout. Attained significant success in project advancement, developing a fully functional website closely aligned with 90% of detailed client specifications.
-                    </p>
-                    
-                </div>
-                <div class="experience-icon">
-                    <i class="fas fa-code"></i>
-                </div>
-            </div>
-            
-            <!-- Experience 5 - Left aligned -->
-            <div class="experience-item animate delay-5">
-                <div class="experience-icon">
-                    <i class="fas fa-paint-brush"></i>
-                </div>
-                <div class="experience-content left-aligned">
-                    <span class="experience-date">Feb 2020 - May 2020</span>
-                    <h3>Website Developer and Designer</h3>
-                    <span class="experience-company"><b> Sain Solutions</b> Bangalore, India</span>
-                    <p class="experience-description">
-                        Successfully designed aesthetically pleasing interfaces with advanced functionality, enhanced teamwork, and problem-solving skills. Implemented new user interfaces for a retail client, leading to a 20% improvement in user engagement within two months of deployment.
-                    </p>
-                    
-                </div>
-            </div>
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-sidebar fade-up">
+        <div class="about-photo-frame">
+          <img src="myimg.jpg" alt="Ruchitra Kumaresan" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="about-photo-placeholder" style="display:none">
+            <div style="font-size:3rem;color:var(--stone);font-family:'DM Serif Display',serif;font-style:italic">RK</div>
+            <div class="ph-text">Ruchitra Kumaresan</div>
+          </div>
         </div>
+        <div class="about-quick-info">
+          <div class="info-row">
+            <span class="info-label">Based in</span>
+            <span class="info-value">New York City, NY</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Email</span>
+            <span class="info-value">ruchitrak98@gmail.com</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Education</span>
+            <span class="info-value">MS Computer Science, NYIT</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Status</span>
+            <span class="info-value" style="color:#22c55e">● Open to opportunities</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-main fade-up stagger-2">
+        <div class="section-label">
+          <div class="section-label-line"></div>
+          <span><h1> About Me </h1></span>
+        </div>
+        <h2 class="section-heading">I build <em>experiences,</em><br>not just screens.</h2>
+        <p class="about-intro">I'm Ruchitra — a front-end developer with a genuine love for design thinking. I earned my Master's in Computer Science from NYIT, and I'm currently pursuing a second MS in Information Technology at Saint Francis College.</p>
+        <p class="about-body">With two years of professional experience as a Software Engineer at Ambica Constructions & Contractors, I've worked across the full front-end cycle — designing, coding, testing, and shipping real-world applications. I believe the best interfaces are the ones users don't have to think about.</p>
+        <p class="about-body">Outside of code, I volunteer at the 9/11 Memorial welcoming 1,000+ visitors monthly, tutor CS students at UPchive, and build passion projects like GiftGenie and TaskFlow Pro. I bring the same curiosity and care to every project I touch.</p>
+        <div class="about-highlights">
+          <div class="highlight-card">
+            <div class="highlight-icon"><i class="fas fa-pencil-ruler"></i></div>
+            <div class="highlight-title">Design-First Mindset</div>
+            <div class="highlight-text">I start every project by understanding the user's mental model before writing a line of code.</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon"><i class="fas fa-code"></i></div>
+            <div class="highlight-title">Production-Ready Code</div>
+            <div class="highlight-text">Clean, accessible, performant implementations that work across all devices.</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon"><i class="fas fa-users"></i></div>
+            <div class="highlight-title">Collaboration</div>
+            <div class="highlight-text">Comfortable working closely with designers, engineers, and product stakeholders.</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon"><i class="fas fa-lightbulb"></i></div>
+            <div class="highlight-title">Curiosity-Driven</div>
+            <div class="highlight-text">From 3D graphics engines to IoT — I love exploring entirely new problem spaces.</div>
+          </div>
+        </div>
+        <a href="Ruchitra.K.pdf" download class="btn-primary">Download Resume</a>
+      </div>
     </div>
+  </div>
 </section>
 
-    <!-- Projects Section -->
-    <section class="section projects" id="projects">
-        <div class="container">
-            <h2 class="section-title text-center animate">My Projects</h2>
-            
-            <div class="projects-filter animate delay-1">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="design">UI/UX Design</button>
-                <button class="filter-btn" data-filter="academic">Academic</button>
-            </div>
-            
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card animate delay-2" data-category="design">
-                       <div class="project-image-container">
-                         <img src="Task.jpg" alt="TaskFlow Pro Project" class="project-image active">
-                          <img src="Task1.jpg" alt="TaskFlow Pro Project" class="project-image active">
-                          <img src="Task2.jpg" alt="TaskFlow Pro Project" class="project-image active">
-                          <img src="Task3.jpg" alt="TaskFlow Pro Project" class="project-image active">
-                    </div>
-
-                    <div class="project-content">
-                        <h3 class="project-title">TaskFlow Pro | AI-Powered Task Management</h3>
-                        <p class="project-description">
-                            Built a fully responsive web app with AI assistant, real-time dashboard, priority filters, calendar scheduling, and animated UI, improving task completion by 12%.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">JavaScript</span>
-                            <span class="project-tag">NLP</span>
-                            <span class="project-tag">Responsive Design</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://ruchi-taskflow-ai-pro.netlify.app/" class="btn btn-sm">View Project</a>
-                            
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card animate delay-2" data-category="design">
-                    <div class="project-image-container">
-                         <img src="Mood.jpg" alt="Mood-Based-Playlist-Generator-Web-App" class="project-image active">
-                         <img src="Mood1.jpg" alt="Mood-Based-Playlist-Generator-Web-App" class="project-image active">
-                         
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">MoodTunes - Mood-Based Playlist Generator</h3>
-                        <p class="project-description">
-                            An interactive web app that curates personalized playlists based on a user's mood. Analyzes input using basic NLP and suggests songs matching emotions with direct YouTube links.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">JavaScript</span>
-                            <span class="project-tag">NLP</span>
-                            <span class="project-tag">Responsive Design</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://ruchitra98.github.io/Mood-Based-Playlist-Generator-Web-App/" class="btn btn-sm">View Project</a>
-                            
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="project-card animate delay-2" data-category="design">
-                    <div class="project-image-container">
-                        <img src="Gift.jpg" alt="GiftGenie Project" class="project-image active">
-                        <img src="Gift1.jpg" alt="GiftGenie Project" class="project-image active">
-                        <img src="Gift2.jpg" alt="GiftGenie Project" class="project-image active">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">GiftGenie - Personalized Gift Suggestion Platform</h3>
-                        <p class="project-description">
-                            Interactive web application designed to help users find the perfect gift for any occasion or recipient through occasion-based suggestions and personality quizzes.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">JavaScript</span>
-                            <span class="project-tag">Responsive Design</span>
-                            <span class="project-tag">Dynamic Content</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://ruchitra98.github.io/Gift-Suggestion-Website-for-Occasions-and-Ages/" class="btn btn-sm">View Project</a>
-                            
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 4 -->
-                <div class="project-card animate delay-2" data-category="academic">
-                    <div class="project-image-container">
-                         <img src="CG-1.jpg" alt="Computer Graphics" class="project-image active">
-                        <img src="CG-2.jpg" alt="Computer Graphics" class="project-image active">
-                        <img src="CG-3.jpg" alt="Computer Graphics" class="project-image active">
-                        <img src="CG-4.jpg" alt="Computer Graphics" class="project-image active">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Computer Graphics - Advanced Rendering</h3>
-                        <p class="project-description">
-                            Focused on Advanced Rendering Techniques, especially Projective Texturing for high-fidelity simulations of real-world elements like shadows, reflections, and decals.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">OpenGL</span>
-                            <span class="project-tag">C++</span>
-                            <span class="project-tag">Shaders</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="Computer Graphics-ppt.pdf" class="btn btn-sm" download>Report</a>
-                            
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 5 -->
-                <div class="project-card animate delay-2" data-category="academic">
-                    <div class="project-image-container">
-                        <img src="PRS-1.jpg" alt="Product Recommendation System" class="project-image active">
-                        <img src="PRS-2.jpg" alt="Product Recommendation System" class="project-image active">
-                        <img src="PRS-3.jpg" alt="Product Recommendation System" class="project-image active">
-                        <img src="PRS-4.jpg" alt="Product Recommendation System" class="project-image active">
-                        <img src="PRS-5.jpg" alt="Product Recommendation System" class="project-image active">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Product Recommendation System</h3>
-                        <p class="project-description">
-                            Academic project on collaborative filtering and rank-based recommendation systems using similarity-based approaches and model-based collaborative filtering with SVD.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">Machine Learning</span>
-                            <span class="project-tag">SVD</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="Product Recommendation-Report.pdf" class="btn btn-sm" download>Report</a>
-                            
-                        </div>
-                    </div>
-                </div>
-
-                 <!-- Project 6 -->
-                <div class="project-card animate delay-2" data-category="academic">
-                    <div class="project-image-container">
-                        <img src="water-1.jpg" alt="Water Quality Monitoring And Filter System To Conserve Water Resources Using IoT" class="project-image active">
-                        <img src="water-2.jpg" alt="Water Quality Monitoring And Filter System To Conserve Water Resources Using IoT" class="project-image active">
-                        <img src="water-3.jpg" alt="Water Quality Monitoring And Filter System To Conserve Water Resources Using IoT" class="project-image active">
-                        <img src="water-4.jpg" alt="Water Quality Monitoring And Filter System To Conserve Water Resources Using IoT" class="project-image active">
-                        <img src="water-5.jpg" alt="Water Quality Monitoring And Filter System To Conserve Water Resources Using IoT" class="project-image active">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Water Quality Monitoring And Filter System To Conserve Water Resources Using IoT</h3>
-                        <p class="project-description">
-                            Leveraged IoT and AWS Cloud to monitor and purify polluted water sources in real time, achieving 90% purification for sustainable reuse.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Embedded C </span>
-                            <span class="project-tag">Java Programimg </span>
-                            <span class="project-tag">IOT</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://www.youtube.com/watch?v=SniVsKWIpDA" class="btn btn-sm" download> Veiw Project</a>
-                            <a href="Water Report.pdf" class="btn btn-sm" download>Report</a>
-    
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="skills-layout">
+      <div class="fade-up">
+        <div class="section-label">
+          <div class="section-label-line"></div>
+          <span> <h1> Skills </h1></span>
         </div>
-    </section>
-
-    
-    <!-- Skills Section -->
-<section class="section skills" id="skills">
-    <div class="container">
-        <h2 class="section-title text-center animate">My Skills</h2>
-        
-        <div class="skills-grid">
-            <!-- Skill 1 -->
-            <div class="skill-card" data-skill="html5">
-                <div class="skill-icon">
-                    <i class="fab fa-html5"></i>
-                </div>
-                <h3 class="skill-title">HTML5</h3>
-                <p class="skill-description">
-                    Proficient in semantic HTML5 and accessibility best practices with extensive experience building accessible web applications.
-                </p>
-                
-            </div>
-            
-            <!-- Skill 2 -->
-            <div class="skill-card" data-skill="css3">
-                <div class="skill-icon">
-                    <i class="fab fa-css3-alt"></i>
-                </div>
-                <h3 class="skill-title">CSS3</h3>
-                <p class="skill-description">
-                    Expert in CSS3, Flexbox, Grid, animations and responsive design principles to create visually appealing interfaces.
-                </p>
-                
-            </div>
-            
-            <!-- Skill 3 -->
-            <div class="skill-card" data-skill="javascript">
-                <div class="skill-icon">
-                    <i class="fab fa-js"></i>
-                </div>
-                <h3 class="skill-title">JavaScript</h3>
-                <p class="skill-description">
-                    Strong knowledge of ES6+, DOM manipulation, AJAX, and modern JavaScript frameworks and libraries.
-                </p>
-                
-            </div>
-            
-            <!-- Skill 4 -->
-            <div class="skill-card" data-skill="react">
-                <div class="skill-icon">
-                    <i class="fab fa-react"></i>
-                </div>
-                <h3 class="skill-title">React</h3>
-                <p class="skill-description">
-                    Experience with React hooks, state management, component lifecycle, and building reusable component libraries.
-                </p>
-                
-            </div>
-            
-            <!-- Skill 5 -->
-            <div class="skill-card" data-skill="responsive">
-                <div class="skill-icon">
-                    <i class="fas fa-mobile-alt"></i>
-                </div>
-                <h3 class="skill-title">Responsive Design</h3>
-                <p class="skill-description">
-                    Creating fluid layouts that work seamlessly across all device sizes using modern CSS techniques and media queries.
-                </p>
-                
-            </div>
-            
-            <!-- Skill 6 -->
-            <div class="skill-card" data-skill="research">
-                <div class="skill-icon">
-                    <i class="fas fa-users"></i>
-                </div>
-                <h3 class="skill-title">User Research</h3>
-                <p class="skill-description">
-                    Conducting surveys, interviews, and usability tests to understand user needs and validate design decisions.
-                </p>
-               
-            </div>
-            
-            <!-- Skill 7 -->
-            <div class="skill-card" data-skill="git">
-                <div class="skill-icon">
-                    <i class="fab fa-git-alt"></i>
-                </div>
-                <h3 class="skill-title">Version Control</h3>
-                <p class="skill-description">
-                    Managing code efficiently using Git, GitHub, and GitLab for collaboration and version control.
-                </p>
-                
-            </div>
-            
-            <!-- Skill 8 -->
-            <div class="skill-card" data-skill="design">
-                <div class="skill-icon">
-                    <i class="fas fa-paint-brush"></i>
-                </div>
-                <h3 class="skill-title">UI/UX Design</h3>
-                <p class="skill-description">
-                    Designing user-centered experiences through wireframing, prototyping, and usability testing.
-                </p>
-                
-            </div>
-            
-            <!-- Skill 9 -->
-            <div class="skill-card" data-skill="motion">
-                <div class="skill-icon">
-                    <i class="fas fa-film"></i>
-                </div>
-                <h3 class="skill-title">Motion Design</h3>
-                <p class="skill-description">
-                    Creating engaging animations and micro-interactions to enhance user experience and bring interfaces to life.
-                </p>
-                
-            </div>
+        <h2 class="section-heading">The tools<br>of my <em>craft.</em></h2>
+        <p class="skills-intro">A blend of design sensibility and technical depth — equally comfortable in Figma and a code editor.</p>
+      </div>
+      <div class="skills-categories fade-up stagger-2">
+        <div>
+          <div class="skill-category-title">Front-End Development</div>
+          <div class="skill-pills">
+            <span class="skill-pill featured">React</span>
+            <span class="skill-pill featured">TypeScript</span>
+            <span class="skill-pill featured">JavaScript ES6+</span>
+            <span class="skill-pill">HTML5</span>
+            <span class="skill-pill">CSS3</span>
+            <span class="skill-pill">Responsive Design</span>
+            <span class="skill-pill">Flexbox / Grid</span>
+            <span class="skill-pill">REST APIs</span>
+          </div>
         </div>
+        <div>
+          <div class="skill-category-title">UX / UI Design</div>
+          <div class="skill-pills">
+            <span class="skill-pill featured">Figma</span>
+            <span class="skill-pill featured">UX Research</span>
+            <span class="skill-pill">Wireframing</span>
+            <span class="skill-pill">Prototyping</span>
+            <span class="skill-pill">User Testing</span>
+            <span class="skill-pill">Design Systems</span>
+            <span class="skill-pill">Accessibility (WCAG)</span>
+          </div>
+        </div>
+        <div>
+          <div class="skill-category-title">Tools & Other</div>
+          <div class="skill-pills">
+            <span class="skill-pill">Git / GitHub</span>
+            <span class="skill-pill">Python</span>
+            <span class="skill-pill">OpenGL / C++</span>
+            <span class="skill-pill">AWS Cloud</span>
+            <span class="skill-pill">Machine Learning</span>
+            <span class="skill-pill">SQL</span>
+            <span class="skill-pill">Node.js</span>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
-    <!-- Contact Section -->
-    <section class="section contact" id="contact">
-        <div class="container">
-            <h2 class="section-title text-center animate"> Get in Touch </h2>
-            
-            <div class="contact-container">
-                <div class="contact-info animate delay-1">
-                    <div class="contact-method">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Email</h3>
-                            <a href="mailto:ruchitrak98@gmail.com">ruchitrak98@gmail.com</a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-method">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Phone</h3>
-                            <a href="tel:+1 201-889-7904">+1 201-889-7904</a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-method">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Location</h3>
-                            <p>New York, USA</p>
-                        </div>
-                    </div>
-                    
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/ruchitrakumaresan/" target="_blank" class="social-link">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/Ruchitra98" target="_blank" class="social-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="contact-form animate delay-2">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Your Name</label>
-                            <input type="text" id="name" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email" class="form-label">Your Email</label>
-                            <input type="email" id="email" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message" class="form-label">Your Message</label>
-                            <textarea id="message" class="form-control" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn" style="width: 100%;">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-about">
-                    <div class="footer-logo">Ruchitra.K</div>
-                    <p class="footer-about-text">
-                        Front-End Developer | UX/UI Designer | Software Engineer creating beautiful, functional digital experiences.
-                    </p>
-                    <div class="footer-social">
-                        <a href="https://www.linkedin.com/in/ruchitrakumaresan/" target="_blank" class="social-link">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/Ruchitra98" target="_blank" class="social-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#Education">Education</a></li>
-                        <li><a href="#experience">Experience</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">UI/UX Design</a></li>
-                        <li><a href="#">Front-End Consulting</a></li>
-                        <li><a href="#">Responsive Design</a></li>
-                        <li><a href="#">Web Accessibility</a></li>
-                        <li><a href="#">Software Developer</a></li>
-                        <li><a href="#">Software Engineer</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-newsletter">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to my newsletter for the latest updates and articles "The Designers Mind"</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your Email" class="newsletter-input" required>
-                        <button type="submit" class="newsletter-btn">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Ruchitra Kumaresan. All rights reserved.</p> <br>
-                <p> Thank You 😊 </p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- AI Assistant Widget -->
-    <div class="ai-assistant">
-        <button id="aiAssistantButton" class="ai-button">Ask My AI</button>
-        <div id="aiChatWindow" class="ai-chat-window">
-            <div class="ai-chat-header">
-                <h3>My AI Assistant</h3>
-                <button class="ai-close-btn">&times;</button>
-            </div>
-            <div id="aiChatMessages" class="ai-chat-messages">
-                <div class="ai-message ai-bot-message">
-                    Hi! 👋 I'm Ruchitra's AI assistant. Ask me about my skills, projects, or leave a message!
-                </div>
-            </div>
-            <div class="ai-quick-questions">
-                <button class="ai-quick-question" data-target="about">About</button>
-        <button class="ai-quick-question" data-target="education">Education</button>
-        <button class="ai-quick-question" data-target="experience">Experience</button>
-        <button class="ai-quick-question" data-target="projects">Projects</button>
-        <button class="ai-quick-question" data-target="skills">Skills</button>
-        <button class="ai-quick-question" data-target="contact">Contact</button>
-            </div>
-            <div class="ai-chat-input">
-                <input type="text" id="aiUserInput" placeholder="Type your question...">
-                <button id="aiSendButton">Send</button>
-            </div>
-        </div>
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label fade-up">
+      <div class="section-label-line"></div>
+      <span><h1> Experience </h1> </span>
     </div>
+    <h2 class="section-heading fade-up">Where I've<br><em>made impact.</em></h2>
+    <br>
+    <div class="exp-list">
+      <div class="exp-item fade-up">
+        <div class="exp-meta">
+          <div class="exp-date">Jan 2025 — Present</div>
+          <span class="exp-type-badge">Volunteer</span>
+        </div>
+        <div class="exp-body">
+          <h3 class="exp-role">Retail Greeter Volunteer</h3>
+          <div class="exp-company">9/11 Memorial &amp; Museum · Manhattan, New York</div>
+          <p class="exp-desc">Welcome 1,000+ guests monthly providing guidance on resources and assisting with navigation and accessibility. Engage visitors in thoughtful discussions about the historical significance of exhibits, preserving personal stories and fostering deeper human connections.</p>
+        </div>
+      </div>
+      <div class="exp-item fade-up stagger-1">
+        <div class="exp-meta">
+          <div class="exp-date">Sept 2024 — Sept 2025</div>
+          <span class="exp-type-badge">Tutor</span>
+        </div>
+        <div class="exp-body">
+          <h3 class="exp-role">Computer Science Tutor</h3>
+          <div class="exp-company">UPchive · Brooklyn, New York</div>
+          <p class="exp-desc">Provided academic support in College Applications, Essay Writing, and CS coursework. Collaborated with students to develop personalized strategies for academic success and enhanced their understanding of core computing concepts.</p>
+        </div>
+      </div>
+      <div class="exp-item fade-up stagger-2">
+        <div class="exp-meta">
+          <div class="exp-date">June 2020 — July 2022</div>
+          <span class="exp-type-badge">Full-Time</span>
+        </div>
+        <div class="exp-body">
+          <h3 class="exp-role">Software Engineer</h3>
+          <div class="exp-company">Ambica Constructions &amp; Contractors · Bangalore, India</div>
+          <p class="exp-desc">Led front-end development across the full product lifecycle — from design to deployment. Built and maintained user interfaces with React and TypeScript, ensuring accessibility, responsiveness, and performance. Served as the go-to for debugging UI issues and improving user experience across the team.</p>
+        </div>
+      </div>
+      <div class="exp-item fade-up stagger-3">
+        <div class="exp-meta">
+          <div class="exp-date">July 2021 — Aug 2021</div>
+          <span class="exp-type-badge">Internship</span>
+        </div>
+        <div class="exp-body">
+          <h3 class="exp-role">Website Developer (Part-time)</h3>
+          <div class="exp-company">Lernov · Bangalore, India</div>
+          <p class="exp-desc">Developed a fully functional website meeting 90% of detailed client specifications. Systematically organized and optimized HTML structure, actively contributing to the website's layout and performance.</p>
+        </div>
+      </div>
+      <div class="exp-item fade-up stagger-4">
+        <div class="exp-meta">
+          <div class="exp-date">Feb 2020 — May 2020</div>
+          <span class="exp-type-badge">Internship</span>
+        </div>
+        <div class="exp-body">
+          <h3 class="exp-role">Website Developer &amp; Designer</h3>
+          <div class="exp-company">Sain Solutions · Bangalore, India</div>
+          <p class="exp-desc">Designed aesthetically pleasing interfaces for a retail client — implementation led to a 20% improvement in user engagement within two months of deployment, demonstrating measurable UX impact.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <div class="section-label fade-up">
+      <div class="section-label-line"></div>
+      <span> <h1> Education </h1></span>
+    </div>
+    <h2 class="section-heading fade-up">Academic<br><em>foundations.</em></h2>
+    <br>
+    <div class="edu-grid">
+      <div class="edu-card fade-up">
+        <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+        <div class="edu-degree">MS Information Technology</div>
+        <div class="edu-school">Saint Francis College</div>
+        <div class="edu-date">Sept 2025 — Expected </div>
+        <p class="edu-desc">Currently enrolled, deepening expertise in information systems and technology management.</p>
+      </div>
+      <div class="edu-card fade-up stagger-2">
+        <div class="edu-icon"><i class="fas fa-brain"></i></div>
+        <div class="edu-degree">MS Computer Science</div>
+        <div class="edu-school">New York Institute of Technology (NYIT)</div>
+        <div class="edu-date">2022 — 2024</div>
+        <p class="edu-desc">Specialized in Advanced Computing, Artificial Intelligence, and Human-Computer Interaction.</p>
+      </div>
+      <div class="edu-card fade-up stagger-3">
+        <div class="edu-icon"><i class="fas fa-laptop-code"></i></div>
+        <div class="edu-degree">BTech Computer Science</div>
+        <div class="edu-school">REVA University · Bangalore, India</div>
+        <div class="edu-date">2016 — 2022</div>
+        <p class="edu-desc">Focused on Software Development, Web Technologies, and Database Systems. First Class Honors.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
- <!-- Back to Top Button -->
-    <section>
-        <a href="#" id="back-to-top" title="Go to top">
-            <i class="fas fa-chevron-up"></i> <!-- Font Awesome arrow icon -->
-        </a>
-    </section>
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="projects-header">
+      <div class="fade-up">
+        <div class="section-label">
+          <div class="section-label-line"></div>
+          <span><h1> Projects </h1></span>
+        </div>
+        <h2 class="section-heading">Things I've<br><em>built &amp; shipped.</em></h2>
+      </div>
+      <div class="projects-filter-row fade-up stagger-2">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="design">UI/UX</button>
+        <button class="filter-btn" data-filter="academic">Academic</button>
+      </div>
+    </div>
+    <div class="projects-grid" id="projects-grid">
+      <div class="project-card fade-up" data-category="design">
+        <div class="project-img-wrap">
+          <img src="Task.jpg" alt="TaskFlow Pro" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="project-img-placeholder" style="display:none"><i class="fas fa-tasks"></i></div>
+          <span class="project-num">01</span>
+        </div>
+        <div class="project-body">
+          <div class="project-category">UI/UX · Web App</div>
+          <h3 class="project-title">TaskFlow Pro</h3>
+          <p class="project-desc">AI-powered task management with real-time dashboard, priority filters, calendar scheduling, and animated UI. Improved task completion by 12%.</p>
+          <div class="project-footer">
+            <div class="project-tags-row"><span class="p-tag">JavaScript</span><span class="p-tag">NLP</span></div>
+            <a href="https://ruchi-taskflow-ai-pro.netlify.app/" target="_blank" class="project-link">View <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card fade-up stagger-1" data-category="design">
+        <div class="project-img-wrap">
+          <img src="Mood.jpg" alt="MoodTunes" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="project-img-placeholder" style="display:none"><i class="fas fa-music"></i></div>
+          <span class="project-num">02</span>
+        </div>
+        <div class="project-body">
+          <div class="project-category">UI/UX · Web App</div>
+          <h3 class="project-title">MoodTunes</h3>
+          <p class="project-desc">Interactive web app curating personalized playlists based on user mood. Analyzes input via NLP and suggests songs matching emotions with YouTube links.</p>
+          <div class="project-footer">
+            <div class="project-tags-row"><span class="p-tag">JavaScript</span><span class="p-tag">NLP</span></div>
+            <a href="https://ruchitra98.github.io/Mood-Based-Playlist-Generator-Web-App/" target="_blank" class="project-link">View <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card fade-up stagger-2" data-category="design">
+        <div class="project-img-wrap">
+          <img src="Gift.jpg" alt="GiftGenie" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="project-img-placeholder" style="display:none"><i class="fas fa-gift"></i></div>
+          <span class="project-num">03</span>
+        </div>
+        <div class="project-body">
+          <div class="project-category">UI/UX · Web App</div>
+          <h3 class="project-title">GiftGenie</h3>
+          <p class="project-desc">Personalized gift suggestion platform helping users find the perfect gift through occasion-based suggestions and personality quizzes.</p>
+          <div class="project-footer">
+            <div class="project-tags-row"><span class="p-tag">JavaScript</span><span class="p-tag">Responsive</span></div>
+            <a href="https://ruchitra98.github.io/Gift-Suggestion-Website-for-Occasions-and-Ages/" target="_blank" class="project-link">View <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card fade-up stagger-1" data-category="academic">
+        <div class="project-img-wrap">
+          <img src="CG-1.jpg" alt="Computer Graphics" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="project-img-placeholder" style="display:none"><i class="fas fa-cube"></i></div>
+          <span class="project-num">04</span>
+        </div>
+        <div class="project-body">
+          <div class="project-category">Academic · Graphics</div>
+          <h3 class="project-title">Advanced Rendering Engine</h3>
+          <p class="project-desc">Projective Texturing techniques for high-fidelity simulation of shadows, reflections, and decals in 3D environments built from scratch.</p>
+          <div class="project-footer">
+            <div class="project-tags-row"><span class="p-tag">OpenGL</span><span class="p-tag">C++</span></div>
+            <a href="Computer Graphics-ppt.pdf" download class="project-link">Report <i class="fas fa-arrow-down"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card fade-up stagger-2" data-category="academic">
+        <div class="project-img-wrap">
+          <img src="PRS-1.jpg" alt="Recommendation System" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="project-img-placeholder" style="display:none"><i class="fas fa-robot"></i></div>
+          <span class="project-num">05</span>
+        </div>
+        <div class="project-body">
+          <div class="project-category">Academic · ML</div>
+          <h3 class="project-title">Product Recommendation System</h3>
+          <p class="project-desc">Collaborative filtering and rank-based recommendation using similarity-based approaches and model-based SVD for personalized suggestions.</p>
+          <div class="project-footer">
+            <div class="project-tags-row"><span class="p-tag">Python</span><span class="p-tag">ML</span><span class="p-tag">SVD</span></div>
+            <a href="Product Recommendation-Report.pdf" download class="project-link">Report <i class="fas fa-arrow-down"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card fade-up stagger-3" data-category="academic">
+        <div class="project-img-wrap">
+          <img src="water-1.jpg" alt="IoT Water Monitoring" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="project-img-placeholder" style="display:none"><i class="fas fa-tint"></i></div>
+          <span class="project-num">06</span>
+        </div>
+        <div class="project-body">
+          <div class="project-category">Academic · IoT</div>
+          <h3 class="project-title">Water Quality Monitoring</h3>
+          <p class="project-desc">IoT and AWS Cloud solution monitoring and purifying polluted water in real time, achieving 90% purification efficiency for sustainable reuse.</p>
+          <div class="project-footer">
+            <div class="project-tags-row"><span class="p-tag">IoT</span><span class="p-tag">AWS</span></div>
+            <a href="https://www.youtube.com/watch?v=SniVsKWIpDA" target="_blank" class="project-link">Demo <i class="fas fa-play"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Add before closing body tag -->
-<div class="cursor-dot"></div>
+<!-- UX PROCESS -->
+<section id="ux-work">
+  <div class="container">
+    <div class="section-label fade-up">
+      <div class="section-label-line"></div>
+      <span><h1>UX Process</h1></span>
+    </div>
+    <h2 class="section-heading fade-up">How I approach<br><em>design problems.</em></h2>
+    <p class="ux-intro-text fade-up stagger-1">Good design isn't decoration — it's structured problem-solving. Here's how I move from ambiguity to a polished, tested interface.</p>
+    <div class="ux-process-steps fade-up stagger-2">
+      <div class="process-step">
+        <div class="process-num">01</div>
+        <div class="process-name">Discover</div>
+        <div class="process-desc">User interviews, competitive analysis, defining the problem space</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">02</div>
+        <div class="process-name">Define</div>
+        <div class="process-desc">Personas, user journeys, and prioritized pain points</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">03</div>
+        <div class="process-name">Ideate</div>
+        <div class="process-desc">Sketching, information architecture, and wireframing</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">04</div>
+        <div class="process-name">Prototype</div>
+        <div class="process-desc">High-fidelity mockups and interactive prototypes in Figma</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">05</div>
+        <div class="process-name">Test &amp; Iterate</div>
+        <div class="process-desc">Usability testing, accessibility review, and refinement</div>
+      </div>
+    </div>
+    <div class="ux-tools-row fade-up stagger-3">
+      <span class="tools-label">Tools I use</span>
+      <span class="tool-chip">Figma</span>
+      <span class="tool-chip">React</span>
+      <span class="tool-chip">Javascript</span>
+      <span class="tool-chip">React DevTools</span>
+    </div>
+  </div>
+</section>
 
-    <!-- JavaScript -->
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-        
-        // Dark Mode Toggle
-        const darkModeToggle = document.getElementById('dark-mode-toggle');
-        const themeIcon = darkModeToggle.querySelector('i');
-        
-        // Check for saved theme preference or use preferred color scheme
-        const currentTheme = localStorage.getItem('theme') || 
-            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        
-        if (currentTheme === 'dark') {
-            document.body.classList.add('dark-mode');
-            themeIcon.classList.replace('fa-moon', 'fa-sun');
-        }
-        
-        darkModeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            
-            if (document.body.classList.contains('dark-mode')) {
-                localStorage.setItem('theme', 'dark');
-                themeIcon.classList.replace('fa-moon', 'fa-sun');
-            } else {
-                localStorage.setItem('theme', 'light');
-                themeIcon.classList.replace('fa-sun', 'fa-moon');
-            }
-        });
-        
-        // Projects Filter
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
-        
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                const filter = btn.getAttribute('data-filter');
-                
-                projectCards.forEach(card => {
-                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="fade-up">
+        <div class="section-label">
+          <div class="section-label-line"></div>
+          <span> <h1> Contact </h1> </span>
+        </div>
+        <h2 class="section-heading">Let's build something<br><em>together.</em></h2>
+        <p class="contact-intro">Whether you have a design challenge, a front-end project, or just want to connect — I'd love to hear from you. Currently open to Full-time, Internship roles and freelance opportunities.</p>
+        <div class="contact-links">
+          <a href="mailto:ruchitrak98@gmail.com" class="contact-link-row">
+            <div class="contact-link-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <div class="contact-link-label">Email</div>
+              <div class="contact-link-value">https://mail.google.com/mail/u/0/#inbox?compose=new </div>
+            </div>
+          </a>
+          <a href="https://linkedin.com" target="_blank" class="contact-link-row">
+            <div class="contact-link-icon"><i class="fab fa-linkedin"></i></div>
+            <div>
+              <div class="contact-link-label">LinkedIn</div>
+              <div class="contact-link-value">https://www.linkedin.com/in/ruchitra-kumaresan-29372a19b/</div>
+            </div>
+          </a>
+          <a href="https://github.com/ruchitra98" target="_blank" class="contact-link-row">
+            <div class="contact-link-icon"><i class="fab fa-github"></i></div>
+            <div>
+              <div class="contact-link-label">GitHub</div>
+              <div class="contact-link-value">github.com/ruchitra98</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="contact-form-wrap fade-up stagger-2">
+        <div class="form-group">
+          <label class="form-label">Your Name</label>
+          <input class="form-input" type="text" placeholder="Jane Smith">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input class="form-input" type="email" placeholder="jane@company.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Subject</label>
+          <input class="form-input" type="text" placeholder="Project opportunity / Say hello">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-input" placeholder="Tell me about your project or role..."></textarea>
+        </div>
+        <button class="form-submit" onclick="handleFormSubmit(this)">Send Message →</button>
+      </div>
+    </div>
+  </div>
+</section>
 
-        
-    // Sequential Image Animation for Projects
-    document.addEventListener('DOMContentLoaded', function() {
-        const projectContainers = document.querySelectorAll('.project-image-container');
-        
-        projectContainers.forEach(container => {
-            const images = container.querySelectorAll('.project-image');
-            let currentIndex = 0;
-            
-            // Only animate if there are multiple images
-            if (images.length > 1) {
-                // Set interval to cycle through images
-                setInterval(() => {
-                    // Remove active class from current image
-                    images[currentIndex].classList.remove('active');
-                    
-                    // Add next class for smooth transition
-                    images[currentIndex].classList.add('next');
-                    
-                    // Calculate next index
-                    currentIndex = (currentIndex + 1) % images.length;
-                    
-                    // Add active class to next image
-                    setTimeout(() => {
-                        images.forEach(img => img.classList.remove('next'));
-                        images[currentIndex].classList.add('active');
-                    }, 100);
-                    
-                }, 3000); // Change image every 3 seconds
-            }
-        });
-        
-        // Pause animation on hover
-        projectContainers.forEach(container => {
-            container.addEventListener('mouseenter', () => {
-                container.dataset.paused = 'true';
-            });
-            
-            container.addEventListener('mouseleave', () => {
-                container.dataset.paused = 'false';
-            });
-        });
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-name">Ruchitra Kumaresan</div>
+      <div class="footer-socials">
+        <a href="mailto:ruchitrak98@gmail.com" class="social-icon" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://linkedin.com" target="_blank" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/ruchitra98" target="_blank" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+      </div>
+      <div class="footer-copy">© 2025 Ruchitra Kumaresan · Designed &amp; built with care.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<a href="#hero" id="back-to-top" title="Back to top"><i class="fas fa-chevron-up"></i></a>
+
+<!-- AI CHAT -->
+<div class="chat-bubble">
+  <div class="chat-window" id="chat-window">
+    <div class="chat-header">
+      <div class="chat-header-left">
+        <div class="chat-avatar"><i class="fas fa-robot" style="font-size:.75rem"></i></div>
+        <div>
+          <div class="chat-title">Portfolio Assistant</div>
+          <div class="chat-status">Ask me about Ruchitra</div>
+        </div>
+      </div>
+      <button class="chat-close" onclick="toggleChat()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="chat-messages" id="chat-messages">
+      <div class="msg msg-bot">
+        Hi! I'm Ruchitra's portfolio assistant. What would you like to know?
+        <div class="chat-quick-btns">
+          <button class="quick-btn" onclick="askQ('skills')">Skills</button>
+          <button class="quick-btn" onclick="askQ('projects')">Projects</button>
+          <button class="quick-btn" onclick="askQ('experience')">Experience</button>
+          <button class="quick-btn" onclick="askQ('contact')">Contact</button>
+        </div>
+      </div>
+    </div>
+    <div class="chat-input-row">
+      <input class="chat-input" id="chat-input" placeholder="Ask something..." onkeydown="if(event.key==='Enter')sendChat()">
+      <button class="chat-send" onclick="sendChat()"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+  <button class="chat-toggle" onclick="toggleChat()" title="Chat with portfolio assistant">
+    <i class="fas fa-comment-dots"></i>
+  </button>
+</div>
+
+<script>
+  // Nav scroll
+  const navbar=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>{navbar.style.padding=window.scrollY>40?'14px 0':'20px 0'});
+
+  // Mobile nav
+  document.getElementById('hamburger').addEventListener('click',()=>{
+    document.getElementById('nav-links').classList.toggle('open');
+  });
+  document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav-links').classList.remove('open')));
+
+  // Back to top
+  const btt=document.getElementById('back-to-top');
+  window.addEventListener('scroll',()=>btt.classList.toggle('visible',window.scrollY>400));
+
+  // Fade in
+  const obs=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');obs.unobserve(e.target)}});
+  },{threshold:0.12});
+  document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+
+  // Project filter
+  document.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const f=btn.dataset.filter;
+      document.querySelectorAll('.project-card').forEach(c=>{
+        c.style.display=(f==='all'||c.dataset.category===f)?'':'none';
+      });
     });
+  });
 
-        
-        // Skill Cards Animation
-const skillCards = document.querySelectorAll('.skill-card');
+  // Chat
+  let chatOpen=false;
+  function toggleChat(){
+    chatOpen=!chatOpen;
+    document.getElementById('chat-window').style.display=chatOpen?'block':'none';
+    if(chatOpen)document.getElementById('chat-input').focus();
+  }
 
-const animateSkills = () => {
-    skillCards.forEach(card => {
-        const cardPosition = card.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.3;
-        
-        if (cardPosition < screenPosition) {
-            card.classList.add('visible');
-        }
-    });
-};
+  const kb={
+    skills:'Ruchitra\'s core skills: React, TypeScript, JavaScript ES6+, HTML5, CSS3, Responsive Design on the dev side. For design: Figma, UX Research, Wireframing, Prototyping, User Testing, Accessibility (WCAG). She also knows Python, OpenGL/C++, AWS, ML, SQL, and Node.js.',
+    projects:'Ruchitra has shipped 6 projects: TaskFlow Pro (AI task management), MoodTunes (mood-based playlist generator), GiftGenie (personalized gifts platform), an Advanced Rendering Engine (OpenGL/C++), a Product Recommendation System (Python/ML), and a Water Quality Monitoring IoT system.',
+    experience:'Ruchitra\'s experience: Retail Greeter Volunteer at 9/11 Memorial (2025–present), CS Tutor at UPchive (2024–2025), Software Engineer at Ambica Constructions using React & TypeScript (2020–2022), Website Developer at Lernov (2021), and Website Developer & Designer at Sain Solutions (2020).',
+    education:'Ruchitra holds an MS Computer Science from NYIT (2022–2024), is pursuing an MS Information Technology at Saint Francis College (2025–2026), and earned her BTech Computer Science from REVA University, India (2016–2022) with First Class Honors.',
+    contact:'You can reach Ruchitra at ruchitrak98@gmail.com. She\'s open to full-time roles and freelance opportunities in front-end development and UX/UI design. You can also connect on LinkedIn or GitHub (ruchitra98).',
+    about:'Ruchitra Kumaresan is a NYC-based Front-End Developer and UX/UI Designer with 5+ years of design experience and 2+ years of professional engineering experience. She volunteers at the 9/11 Memorial and loves exploring technologies from 3D graphics to IoT.',
+    ux:'Ruchitra\'s UX process: Discover → Define → Ideate → Prototype → Test & Iterate. She uses Figma, FigJam, Maze, Hotjar, Notion, and follows WCAG accessibility guidelines. She starts every project by understanding the user\'s mental model before writing any code.',
+  };
 
-// Initial check
-window.addEventListener('load', animateSkills);
-// Check on scroll
-window.addEventListener('scroll', animateSkills);
+  function addMsg(text,who){
+    const d=document.createElement('div');
+    d.className=`msg msg-${who}`;
+    d.textContent=text;
+    const msgs=document.getElementById('chat-messages');
+    msgs.appendChild(d);
+    msgs.scrollTop=99999;
+  }
 
-        // Smooth Scrolling for Anchor Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Back to Top Button
-            window.addEventListener('scroll', () => {
-                const backToTop = document.getElementById('back-to-top');
-                backToTop.style.display = window.pageYOffset > 300 ? 'block' : 'none';
-            });
+  function askQ(topic){
+    addMsg(topic.charAt(0).toUpperCase()+topic.slice(1),'user');
+    setTimeout(()=>addMsg(kb[topic]||'I can tell you about skills, projects, experience, education, UX process, or contact info.','bot'),400);
+  }
 
-            document.getElementById('back-to-top').addEventListener('click', (e) => {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-        
-        // Form Submission
-        const contactForm = document.getElementById('contactForm');
-        
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-            // Here you would typically send the form data to a server
-            // For demonstration, we'll just show an alert
-            alert(`Thank you for your message, ${name}! I'll get back to you soon at ${email}.`);
-            
-            // Reset the form
-            contactForm.reset();
-        });
-        
-       // Replace your existing animateOnScroll function with this
-const animateOnScroll = () => {
-    const elements = document.querySelectorAll('.animate');
-    
-    elements.forEach(element => {
-        const elementPosition = element.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        
-        if (elementPosition < windowHeight - 100) {
-            element.style.opacity = '1';
-            element.style.transform = 'translateY(0)';
-            
-            // Add staggered animation classes
-            if (element.classList.contains('delay-1')) {
-                element.style.transitionDelay = '0.1s';
-            } else if (element.classList.contains('delay-2')) {
-                element.style.transitionDelay = '0.2s';
-            } else if (element.classList.contains('delay-3')) {
-                element.style.transitionDelay = '0.3s';
-            }
-        }
-    });
-};
-        
-        // Initial check on load
-        window.addEventListener('load', animateOnScroll);
-        // Check on scroll
-        window.addEventListener('scroll', animateOnScroll);
+  function sendChat(){
+    const inp=document.getElementById('chat-input');
+    const q=inp.value.trim();if(!q)return;
+    addMsg(q,'user');inp.value='';
+    const ql=q.toLowerCase();
+    let r='I can help with: skills, projects, experience, education, UX process, or contact info. What would you like to know?';
+    if(ql.match(/skill|tech|react|figma|css|html|javascript|typescript/))r=kb.skills;
+    else if(ql.match(/project|taskflow|moodtune|giftgenie|build|ship/))r=kb.projects;
+    else if(ql.match(/experience|job|work|ambica|lernov|sain/))r=kb.experience;
+    else if(ql.match(/education|degree|school|nyit|reva|saint francis/))r=kb.education;
+    else if(ql.match(/contact|email|hire|available|reach/))r=kb.contact;
+    else if(ql.match(/about|who|background|story|herself/))r=kb.about;
+    else if(ql.match(/ux|design process|wireframe|prototype|research/))r=kb.ux;
+    else if(ql.match(/hello|hi|hey/))r='Hi there! Great to meet you. I can tell you about Ruchitra\'s work, skills, experience, and more. What would you like to know?';
+    setTimeout(()=>addMsg(r,'bot'),450);
+  }
 
-        // Custom cursor effect
-        const cursorDot = document.querySelector('.cursor-dot');
-
-        document.addEventListener('mousemove', (e) => {
-            cursorDot.style.left = `${e.clientX}px`;
-            cursorDot.style.top = `${e.clientY}px`;
-        });
-
-        document.querySelectorAll('a, button').forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursorDot.classList.add('active');
-            });
-            el.addEventListener('mouseleave', () => {
-                cursorDot.classList.remove('active');
-            });
-        });
-
-       
-        // AI Assistant Functionality
-        // AI Assistant Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const aiButton = document.getElementById('aiAssistantButton');
-    const chatWindow = document.getElementById('aiChatWindow');
-    const closeButton = document.querySelector('.ai-close-btn');
-    const quickQuestions = document.querySelectorAll('.ai-quick-question');
-    const userInput = document.getElementById('aiUserInput');
-    const sendButton = document.getElementById('aiSendButton');
-    const chatMessages = document.getElementById('aiChatMessages');
-
-    // Section information database
-    const sectionsDB = {
-        'about': {
-            name: 'About Me',
-            description: 'Learn about Ruchitra\'s background, education, and professional journey as a front-end developer and UX/UI designer.',
-            target: '#about'
-        },
-        'education': {
-            name: 'Education',
-            description: 'View Ruchitra\'s academic qualifications including Master\'s in Computer Science from NYIT and Bachelor\'s from REVA University.',
-            target: '#education'
-        },
-        'experience': {
-            name: 'Experience',
-            description: 'Explore Ruchitra\'s professional experience including roles at Ambica Constructions & Contractors, Lernov, and Sain Solutions.',
-            target: '#experience'
-        },
-        'projects': {
-            name: 'Projects',
-            description: 'Discover Ruchitra\'s portfolio projects including TaskFlow Pro, MoodTunes, GiftGenie, and academic projects.',
-            target: '#projects'
-        },
-        'skills': {
-            name: 'Skills',
-            description: 'See Ruchitra\'s technical skills in HTML5, CSS3, JavaScript, React, responsive design, and UI/UX design.',
-            target: '#skills'
-        },
-        'contact': {
-            name: 'Contact',
-            description: 'Get in touch with Ruchitra via email, phone, or through the contact form.',
-            target: '#contact'
-        }
-    };
-
-    // Project information database
-    const projectsDB = {
-        'taskflow': {
-            name: 'TaskFlow Pro',
-            description: 'An AI-powered task management application with real-time dashboard, priority filters, and calendar scheduling. It improves task completion rates by 12% through intelligent prioritization.',
-            technologies: ['JavaScript', 'NLP', 'Responsive Design'],
-            link: 'https://ruchi-taskflow-ai-pro.netlify.app/'
-        },
-        'moodtunes': {
-            name: 'MoodTunes',
-            description: 'A mood-based playlist generator that analyzes user input using basic NLP and suggests songs matching emotions with direct YouTube links.',
-            technologies: ['JavaScript', 'NLP', 'Responsive Design'],
-            link: 'https://ruchitra98.github.io/Mood-Based-Playlist-Generator-Web-App/'
-        },
-        'giftgenie': {
-            name: 'GiftGenie',
-            description: 'A personalized gift suggestion platform that helps users find perfect gifts through occasion-based suggestions and personality quizzes.',
-            technologies: ['JavaScript', 'Responsive Design', 'Dynamic Content'],
-            link: 'https://ruchitra98.github.io/Gift-Suggestion-Website-for-Occasions-and-Ages/'
-        },
-        'computer graphics': {
-            name: 'Computer Graphics - Advanced Rendering',
-            description: 'Focused on Advanced Rendering Techniques, especially Projective Texturing for high-fidelity simulations of real-world elements like shadows, reflections, and decals.',
-            technologies: ['OpenGL', 'C++', 'Shaders'],
-            link: 'Computer Graphics-ppt.pdf'
-        },
-        'product recommendation': {
-            name: 'Product Recommendation System',
-            description: 'Academic project on collaborative filtering and rank-based recommendation systems using similarity-based approaches and model-based collaborative filtering with SVD.',
-            technologies: ['Python', 'Machine Learning', 'SVD'],
-            link: 'Product Recommendation-Report.pdf'
-        },
-        'water quality': {
-            name: 'Water Quality Monitoring System',
-            description: 'Leveraged IoT and AWS Cloud to monitor and purify polluted water sources in real time, achieving 90% purification for sustainable reuse.',
-            technologies: ['Embedded C', 'Java Programming', 'IoT'],
-            link: 'https://www.youtube.com/watch?v=SniVsKWIpDA'
-        }
-    };
-
-    // Toggle chat window
-    aiButton.addEventListener('click', function() {
-        chatWindow.style.display = chatWindow.style.display === 'block' ? 'none' : 'block';
-    });
-
-    // Close chat window
-    closeButton.addEventListener('click', function() {
-        chatWindow.style.display = 'none';
-    });
-
-    // Quick question buttons
-    quickQuestions.forEach(button => {
-        button.addEventListener('click', function() {
-            const target = this.getAttribute('data-target');
-            handleSectionNavigation(target);
-        });
-    });
-
-    // Send message on button click
-    sendButton.addEventListener('click', function() {
-        sendMessage();
-    });
-
-    // Send message on Enter key
-    userInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            sendMessage();
-        }
-    });
-
-    function sendMessage() {
-        const message = userInput.value.trim();
-        if (message) {
-            addMessage(message, 'user');
-            respondToQuestion(message);
-            userInput.value = '';
-        }
-    }
-
-    function addMessage(text, sender) {
-        const messageDiv = document.createElement('div');
-        messageDiv.classList.add('ai-message');
-        messageDiv.classList.add(sender === 'user' ? 'ai-user-message' : 'ai-bot-message');
-        messageDiv.textContent = text;
-        chatMessages.appendChild(messageDiv);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
-
-    function handleSectionNavigation(sectionKey) {
-        const section = sectionsDB[sectionKey];
-        if (section) {
-            // Add message about the section
-            addMessage(`Taking you to the ${section.name} section...`, 'bot');
-            
-            // Close chat window after a brief delay
-            setTimeout(() => {
-                chatWindow.style.display = 'none';
-                
-                // Scroll to the section
-                document.querySelector(section.target).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                
-                // Highlight the section briefly
-                const sectionElement = document.querySelector(section.target);
-                const originalBg = sectionElement.style.backgroundColor;
-                sectionElement.style.backgroundColor = 'rgba(37, 99, 235, 0.1)';
-                sectionElement.style.transition = 'background-color 0.5s ease';
-                
-                setTimeout(() => {
-                    sectionElement.style.backgroundColor = originalBg;
-                }, 2000);
-            }, 1000);
-        }
-    }
-
-    function respondToQuestion(question) {
-        let response = "I'm sorry, I don't have information about that yet.";
-        
-        question = question.toLowerCase();
-        
-        // Check if question matches any section
-        for (const sectionKey in sectionsDB) {
-            if (question.includes(sectionKey)) {
-                const section = sectionsDB[sectionKey];
-                response = `${section.name}: ${section.description}\n\nWould you like me to take you to this section?`;
-                
-                // Add this to the chat immediately
-                setTimeout(() => {
-                    addMessage(response, 'bot');
-                    
-                    // Add a follow-up button to scroll to the section
-                    const buttonDiv = document.createElement('div');
-                    buttonDiv.style.marginTop = '10px';
-                    
-                    const viewButton = document.createElement('button');
-                    viewButton.textContent = 'Take me there';
-                    viewButton.classList.add('ai-quick-question');
-                    viewButton.style.margin = '5px 0';
-                    viewButton.addEventListener('click', function() {
-                        handleSectionNavigation(sectionKey);
-                    });
-                    
-                    buttonDiv.appendChild(viewButton);
-                    chatMessages.appendChild(buttonDiv);
-                    chatMessages.scrollTop = chatMessages.scrollHeight;
-                }, 500);
-                
-                return; // Exit the function after handling section-specific question
-            }
-        }
-        
-        // Check if question matches any project
-        for (const projectKey in projectsDB) {
-            if (question.includes(projectKey)) {
-                const project = projectsDB[projectKey];
-                response = `${project.name}: ${project.description}\n\nTechnologies: ${project.technologies.join(', ')}\n\n`;
-                
-                // Add link if available
-                if (project.link) {
-                    if (project.link.startsWith('http')) {
-                        response += `View it here: ${project.link}`;
-                    } else {
-                        response += `Download the report: ${project.link}`;
-                    }
-                }
-                
-                // Add option to view in portfolio
-                response += "\n\nWould you like me to take you to this project in the portfolio?";
-                
-                // Add this to the chat immediately
-                setTimeout(() => {
-                    addMessage(response, 'bot');
-                    
-                    // Add a follow-up button to scroll to the project
-                    const buttonDiv = document.createElement('div');
-                    buttonDiv.style.marginTop = '10px';
-                    
-                    const viewButton = document.createElement('button');
-                    viewButton.textContent = 'Take me to projects';
-                    viewButton.classList.add('ai-quick-question');
-                    viewButton.style.margin = '5px 0';
-                    viewButton.addEventListener('click', function() {
-                        // Close chat window
-                        chatWindow.style.display = 'none';
-                        
-                        // Scroll to projects section
-                        document.querySelector('#projects').scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                        
-                        // Highlight the specific project after a delay
-                        setTimeout(() => {
-                            const projectCards = document.querySelectorAll('.project-card');
-                            projectCards.forEach(card => {
-                                if (card.querySelector('.project-title').textContent.toLowerCase().includes(projectKey)) {
-                                    card.style.boxShadow = '0 0 0 3px var(--accent-color)';
-                                    card.style.transition = 'box-shadow 0.3s ease';
-                                    
-                                    // Remove highlight after some time
-                                    setTimeout(() => {
-                                        card.style.boxShadow = 'var(--shadow-md)';
-                                    }, 3000);
-                                }
-                            });
-                        }, 800);
-                    });
-                    
-                    buttonDiv.appendChild(viewButton);
-                    chatMessages.appendChild(buttonDiv);
-                    chatMessages.scrollTop = chatMessages.scrollHeight;
-                }, 500);
-                
-                return; // Exit the function after handling project-specific question
-            }
-        }
-        
-        // General questions
-        if (question.includes('skill') || question.includes('technolog')) {
-            response = "Ruchitra has skills in HTML, CSS, JavaScript, React, and various web development technologies. Would you like me to take you to the Skills section?";
-            
-            setTimeout(() => {
-                addMessage(response, 'bot');
-                
-                const buttonDiv = document.createElement('div');
-                buttonDiv.style.marginTop = '10px';
-                
-                const viewButton = document.createElement('button');
-                viewButton.textContent = 'Take me to Skills';
-                viewButton.classList.add('ai-quick-question');
-                viewButton.style.margin = '5px 0';
-                viewButton.addEventListener('click', function() {
-                    handleSectionNavigation('skills');
-                });
-                
-                buttonDiv.appendChild(viewButton);
-                chatMessages.appendChild(buttonDiv);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }, 500);
-        } 
-        else if (question.includes('project') || question.includes('work')) {
-            response = "Ruchitra has worked on several projects including TaskFlow Pro, MoodTunes, and GiftGenie. Would you like me to take you to the Projects section?";
-            
-            setTimeout(() => {
-                addMessage(response, 'bot');
-                
-                const buttonDiv = document.createElement('div');
-                buttonDiv.style.marginTop = '10px';
-                
-                const viewButton = document.createElement('button');
-                viewButton.textContent = 'Take me to Projects';
-                viewButton.classList.add('ai-quick-question');
-                viewButton.style.margin = '5px 0';
-                viewButton.addEventListener('click', function() {
-                    handleSectionNavigation('projects');
-                });
-                
-                buttonDiv.appendChild(viewButton);
-                chatMessages.appendChild(buttonDiv);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }, 500);
-        } 
-        else if (question.includes('contact') || question.includes('reach') || question.includes('email') || question.includes('phone')) {
-            response = "You can contact Ruchitra through the Contact section of this portfolio or via email at ruchitrak98@gmail.com. Would you like me to take you to the Contact section?";
-            
-            setTimeout(() => {
-                addMessage(response, 'bot');
-                
-                const buttonDiv = document.createElement('div');
-                buttonDiv.style.marginTop = '10px';
-                
-                const viewButton = document.createElement('button');
-                viewButton.textContent = 'Take me to Contact';
-                viewButton.classList.add('ai-quick-question');
-                viewButton.style.margin = '5px 0';
-                viewButton.addEventListener('click', function() {
-                    handleSectionNavigation('contact');
-                });
-                
-                buttonDiv.appendChild(viewButton);
-                chatMessages.appendChild(buttonDiv);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }, 500);
-        } 
-        else if (question.includes('hello') || question.includes('hi')) {
-            response = "Hello there! I'm Ruchitra's AI assistant. I can help you navigate the portfolio, tell you about projects, skills, experience, or connect you directly. What would you like to know?";
-            setTimeout(() => {
-                addMessage(response, 'bot');
-            }, 500);
-        } 
-        else if (question.includes('experience') || question.includes('background') || question.includes('job')) {
-            response = "Ruchitra has 2 years of professional experience as a Software Engineer at Ambica Constructions & Contractors, along with several academic and personal projects. Would you like me to take you to the Experience section?";
-            
-            setTimeout(() => {
-                addMessage(response, 'bot');
-                
-                const buttonDiv = document.createElement('div');
-                buttonDiv.style.marginTop = '10px';
-                
-                const viewButton = document.createElement('button');
-                viewButton.textContent = 'Take me to Experience';
-                viewButton.classList.add('ai-quick-question');
-                viewButton.style.margin = '5px 0';
-                viewButton.addEventListener('click', function() {
-                    handleSectionNavigation('experience');
-                });
-                
-                buttonDiv.appendChild(viewButton);
-                chatMessages.appendChild(buttonDiv);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }, 500);
-        } 
-        else if (question.includes('education') || question.includes('degree') || question.includes('school')) {
-            response = "Ruchitra holds a Master's in Computer Science from NYIT and a Bachelor's in Computer Science from REVA University. Would you like me to take you to the Education section?";
-            
-            setTimeout(() => {
-                addMessage(response, 'bot');
-                
-                const buttonDiv = document.createElement('div');
-                buttonDiv.style.marginTop = '10px';
-                
-                const viewButton = document.createElement('button');
-                viewButton.textContent = 'Take me to Education';
-                viewButton.classList.add('ai-quick-question');
-                viewButton.style.margin = '5px 0';
-                viewButton.addEventListener('click', function() {
-                    handleSectionNavigation('education');
-                });
-                
-                buttonDiv.appendChild(viewButton);
-                chatMessages.appendChild(buttonDiv);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }, 500);
-        } 
-        else if (question.includes('about') || question.includes('who')) {
-            response = "Ruchitra is a front-end developer with a Master's in Computer Science from NYIT and a Bachelor's from REVA University, India. Would you like me to take you to the About section?";
-            
-            setTimeout(() => {
-                addMessage(response, 'bot');
-                
-                const buttonDiv = document.createElement('div');
-                buttonDiv.style.marginTop = '10px';
-                
-                const viewButton = document.createElement('button');
-                viewButton.textContent = 'Take me to About';
-                viewButton.classList.add('ai-quick-question');
-                viewButton.style.margin = '5px 0';
-                viewButton.addEventListener('click', function() {
-                    handleSectionNavigation('about');
-                });
-                
-                buttonDiv.appendChild(viewButton);
-                chatMessages.appendChild(buttonDiv);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }, 500);
-        }
-        else {
-            // For non-specific responses
-            setTimeout(() => {
-                addMessage(response, 'bot');
-            }, 500);
-        }
-    }
-});
-    </script>
+  function handleFormSubmit(btn){
+    btn.textContent='Message sent! ✓';
+    btn.style.background='#22c55e';
+    setTimeout(()=>{btn.textContent='Send Message →';btn.style.background='';},4000);
+  }
+</script>
 </body>
 </html>
