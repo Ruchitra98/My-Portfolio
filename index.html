@@ -115,12 +115,16 @@
     #skills .section-heading em{color:var(--accent)}
     .skills-layout{display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:start}
     .skills-intro{font-size:1rem;color:rgba(245,242,235,.6);line-height:1.8;font-weight:300;margin-top:20px}
-    .skills-categories{display:flex;flex-direction:column;gap:36px}
-    .skill-category-title{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,242,235,.4);margin-bottom:14px}
-    .skill-pills{display:flex;flex-wrap:wrap;gap:10px}
-    .skill-pill{border:1px solid rgba(245,242,235,.15);color:rgba(245,242,235,.8);padding:8px 16px;border-radius:2px;font-size:.82rem;font-weight:300;transition:all .2s;cursor:default}
-    .skill-pill:hover{background:var(--accent);border-color:var(--accent);color:white}
-    .skill-pill.featured{background:rgba(192,57,43,.15);border-color:rgba(192,57,43,.4)}
+    .skills-categories{display:flex;flex-direction:column;gap:44px}
+    .skill-category-title{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,242,235,.4);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+    .skill-category-title i{font-size:.7rem;color:var(--accent);transform:rotate(45deg)}
+    .skill-chain{display:flex;flex-wrap:wrap;align-items:center;padding:6px 0}
+    .skill-link{position:relative;padding:11px 22px;border:3px solid rgba(245,242,235,.18);border-radius:50px;background:rgba(245,242,235,.02);color:rgba(245,242,235,.75);font-size:.8rem;font-weight:400;white-space:nowrap;margin-left:-16px;transition:all .3s cubic-bezier(.34,1.56,.64,1);cursor:default}
+    .skill-link:first-child{margin-left:0}
+    .skill-chain .skill-link:nth-child(odd){transform:translateY(-6px)}
+    .skill-chain .skill-link:nth-child(even){transform:translateY(6px)}
+    .skill-link:hover{border-color:var(--accent);background:rgba(192,57,43,.15);color:white;transform:scale(1.08) translateY(0);z-index:5;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+    .skill-link.featured{border-color:rgba(192,57,43,.55);background:rgba(192,57,43,.08);color:rgba(245,242,235,.95)}
 
     /* EXPERIENCE */
     #experience{background:var(--cream)}
@@ -207,16 +211,25 @@
     #ux-work .section-heading{color:var(--paper)}
     #ux-work .section-heading em{color:var(--accent)}
     .ux-intro-text{font-size:1rem;color:rgba(245,242,235,.55);font-weight:300;max-width:480px;line-height:1.8;margin-bottom:60px}
-    .ux-process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-bottom:60px;border:1px solid rgba(255,255,255,.08);border-radius:4px;overflow:hidden}
-    .process-step{padding:28px 20px;border-right:1px solid rgba(255,255,255,.08);transition:background .2s}
-    .process-step:last-child{border-right:none}
-    .process-step:hover{background:rgba(255,255,255,.04)}
-    .process-num{font-family:var(--mono);font-size:.62rem;color:var(--accent);margin-bottom:10px;letter-spacing:.1em}
-    .process-name{font-size:.9rem;color:rgba(245,242,235,.8);font-weight:500;margin-bottom:6px}
-    .process-desc{font-size:.75rem;color:rgba(245,242,235,.4);line-height:1.5}
     .ux-tools-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
     .tools-label{font-family:var(--mono);font-size:.65rem;color:rgba(245,242,235,.35);letter-spacing:.1em;text-transform:uppercase;margin-right:4px}
     .tool-chip{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:rgba(245,242,235,.7);font-size:.82rem;padding:6px 14px;border-radius:2px}
+
+    /* UX PROCESS — INTERLOCKING RINGS */
+    .ux-rings{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;padding:36px 0 90px}
+    .ring-item{position:relative;width:168px;height:168px;margin-left:-40px;z-index:1}
+    .ring-item:first-child{margin-left:0}
+    .ring-item:nth-child(odd){transform:translateY(-16px);z-index:2}
+    .ring-item:nth-child(even){transform:translateY(16px);z-index:1}
+    .ring-circle{width:100%;height:100%;border-radius:50%;border:3px solid var(--ring-color,var(--accent));background:var(--ring-bg,rgba(192,57,43,.1));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer;text-align:center;padding:10px;transition:transform .4s cubic-bezier(.34,1.56,.64,1),box-shadow .4s;position:relative}
+    .ring-item:hover .ring-circle,.ring-item.active .ring-circle{transform:scale(1.1);box-shadow:0 0 0 6px rgba(255,255,255,.05),0 20px 44px rgba(0,0,0,.4)}
+    .ring-num{font-family:var(--mono);font-size:.62rem;color:var(--ring-color,var(--accent));letter-spacing:.12em}
+    .ring-name{font-family:'DM Serif Display',serif;font-size:1.02rem;color:var(--paper);line-height:1.2}
+    .ring-tooltip{position:absolute;left:50%;top:calc(100% + 16px);transform:translateX(-50%) translateY(-6px);width:190px;background:var(--cream);color:var(--ink);font-size:.74rem;line-height:1.55;padding:14px 16px;border-radius:6px;box-shadow:0 16px 40px rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:20}
+    .ring-tooltip::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-width:0 6px 6px 6px;border-style:solid;border-color:transparent transparent var(--cream) transparent}
+    .ring-item:nth-child(even) .ring-tooltip{top:auto;bottom:calc(100% + 16px);transform:translateX(-50%) translateY(6px)}
+    .ring-item:nth-child(even) .ring-tooltip::before{top:auto;bottom:-6px;border-width:6px 6px 0 6px;border-color:var(--cream) transparent transparent transparent}
+    .ring-item:hover .ring-tooltip,.ring-item.active .ring-tooltip{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto}
 
     /* CONTACT */
     #contact{background:var(--cream)}
@@ -291,7 +304,7 @@
       .edu-grid{grid-template-columns:1fr 1fr}
       .exp-grid{grid-template-columns:1fr 1fr}
       .projects-grid{grid-template-columns:repeat(2,1fr)}
-      .ux-process-steps{grid-template-columns:repeat(3,1fr)}
+      .ring-item{width:130px;height:130px;margin-left:-30px}
       .hero-visual{display:none}
       .hero-stats{gap:24px}
       .projects-header{grid-template-columns:1fr;gap:24px}
@@ -306,15 +319,21 @@
       .nav-cta{display:none}
       .edu-grid{grid-template-columns:1fr}
       .projects-grid{grid-template-columns:1fr}
-      .ux-process-steps{grid-template-columns:repeat(2,1fr)}
       .exp-grid{grid-template-columns:1fr}
+      .ux-rings{flex-direction:column;align-items:stretch;gap:14px;padding:20px 0 40px}
+      .ring-item{width:100%;height:auto;margin-left:0!important;transform:none!important;z-index:1!important}
+      .ring-circle{width:100%;height:auto;border-radius:14px;flex-direction:row;justify-content:flex-start;gap:16px;padding:16px 20px;text-align:left}
+      .ring-tooltip{position:static;opacity:1;pointer-events:auto;transform:none!important;width:100%;margin-top:8px;box-shadow:none;background:rgba(255,255,255,.06);color:rgba(245,242,235,.7);border:1px solid rgba(255,255,255,.08)}
+      .ring-tooltip::before{display:none}
       .about-highlights{grid-template-columns:1fr}
       .hero-stats{flex-wrap:wrap;gap:20px}
+      .skill-link{margin-left:-8px;padding:9px 16px;font-size:.75rem}
+      .skill-chain .skill-link:nth-child(odd){transform:translateY(-3px)}
+      .skill-chain .skill-link:nth-child(even){transform:translateY(3px)}
     }
     @media(max-width:480px){
       .hero-title{font-size:2.6rem}
       .section-heading{font-size:2rem}
-      .ux-process-steps{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -336,7 +355,7 @@
       <li><a href="#ux-work">UX Process</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="Ruchitra.pdf" download class="nav-cta">Download CV</a>
+    <a href="Ruchitra.K.pdf" download class="nav-cta">Download CV</a>
   </div>
 </nav>
 
@@ -463,7 +482,7 @@
             <div class="highlight-text">From 3D graphics engines to IoT — I love exploring entirely new problem spaces.</div>
           </div>
         </div>
-        <a href="Ruchitra.pdf" download class="btn-primary">Download Resume</a>
+        <a href="Ruchitra.K.pdf" download class="btn-primary">Download Resume</a>
       </div>
     </div>
   </div>
@@ -483,40 +502,40 @@
       </div>
       <div class="skills-categories fade-up stagger-2">
         <div>
-          <div class="skill-category-title">Front-End Development</div>
-          <div class="skill-pills">
-            <span class="skill-pill featured">React</span>
-            <span class="skill-pill featured">TypeScript</span>
-            <span class="skill-pill featured">JavaScript ES6+</span>
-            <span class="skill-pill">HTML5</span>
-            <span class="skill-pill">CSS3</span>
-            <span class="skill-pill">Responsive Design</span>
-            <span class="skill-pill">Flexbox / Grid</span>
-            <span class="skill-pill">REST APIs</span>
+          <div class="skill-category-title"><i class="fas fa-link"></i>Front-End Development</div>
+          <div class="skill-chain">
+            <span class="skill-link featured">React</span>
+            <span class="skill-link featured">TypeScript</span>
+            <span class="skill-link featured">JavaScript ES6+</span>
+            <span class="skill-link">HTML5</span>
+            <span class="skill-link">CSS3</span>
+            <span class="skill-link">Responsive Design</span>
+            <span class="skill-link">Flexbox / Grid</span>
+            <span class="skill-link">REST APIs</span>
           </div>
         </div>
         <div>
-          <div class="skill-category-title">UX / UI Design</div>
-          <div class="skill-pills">
-            <span class="skill-pill featured">Figma</span>
-            <span class="skill-pill featured">UX Research</span>
-            <span class="skill-pill">Wireframing</span>
-            <span class="skill-pill">Prototyping</span>
-            <span class="skill-pill">User Testing</span>
-            <span class="skill-pill">Design Systems</span>
-            <span class="skill-pill">Accessibility (WCAG)</span>
+          <div class="skill-category-title"><i class="fas fa-link"></i>UX / UI Design</div>
+          <div class="skill-chain">
+            <span class="skill-link featured">Figma</span>
+            <span class="skill-link featured">UX Research</span>
+            <span class="skill-link">Wireframing</span>
+            <span class="skill-link">Prototyping</span>
+            <span class="skill-link">User Testing</span>
+            <span class="skill-link">Design Systems</span>
+            <span class="skill-link">Accessibility (WCAG)</span>
           </div>
         </div>
         <div>
-          <div class="skill-category-title">Tools & Other</div>
-          <div class="skill-pills">
-            <span class="skill-pill">Git / GitHub</span>
-            <span class="skill-pill">Python</span>
-            <span class="skill-pill">OpenGL / C++</span>
-            <span class="skill-pill">AWS Cloud</span>
-            <span class="skill-pill">Machine Learning</span>
-            <span class="skill-pill">SQL</span>
-            <span class="skill-pill">Node.js</span>
+          <div class="skill-category-title"><i class="fas fa-link"></i>Tools &amp; Other</div>
+          <div class="skill-chain">
+            <span class="skill-link">Git / GitHub</span>
+            <span class="skill-link">Python</span>
+            <span class="skill-link">OpenGL / C++</span>
+            <span class="skill-link">AWS Cloud</span>
+            <span class="skill-link">Machine Learning</span>
+            <span class="skill-link">SQL</span>
+            <span class="skill-link">Node.js</span>
           </div>
         </div>
       </div>
@@ -533,7 +552,7 @@
     </div>
     <h2 class="section-heading fade-up">Where I've<br><em>made impact.</em></h2>
     <br>
-    <p style="font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--stone);text-transform:uppercase;margin-top:-24px;margin-bottom:40px"><b><h2>Tap a card to open it, like a book</h2></b></p>
+    <p style="font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--stone);text-transform:uppercase;margin-top:-24px;margin-bottom:40px">Tap a card to open it, like a book</p>
     <div class="exp-grid">
 
       <div class="exp-book fade-up" onclick="this.classList.toggle('opened')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('opened')}" aria-label="Retail Greeter Volunteer at 9/11 Memorial & Museum, tap to open for details">
@@ -648,7 +667,7 @@
       <span> <h1> Education </h1></span>
     </div>
     <h2 class="section-heading fade-up">Academic<br><em>foundations.</em></h2>
-    <p style="font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--stone);text-transform:uppercase;margin-top:-24px;margin-bottom:40px"><b> <h2>Tap a card to flip it </h2></b></p>
+    <p style="font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--stone);text-transform:uppercase;margin-top:-24px;margin-bottom:40px"> <b> <h2> Tap a card to flip it  </h2> </b> </p>
     <div class="edu-grid">
 
       <div class="edu-flip-card fade-up" onclick="this.classList.toggle('flipped')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped')}" aria-label="MS Information Technology at Saint Francis College, tap to flip for details">
@@ -732,7 +751,7 @@
         <button class="filter-btn" data-filter="academic">Academic</button>
       </div>
     </div>
-    <p style="font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--stone);text-transform:uppercase;margin-top:-40px;margin-bottom:32px"><b> <h2>Tap a card to flip it </h2> </b> </p>
+    <p style="font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--stone);text-transform:uppercase;margin-top:-40px;margin-bottom:32px">Tap a card to flip it</p>
     <div class="projects-grid" id="projects-grid">
 
       <div class="project-flip-card fade-up" data-category="design" onclick="this.classList.toggle('flipped')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped')}" aria-label="TaskFlow Pro, UI/UX project, tap to flip for details">
@@ -898,32 +917,43 @@
     </div>
     <h2 class="section-heading fade-up">How I approach<br><em>design problems.</em></h2>
     <p class="ux-intro-text fade-up stagger-1">Good design isn't decoration — it's structured problem-solving. Here's how I move from ambiguity to a polished, tested interface.</p>
-    <div class="ux-process-steps fade-up stagger-2">
-      <div class="process-step">
-        <div class="process-num">01</div>
-        <div class="process-name">Discover</div>
-        <div class="process-desc">User interviews, competitive analysis, defining the problem space</div>
+    <div class="ux-rings fade-up stagger-2">
+      <div class="ring-item" style="--ring-color:#c0392b;--ring-bg:rgba(192,57,43,.1)" onclick="this.classList.toggle('active')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('active')}" aria-label="Discover: User interviews, competitive analysis, defining the problem space">
+        <div class="ring-circle">
+          <span class="ring-num">01</span>
+          <span class="ring-name">Discover</span>
+        </div>
+        <div class="ring-tooltip">User interviews, competitive analysis, defining the problem space</div>
       </div>
-      <div class="process-step">
-        <div class="process-num">02</div>
-        <div class="process-name">Define</div>
-        <div class="process-desc">Personas, user journeys, and prioritized pain points</div>
+      <div class="ring-item" style="--ring-color:#b5862d;--ring-bg:rgba(181,134,45,.1)" onclick="this.classList.toggle('active')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('active')}" aria-label="Define: Personas, user journeys, and prioritized pain points">
+        <div class="ring-circle">
+          <span class="ring-num">02</span>
+          <span class="ring-name">Define</span>
+        </div>
+        <div class="ring-tooltip">Personas, user journeys, and prioritized pain points</div>
       </div>
-      <div class="process-step">
-        <div class="process-num">03</div>
-        <div class="process-name">Ideate</div>
-        <div class="process-desc">Sketching, information architecture, and wireframing</div>
+      <div class="ring-item" style="--ring-color:#6b8f71;--ring-bg:rgba(107,143,113,.12)" onclick="this.classList.toggle('active')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('active')}" aria-label="Ideate: Sketching, information architecture, and wireframing">
+        <div class="ring-circle">
+          <span class="ring-num">03</span>
+          <span class="ring-name">Ideate</span>
+        </div>
+        <div class="ring-tooltip">Sketching, information architecture, and wireframing</div>
       </div>
-      <div class="process-step">
-        <div class="process-num">04</div>
-        <div class="process-name">Prototype</div>
-        <div class="process-desc">High-fidelity mockups and interactive prototypes in Figma</div>
+      <div class="ring-item" style="--ring-color:#5b7c99;--ring-bg:rgba(91,124,153,.12)" onclick="this.classList.toggle('active')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('active')}" aria-label="Prototype: High-fidelity mockups and interactive prototypes in Figma">
+        <div class="ring-circle">
+          <span class="ring-num">04</span>
+          <span class="ring-name">Prototype</span>
+        </div>
+        <div class="ring-tooltip">High-fidelity mockups and interactive prototypes in Figma</div>
       </div>
-      <div class="process-step">
-        <div class="process-num">05</div>
-        <div class="process-name">Test &amp; Iterate</div>
-        <div class="process-desc">Usability testing, accessibility review, and refinement</div>
+      <div class="ring-item" style="--ring-color:#9b6b9e;--ring-bg:rgba(155,107,158,.12)" onclick="this.classList.toggle('active')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('active')}" aria-label="Test & Iterate: Usability testing, accessibility review, and refinement">
+        <div class="ring-circle">
+          <span class="ring-num">05</span>
+          <span class="ring-name">Test &amp; Iterate</span>
+        </div>
+        <div class="ring-tooltip">Usability testing, accessibility review, and refinement</div>
       </div>
+
     </div>
     <div class="ux-tools-row fade-up stagger-3">
       <span class="tools-label">Tools I use</span>
