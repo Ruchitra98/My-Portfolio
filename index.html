@@ -124,28 +124,47 @@
 
     /* EXPERIENCE */
     #experience{background:var(--cream)}
-    .exp-list{display:flex;flex-direction:column}
-    .exp-item{display:grid;grid-template-columns:200px 1fr;gap:40px;padding:40px 0;border-top:1px solid var(--border)}
-    .exp-item:last-child{border-bottom:1px solid var(--border)}
-    .exp-date{font-family:var(--mono);font-size:.68rem;color:var(--stone);letter-spacing:.06em;margin-bottom:8px;line-height:1.5}
-    .exp-type-badge{display:inline-block;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(192,57,43,.3);padding:3px 8px;border-radius:2px}
-    .exp-role{font-family:'DM Serif Display',serif;font-size:1.5rem;margin-bottom:6px}
-    .exp-company{font-size:.85rem;color:var(--stone);font-weight:500;margin-bottom:14px;display:flex;align-items:center;gap:8px}
-    .exp-company::before{content:'↗';font-size:.75rem;color:var(--accent)}
-    .exp-desc{font-size:.9rem;color:#5a5550;line-height:1.75}
+    .exp-grid{display:grid;grid-template-columns:repeat(3,1fr);row-gap:56px;column-gap:28px;align-items:start}
+    .exp-book{position:relative;height:320px;perspective:1600px}
+    .exp-page{position:absolute;inset:0;background:var(--ink);color:var(--paper);border-radius:3px;padding:30px 28px;display:flex;flex-direction:column;gap:12px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.07)}
+    .exp-page::before{content:'';position:absolute;left:0;top:10px;bottom:10px;width:2px;background:rgba(192,57,43,.5)}
+    .exp-cover{position:absolute;inset:0;background:var(--paper);border:1px solid var(--border);border-radius:3px;padding:30px 28px;display:flex;flex-direction:column;gap:14px;cursor:pointer;transform-origin:left center;transition:transform .75s cubic-bezier(.45,.05,.15,1),box-shadow .3s;backface-visibility:hidden;box-shadow:3px 2px 14px rgba(0,0,0,.1);z-index:2}
+    .exp-cover::before{content:'';position:absolute;left:0;top:0;bottom:0;width:16px;background:linear-gradient(90deg,rgba(13,13,13,.14),transparent)}
+    .exp-book:hover .exp-cover{box-shadow:6px 4px 22px rgba(0,0,0,.16);transform:translateY(-2px)}
+    .exp-book.opened .exp-cover{transform:rotateY(-155deg) translateY(-2px)}
+    .exp-icon{width:48px;height:48px;background:var(--accent-soft);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1.1rem;position:relative}
+    .exp-role-front{font-family:'DM Serif Display',serif;font-size:1.3rem;line-height:1.3;margin-bottom:2px;position:relative}
+    .exp-company-front{font-size:.82rem;color:var(--stone);font-weight:500;display:flex;align-items:center;gap:6px;position:relative}
+    .exp-company-front::before{content:'↗';font-size:.72rem;color:var(--accent)}
+    .exp-location-front{font-family:var(--mono);font-size:.68rem;color:var(--stone);letter-spacing:.04em;margin-top:2px;position:relative}
+    .exp-flip-hint{margin-top:auto;font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);display:flex;align-items:center;gap:6px;position:relative}
+    .exp-flip-hint i{font-size:.65rem}
+    .exp-back-header{display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .exp-type-badge{display:inline-block;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(192,57,43,.4);background:rgba(192,57,43,.12);padding:4px 10px;border-radius:2px;flex-shrink:0}
+    .exp-back-date{font-family:var(--mono);font-size:.68rem;color:rgba(245,242,235,.6);letter-spacing:.05em}
+    .exp-back-role{font-family:'DM Serif Display',serif;font-size:1.05rem;line-height:1.3;color:var(--paper)}
+    .exp-back-desc{font-size:.8rem;color:rgba(245,242,235,.75);line-height:1.65;overflow:auto}
 
     /* EDUCATION */
     #education{background:var(--paper)}
     .edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-    .edu-card{padding:36px 32px;background:var(--cream);border:1px solid var(--border);border-radius:4px;position:relative;overflow:hidden;transition:all .3s}
-    .edu-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
-    .edu-card:hover{border-color:transparent;box-shadow:0 12px 40px rgba(0,0,0,.08);transform:translateY(-4px)}
-    .edu-card:hover::before{transform:scaleX(1)}
-    .edu-icon{width:44px;height:44px;background:var(--accent-soft);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1rem;margin-bottom:20px}
-    .edu-degree{font-family:'DM Serif Display',serif;font-size:1.15rem;margin-bottom:8px;line-height:1.3}
-    .edu-school{font-size:.82rem;color:var(--accent);font-weight:500;margin-bottom:6px}
-    .edu-date{font-family:var(--mono);font-size:.65rem;color:var(--stone);letter-spacing:.06em;margin-bottom:14px}
-    .edu-desc{font-size:.82rem;color:var(--stone);line-height:1.6}
+    .edu-flip-card{perspective:1400px;height:260px}
+    .edu-flip-inner{position:relative;width:100%;height:100%;transition:transform .6s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d;cursor:pointer}
+    .edu-flip-card.flipped .edu-flip-inner{transform:rotateY(180deg)}
+    .edu-flip-face{position:absolute;inset:0;-webkit-backface-visibility:hidden;backface-visibility:hidden;border-radius:4px;padding:32px;display:flex;flex-direction:column;overflow:hidden}
+    .edu-flip-front{background:var(--cream);border:1px solid var(--border);align-items:flex-start;justify-content:center;gap:16px;transition:border-color .3s,box-shadow .3s}
+    .edu-flip-card:hover .edu-flip-front{border-color:var(--accent);box-shadow:0 12px 40px rgba(0,0,0,.08)}
+    .edu-flip-back{background:var(--ink);color:var(--paper);transform:rotateY(180deg);justify-content:flex-start;gap:10px}
+    .edu-icon{width:44px;height:44px;background:var(--accent-soft);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1rem}
+    .edu-flip-back .edu-icon{background:rgba(192,57,43,.18)}
+    .edu-degree-short{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+    .edu-school{font-family:'DM Serif Display',serif;font-size:1.2rem;line-height:1.3}
+    .edu-flip-hint{margin-top:auto;font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);display:flex;align-items:center;gap:6px}
+    .edu-flip-hint i{font-size:.65rem}
+    .edu-degree{font-family:'DM Serif Display',serif;font-size:1.1rem;line-height:1.3;color:var(--paper)}
+    .edu-back-school{font-size:.78rem;color:rgba(245,242,235,.6)}
+    .edu-date{font-family:var(--mono);font-size:.64rem;color:var(--accent);letter-spacing:.06em}
+    .edu-desc{font-size:.78rem;color:rgba(245,242,235,.75);line-height:1.6}
 
     /* PROJECTS */
     #projects{background:var(--paper)}
@@ -155,22 +174,31 @@
     .filter-btn:last-child{border-right:none}
     .filter-btn.active,.filter-btn:hover{background:var(--ink);color:var(--paper)}
     .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-    .project-card{background:var(--cream);border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:all .3s;display:flex;flex-direction:column}
-    .project-card:hover{border-color:transparent;box-shadow:0 16px 48px rgba(0,0,0,.1);transform:translateY(-4px)}
-    .project-img-wrap{height:180px;background:linear-gradient(145deg,var(--warm-gray),#c8c3b8);overflow:hidden;position:relative}
-    .project-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
-    .project-card:hover .project-img-wrap img{transform:scale(1.05)}
-    .project-img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2rem;color:rgba(255,255,255,.4)}
-    .project-num{position:absolute;top:12px;right:14px;font-family:var(--mono);font-size:.62rem;color:rgba(255,255,255,.6);letter-spacing:.08em}
-    .project-body{padding:24px;flex:1;display:flex;flex-direction:column}
-    .project-category{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
-    .project-title{font-family:'DM Serif Display',serif;font-size:1.15rem;margin-bottom:10px;line-height:1.3}
-    .project-desc{font-size:.82rem;color:var(--stone);line-height:1.6;flex:1;margin-bottom:20px}
-    .project-footer{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid var(--border)}
-    .project-tags-row{display:flex;gap:6px;flex-wrap:wrap}
     .p-tag{font-family:var(--mono);font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:var(--stone);background:var(--paper);border:1px solid var(--border);padding:3px 8px;border-radius:2px}
-    .project-link{font-family:var(--mono);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:6px;white-space:nowrap;transition:gap .2s}
-    .project-link:hover{gap:10px}
+
+    /* PROJECT FLIP CARDS */
+    .project-flip-card{perspective:1400px;height:320px}
+    .project-flip-inner{position:relative;width:100%;height:100%;transition:transform .6s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d;cursor:pointer}
+    .project-flip-card.flipped .project-flip-inner{transform:rotateY(180deg)}
+    .project-flip-face{position:absolute;inset:0;-webkit-backface-visibility:hidden;backface-visibility:hidden;border-radius:4px;overflow:hidden;display:flex;flex-direction:column}
+    .project-flip-front{background:var(--cream);border:1px solid var(--border);align-items:flex-start;justify-content:center;padding:32px;gap:16px;transition:border-color .3s,box-shadow .3s}
+    .project-flip-card:hover .project-flip-front{border-color:var(--accent);box-shadow:0 16px 48px rgba(0,0,0,.1)}
+    .project-flip-back{background:var(--ink);color:var(--paper);transform:rotateY(180deg)}
+    .project-icon{width:44px;height:44px;background:var(--accent-soft);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1rem}
+    .project-category-short{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+    .project-name-front{font-family:'DM Serif Display',serif;font-size:1.25rem;line-height:1.3}
+    .project-flip-hint{margin-top:auto;font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);display:flex;align-items:center;gap:6px}
+    .project-flip-hint i{font-size:.65rem}
+    .project-back-img{height:110px;width:100%;background:linear-gradient(145deg,var(--warm-gray),#c8c3b8);overflow:hidden;position:relative;flex-shrink:0}
+    .project-back-img img{width:100%;height:100%;object-fit:cover;display:block}
+    .project-back-img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:rgba(255,255,255,.35)}
+    .project-back-body{padding:18px 20px;display:flex;flex-direction:column;flex:1;gap:8px;overflow:hidden}
+    .project-back-title{font-family:'DM Serif Display',serif;font-size:1rem;line-height:1.3;color:var(--paper)}
+    .project-back-desc{font-size:.75rem;color:rgba(245,242,235,.75);line-height:1.55;flex:1;overflow:hidden}
+    .project-back-tags{display:flex;flex-wrap:wrap;gap:6px}
+    .project-back-tags .p-tag{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);color:rgba(245,242,235,.8)}
+    .project-back-link{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:6px;transition:gap .2s}
+    .project-back-link:hover{gap:10px}
 
     /* UX SHOWCASE */
     #ux-work{background:var(--ink);color:var(--paper);padding:100px 0}
@@ -261,6 +289,7 @@
       .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:48px}
       .skills-layout{grid-template-columns:1fr;gap:48px}
       .edu-grid{grid-template-columns:1fr 1fr}
+      .exp-grid{grid-template-columns:1fr 1fr}
       .projects-grid{grid-template-columns:repeat(2,1fr)}
       .ux-process-steps{grid-template-columns:repeat(3,1fr)}
       .hero-visual{display:none}
@@ -278,7 +307,7 @@
       .edu-grid{grid-template-columns:1fr}
       .projects-grid{grid-template-columns:1fr}
       .ux-process-steps{grid-template-columns:repeat(2,1fr)}
-      .exp-item{grid-template-columns:1fr;gap:10px}
+      .exp-grid{grid-template-columns:1fr}
       .about-highlights{grid-template-columns:1fr}
       .hero-stats{flex-wrap:wrap;gap:20px}
     }
@@ -504,62 +533,109 @@
     </div>
     <h2 class="section-heading fade-up">Where I've<br><em>made impact.</em></h2>
     <br>
-    <div class="exp-list">
-      <div class="exp-item fade-up">
-        <div class="exp-meta">
-          <div class="exp-date">Jan 2025 — Present</div>
-          <span class="exp-type-badge">Volunteer</span>
+    <p style="font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--stone);text-transform:uppercase;margin-top:-24px;margin-bottom:40px"><b><h2>Tap a card to open it, like a book</h2></b></p>
+    <div class="exp-grid">
+
+      <div class="exp-book fade-up" onclick="this.classList.toggle('opened')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('opened')}" aria-label="Retail Greeter Volunteer at 9/11 Memorial & Museum, tap to open for details">
+        <div class="exp-page">
+          <div class="exp-back-header">
+            <span class="exp-type-badge">Volunteer</span>
+            <span class="exp-back-date">Jan 2025 — Present</span>
+          </div>
+          <div class="exp-back-role">Retail Greeter Volunteer</div>
+          <p class="exp-back-desc">Welcome 1,000+ guests monthly providing guidance on resources and assisting with navigation and accessibility. Engage visitors in thoughtful discussions about the historical significance of exhibits, preserving personal stories and fostering deeper human connections.</p>
         </div>
-        <div class="exp-body">
-          <h3 class="exp-role">Retail Greeter Volunteer</h3>
-          <div class="exp-company">9/11 Memorial &amp; Museum · Manhattan, New York</div>
-          <p class="exp-desc">Welcome 1,000+ guests monthly providing guidance on resources and assisting with navigation and accessibility. Engage visitors in thoughtful discussions about the historical significance of exhibits, preserving personal stories and fostering deeper human connections.</p>
-        </div>
-      </div>
-      <div class="exp-item fade-up stagger-1">
-        <div class="exp-meta">
-          <div class="exp-date">Sept 2024 — Dec 2025</div>
-          <span class="exp-type-badge">Tutor</span>
-        </div>
-        <div class="exp-body">
-          <h3 class="exp-role">Computer Science Tutor</h3>
-          <div class="exp-company">UPchive · Brooklyn, New York</div>
-          <p class="exp-desc">Provided academic support in College Applications, Essay Writing, and CS coursework. Collaborated with students to develop personalized strategies for academic success and enhanced their understanding of core computing concepts.</p>
-        </div>
-      </div>
-      <div class="exp-item fade-up stagger-2">
-        <div class="exp-meta">
-          <div class="exp-date">June 2020 — July 2022</div>
-          <span class="exp-type-badge">Full-Time</span>
-        </div>
-        <div class="exp-body">
-          <h3 class="exp-role">Software Engineer</h3>
-          <div class="exp-company">Ambica Constructions &amp; Contractors · Bangalore, India</div>
-          <p class="exp-desc">Led front-end development across the full product lifecycle — from design to deployment. Built and maintained user interfaces with React and TypeScript, ensuring accessibility, responsiveness, and performance. Served as the go-to for debugging UI issues and improving user experience across the team.</p>
+        <div class="exp-cover">
+          <div class="exp-icon"><i class="fas fa-hand-holding-heart"></i></div>
+          <div>
+            <div class="exp-role-front">Retail Greeter Volunteer</div>
+            <div class="exp-company-front">9/11 Memorial &amp; Museum</div>
+            <div class="exp-location-front">Manhattan, New York</div>
+          </div>
+          <div class="exp-flip-hint"><i class="fas fa-book-open"></i> Tap to open</div>
         </div>
       </div>
-      <div class="exp-item fade-up stagger-3">
-        <div class="exp-meta">
-          <div class="exp-date">July 2021 — Aug 2021</div>
-          <span class="exp-type-badge">Internship</span>
+
+      <div class="exp-book fade-up stagger-1" onclick="this.classList.toggle('opened')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('opened')}" aria-label="Computer Science Tutor at UPchive, tap to open for details">
+        <div class="exp-page">
+          <div class="exp-back-header">
+            <span class="exp-type-badge">Tutor</span>
+            <span class="exp-back-date">Sept 2024 — Dec 2025</span>
+          </div>
+          <div class="exp-back-role">Computer Science Tutor</div>
+          <p class="exp-back-desc">Provided academic support in College Applications, Essay Writing, and CS coursework. Collaborated with students to develop personalized strategies for academic success and enhanced their understanding of core computing concepts.</p>
         </div>
-        <div class="exp-body">
-          <h3 class="exp-role">Website Developer (Part-time)</h3>
-          <div class="exp-company">Lernov · Bangalore, India</div>
-          <p class="exp-desc">Developed a fully functional website meeting 90% of detailed client specifications. Systematically organized and optimized HTML structure, actively contributing to the website's layout and performance.</p>
-        </div>
-      </div>
-      <div class="exp-item fade-up stagger-4">
-        <div class="exp-meta">
-          <div class="exp-date">Feb 2020 — May 2020</div>
-          <span class="exp-type-badge">Internship</span>
-        </div>
-        <div class="exp-body">
-          <h3 class="exp-role">Website Developer &amp; Designer</h3>
-          <div class="exp-company">Sain Solutions · Bangalore, India</div>
-          <p class="exp-desc">Designed aesthetically pleasing interfaces for a retail client — implementation led to a 20% improvement in user engagement within two months of deployment, demonstrating measurable UX impact.</p>
+        <div class="exp-cover">
+          <div class="exp-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+          <div>
+            <div class="exp-role-front">Computer Science Tutor</div>
+            <div class="exp-company-front">UPchive</div>
+            <div class="exp-location-front">Brooklyn, New York</div>
+          </div>
+          <div class="exp-flip-hint"><i class="fas fa-book-open"></i> Tap to open</div>
         </div>
       </div>
+
+      <div class="exp-book fade-up stagger-2" onclick="this.classList.toggle('opened')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('opened')}" aria-label="Software Engineer at Ambica Constructions & Contractors, tap to open for details">
+        <div class="exp-page">
+          <div class="exp-back-header">
+            <span class="exp-type-badge">Full-Time</span>
+            <span class="exp-back-date">June 2020 — July 2022</span>
+          </div>
+          <div class="exp-back-role">Software Engineer</div>
+          <p class="exp-back-desc">Led front-end development across the full product lifecycle — from design to deployment. Built and maintained user interfaces with React and TypeScript, ensuring accessibility, responsiveness, and performance. Served as the go-to for debugging UI issues and improving user experience across the team.</p>
+        </div>
+        <div class="exp-cover">
+          <div class="exp-icon"><i class="fas fa-briefcase"></i></div>
+          <div>
+            <div class="exp-role-front">Software Engineer</div>
+            <div class="exp-company-front">Ambica Constructions &amp; Contractors</div>
+            <div class="exp-location-front">Bangalore, India</div>
+          </div>
+          <div class="exp-flip-hint"><i class="fas fa-book-open"></i> Tap to open</div>
+        </div>
+      </div>
+
+      <div class="exp-book fade-up stagger-3" onclick="this.classList.toggle('opened')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('opened')}" aria-label="Website Developer Part-time at Lernov, tap to open for details">
+        <div class="exp-page">
+          <div class="exp-back-header">
+            <span class="exp-type-badge">Internship</span>
+            <span class="exp-back-date">July 2021 — Aug 2021</span>
+          </div>
+          <div class="exp-back-role">Website Developer (Part-time)</div>
+          <p class="exp-back-desc">Developed a fully functional website meeting 90% of detailed client specifications. Systematically organized and optimized HTML structure, actively contributing to the website's layout and performance.</p>
+        </div>
+        <div class="exp-cover">
+          <div class="exp-icon"><i class="fas fa-user-graduate"></i></div>
+          <div>
+            <div class="exp-role-front">Website Developer (Part-time)</div>
+            <div class="exp-company-front">Lernov</div>
+            <div class="exp-location-front">Bangalore, India</div>
+          </div>
+          <div class="exp-flip-hint"><i class="fas fa-book-open"></i> Tap to open</div>
+        </div>
+      </div>
+
+      <div class="exp-book fade-up stagger-4" onclick="this.classList.toggle('opened')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('opened')}" aria-label="Website Developer and Designer at Sain Solutions, tap to open for details">
+        <div class="exp-page">
+          <div class="exp-back-header">
+            <span class="exp-type-badge">Internship</span>
+            <span class="exp-back-date">Feb 2020 — May 2020</span>
+          </div>
+          <div class="exp-back-role">Website Developer &amp; Designer</div>
+          <p class="exp-back-desc">Designed aesthetically pleasing interfaces for a retail client — implementation led to a 20% improvement in user engagement within two months of deployment, demonstrating measurable UX impact.</p>
+        </div>
+        <div class="exp-cover">
+          <div class="exp-icon"><i class="fas fa-user-graduate"></i></div>
+          <div>
+            <div class="exp-role-front">Website Developer &amp; Designer</div>
+            <div class="exp-company-front">Sain Solutions</div>
+            <div class="exp-location-front">Bangalore, India</div>
+          </div>
+          <div class="exp-flip-hint"><i class="fas fa-book-open"></i> Tap to open</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -572,29 +648,69 @@
       <span> <h1> Education </h1></span>
     </div>
     <h2 class="section-heading fade-up">Academic<br><em>foundations.</em></h2>
-    <br>
+    <p style="font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--stone);text-transform:uppercase;margin-top:-24px;margin-bottom:40px"><b> <h2>Tap a card to flip it </h2></b></p>
     <div class="edu-grid">
-      <div class="edu-card fade-up">
-        <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-        <div class="edu-degree">MS Information Technology</div>
-        <div class="edu-school">Saint Francis College</div>
-        <div class="edu-date">Sept 2025 — Expected </div>
-        <p class="edu-desc">Currently enrolled, deepening expertise in information systems and technology management.</p>
+
+      <div class="edu-flip-card fade-up" onclick="this.classList.toggle('flipped')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped')}" aria-label="MS Information Technology at Saint Francis College, tap to flip for details">
+        <div class="edu-flip-inner">
+          <div class="edu-flip-face edu-flip-front">
+            <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div>
+              <div class="edu-degree-short">Master's</div>
+              <div class="edu-school">Saint Francis College</div>
+            </div>
+            <div class="edu-flip-hint"><i class="fas fa-sync-alt"></i> Tap for details</div>
+          </div>
+          <div class="edu-flip-face edu-flip-back">
+            <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div class="edu-degree">MS Information Technology</div>
+            <div class="edu-back-school">Saint Francis College</div>
+            <div class="edu-date">Sept 2025 — Expected 2026</div>
+            <p class="edu-desc">Coursework in information systems and technology management. Currently enrolled full-time while working in front-end/UX roles.</p>
+          </div>
+        </div>
       </div>
-      <div class="edu-card fade-up stagger-2">
-        <div class="edu-icon"><i class="fas fa-brain"></i></div>
-        <div class="edu-degree">MS Computer Science</div>
-        <div class="edu-school">New York Institute of Technology (NYIT)</div>
-        <div class="edu-date">2022 — 2024</div>
-        <p class="edu-desc">Specialized in Advanced Computing, Artificial Intelligence, and Human-Computer Interaction.</p>
+
+      <div class="edu-flip-card fade-up stagger-2" onclick="this.classList.toggle('flipped')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped')}" aria-label="MS Computer Science at New York Institute of Technology, tap to flip for details">
+        <div class="edu-flip-inner">
+          <div class="edu-flip-face edu-flip-front">
+            <div class="edu-icon"><i class="fas fa-brain"></i></div>
+            <div>
+              <div class="edu-degree-short">Master's</div>
+              <div class="edu-school">NYIT</div>
+            </div>
+            <div class="edu-flip-hint"><i class="fas fa-sync-alt"></i> Tap for details</div>
+          </div>
+          <div class="edu-flip-face edu-flip-back">
+            <div class="edu-icon"><i class="fas fa-brain"></i></div>
+            <div class="edu-degree">MS Computer Science</div>
+            <div class="edu-back-school">New York Institute of Technology (NYIT)</div>
+            <div class="edu-date">2022 — 2024</div>
+            <p class="edu-desc">Specialized in Advanced Computing, Artificial Intelligence, and Human-Computer Interaction.</p>
+          </div>
+        </div>
       </div>
-      <div class="edu-card fade-up stagger-3">
-        <div class="edu-icon"><i class="fas fa-laptop-code"></i></div>
-        <div class="edu-degree">BTech Computer Science</div>
-        <div class="edu-school">REVA University · Bangalore, India</div>
-        <div class="edu-date">2016 — 2022</div>
-        <p class="edu-desc">Focused on Software Development, Web Technologies, and Database Systems. First Class Honors.</p>
+
+      <div class="edu-flip-card fade-up stagger-3" onclick="this.classList.toggle('flipped')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped')}" aria-label="BTech Computer Science at REVA University, tap to flip for details">
+        <div class="edu-flip-inner">
+          <div class="edu-flip-face edu-flip-front">
+            <div class="edu-icon"><i class="fas fa-laptop-code"></i></div>
+            <div>
+              <div class="edu-degree-short">Bachelor's</div>
+              <div class="edu-school">REVA University</div>
+            </div>
+            <div class="edu-flip-hint"><i class="fas fa-sync-alt"></i> Tap for details</div>
+          </div>
+          <div class="edu-flip-face edu-flip-back">
+            <div class="edu-icon"><i class="fas fa-laptop-code"></i></div>
+            <div class="edu-degree">BTech Computer Science</div>
+            <div class="edu-back-school">REVA University · Bangalore, India</div>
+            <div class="edu-date">2016 — 2022</div>
+            <p class="edu-desc">Focused on Software Development, Web Technologies, and Database Systems. First Class Honors.</p>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -616,103 +732,159 @@
         <button class="filter-btn" data-filter="academic">Academic</button>
       </div>
     </div>
+    <p style="font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--stone);text-transform:uppercase;margin-top:-40px;margin-bottom:32px"><b> <h2>Tap a card to flip it </h2> </b> </p>
     <div class="projects-grid" id="projects-grid">
-      <div class="project-card fade-up" data-category="design">
-        <div class="project-img-wrap">
-          <img src="Task.jpg" alt="TaskFlow Pro" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="project-img-placeholder" style="display:none"><i class="fas fa-tasks"></i></div>
-          <span class="project-num">01</span>
-        </div>
-        <div class="project-body">
-          <div class="project-category">UI/UX · Web App</div>
-          <h3 class="project-title">TaskFlow Pro</h3>
-          <p class="project-desc">AI-powered task management with real-time dashboard, priority filters, calendar scheduling, and animated UI. Improved task completion by 12%.</p>
-          <div class="project-footer">
-            <div class="project-tags-row"><span class="p-tag">JavaScript</span><span class="p-tag">NLP</span></div>
-            <a href="https://ruchi-taskflow-ai-pro.netlify.app/" target="_blank" class="project-link">View <i class="fas fa-arrow-right"></i></a>
+
+      <div class="project-flip-card fade-up" data-category="design" onclick="this.classList.toggle('flipped')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped')}" aria-label="TaskFlow Pro, UI/UX project, tap to flip for details">
+        <div class="project-flip-inner">
+          <div class="project-flip-face project-flip-front">
+            <div class="project-icon"><i class="fas fa-tasks"></i></div>
+            <div>
+              <div class="project-category-short">UI/UX Project</div>
+              <div class="project-name-front">TaskFlow Pro</div>
+            </div>
+            <div class="project-flip-hint"><i class="fas fa-sync-alt"></i> Tap for details</div>
+          </div>
+          <div class="project-flip-face project-flip-back">
+            <div class="project-back-img">
+              <img src="Task.jpg" alt="TaskFlow Pro" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="project-back-img-placeholder" style="display:none"><i class="fas fa-tasks"></i></div>
+            </div>
+            <div class="project-back-body">
+              <div class="project-back-title">TaskFlow Pro</div>
+              <p class="project-back-desc">AI-powered task management with real-time dashboard, priority filters, calendar scheduling, and animated UI. Improved task completion by 12%.</p>
+              <div class="project-back-tags"><span class="p-tag">JavaScript</span><span class="p-tag">NLP</span></div>
+              <a href="https://ruchi-taskflow-ai-pro.netlify.app/" target="_blank" class="project-back-link" onclick="event.stopPropagation()">View <i class="fas fa-arrow-right"></i></a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="project-card fade-up stagger-1" data-category="design">
-        <div class="project-img-wrap">
-          <img src="Mood.jpg" alt="MoodTunes" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="project-img-placeholder" style="display:none"><i class="fas fa-music"></i></div>
-          <span class="project-num">02</span>
-        </div>
-        <div class="project-body">
-          <div class="project-category">UI/UX · Web App</div>
-          <h3 class="project-title">MoodTunes</h3>
-          <p class="project-desc">Interactive web app curating personalized playlists based on user mood. Analyzes input via NLP and suggests songs matching emotions with YouTube links.</p>
-          <div class="project-footer">
-            <div class="project-tags-row"><span class="p-tag">JavaScript</span><span class="p-tag">NLP</span></div>
-            <a href="https://ruchitra98.github.io/Mood-Based-Playlist-Generator-Web-App/" target="_blank" class="project-link">View <i class="fas fa-arrow-right"></i></a>
+
+      <div class="project-flip-card fade-up stagger-1" data-category="design" onclick="this.classList.toggle('flipped')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped')}" aria-label="MoodTunes, UI/UX project, tap to flip for details">
+        <div class="project-flip-inner">
+          <div class="project-flip-face project-flip-front">
+            <div class="project-icon"><i class="fas fa-music"></i></div>
+            <div>
+              <div class="project-category-short">UI/UX Project</div>
+              <div class="project-name-front">MoodTunes</div>
+            </div>
+            <div class="project-flip-hint"><i class="fas fa-sync-alt"></i> Tap for details</div>
+          </div>
+          <div class="project-flip-face project-flip-back">
+            <div class="project-back-img">
+              <img src="Mood.jpg" alt="MoodTunes" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="project-back-img-placeholder" style="display:none"><i class="fas fa-music"></i></div>
+            </div>
+            <div class="project-back-body">
+              <div class="project-back-title">MoodTunes</div>
+              <p class="project-back-desc">Interactive web app curating personalized playlists based on user mood. Analyzes input via NLP and suggests songs matching emotions with YouTube links.</p>
+              <div class="project-back-tags"><span class="p-tag">JavaScript</span><span class="p-tag">NLP</span></div>
+              <a href="https://ruchitra98.github.io/Mood-Based-Playlist-Generator-Web-App/" target="_blank" class="project-back-link" onclick="event.stopPropagation()">View <i class="fas fa-arrow-right"></i></a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="project-card fade-up stagger-2" data-category="design">
-        <div class="project-img-wrap">
-          <img src="Gift.jpg" alt="GiftGenie" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="project-img-placeholder" style="display:none"><i class="fas fa-gift"></i></div>
-          <span class="project-num">03</span>
-        </div>
-        <div class="project-body">
-          <div class="project-category">UI/UX · Web App</div>
-          <h3 class="project-title">GiftGenie</h3>
-          <p class="project-desc">Personalized gift suggestion platform helping users find the perfect gift through occasion-based suggestions and personality quizzes.</p>
-          <div class="project-footer">
-            <div class="project-tags-row"><span class="p-tag">JavaScript</span><span class="p-tag">Responsive</span></div>
-            <a href="https://ruchitra98.github.io/Gift-Suggestion-Website-for-Occasions-and-Ages/" target="_blank" class="project-link">View <i class="fas fa-arrow-right"></i></a>
+
+      <div class="project-flip-card fade-up stagger-2" data-category="design" onclick="this.classList.toggle('flipped')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped')}" aria-label="GiftGenie, UI/UX project, tap to flip for details">
+        <div class="project-flip-inner">
+          <div class="project-flip-face project-flip-front">
+            <div class="project-icon"><i class="fas fa-gift"></i></div>
+            <div>
+              <div class="project-category-short">UI/UX Project</div>
+              <div class="project-name-front">GiftGenie</div>
+            </div>
+            <div class="project-flip-hint"><i class="fas fa-sync-alt"></i> Tap for details</div>
+          </div>
+          <div class="project-flip-face project-flip-back">
+            <div class="project-back-img">
+              <img src="Gift.jpg" alt="GiftGenie" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="project-back-img-placeholder" style="display:none"><i class="fas fa-gift"></i></div>
+            </div>
+            <div class="project-back-body">
+              <div class="project-back-title">GiftGenie</div>
+              <p class="project-back-desc">Personalized gift suggestion platform helping users find the perfect gift through occasion-based suggestions and personality quizzes.</p>
+              <div class="project-back-tags"><span class="p-tag">JavaScript</span><span class="p-tag">Responsive</span></div>
+              <a href="https://ruchitra98.github.io/Gift-Suggestion-Website-for-Occasions-and-Ages/" target="_blank" class="project-back-link" onclick="event.stopPropagation()">View <i class="fas fa-arrow-right"></i></a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="project-card fade-up stagger-1" data-category="academic">
-        <div class="project-img-wrap">
-          <img src="CG-1.jpg" alt="Computer Graphics" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="project-img-placeholder" style="display:none"><i class="fas fa-cube"></i></div>
-          <span class="project-num">04</span>
-        </div>
-        <div class="project-body">
-          <div class="project-category">Academic · Graphics</div>
-          <h3 class="project-title">Advanced Rendering Engine</h3>
-          <p class="project-desc">Projective Texturing techniques for high-fidelity simulation of shadows, reflections, and decals in 3D environments built from scratch.</p>
-          <div class="project-footer">
-            <div class="project-tags-row"><span class="p-tag">OpenGL</span><span class="p-tag">C++</span></div>
-            <a href="Computer Graphics-ppt.pdf" download class="project-link">Report <i class="fas fa-arrow-down"></i></a>
+
+      <div class="project-flip-card fade-up stagger-1" data-category="academic" onclick="this.classList.toggle('flipped')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped')}" aria-label="Advanced Rendering Engine, academic project, tap to flip for details">
+        <div class="project-flip-inner">
+          <div class="project-flip-face project-flip-front">
+            <div class="project-icon"><i class="fas fa-cube"></i></div>
+            <div>
+              <div class="project-category-short">Academic Project</div>
+              <div class="project-name-front">Advanced Rendering Engine</div>
+            </div>
+            <div class="project-flip-hint"><i class="fas fa-sync-alt"></i> Tap for details</div>
+          </div>
+          <div class="project-flip-face project-flip-back">
+            <div class="project-back-img">
+              <img src="CG-1.jpg" alt="Computer Graphics" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="project-back-img-placeholder" style="display:none"><i class="fas fa-cube"></i></div>
+            </div>
+            <div class="project-back-body">
+              <div class="project-back-title">Advanced Rendering Engine</div>
+              <p class="project-back-desc">Projective Texturing techniques for high-fidelity simulation of shadows, reflections, and decals in 3D environments built from scratch.</p>
+              <div class="project-back-tags"><span class="p-tag">OpenGL</span><span class="p-tag">C++</span></div>
+              <a href="Computer Graphics-ppt.pdf" download class="project-back-link" onclick="event.stopPropagation()">Report <i class="fas fa-arrow-down"></i></a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="project-card fade-up stagger-2" data-category="academic">
-        <div class="project-img-wrap">
-          <img src="PRS-1.jpg" alt="Recommendation System" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="project-img-placeholder" style="display:none"><i class="fas fa-robot"></i></div>
-          <span class="project-num">05</span>
-        </div>
-        <div class="project-body">
-          <div class="project-category">Academic · ML</div>
-          <h3 class="project-title">Product Recommendation System</h3>
-          <p class="project-desc">Collaborative filtering and rank-based recommendation using similarity-based approaches and model-based SVD for personalized suggestions.</p>
-          <div class="project-footer">
-            <div class="project-tags-row"><span class="p-tag">Python</span><span class="p-tag">ML</span><span class="p-tag">SVD</span></div>
-            <a href="Product Recommendation-Report.pdf" download class="project-link">Report <i class="fas fa-arrow-down"></i></a>
+
+      <div class="project-flip-card fade-up stagger-2" data-category="academic" onclick="this.classList.toggle('flipped')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped')}" aria-label="Product Recommendation System, academic project, tap to flip for details">
+        <div class="project-flip-inner">
+          <div class="project-flip-face project-flip-front">
+            <div class="project-icon"><i class="fas fa-robot"></i></div>
+            <div>
+              <div class="project-category-short">Academic Project</div>
+              <div class="project-name-front">Product Recommendation System</div>
+            </div>
+            <div class="project-flip-hint"><i class="fas fa-sync-alt"></i> Tap for details</div>
+          </div>
+          <div class="project-flip-face project-flip-back">
+            <div class="project-back-img">
+              <img src="PRS-1.jpg" alt="Recommendation System" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="project-back-img-placeholder" style="display:none"><i class="fas fa-robot"></i></div>
+            </div>
+            <div class="project-back-body">
+              <div class="project-back-title">Product Recommendation System</div>
+              <p class="project-back-desc">Collaborative filtering and rank-based recommendation using similarity-based approaches and model-based SVD for personalized suggestions.</p>
+              <div class="project-back-tags"><span class="p-tag">Python</span><span class="p-tag">ML</span><span class="p-tag">SVD</span></div>
+              <a href="Product Recommendation-Report.pdf" download class="project-back-link" onclick="event.stopPropagation()">Report <i class="fas fa-arrow-down"></i></a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="project-card fade-up stagger-3" data-category="academic">
-        <div class="project-img-wrap">
-          <img src="water-1.jpg" alt="IoT Water Monitoring" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="project-img-placeholder" style="display:none"><i class="fas fa-tint"></i></div>
-          <span class="project-num">06</span>
-        </div>
-        <div class="project-body">
-          <div class="project-category">Academic · IoT</div>
-          <h3 class="project-title">Water Quality Monitoring</h3>
-          <p class="project-desc">IoT and AWS Cloud solution monitoring and purifying polluted water in real time, achieving 90% purification efficiency for sustainable reuse.</p>
-          <div class="project-footer">
-            <div class="project-tags-row"><span class="p-tag">IoT</span><span class="p-tag">AWS</span></div>
-            <a href="https://www.youtube.com/watch?v=SniVsKWIpDA" target="_blank" class="project-link">Demo <i class="fas fa-play"></i></a>
+
+      <div class="project-flip-card fade-up stagger-3" data-category="academic" onclick="this.classList.toggle('flipped')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped')}" aria-label="Water Quality Monitoring, academic project, tap to flip for details">
+        <div class="project-flip-inner">
+          <div class="project-flip-face project-flip-front">
+            <div class="project-icon"><i class="fas fa-tint"></i></div>
+            <div>
+              <div class="project-category-short">Academic Project</div>
+              <div class="project-name-front">Water Quality Monitoring</div>
+            </div>
+            <div class="project-flip-hint"><i class="fas fa-sync-alt"></i> Tap for details</div>
+          </div>
+          <div class="project-flip-face project-flip-back">
+            <div class="project-back-img">
+              <img src="water-1.jpg" alt="IoT Water Monitoring" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="project-back-img-placeholder" style="display:none"><i class="fas fa-tint"></i></div>
+            </div>
+            <div class="project-back-body">
+              <div class="project-back-title">Water Quality Monitoring</div>
+              <p class="project-back-desc">IoT and AWS Cloud solution monitoring and purifying polluted water in real time, achieving 90% purification efficiency for sustainable reuse.</p>
+              <div class="project-back-tags"><span class="p-tag">IoT</span><span class="p-tag">AWS</span></div>
+              <a href="https://www.youtube.com/watch?v=SniVsKWIpDA" target="_blank" class="project-back-link" onclick="event.stopPropagation()">Demo <i class="fas fa-play"></i></a>
+            </div>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -900,7 +1072,7 @@
       document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
       btn.classList.add('active');
       const f=btn.dataset.filter;
-      document.querySelectorAll('.project-card').forEach(c=>{
+      document.querySelectorAll('.project-flip-card').forEach(c=>{
         c.style.display=(f==='all'||c.dataset.category===f)?'':'none';
       });
     });
